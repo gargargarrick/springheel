@@ -1,0 +1,223 @@
+@media screen {
+/*Plain*/
+    #plain {
+    /* Default (small) screens */
+        * {
+            box-sizing: content-box;
+        }
+        body {
+            background-color: #fdfdfd;
+            color: #222;
+            text-align: center;
+            font-size: 1.2em;
+            font-family: sans-serif;
+        }
+
+        main, figure {
+            margin-left: 0em;
+            padding-left: 0em;
+        }
+
+        h1 {
+            margin: 0em;
+        }
+        figure {
+            padding: 1em;
+            text-align: center;
+            border: none;
+        }
+        .cominavbox, .cominavbox li {
+            display: inline-block;
+            padding: 0em;
+        }
+
+        p + p, li + li {
+            margin-top: 0.5em
+        }
+
+        /*TODO: Fix the skip link hiding method*/
+        #skippy {
+            text-align: left;
+        }
+        #skippy a, #skippy a:hover, #skippy a:visited {
+            position:absolute;
+            left:-10000px;
+            top:auto;
+            width:1px;
+            height:1px;
+            overflow:hidden;
+        }
+
+        #skippy a:active, #skippy a:focus {
+          position: static;
+          height: auto;
+          width: auto;
+          font-size: 1em;
+          margin-top: 0em;
+          color: #0000ff;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        #commentary, #transcript {
+            text-align: left;
+        }
+
+        .statline {
+            font-weight: bold;
+        }
+
+        a:link {
+            color: #214184;
+            text-decoration: underline
+        }
+
+        a:visited {
+            color: #5c3566;
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        a:hover, a:focus, a:active {
+            color: #cc0000;
+        }
+
+        footer p {
+            margin-left: 0em;
+            text-align: left;
+        }
+
+        .archive {
+            display: inline-block;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        img, embed, object, video {
+            max-width: 100%;
+        }
+
+        .action {
+            font-weight: bold;
+        }
+
+        .charname {
+            font-weight: bold
+        }
+        
+        .char {
+            dt:after {
+                content: ":"
+            }
+            dd:after {
+                content: "\A"; white-space: pre;
+            }
+            dd {
+                margin-left: 0em;
+            }
+            dt, dd {
+                display: inline;
+                white-space: pre;
+            }
+        }
+
+    /*Medium screens*/
+
+        @media screen and (min-width: 40em) {
+            body {
+                font-size: 1.5em;
+                margin-left: 1em;
+            }
+
+            figure {
+                margin-left: 1em;
+                margin-top: 0em;
+                margin-bottom: 0em;
+            }
+
+            main div, main section {
+                padding-left: 1em;
+                padding-right: 1em;
+                width: 80%;
+                margin-top: 1em;
+            }
+
+            div + div {
+                margin-bottom: 0em;
+                margin-top: 0em;
+            }
+
+            .cominavbox, .cominavbox li {
+                margin-left: 1em;
+                margin-right: 1em;
+                margin-top: 0.5em;
+                margin-bottom: 0em;
+            }
+
+            figure + .cominavbox {
+                margin-top: 0em;
+            }
+
+            figure {
+                margin-left: 1em;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+            
+            h3 {
+                font-size: 1em;
+            }
+
+            nav li {
+                padding-top: 1em;
+                padding-left: 1em;
+                padding-right: 1em;
+                padding-bottom: 0.8em;
+                margin: 0em;
+            }
+
+            .statline {
+                font-size: 0.8em;
+                text-align: right;
+            }
+
+            footer p {
+                font-size: 0.7em;
+            }
+
+            .archive {
+                margin-left: 1em;
+                margin-right: 1em;
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+            
+            .main {
+                padding: 0.5em;
+                margin: auto;
+                width: 50%;
+                text-align: center;
+                & p {
+                    margin-left: 0em;
+                }
+            }
+            .char {
+                text-align: left;
+                img {
+                    float: left;
+                    margin: 1em
+                }
+            }
+        }
+    }
+}

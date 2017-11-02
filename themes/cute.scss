@@ -1,0 +1,252 @@
+@media screen {
+/*Cute*/
+    #cute {
+    /* Default (small) screens */
+        * {
+            box-sizing: content-box;
+        }
+        body {
+            background-color: #e7dfc2;
+            background: url("cakeMid.png") repeat-x 0 0,
+            url("cakeCenter.png") repeat 0 0;
+            color: #000;
+            text-align: center;
+            font-size: 1.2em;
+            font-family: "Lato", "Noto Sans", "DejaVu Sans", sans-serif;
+            margin: 0em;
+        }
+
+        main, figure {
+            margin-left: 0em;
+            padding-left: 0em;
+        }
+
+        h1 {
+            margin: 0em;
+        }
+        figure {
+            padding: 1em;
+            text-align: center;
+            border: none;
+        }
+        .cominavbox, .cominavbox li {
+            display: inline-block;
+            padding: 0em;
+        }
+
+        figure, main div, nav li, .archive {
+            border: thick solid #FFCCFF;
+            background: #fff;
+            padding-top: .3em;
+            padding-bottom: .3em;
+            padding-left: 1.2em;
+            padding-right: 1.5em;
+        }
+
+        p + p, li + li, div + div {
+            margin-top: 0.5em
+        }
+
+        /*TODO: Fix the skip link hiding method*/
+        #skippy {
+            text-align: left;
+        }
+        #skippy a, #skippy a:hover, #skippy a:visited {
+            position:absolute;
+            left:-10000px;
+            top:auto;
+            width:1px;
+            height:1px;
+            overflow:hidden;
+        }
+
+        #skippy a:active, #skippy a:focus {
+          position: static;
+          height: auto;
+          width: auto;
+          font-size: 1em;
+          margin-top: 0em;
+          color: #0000ff;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        main div {
+            text-align: left;
+        }
+
+        .statline {
+            font-weight: bold;
+        }
+
+        a:link {
+            color: #a700a4;
+            text-decoration: underline
+        }
+
+        a:visited {
+            color: #7024a6;
+        }
+
+        a:hover, a:focus, a:active {
+            color: #ff0000;
+        }
+
+        footer p {
+            margin-left: 0em;
+            text-align: left;
+        }
+
+        .archive {
+            display: inline-block;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        img, embed, object, video {
+            max-width: 100%;
+        }
+
+        .action {
+            font-weight: bold;
+        }
+        
+        figure, main div {
+            max-width: 100%;
+            margin-left: 0em;
+            margin-right: 0em;
+            border-left: 0em;
+            border-right: 0em
+        }
+        
+        .char {
+            text-align: left;
+            dt:after {
+                content: ":"
+            }
+            dd:after {
+                content: "\A"; white-space: pre;
+            }
+            dd {
+                margin-left: 0em;
+            }
+            dt, dd {
+                display: inline;
+                white-space: pre;
+            }
+        }
+
+    /*Medium screens*/
+
+        @media screen and (min-width: 40em) {
+            body {
+                font-size: 1.5em;
+                margin-left: 1em;
+            }
+
+            figure {
+                margin-left: 1em;
+            }
+
+            figure, nav li, .archive, main div {
+                border: thick solid #FFCCFF;
+                border-image-slice: 20 20 20 20 fill;
+                border-image-width: 10px 10px 10px 10px;
+                border-image-outset: 0px 0px 0px 0px;
+                border-image-repeat: round round;
+                border-image-source: url("stripe-border.png")
+            }
+
+            main div {
+                padding: 1em;
+                width: 80%;
+                margin-top: 1em;
+            }
+
+            .cominavbox, .cominavbox li {
+                margin-left: 1em;
+                margin-right: 1em;
+                margin-top: 0.5em;
+                margin-bottom: 0em;
+            }
+
+            figure {
+                width: 60%;
+                margin-left: 15%;
+                & + .cominavbox {
+                    margin-top: 0em;
+                }
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+                margin: 0em;
+            }
+
+            nav li {
+                padding-top: 1em;
+                padding-left: 1em;
+                padding-right: 1em;
+                padding-bottom: 0.8em;
+                margin: 0em;
+            }
+
+            .statline {
+                font-size: 0.8em;
+                text-align: right;
+            }
+
+            footer p {
+                font-size: 0.7em;
+            }
+
+            .action {
+                text-indent: 1em;
+            }
+
+            .archive {
+                margin: 1em;
+                padding: 1em;
+            }
+            
+            .main {
+                padding: 0.5em;
+                margin: auto;
+                margin-top: 1em;
+                width: 50%;
+                text-align: center;
+                & p {
+                    margin-left: 0em;
+                }
+            }
+            
+            .intro {
+                border: none;
+                margin: 0em;
+                padding: 0em;
+                text-align: left;
+                & h2, & p {
+                    margin: 0.5em;
+                    padding: 0.5em;
+                };
+                & img {
+                    display: inline;
+                };
+                & .author {
+                    font-size: 0.8em;
+                    font-weight: bold;
+                    text-indent: 1em;
+                };
+                & .desc {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,207 @@
+@media screen {
+  /*Cyber*/
+  #cyber {
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #cyber * {
+      box-sizing: content-box; }
+    #cyber body {
+      background-color: #060815;
+      background-image: url(blue.png);
+      background-attachment: fixed;
+      color: #d2f7ff;
+      text-align: center;
+      font-size: 1.5em;
+      font-family: sans-serif;
+      margin: 0em; }
+    #cyber main, #cyber figure {
+      margin-left: 0em;
+      padding-left: 0em; }
+    #cyber h1 {
+      margin: 0em;
+      font-size: 1.2em; }
+    #cyber h2 {
+      font-size: 1em; }
+    #cyber figure {
+      padding: 1em;
+      text-align: center;
+      border: none;
+      margin: 0em; }
+    #cyber .cominavbox, #cyber .cominavbox li {
+      display: inline-block;
+      padding: 0em; }
+    #cyber .cominavbox li {
+      padding: 0.5em; }
+      #cyber .cominavbox li a:active, #cyber .cominavbox li a:focus {
+        outline: dashed medium #80dede; }
+    #cyber * + * {
+      margin-top: 0.5em; }
+    #cyber header {
+      margin-top: 0em;
+      margin-right: 0em; }
+    #cyber #skippy {
+      text-align: left;
+      margin: 0em; }
+    #cyber #skippy a, #cyber #skippy a:hover, #cyber #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #cyber #skippy a:active, #cyber #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #ffffff; }
+    #cyber nav li {
+      display: inline-block; }
+    #cyber #commentary, #cyber #transcript {
+      text-align: left; }
+    #cyber .statline {
+      font-weight: bold; }
+    #cyber a:link {
+      color: #80dede;
+      text-decoration: underline; }
+    #cyber a:visited {
+      color: #e0c3f0; }
+    #cyber a:hover, #cyber a:focus, #cyber a:active {
+      color: #ffbcba; }
+    #cyber footer {
+      border-top: groove medium #066ed1;
+      background: #06376f;
+      color: #d2f7ff;
+      margin: 1em 0em 0em 0em;
+      padding: 0em; }
+      #cyber footer p {
+        margin-left: 0em;
+        text-align: left; }
+        #cyber footer p:last-of-type {
+          margin-bottom: 0em; }
+    #cyber .archive {
+      vertical-align: top;
+      text-align: left; }
+    #cyber nav li, #cyber main div, #cyber main section {
+      background: #06376f;
+      color: #d2f7ff;
+      border: ridge medium #066ed1; }
+    #cyber main div, #cyber main section {
+      border-left: none;
+      border-right: none;
+      background-color: #06376f;
+      background-image: url("button.png");
+      background-repeat: no-repeat;
+      background-position: 0 0; }
+    #cyber #commentary, #cyber #transcript {
+      padding-top: .5em;
+      padding-bottom: .5em;
+      padding-left: 1.2em;
+      padding-right: 1.4em; }
+    #cyber img, #cyber embed, #cyber object, #cyber video {
+      max-width: 99%; }
+    #cyber .archive li {
+      margin-top: 1em; }
+    #cyber .char {
+      text-align: left; }
+      #cyber .char dt:after {
+        content: ":"; }
+      #cyber .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #cyber .char dd {
+        margin-left: 0em; }
+      #cyber .char dt, #cyber .char dd {
+        display: inline;
+        white-space: pre; }
+    #cyber .intro {
+      border: none;
+      background: none;
+      margin: 0em;
+      padding: 0em;
+      width: 100%; }
+      #cyber .intro img {
+        display: inline;
+        margin: 0em;
+        padding: 0em; } }
+  @media screen and (min-width: 40em) {
+    #cyber figure {
+      margin-left: 1em; }
+    #cyber .cominavbox, #cyber .cominavbox li {
+      margin-left: 1em;
+      margin-right: 1em;
+      margin-bottom: 0em; }
+    #cyber figure + .cominavbox {
+      margin-top: 0em; }
+    #cyber h1 {
+      font-size: 1.4em; }
+    #cyber h2 {
+      font-size: 1.2em; }
+    #cyber h3 {
+      font-size: 1em; }
+    #cyber h2, #cyber h3, #cyber h4, #cyber h5, #cyber h6, #cyber nav li {
+      font-weight: normal; }
+    #cyber nav li {
+      padding: 0.5em;
+      margin: 0em; }
+    #cyber .statline {
+      font-size: 0.8em; }
+    #cyber footer p {
+      font-size: 0.7em;
+      margin-left: 1em; }
+    #cyber .archive {
+      margin: 1em;
+      padding: 1em; }
+      #cyber .archive h2 {
+        margin: 0em 0em 1em 0em; }
+    #cyber main div, #cyber main section {
+      margin: 1em;
+      width: 80%; }
+    #cyber nav li, #cyber main div, #cyber main section {
+      padding: 0.5em;
+      border: ridge medium #066ed1; }
+    #cyber .main {
+      padding: 0.5em;
+      margin: auto;
+      width: 70%; }
+      #cyber .main p {
+        margin-left: 0em; }
+    #cyber .intro {
+      border: none;
+      margin: 0em;
+      padding: 0em;
+      text-align: left;
+      max-width: 100%; }
+      #cyber .intro h2 {
+        margin-bottom: 0.5em; }
+      #cyber .intro .author {
+        font-size: 0.8em;
+        font-weight: bold; }
+      #cyber .intro .desc {
+        font-weight: bold; }
+    #cyber .main, #cyber .intro {
+      text-align: left; }
+      #cyber .main p, #cyber .intro p {
+        text-align: left;
+        margin: 1em; }
+    #cyber .action {
+      font-weight: bold; }
+    #cyber .charname {
+      font-weight: bold; }
+    #cyber .char h2 {
+      margin-top: 0em; }
+    #cyber .char dl {
+      font-size: 0.8em;
+      margin-left: 1em; }
+    #cyber .char p {
+      text-indent: 1em; }
+    #cyber .char img {
+      float: left;
+      margin: 0em;
+      margin-right: 1em;
+      padding: 0em;
+      border: solid medium #066ed1; } }
+
+/*# sourceMappingURL=style.css.map */

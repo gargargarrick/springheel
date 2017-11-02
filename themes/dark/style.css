@@ -1,0 +1,159 @@
+@media screen {
+  /*Dark*/
+  #dark {
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #dark * {
+      box-sizing: content-box; }
+    #dark body {
+      background: #23232D;
+      color: #ffffff;
+      text-align: center;
+      font-size: 1.5em;
+      font-family: serif; }
+    #dark main, #dark figure {
+      margin-left: 0em;
+      padding-left: 0em; }
+    #dark h1 {
+      margin: 0em;
+      font-size: 1.2em; }
+    #dark h2 {
+      font-size: 1em; }
+    #dark figure {
+      padding: 1em;
+      text-align: center;
+      border: none; }
+    #dark .cominavbox, #dark .cominavbox li {
+      display: inline-block;
+      padding: 0em; }
+    #dark * + * {
+      margin-top: 0.5em; }
+    #dark #skippy {
+      text-align: left; }
+    #dark #skippy a, #dark #skippy a:hover, #dark #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #dark #skippy a:active, #dark #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #ffffff; }
+    #dark nav li {
+      display: inline-block; }
+    #dark #commentary, #dark #transcript {
+      text-align: left; }
+    #dark .statline {
+      font-weight: bold; }
+    #dark a:link {
+      color: #7c7cff;
+      text-decoration: underline; }
+    #dark a:visited {
+      color: #b97cff; }
+    #dark a:hover, #dark a:focus, #dark a:active {
+      color: #ffffff; }
+    #dark footer p {
+      margin-left: 0em;
+      text-align: left; }
+    #dark .archive {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left; }
+    #dark nav li, #dark main div, #dark .archive {
+      background: #17181f;
+      border: thin #4C565E solid;
+      padding: 0.5em; }
+    #dark #commentary, #dark #transcript {
+      padding-top: .5em;
+      padding-bottom: .5em;
+      padding-left: 1.2em;
+      padding-right: 1.4em; }
+    #dark img, #dark embed, #dark object, #dark video {
+      max-width: 100%; }
+    #dark .archive li {
+      margin-top: 1em; }
+    #dark .char {
+      text-align: left; }
+      #dark .char dt:after {
+        content: ":"; }
+      #dark .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #dark .char dd {
+        margin-left: 0em; }
+      #dark .char dt, #dark .char dd {
+        display: inline;
+        white-space: pre; }
+      #dark .char dl {
+        font-size: 0.9em; }
+      #dark .char img {
+        float: left;
+        margin: 1em; }
+      #dark .char p {
+        text-indent: 1em; } }
+  @media screen and (min-width: 40em) {
+    #dark body {
+      margin-left: 1em; }
+    #dark figure {
+      margin-left: 1em; }
+    #dark .cominavbox, #dark .cominavbox li {
+      margin-left: 1em;
+      margin-right: 1em;
+      margin-bottom: 0em; }
+    #dark figure + .cominavbox {
+      margin-top: 0em; }
+    #dark h1 {
+      font-size: 1.4em; }
+    #dark h2 {
+      font-size: 1.2em; }
+    #dark h3 {
+      font-size: 1em; }
+    #dark nav li {
+      padding: 0.5em;
+      margin: 0em; }
+    #dark .statline {
+      font-size: 0.8em; }
+    #dark footer p {
+      font-size: 0.7em; }
+    #dark .archive {
+      margin: 1em;
+      padding: 1em; }
+      #dark .archive h2 {
+        margin: 0em 0em 1em 0em; }
+    #dark main div, #dark main section {
+      margin: 1em;
+      padding: .5em 1.4em .5em 1.2em;
+      width: 80%; }
+    #dark .main {
+      padding: 0.5em;
+      margin: auto;
+      width: 50%; }
+      #dark .main p {
+        margin-left: 0em; }
+    #dark .intro {
+      border: none;
+      margin: 0em;
+      padding: 0em;
+      text-align: left; }
+      #dark .intro h2 {
+        margin-bottom: 0.5em; }
+      #dark .intro img {
+        display: inline; }
+      #dark .intro .author {
+        font-size: 0.8em;
+        font-weight: bold; }
+      #dark .intro .desc {
+        font-weight: bold; }
+    #dark .main, #dark .intro {
+      text-align: left; }
+      #dark .main p, #dark .intro p {
+        text-align: left;
+        margin: 1em; } }
+
+/*# sourceMappingURL=style.css.map */

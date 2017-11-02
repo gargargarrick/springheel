@@ -1,0 +1,271 @@
+@media screen {
+  /*Note*/
+  #note {
+    /* #4a148c: main color (default: dark purple) */
+    /* This should be a dark color to keep the white text legible. Be sure to check the contrast ratio.*/
+    /* #01579b: comic navigation buttons color (default: blue) */
+    /* #00BCD4: hovered comic navigation buttons color (default: aqua) */
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #note * {
+      box-sizing: content-box; }
+    #note body {
+      background-color: #fafafa;
+      background-attachment: fixed;
+      color: #212121;
+      text-align: center;
+      font-size: 1.5em;
+      font-family: sans-serif;
+      margin: 0em; }
+    #note main, #note figure {
+      margin-left: 0em;
+      padding-left: 0em; }
+    #note main {
+      margin-right: 0em;
+      padding-right: 0em;
+      width: 100%; }
+    #note h1, #note h2 {
+      color: #fafafa;
+      font-weight: normal; }
+    #note h1 {
+      margin: 0em;
+      font-size: 1.2em; }
+    #note h2 {
+      font-size: 1.1em; }
+    #note h3 {
+      font-size: 1em; }
+    #note h3, #note h4, #note h5, #note h6 {
+      color: #4a148c;
+      font-weight: normal; }
+    #note * + * {
+      margin-top: 0.5em; }
+    #note figure {
+      padding: 0em;
+      text-align: center;
+      border: none;
+      margin: 0em; }
+    #note .cominavbox, #note .cominavbox li {
+      display: inline-block;
+      padding: 0em;
+      margin-top: 1em;
+      margin-bottom: 0em; }
+    #note .cominavbox li a:active, #note .cominavbox li a:focus {
+      display: block;
+      outline: dotted medium #ff4081; }
+    #note .cominavbox li img {
+      background-color: #01579b;
+      display: block;
+      -webkit-transition: background-color 0.2s ease;
+      -moz-transition: background-color 0.2s ease;
+      transition: background-color 0.2s ease; }
+      #note .cominavbox li img:active, #note .cominavbox li img:focus, #note .cominavbox li img:hover {
+        background-color: #00BCD4;
+        -webkit-transition: background-color 0.2s ease;
+        -moz-transition: background-color 0.2s ease;
+        transition: background-color 0.2s ease; }
+    #note figure + .cominavbox {
+      margin-top: 0em; }
+    #note header {
+      background: #4a148c;
+      margin-top: 0em;
+      padding: 1em;
+      -webkit-box-shadow: 0em 0.2em 0.5em 0.5em #616161;
+      -moz-box-shadow: 0em 0.2em 0.5em 0.5em #616161;
+      box-shadow: 0em 0.2em 0.5em 0.5em #616161; }
+    #note #skippy {
+      text-align: left;
+      margin: 0em; }
+    #note #skippy a, #note #skippy a:hover, #note #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #note #skippy a:active, #note #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1.5em;
+      margin-top: 0em;
+      color: #000; }
+    #note nav ul {
+      margin-left: 0em;
+      padding-left: 0em;
+      text-align: left; }
+      #note nav ul li {
+        display: inline-block;
+        background: #fafafa;
+        color: #212121;
+        font-size: 1rem;
+        margin: 0.5em 0.2em;
+        -webkit-border-radius: 0.2em;
+        -moz-border-radius: 0.2em;
+        border-radius: 0.2em;
+        -webkit-box-shadow: 0em 0em 0.5em 0.2em #212121;
+        -moz-box-shadow: 0em 0em 0.5em 0.2em #212121;
+        box-shadow: 0em 0em 0.5em 0.2em #212121; }
+    #note #commentary, #note #transcript {
+      text-align: left; }
+    #note .statline {
+      font-weight: bold; }
+    #note a:link, #note a:visited {
+      color: #4a148c;
+      text-decoration: underline;
+      -webkit-transition: color 0.2s ease;
+      -moz-transition: color 0.2s ease;
+      transition: color 0.2s ease; }
+    #note a:focus, #note a:active, #note a:hover {
+      color: #ef6c00; }
+    #note a:focus, #note a:active {
+      outline: dotted medium #00BCD4;
+      -webkit-transition: color 0.2s ease;
+      -moz-transition: color 0.2s ease;
+      transition: color 0.2s ease; }
+    #note header a:link {
+      text-decoration: none; }
+    #note footer {
+      background: #4a148c;
+      color: #fafafa;
+      margin: 1em 0em 0em 0em;
+      padding: .5em 1.4em .5em 1.2em;
+      -webkit-box-shadow: 0em 0em 0.5em 0.5em #616161;
+      -moz-box-shadow: 0em 0em 0.5em 0.5em #616161;
+      box-shadow: 0em 0em 0.5em 0.5em #616161; }
+      #note footer p {
+        margin-left: 0em;
+        text-align: left; }
+      #note footer a:link, #note footer a:visited {
+        color: #fafafa; }
+    #note .archive {
+      vertical-align: top;
+      text-align: left; }
+    #note nav li, #note main div, #note main section {
+      color: #212121;
+      padding: 0.5em; }
+    #note main div, #note main section {
+      /*padding: .5em 1.4em .5em 1.2em;*/
+      padding: 0em;
+      padding-bottom: 0.5em;
+      -webkit-border-radius: 0.2em;
+      -moz-border-radius: 0.2em;
+      border-radius: 0.2em;
+      -webkit-box-shadow: 0em 0em 0.5em 0.2em #616161;
+      -moz-box-shadow: 0em 0em 0.5em 0.2em #616161;
+      box-shadow: 0em 0em 0.5em 0.2em #616161;
+      margin: 1em 0em;
+      width: 100%; }
+      #note main div h2, #note main section h2 {
+        background: #4a148c;
+        color: #fafafa;
+        margin: 0em;
+        margin-bottom: 1em;
+        padding: 0.5em;
+        -webkit-box-shadow: 0em 0.1em 0.2em 0.1em rgba(47, 47, 47, 0.5);
+        -moz-box-shadow: 0em 0.1em 0.2em 0.1em rgba(47, 47, 47, 0.5);
+        box-shadow: 0em 0.1em 0.2em 0.1em rgba(47, 47, 47, 0.5); }
+      #note main div p, #note main section p {
+        padding-right: 1.4em;
+        padding-left: 1.2em; }
+    #note img, #note embed, #note object, #note video {
+      max-width: 100%; }
+    #note .archive h3 {
+      margin-left: 1em; }
+    #note .archive li {
+      margin-top: 1em; }
+    #note .main {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      margin-bottom: 0em; }
+    #note .allchars {
+      padding: 1em 0em; }
+    #note .charname {
+      font-weight: bold; }
+    #note .char {
+      text-align: left; }
+      #note .char p {
+        line-height: 2em; }
+      #note .char dl {
+        margin-left: 0.5em; }
+      #note .char dt:after {
+        content: ":"; }
+      #note .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #note .char dd {
+        margin-left: 0em; }
+      #note .char dt, #note .char dd {
+        display: inline;
+        white-space: pre; } }
+  @media screen and (min-width: 40em) {
+    #note figure {
+      margin-left: 1em; }
+    #note .cominavbox, #note .cominavbox li {
+      margin-left: 1em;
+      margin-right: 1em;
+      margin-bottom: 0em; }
+    #note h1 {
+      font-size: 1.4em; }
+    #note h2 {
+      font-size: 1.2em; }
+    #note h2, #note h3, #note h4, #note h5, #note h6, #note nav li {
+      font-weight: normal; }
+    #note main {
+      margin-top: 1em; }
+    #note nav ul {
+      text-align: center; }
+      #note nav ul li {
+        padding: 0.5em;
+        margin: 0em;
+        font-size: 1em; }
+        #note nav ul li + li {
+          margin-left: 1em; }
+    #note .statline {
+      font-size: 0.8em; }
+    #note footer p {
+      font-size: 0.7em;
+      margin-left: 1em; }
+    #note .main {
+      padding: 0em;
+      margin: auto;
+      width: 50%; }
+      #note .main p {
+        margin-left: 0em; }
+    #note .intro {
+      border: none;
+      margin: 0em;
+      padding: 0em 0em 0.5em 0em;
+      margin-bottom: 1em;
+      text-align: left; }
+      #note .intro h2 {
+        margin-bottom: 0.5em; }
+      #note .intro img {
+        display: inline; }
+      #note .intro .author {
+        font-size: 0.8em;
+        font-weight: bold; }
+      #note .intro .desc {
+        font-weight: bold; }
+    #note .main, #note .intro {
+      text-align: left; }
+      #note .main p, #note .intro p {
+        text-align: left;
+        margin: 1em; }
+    #note .action {
+      font-weight: bold; }
+    #note .char h2 {
+      margin-top: 0em; }
+    #note .char dl {
+      font-size: 0.8em;
+      margin-left: 1em; }
+    #note .char img {
+      float: left;
+      margin: 0em;
+      margin-right: 1em;
+      margin-left: 0.5em;
+      padding: 0em;
+      border: solid medium #4a148c; } }
+
+/*# sourceMappingURL=style.css.map */

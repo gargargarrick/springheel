@@ -1,0 +1,220 @@
+@media screen {
+  /*Brandy*/
+  #brandy {
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #brandy * {
+      box-sizing: content-box; }
+    #brandy body {
+      background-color: #0d0d0d;
+      background-attachment: fixed;
+      color: #eee;
+      text-align: center;
+      font-size: 1.5em;
+      font-family: sans-serif;
+      margin: 0em; }
+    #brandy main, #brandy figure {
+      margin-left: 0em;
+      padding-left: 0em; }
+    #brandy * + * {
+      margin-top: 0.5em; }
+    #brandy h1 {
+      margin: 0em;
+      font-size: 1.2em;
+      font-variant: small-caps; }
+    #brandy h2 {
+      font-size: 1em;
+      font-variant: small-caps; }
+    #brandy h3 {
+      font-variant: small-caps;
+      margin-top: 1em;
+      margin-bottom: 1em; }
+    #brandy figure {
+      padding: 1em;
+      border: none;
+      margin: 0em; }
+    #brandy .cominavbox, #brandy .cominavbox li {
+      display: inline-block;
+      padding: 0em; }
+    #brandy #skippy {
+      text-align: left; }
+    #brandy #skippy a, #brandy #skippy a:hover, #brandy #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #brandy #skippy a:active, #brandy #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #ffffff; }
+    #brandy nav {
+      margin-left: 0em;
+      margin-right: 0em;
+      padding-left: 0em;
+      padding-right: 0em;
+      text-align: left;
+      vertical-align: top; }
+    #brandy nav li {
+      display: inline-block;
+      border: solid thin #fbfbfb;
+      padding: 0.5em;
+      -webkit-box-shadow: 0em 0em 0.5em 0.2em #fbfbfb;
+      -moz-box-shadow: 0em 0em 0.5em 0.2em #fbfbfb;
+      box-shadow: 0em 0em 0.5em 0.2em #fbfbfb; }
+    #brandy #commentary, #brandy #transcript {
+      text-align: left; }
+    #brandy .statline {
+      font-weight: bold; }
+    #brandy a:link {
+      color: #7c7cff;
+      text-decoration: underline; }
+    #brandy a:visited {
+      color: #b97cff; }
+    #brandy a:hover, #brandy a:focus, #brandy a:active {
+      color: #ffffff; }
+    #brandy footer {
+      margin: 2em 0em 0em 0em;
+      padding: 0em; }
+      #brandy footer p {
+        margin-left: 0em;
+        text-align: left; }
+    #brandy .archive {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left; }
+    #brandy main div, #brandy main section {
+      background: #0d0d0d;
+      color: #eee;
+      padding: 0.5em;
+      -webkit-box-shadow: 0em 0em 0.5em 0.5em #fbfbfb;
+      -moz-box-shadow: 0em 0em 0.5em 0.5em #fbfbfb;
+      box-shadow: 0em 0em 0.5em 0.5em #fbfbfb; }
+    #brandy main div {
+      padding: .5em 1.4em .5em 1.2em; }
+    #brandy img, #brandy embed, #brandy object, #brandy video {
+      max-width: 100%; }
+    #brandy .archive li {
+      margin-top: 1em; }
+    #brandy .char {
+      text-align: left; }
+      #brandy .char dt:after {
+        content: ":"; }
+      #brandy .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #brandy .char dd {
+        margin-left: 0em; }
+      #brandy .char dt, #brandy .char dd {
+        display: inline;
+        white-space: pre; } }
+  @media screen and (min-width: 40em) {
+    #brandy * + * {
+      margin-top: 2em; }
+    #brandy main {
+      margin-top: 2em;
+      background: url("blinds.png") repeat-y 100% 0%, #0d0d0d url("blinds.png") repeat-y 0% 0%; }
+    #brandy figure, #brandy main div, #brandy main section {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 70%; }
+    #brandy .cominavbox, #brandy .cominavbox li {
+      margin-left: 1em;
+      margin-right: 1em;
+      margin-bottom: 0em; }
+    #brandy .cominavbox {
+      margin-top: 0em; }
+    #brandy h1 {
+      font-size: 1.4em;
+      margin-top: 2em; }
+    #brandy h2 {
+      font-size: 1.2em; }
+    #brandy h3 {
+      font-size: 1em;
+      margin-top: 1em; }
+    #brandy h2, #brandy h3, #brandy h4, #brandy h5, #brandy h6, #brandy nav li {
+      font-weight: normal; }
+    #brandy .archives ol {
+      margin-top: 1em; }
+    #brandy nav {
+      text-align: center;
+      -webkit-box-shadow: 0em 0em 0.5em 0.5em #fbfbfb;
+      -moz-box-shadow: 0em 0em 0.5em 0.5em #fbfbfb;
+      box-shadow: 0em 0em 0.5em 0.5em #fbfbfb; }
+    #brandy nav ul {
+      padding-left: 0em; }
+    #brandy nav li {
+      padding: 0.5em;
+      padding-left: 0em;
+      margin: 0em;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      border: none; }
+      #brandy nav li + li {
+        padding-left: 2em; }
+    #brandy .statline {
+      font-size: 0.8em; }
+    #brandy footer p {
+      font-size: 0.7em;
+      margin-left: 1em; }
+    #brandy main section {
+      margin: 1em;
+      margin-left: 10%;
+      margin-right: 10%;
+      padding: 1em; }
+      #brandy main section h2 {
+        margin: 0em 0em 1em 0em; }
+    #brandy main div, #brandy main section {
+      width: 60%; }
+    #brandy .main {
+      padding: .5em 1.4em .5em 1.2em;
+      margin: auto; }
+      #brandy .main p {
+        margin-left: 0em; }
+    #brandy .intro {
+      border: none;
+      margin: 0em;
+      padding: 0em;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      text-align: left; }
+      #brandy .intro h2 {
+        margin-bottom: 0.5em; }
+      #brandy .intro img {
+        display: inline;
+        margin: 0em; }
+      #brandy .intro .author {
+        font-size: 0.8em;
+        font-weight: bold; }
+      #brandy .intro .desc {
+        font-weight: bold; }
+    #brandy .main, #brandy .intro {
+      text-align: left; }
+      #brandy .main p, #brandy .intro p {
+        text-align: left;
+        margin: 1em; }
+    #brandy .action {
+      font-weight: bold; }
+    #brandy .charname {
+      font-weight: bold; }
+    #brandy .char h2 {
+      margin-top: 0em; }
+    #brandy .char dl {
+      font-size: 0.8em;
+      margin-left: 1em; }
+    #brandy .char p {
+      text-indent: 1em; }
+    #brandy .char img {
+      float: left;
+      margin: 0em;
+      margin-right: 1em;
+      padding: 0em; } }
+
+/*# sourceMappingURL=style.css.map */

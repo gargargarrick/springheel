@@ -1,0 +1,241 @@
+@charset "UTF-8";
+@media screen {
+  /*Book*/
+  #book {
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #book * {
+      box-sizing: content-box; }
+    #book body {
+      background-color: #501916;
+      background: url("leather.jpg");
+      color: #ffd;
+      text-align: center;
+      font-size: 1.2em;
+      font-family: serif;
+      margin: 0em; }
+    #book main, #book figure {
+      margin-left: 0em;
+      padding-left: 0em; }
+    #book figure, #book main div, #book .archives {
+      background-color: #fdf5e6;
+      background-image: url("paper.gif");
+      color: #111; }
+    #book h1 {
+      margin: 0em; }
+    #book figure {
+      padding: 1em 0em 1em 0em;
+      margin-left: 0em;
+      margin-right: 0em;
+      text-align: center;
+      border: none; }
+      #book figure img {
+        padding: 0em;
+        margin: 0em;
+        max-width: 100%; }
+    #book p + p, #book li + li, #book div + div {
+      margin-top: 0.5em; }
+    #book .cominavbox, #book .cominavbox li {
+      display: inline-block; }
+    #book .cominavbox {
+      background-color: #fdf5e6;
+      background-image: url("paper.gif");
+      -webkit-border-radius: 0.5em;
+      -moz-border-radius: 0.5em;
+      border-radius: 0.5em;
+      width: auto;
+      margin: 0.5em;
+      padding: 0.5em; }
+      #book .cominavbox li {
+        padding: 0em;
+        margin: 0em; }
+        #book .cominavbox li img {
+          max-width: 25%; }
+    #book #skippy {
+      text-align: left; }
+    #book #skippy a, #book #skippy a:hover, #book #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #book #skippy a:active, #book #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #0000ff; }
+    #book nav li {
+      display: inline-block; }
+      #book nav li + li:before {
+        content: "— "; }
+    #book main div, #book main section {
+      text-align: left; }
+    #book .statline {
+      font-weight: bold; }
+    #book a:link {
+      color: #aec2eb;
+      text-decoration: underline; }
+    #book a:visited {
+      color: #d2b6d9; }
+    #book a:hover {
+      text-decoration: underline; }
+    #book a:hover, #book a:focus, #book a:active {
+      color: #ffa4a4; }
+    #book main div, #book main section {
+      padding-top: 1em;
+      padding-bottom: 1em; }
+      #book main div a:link, #book main section a:link {
+        color: #214184;
+        text-decoration: underline; }
+      #book main div a:visited, #book main section a:visited {
+        color: #5c3566; }
+      #book main div a:hover, #book main section a:hover {
+        text-decoration: underline; }
+      #book main div a:hover, #book main div a:focus, #book main div a:active, #book main section a:hover, #book main section a:focus, #book main section a:active {
+        color: #cc0000; }
+    #book footer p {
+      margin-left: 0em;
+      text-align: left; }
+    #book .archives {
+      margin-top: 1em;
+      padding-bottom: 1em; }
+    #book .archive {
+      text-align: left; }
+    #book img, #book embed, #book object, #book video {
+      max-width: 100%; }
+    #book .action {
+      font-weight: bold; }
+    #book .charname {
+      font-weight: bold; }
+    #book .char {
+      text-align: left; }
+      #book .char dt:after {
+        content: ":"; }
+      #book .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #book .char dd {
+        margin-left: 0em; }
+      #book .char dt, #book .char dd {
+        display: inline;
+        white-space: pre; }
+      #book .char dt {
+        font-weight: bold; }
+      #book .char dl {
+        font-size: 0.9em; }
+      #book .char img {
+        float: left;
+        margin: 2em; }
+      #book .char p {
+        text-indent: 1em; } }
+  @media screen and (min-width: 40em) {
+    #book {
+      /*            figure + .cominavbox {*/
+      /*                margin-top: 0em;*/
+      /*            }*/ }
+      #book body {
+        font-size: 1.5em; }
+      #book figure {
+        margin: 0em 1em 0em 1em;
+        padding: 1em; }
+        #book figure img {
+          padding: 1em;
+          margin: 1em;
+          max-width: 90%; }
+      #book main div {
+        padding: 0.5em 1em 0.5em 1em;
+        width: 80%;
+        margin-left: 1em; }
+        #book main div p, #book main div h2 {
+          margin-left: 2em;
+          margin-right: 2em; }
+      #book figure, #book main div, #book .archives {
+        background-color: #fdf5e6;
+        background: url("pages_l.png") repeat-y 0% 0%, url("pages_r.png") repeat-y 100% 0%, url("paper.gif"); }
+      #book div + div {
+        margin-bottom: 0em;
+        margin-top: 1em; }
+      #book .cominavbox {
+        margin: 1em; }
+        #book .cominavbox li {
+          margin: 0.5em 1em;
+          padding: 0.5em 1em; }
+          #book .cominavbox li img {
+            max-width: inherit; }
+      #book h1 {
+        font-size: 1.5em; }
+      #book h2 {
+        font-size: 1.3em;
+        font-variant: small-caps; }
+      #book h3 {
+        font-size: 1.1em;
+        font-variant: small-caps; }
+      #book nav ul {
+        background-color: #fdf5e6;
+        background-image: url("paper.gif");
+        -webkit-border-radius: 1em;
+        -moz-border-radius: 1em;
+        border-radius: 1em;
+        width: auto;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 0em; }
+      #book nav li {
+        padding-top: 1em;
+        padding-left: 0em;
+        padding-right: 0em;
+        padding-bottom: 0.8em;
+        margin: 0em;
+        color: #111; }
+        #book nav li a:link {
+          color: #214184;
+          text-decoration: underline; }
+        #book nav li a:visited {
+          color: #5c3566; }
+        #book nav li a:hover {
+          text-decoration: underline; }
+        #book nav li a:hover, #book nav li a:focus, #book nav li a:active {
+          color: #cc0000; }
+      #book .statline {
+        font-size: 0.8em;
+        text-align: right; }
+      #book footer p {
+        font-size: 0.7em;
+        text-indent: 1em; }
+      #book .archives {
+        margin: 1em; }
+      #book .archive {
+        margin-left: 2em;
+        margin-right: 2em;
+        padding: 1em 2em;
+        padding-bottom: 0em;
+        margin-top: 1em; }
+        #book .archive ol {
+          margin-left: 1em; }
+        #book .archive + .archive {
+          padding-bottom: 1em; }
+          #book .archive + .archive h2 {
+            margin-top: 0em;
+            padding-top: 1em;
+            border-top: solid thin #111; }
+      #book .main {
+        padding: 0.5em;
+        margin: auto;
+        margin-top: 1em;
+        width: 70%;
+        text-align: left; }
+        #book .main p {
+          margin-left: 2em; }
+        #book .main h2 {
+          margin-left: 1em; }
+      #book .intro {
+        background: none; }
+      #book .author, #book .charname {
+        font-weight: bold;
+        font-variant: small-caps; } }
+
+/*# sourceMappingURL=style.css.map */

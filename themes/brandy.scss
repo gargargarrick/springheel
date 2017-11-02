@@ -1,0 +1,334 @@
+@import "shadow.scss";
+@media screen {
+/*Brandy*/
+    #brandy {
+    /* Default (small) screens */
+    $bg: #0d0d0d;
+    $outt: #eee;
+    $box: #fbfbfb;
+    $int: #222;
+    $acc: #8e0006;
+        * {
+            box-sizing: content-box;
+        }
+        body {
+            background-color: $bg;
+            background-attachment: fixed;
+            color: $outt;
+            text-align: center;
+            font-size: 1.5em;
+            font-family: sans-serif;
+            margin: 0em;
+        }
+        main, figure {
+            margin-left: 0em;
+            padding-left: 0em;
+        }
+
+        * + * {
+            margin-top: 0.5em
+        }
+
+        h1 {
+            margin: 0em;
+            font-size: 1.2em;
+            font-variant: small-caps;
+        }
+
+        h2 {
+            font-size: 1em;
+            font-variant: small-caps;
+        }
+        
+        h3 {
+            font-variant: small-caps;
+            margin-top: 1em;
+            margin-bottom: 1em
+        }        
+        
+        figure {
+            padding: 1em;
+            border: none;
+            margin: 0em;
+        }
+        .cominavbox, .cominavbox li {
+            display: inline-block;
+            padding: 0em;
+        }
+
+        /*TODO: Fix the skip link hiding method*/
+        #skippy {
+            text-align: left;
+        }
+        #skippy a, #skippy a:hover, #skippy a:visited {
+        position:absolute;
+        left:-10000px;
+        top:auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+        }
+
+        #skippy a:active, #skippy a:focus {
+          position: static;
+          height: auto;
+          width: auto;
+          font-size: 1em;
+          margin-top: 0em;
+          color: #ffffff;
+        }
+            
+        nav {
+            margin-left: 0em;
+            margin-right: 0em;
+            padding-left: 0em;
+            padding-right: 0em;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        nav li {
+            display: inline-block;
+            border: solid thin $box;
+            padding: 0.5em;
+            @include shadow(0em,0em,0.5em,0.2em,$box)
+        }
+
+        #commentary, #transcript {
+            text-align: left;
+        }
+
+        .statline {
+            font-weight: bold;
+        }
+
+        a:link {
+            color: #7c7cff;
+            text-decoration: underline
+        }
+
+        a:visited {
+            color: #b97cff;
+        }
+
+        a:hover, a:focus, a:active {
+            color: #ffffff;
+        }
+
+        footer {
+            margin: 2em 0em 0em 0em;
+            padding: 0em;   
+            p {
+                margin-left: 0em;
+                text-align: left;
+            }
+        }
+
+        .archive {
+            display: inline-block;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        main div, main section {
+            background: $bg;
+            color: $outt;
+            padding: 0.5em;
+            @include shadow(0em,0em,0.5em,0.5em,$box);
+        }
+
+        main div {
+            padding: .5em 1.4em .5em 1.2em;
+        }
+
+        img, embed, object, video {
+            max-width: 100%;
+        }
+
+        .archive li {
+            margin-top: 1em;
+        }
+        
+        .char {
+            text-align: left;
+            dt:after {
+                content: ":"
+            }
+            dd:after {
+                content: "\A"; white-space: pre;
+            }
+            dd {
+                margin-left: 0em;
+            }
+            dt, dd {
+                display: inline;
+                white-space: pre;
+            }
+        }
+
+    /*Medium screens*/
+
+        @media screen and (min-width: 40em) {
+        
+            * + * {
+                margin-top: 2em;
+            }
+            
+            main {
+                margin-top: 2em;
+                background: url("blinds.png") repeat-y 100% 0%, $bg url("blinds.png") repeat-y 0% 0%;
+            }
+        
+            figure, main div, main section {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 70%;
+            }
+
+            .cominavbox, .cominavbox li {
+                margin-left: 1em;
+                margin-right: 1em;
+                margin-bottom: 0em;
+            }
+            
+            .cominavbox {
+                margin-top: 0em;
+            }
+
+            h1 {
+                font-size: 1.4em;
+                margin-top: 2em;
+            }
+
+            h2 {
+                font-size: 1.2em;             
+            }
+            
+            h3 {
+                font-size: 1em;
+                margin-top: 1em;
+            }
+            
+            h2, h3, h4, h5, h6, nav li {
+                font-weight: normal;
+            }
+            
+            .archives ol {
+                margin-top: 1em;
+            }
+            
+            nav {
+                text-align: center;
+                @include shadow(0em,0em,0.5em,0.5em,$box)
+            }
+            
+            nav ul {
+                padding-left: 0em;
+            }
+
+            nav li {
+                padding: 0.5em;
+                padding-left: 0em;
+                margin: 0em;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                border: none;
+                & + li {
+                    padding-left: 2em;
+                }
+            }
+
+            .statline {
+                font-size: 0.8em;
+            }
+
+            footer p {
+                font-size: 0.7em;
+                margin-left: 1em;
+            }
+
+            main section {
+                margin: 1em;
+                margin-left: 10%;
+                margin-right: 10%;
+                padding: 1em;
+                & h2 {
+                    margin: 0em 0em 1em 0em;
+                }
+            }
+
+            main div, main section {
+                width: 60%;
+            }
+            
+            .main {
+                padding: .5em 1.4em .5em 1.2em;
+                margin: auto;
+                & p {
+                    margin-left: 0em;
+                }
+            }
+            
+            .intro {
+                border: none;
+                margin: 0em;
+                padding: 0em;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+                text-align: left;
+                & h2 {
+                    margin-bottom: 0.5em;
+                };
+                & img {
+                    display: inline;
+                    margin: 0em;
+                };
+                & .author {
+                    font-size: 0.8em;
+                    font-weight: bold;
+                }
+                & .desc {
+                    font-weight: bold;
+                }
+            }
+            
+            .main, .intro {
+                text-align: left;
+                & p {
+                  text-align: left;
+                  margin: 1em;
+                }
+            }
+
+            .action {
+                font-weight: bold;
+            }
+
+            .charname {
+                font-weight: bold
+            }
+            
+            .char {
+                h2 {
+                    margin-top: 0em;
+                };
+                dl {
+                    font-size: 0.8em;
+                    margin-left: 1em;
+                };
+                p {
+                    text-indent: 1em;
+                };
+                img {
+                    float: left;
+                    margin: 0em;
+                    margin-right: 1em;
+                    padding: 0em;
+                }
+            }
+
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@mixin linear-gradient($from, $to) {
+  /* Fallback for sad browsers */
+  background-color: $to;
+  /* Mozilla Firefox */
+  background-image:-moz-linear-gradient($from, $to);
+  /* Opera */
+  background-image:-o-linear-gradient($from, $to);
+  /* WebKit (Chrome 11+) */
+  background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, $from), color-stop(1, $to));
+  /* WebKit (Safari 5.1+, Chrome 10+) */
+  background-image: -webkit-linear-gradient($from, $to);
+  /* IE10 */
+  background-image: -ms-linear-gradient($from, $to);
+  /* W3C */
+  background-image: linear-gradient($from, $to);
+}

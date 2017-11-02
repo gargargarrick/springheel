@@ -1,0 +1,222 @@
+@media screen {
+  /*Prayers*/
+  #prayers {
+    /*$bg: #1e530b;*/
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #prayers * {
+      box-sizing: content-box; }
+    #prayers body {
+      background: #164007;
+      color: #eee;
+      text-align: center;
+      font-size: 1.5em;
+      font-family: serif;
+      margin: 0em; }
+    #prayers main {
+      color: #201f1e; }
+      #prayers main a:link {
+        color: #0032A3;
+        text-decoration: underline; }
+      #prayers main a:visited {
+        color: #640FB9; }
+      #prayers main a:hover, #prayers main a:focus, #prayers main a:active {
+        color: #940000; }
+    #prayers main, #prayers figure {
+      margin-left: 0em;
+      padding-left: 0em; }
+    #prayers div, #prayers section, #prayers figure {
+      background: #fff;
+      border: double thick #EE3400; }
+    #prayers main div, #prayers main section {
+      background-color: #fff; }
+    #prayers h1 {
+      margin: 0em;
+      font-size: 1.2em; }
+    #prayers h2 {
+      font-size: 1em;
+      padding-bottom: 0.5em;
+      border-bottom: medium dashed #EE3400; }
+    #prayers figure {
+      padding: 0.3em;
+      text-align: center;
+      margin-right: 0; }
+    #prayers .cominavbox {
+      max-width: 100%; }
+      #prayers .cominavbox li {
+        max-width: 20%; }
+    #prayers .cominavbox, #prayers .cominavbox li {
+      display: inline-block;
+      padding: 0em; }
+    #prayers .cominavbox li a, #prayers .cominavbox li a img {
+      display: block; }
+    #prayers .cominavbox li a:active, #prayers .cominavbox li a:focus {
+      background: #fff;
+      outline: dashed medium #EE3400; }
+    #prayers * + * {
+      margin-top: 0.5em; }
+    #prayers header {
+      margin-top: 0; }
+    #prayers #skippy {
+      text-align: left;
+      margin-bottom: 0em;
+      display: inline; }
+    #prayers #skippy a, #prayers #skippy a:hover, #prayers #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #prayers #skippy a:active, #prayers #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #00f; }
+    #prayers nav li {
+      display: inline-block;
+      padding: 1em;
+      background: wheat;
+      border: solid medium #201f1e;
+      color: #201f1e; }
+      #prayers nav li a:link {
+        color: #0300AD; }
+      #prayers nav li a:visited {
+        color: #5B008A; }
+      #prayers nav li a:hover, #prayers nav li a:active, #prayers nav li a:focus {
+        color: #8A0000; }
+    #prayers #commentary, #prayers #transcript {
+      text-align: left; }
+    #prayers a:link {
+      color: #99D1FF;
+      text-decoration: underline; }
+    #prayers a:visited {
+      color: #EBBDFF; }
+    #prayers a:hover, #prayers a:focus, #prayers a:active {
+      color: #FFADB7; }
+    #prayers .statline {
+      font-weight: bold; }
+    #prayers footer p {
+      margin-left: 0em;
+      text-align: left; }
+    #prayers .archive {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left; }
+    #prayers main div, #prayers main section {
+      padding: .5em 1.4em 0em 1.2em; }
+    #prayers img, #prayers embed, #prayers object, #prayers video {
+      max-width: 100%; }
+    #prayers .archive li {
+      margin-top: 1em; }
+    #prayers .charname {
+      font-weight: bold; }
+    #prayers .action {
+      font-weight: bold; }
+    #prayers .char {
+      text-align: left; }
+      #prayers .char dt {
+        font-weight: bold; }
+        #prayers .char dt:after {
+          content: ":"; }
+      #prayers .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #prayers .char dd {
+        margin-left: 0em; }
+      #prayers .char dt, #prayers .char dd {
+        display: inline;
+        white-space: pre; } }
+  @media screen and (min-width: 40em) {
+    #prayers * + * {
+      margin-top: 1em; }
+    #prayers body {
+      margin-left: 1em;
+      background: url("torii.png") 99% 99% no-repeat fixed, url("trees.png") repeat-y -200px 0%, #000f29 url("trees.png") repeat-y 101% 0%; }
+    #prayers figure {
+      margin-left: 4em;
+      margin-bottom: 0em;
+      padding: 1em 1em 0em 1em; }
+    #prayers figcaption {
+      margin-bottom: 1em; }
+    #prayers .cominavbox {
+      margin: 0em 1em; }
+      #prayers .cominavbox li {
+        margin: 0.5em; }
+    #prayers figure + .cominavbox {
+      margin-top: 1em; }
+    #prayers header {
+      background: url("shimenawa.png") 98% 0% no-repeat, url("shimenawa.png") 2% 0% no-repeat; }
+    #prayers h1 {
+      font-size: 1.4em;
+      text-align: center; }
+    #prayers h2 {
+      font-size: 1.2em;
+      margin-bottom: 0.5em;
+      margin-top: 0.5em; }
+    #prayers h3 {
+      font-size: 1em; }
+    #prayers nav {
+      max-width: 75%;
+      margin-left: 10%;
+      margin-bottom: 1em;
+      padding-bottom: 0.1em; }
+    #prayers nav li {
+      padding: 1em;
+      margin: 0em; }
+    #prayers main {
+      max-width: 65%;
+      line-height: 1.2em; }
+    #prayers .statline {
+      font-size: 0.8em; }
+    #prayers footer p {
+      font-size: 0.7em; }
+    #prayers .action {
+      text-indent: 1em; }
+    #prayers .archive {
+      margin: 1em;
+      padding: 1em 1em 0em 1em; }
+      #prayers .archive h2 {
+        margin: 0em 0em 1em 0em;
+        padding-top: 0.5em;
+        padding-bottom: 0em; }
+      #prayers .archive + .archive {
+        margin-top: 0em; }
+    #prayers main div, #prayers main section {
+      margin: 1.2em;
+      width: 80%;
+      text-align: left; }
+    #prayers .main {
+      padding: 0.5em;
+      margin: auto;
+      width: 80%; }
+      #prayers .main p {
+        margin-left: 0em; }
+    #prayers .intro {
+      border: none;
+      background: none;
+      margin: 0em;
+      padding: 0em;
+      text-align: left; }
+      #prayers .intro h2 {
+        margin-bottom: 0.5em; }
+      #prayers .intro img {
+        display: inline; }
+      #prayers .intro .author {
+        font-size: 0.8em;
+        font-weight: bold; }
+      #prayers .intro .desc {
+        font-weight: bold; }
+    #prayers .main, #prayers .intro {
+      text-align: left; }
+      #prayers .main p, #prayers .intro p {
+        text-align: left;
+        margin: 1em; }
+    #prayers .char img {
+      float: left;
+      margin-right: 1em; } }
+
+/*# sourceMappingURL=style.css.map */

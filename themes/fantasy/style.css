@@ -1,0 +1,184 @@
+@media screen {
+  /*Fantasy*/
+  #fantasy {
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #fantasy * {
+      box-sizing: content-box; }
+    #fantasy body {
+      background-color: #314e30;
+      background-image: url(leaves.jpg);
+      color: #eee;
+      text-align: center;
+      font-size: 1.2em;
+      font-family: serif;
+      margin: 0em; }
+    #fantasy nav li, #fantasy figure, #fantasy main div, #fantasy main section {
+      background-color: #f5ebda;
+      background-image: url(paper.gif);
+      color: #222;
+      border: thick ridge gold; }
+    #fantasy h1 {
+      margin: 0em; }
+    #fantasy figure {
+      text-align: center; }
+    #fantasy .cominavbox, #fantasy .cominavbox li {
+      display: inline-block;
+      padding: 0em; }
+    #fantasy .cominavbox li a:active, #fantasy .cominavbox li a:focus {
+      display: block;
+      outline: dotted thick #e41f1f; }
+    #fantasy p + p, #fantasy li + li {
+      margin-top: 0.5em; }
+    #fantasy #skippy {
+      text-align: left; }
+    #fantasy #skippy a, #fantasy #skippy a:hover, #fantasy #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #fantasy #skippy a:active, #fantasy #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #fff; }
+    #fantasy nav li {
+      display: inline-block;
+      padding: 0.5em; }
+    #fantasy #commentary, #fantasy #transcript {
+      text-align: left; }
+    #fantasy .statline {
+      font-weight: bold; }
+    #fantasy a:link {
+      color: #eeeeff;
+      text-decoration: underline; }
+    #fantasy a:visited {
+      color: #ffeeff; }
+    #fantasy a:hover {
+      text-decoration: underline; }
+    #fantasy a:hover, #fantasy a:focus, #fantasy a:active {
+      color: #ffdddd;
+      outline: medium dashed #ffdddd; }
+    #fantasy main div h2, #fantasy main div h3, #fantasy main div h4, #fantasy main section h2, #fantasy main section h3, #fantasy main section h4 {
+      border-bottom: thin solid goldenrod; }
+    #fantasy nav a:link, #fantasy main a:link {
+      color: #181347; }
+    #fantasy nav a:visited, #fantasy main a:visited {
+      color: #441347; }
+    #fantasy nav a:hover, #fantasy nav a:focus, #fantasy nav a:active, #fantasy main a:hover, #fantasy main a:focus, #fantasy main a:active {
+      color: #910c26;
+      outline: thin dotted #910c26; }
+    #fantasy footer p {
+      margin-left: 0em;
+      text-align: left; }
+    #fantasy .archive {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left; }
+    #fantasy img, #fantasy embed, #fantasy object, #fantasy video {
+      max-width: 100%; }
+    #fantasy .action {
+      font-weight: bold;
+      text-indent: 1em; }
+    #fantasy .charname {
+      font-weight: bold; }
+    #fantasy .char dt:after {
+      content: ":"; }
+    #fantasy .char dd:after {
+      content: "\A";
+      white-space: pre; }
+    #fantasy .char dd {
+      margin-left: 0em; }
+    #fantasy .char dt, #fantasy .char dd {
+      display: inline;
+      white-space: pre; }
+    #fantasy main, #fantasy figure {
+      margin-left: 0em;
+      padding-left: 0em;
+      margin-right: 0em;
+      padding-right: 0em;
+      border-left: none;
+      border-right: none; }
+      #fantasy main section, #fantasy main div, #fantasy figure section, #fantasy figure div {
+        border-left: none;
+        border-right: none;
+        padding: 0.5em; }
+        #fantasy main section + div, #fantasy main section + section, #fantasy main div + div, #fantasy main div + section, #fantasy figure section + div, #fantasy figure section + section, #fantasy figure div + div, #fantasy figure div + section {
+          margin-top: 1em; }
+    #fantasy .intro {
+      border: none;
+      margin: 0em;
+      padding: 0em; } }
+  @media screen and (min-width: 40em) {
+    #fantasy body {
+      font-size: 1.5em; }
+    #fantasy nav li, #fantasy figure, #fantasy main div, #fantasy main section {
+      border: thick ridge gold; }
+    #fantasy figure {
+      margin: 0em 1em;
+      padding: 1em; }
+    #fantasy main div, #fantasy main section {
+      padding: 0.5em 1em;
+      margin: 1em;
+      width: 80%;
+      margin-top: 1em; }
+      #fantasy main div h2, #fantasy main section h2 {
+        margin-top: 0.5em;
+        background-image: url(gem.png);
+        background-size: contain;
+        background-position: 100% 100%;
+        background-repeat: no-repeat; }
+    #fantasy div + div {
+      margin-bottom: 0em;
+      margin-top: 0em; }
+    #fantasy .cominavbox, #fantasy .cominavbox li {
+      margin-left: 1em;
+      margin-right: 1em;
+      margin-top: 0.5em;
+      margin-bottom: 0em; }
+    #fantasy figure + .cominavbox {
+      margin-top: 0em; }
+    #fantasy figure {
+      margin-left: 1em; }
+    #fantasy h1 {
+      font-size: 1.5em; }
+    #fantasy h2 {
+      font-size: 1.2em; }
+    #fantasy h3 {
+      font-size: 1em; }
+    #fantasy nav li {
+      padding-top: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 0.8em;
+      margin: 0em; }
+    #fantasy .statline {
+      font-size: 0.8em;
+      text-align: right; }
+    #fantasy footer p {
+      font-size: 0.7em;
+      margin-left: 1em; }
+    #fantasy .archive {
+      margin-left: 1em;
+      margin-right: 1em;
+      padding-left: 1em;
+      padding-right: 1em; }
+    #fantasy .main {
+      padding: 0.5em;
+      margin: auto;
+      width: 50%;
+      text-align: center; }
+      #fantasy .main p {
+        margin-left: 0em; }
+    #fantasy .char {
+      text-align: left; }
+      #fantasy .char img {
+        float: left;
+        margin: 1em; } }
+
+/*# sourceMappingURL=style.css.map */

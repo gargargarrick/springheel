@@ -1,0 +1,5 @@
+@mixin trans($aspect, $duration, $effect) {
+  -webkit-transition: $aspect $duration $effect;
+     -moz-transition: $aspect $duration $effect;
+          transition: $aspect $duration $effect;
+}

@@ -1,0 +1,324 @@
+@media screen {
+/*Cherry*/
+    #cherry {
+    $petal: #ffcaec;
+    $bg: #fff;
+    $box: #fff6f9;
+    $textc: #2e1f27;
+    $accent: #cc006d;
+    /* Default (small) screens */
+        * {
+            box-sizing: content-box;
+        }
+        body {
+            background: $bg;
+            background: url("bloom.png") fixed no-repeat 110% -10%, $bg url("cherrywind.png") 0% 0%;
+            color: $textc;
+            text-align: center;
+            font-size: 1.5em;
+            font-family: sans-serif;
+            margin: 0em;
+        }
+
+        main, figure {
+            margin-left: 0em;
+            padding-left: 0em;
+        }
+        
+        div, section, nav li, figure, .cominavbox {
+            background: $box;
+            border-right: solid thin $accent;
+            border-bottom: solid thin $accent;
+        }
+
+        h1 {
+            margin: 0em;
+            font-size: 1.2em;
+        }
+
+        h2 {
+            font-size: 1em;
+        }
+        figure {
+            padding: 0.3em;
+            text-align: center;
+            margin-right: 0;
+        }
+        .cominavbox, .cominavbox li {
+            display: inline-block;
+            padding: 0em;
+        }
+        
+        .cominavbox li a {
+            &, img {
+                display: block;
+            }
+            &:hover img {
+                background: $petal;
+            }
+            &:active, &:focus {
+                outline-width: medium;
+            }
+        }
+
+        * + * {
+            margin-top: 0.5em
+        }
+        
+        header {
+            margin-top: 0;
+        }
+
+        /*TODO: Fix the skip link hiding method*/
+        #skippy {
+            text-align: left;
+            margin-bottom: 0em;
+            display: inline;
+        }
+        #skippy a, #skippy a:hover, #skippy a:visited {
+        position:absolute;
+        left:-10000px;
+        top:auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+        }
+
+        #skippy a:active, #skippy a:focus {
+          position: static;
+          height: auto;
+          width: auto;
+          font-size: 1em;
+          margin-top: 0em;
+          color: #00f;
+        }
+
+        nav li {
+            display: inline-block;
+            padding: 0.5em;
+        }
+
+        #commentary, #transcript {
+            text-align: left;
+        }
+
+        .statline {
+            font-weight: bold;
+        }
+
+        a:link {
+            color: #444470;
+            text-decoration: underline
+        }
+
+        a:visited {
+            color: #6e495e;
+        }
+
+        a:hover, a:focus, a:active {
+            color: #9e0054;
+        }
+
+        footer p {
+            margin-left: 0em;
+            text-align: left;
+        }
+
+        .archive {
+            display: inline-block;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        main div, main section {
+            padding: .5em 1.4em 0em 1.2em;
+            background-image: url("bloom.png");
+            background-size: 1.5em;
+            background-repeat: no-repeat;
+            background-position: 1% 1%;
+        }
+
+        img, embed, object, video {
+            max-width: 100%;
+        }
+
+        .archive li {
+            margin-top: 1em;
+        }
+            
+        .charname {
+            font-weight: bold;
+        }
+        
+        .action {
+            font-weight: bold;
+        }
+        
+        .char {
+            text-align: left;
+            dt {
+                font-weight: bold;
+                &:after {
+                    content: ":"
+                };
+            };
+            dd:after {
+                content: "\A"; white-space: pre;
+            };
+            dd {
+                margin-left: 0em;
+            };
+            dt, dd {
+                display: inline;
+                white-space: pre;
+            }
+        }
+
+    /*Medium screens*/
+
+        @media screen and (min-width: 40em) {
+
+            * + * {
+                margin-top: 1em
+            }
+            body {
+                margin-left: 1em;
+            }            
+            
+            figure {
+                margin-left: 4em;
+                margin-bottom: 0em;
+                padding: 1em 1em 0em 1em;
+            }
+            
+            figcaption {
+                margin-bottom: 1em;
+            }
+
+            .cominavbox {
+                margin: 0em 1em;
+                li {
+                    margin: 0.5em;
+                }
+            }
+
+            figure + .cominavbox {
+                margin-top: 1em;
+            }
+
+            h1 {
+                font-size: 1.4em;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 1.2em;
+                border-bottom: thin solid $petal;
+                margin-bottom: 0.5em;
+                margin-top: 0.5em;
+            }
+            
+            h3 {
+                font-size: 1em;
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+                letter-spacing: .06em;
+            }
+            
+            nav {
+                max-width: 75%;
+                margin-left: 10%;
+                margin-bottom: 1em;
+                padding-bottom: 0.1em
+            }
+
+            nav li {
+                padding: 0.5em;
+                margin: 0em;
+            }
+            
+            main {
+                max-width: 70%;
+                line-height: 1.2em;
+            }
+
+            .statline {
+                font-size: 0.8em;
+            }
+
+            footer p {
+                font-size: 0.7em;
+            }
+            
+            .action {
+                text-indent: 1em;
+            }
+
+            .archive {
+                margin: 1em;
+                padding: 1em 1em 0em 1em;
+                & h2 {
+                    margin: 0em 0em 1em 0em;
+                    padding-top: 0.5em;
+                    padding-bottom: 0em;
+                };
+                & + .archive {
+                    margin-top: 0em;
+                }
+            }
+
+            main div, main section {
+                margin: 1em;
+                width: 80%;
+                text-align: left;
+            }
+            
+            .main {
+                padding: 0.5em;
+                margin: auto;
+                width: 80%;
+                & p {
+                    margin-left: 0em;
+                }
+            }
+            
+            .intro {
+                border: none;
+                background: none;
+                margin: 0em;
+                padding: 0em;
+                text-align: left;
+                h2 {
+                    margin-bottom: 0.5em;
+                };
+                img {
+                    display: inline;
+                };
+                .author {
+                    font-size: 0.8em;
+                    font-weight: bold;
+                };
+                .desc {
+                    font-weight: bold;
+                }
+            }
+            
+            .main, .intro {
+                text-align: left;
+                & p {
+                  text-align: left;
+                  margin: 1em;
+                }
+            }
+            
+            .char {
+                img {
+                    float: left;
+                    margin-right: 1em;
+                }
+            }
+
+        }
+    }
+}

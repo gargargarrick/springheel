@@ -1,0 +1,396 @@
+@import "rounded.scss";
+@import "shadow.scss";
+@import "transition.scss";
+@media screen {
+/*Note*/
+    #note {
+    $bg: #fafafa;
+    $t: #212121;
+    $it: #fafafa;
+    $acc: #01579b;
+    $ac2: #00BCD4;
+    $borders: #616161;
+    $ba: rgba(47,47,47,0.5);
+    
+    /* #4a148c: main color (default: dark purple) */
+    /* This should be a dark color to keep the white text legible. Be sure to check the contrast ratio.*/
+    $main: #4a148c;
+    /* #01579b: comic navigation buttons color (default: blue) */
+    $navc: #01579b;
+    /* #00BCD4: hovered comic navigation buttons color (default: aqua) */
+    $navch: #00BCD4;
+    
+    /* Default (small) screens */
+        * {
+            box-sizing: content-box;
+        }
+        body {
+            background-color: $bg;
+            background-attachment: fixed;
+            color: $t;
+            text-align: center;
+            font-size: 1.5em;
+            font-family: sans-serif;
+            margin: 0em;
+        }
+
+        main, figure {
+            margin-left: 0em;
+            padding-left: 0em;
+        }
+        
+        main {
+            margin-right: 0em;
+            padding-right: 0em;
+            width: 100%;
+        }
+        
+        h1, h2 {
+            color: $it;
+            font-weight: normal;
+        }
+
+        h1 {
+            margin: 0em;
+            font-size: 1.2em;
+        }
+
+        h2 {
+            font-size: 1.1em;
+        }
+        
+        h3 {
+            font-size: 1em;
+        }
+        
+        h3, h4, h5, h6 {
+            color: $main;
+            font-weight: normal;
+        }
+
+        * + * {
+            margin-top: 0.5em
+        }
+        
+        figure {
+            padding: 0em;
+            text-align: center;
+            border: none;
+            margin: 0em;
+        }
+            
+        .cominavbox, .cominavbox li {
+            display: inline-block;
+            padding: 0em;
+            margin-top: 1em;
+            margin-bottom: 0em;
+        }
+        
+        .cominavbox li {
+            a:active, a:focus {
+                display: block;
+                outline: dotted medium #ff4081;
+            };
+            img {
+                background-color: $navc;
+                display: block;
+                @include trans(background-color, 0.2s, ease);
+                &:active, &:focus, &:hover {
+                    background-color: $navch;
+                    @include trans(background-color, 0.2s, ease);
+                }
+            }
+        }
+
+        figure + .cominavbox {
+            margin-top: 0em;
+        }
+        
+        header {
+            background: $main;
+            margin-top: 0em;
+            padding: 1em;
+            @include shadow(0em,0.2em,0.5em,0.5em,$borders)
+            
+        }
+
+        /*TODO: Fix the skip link hiding method*/
+        #skippy {
+            text-align: left;
+            margin: 0em;
+        }
+        #skippy a, #skippy a:hover, #skippy a:visited {
+        position:absolute;
+        left:-10000px;
+        top:auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+        }
+
+        #skippy a:active, #skippy a:focus {
+          position: static;
+          height: auto;
+          width: auto;
+          font-size: 1.5em;
+          margin-top: 0em;
+          color: #000;
+        }
+
+        nav ul
+            {
+            margin-left: 0em;
+            padding-left: 0em;
+            text-align: left;
+            li {
+                display: inline-block;
+                background: $bg;
+                color: $t;
+                font-size: 1rem;
+                margin: 0.5em 0.2em;
+                @include rounded(0.2em);
+                @include shadow(0em,0em,0.5em,0.2em,$t);
+            }
+        }
+
+        #commentary, #transcript {
+            text-align: left;
+        }
+
+        .statline {
+            font-weight: bold;
+        }
+
+        a:link, a:visited {
+            color: $main;
+            text-decoration: underline;
+            @include trans(color,0.2s,ease)
+        }
+        
+        a:focus, a:active, a:hover {
+            color: #ef6c00;
+        };
+
+        a:focus, a:active {
+            outline: dotted medium $ac2;
+            @include trans(color,0.2s,ease)
+        }
+        
+        header {
+            a:link {
+                text-decoration: none;
+            };
+        }
+
+        footer {     
+            background: $main;
+            color: $it;
+            margin: 1em 0em 0em 0em;
+            padding: .5em 1.4em .5em 1.2em;
+            @include shadow(0em,0em,.5em,.5em, $borders);
+            p {
+                margin-left: 0em;
+                text-align: left;
+            };
+            a:link, a:visited {
+                color: $it;
+            }
+        }
+
+        .archive {
+            vertical-align: top;
+            text-align: left;
+        }
+
+        nav li, main div, main section {
+            color: $t;
+            padding: 0.5em;
+        }
+
+        main div, main section {
+            /*padding: .5em 1.4em .5em 1.2em;*/
+            padding: 0em;
+            padding-bottom: 0.5em;
+            @include rounded(0.2em);
+            @include shadow(0em,0em,0.5em,0.2em,$borders);
+            margin: 1em 0em;
+            width: 100%;
+            h2 {
+                background: $main;
+                color: $it;
+                margin: 0em;
+                margin-bottom: 1em;
+                padding: 0.5em;
+                @include shadow(0em,0.1em,0.2em,0.1em,$ba);
+            };
+            p {
+                padding-right: 1.4em;
+                padding-left: 1.2em;
+            }
+        }
+
+        img, embed, object, video {
+            max-width: 100%;
+        }
+        
+        .archive {
+            h3 {
+                margin-left: 1em;
+            }
+        }
+
+        .archive li {
+            margin-top: 1em;
+        }
+        
+        .main {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            margin-bottom: 0em;
+        }
+        
+        .allchars {
+            padding: 1em 0em;
+        }
+
+        .charname {
+            font-weight: bold
+        }
+        
+        .char {
+            text-align: left;
+            p {
+                line-height: 2em;
+            };
+            dl {
+                margin-left: 0.5em;
+            };
+            dt:after {
+                content: ":"
+            };
+            dd:after {
+                content: "\A"; white-space: pre;
+            };
+            dd {
+                margin-left: 0em;
+            };
+            dt, dd {
+                display: inline;
+                white-space: pre;
+            }
+        }
+
+    /*Medium screens*/
+
+        @media screen and (min-width: 40em) {
+            figure {
+                margin-left: 1em;
+            }
+
+            .cominavbox, .cominavbox li {
+                margin-left: 1em;
+                margin-right: 1em;
+                margin-bottom: 0em;
+            }
+
+            h1 {
+                font-size: 1.4em;
+            }
+
+            h2 {
+                font-size: 1.2em;         
+            }
+            
+            h2, h3, h4, h5, h6, nav li {
+                font-weight: normal;
+            }
+            
+            main {
+                margin-top: 1em;
+            }
+
+            nav ul {
+                text-align: center;
+                li {
+                    padding: 0.5em;
+                    margin: 0em;
+                    font-size: 1em;
+                    & + li {
+                        margin-left: 1em;
+                    }
+                }
+            }
+
+            .statline {
+                font-size: 0.8em;
+            }
+
+            footer p {
+                font-size: 0.7em;
+                margin-left: 1em;
+            }
+            
+            .main {
+                padding: 0em;
+                margin: auto;
+                width: 50%;
+                & p {
+                    margin-left: 0em;
+                }
+            }
+            
+            .intro {
+                border: none;
+                margin: 0em;
+                padding: 0em 0em 0.5em 0em;
+                margin-bottom: 1em;
+                text-align: left;
+                & h2 {
+                    margin-bottom: 0.5em;
+                };
+                & img {
+                    display: inline;
+                };
+                & .author {
+                    font-size: 0.8em;
+                    font-weight: bold;
+                }
+                & .desc {
+                    font-weight: bold;
+                }
+            }
+            
+            .main, .intro {
+                text-align: left;
+                & p {
+                  text-align: left;
+                  margin: 1em;
+                }
+            }
+
+            .action {
+                font-weight: bold;
+            }
+            
+            .char {
+                h2 {
+                    margin-top: 0em;
+                };
+                dl {
+                    font-size: 0.8em;
+                    margin-left: 1em;
+                };
+                img {
+                    float: left;
+                    margin: 0em;
+                    margin-right: 1em;
+                    margin-left: 0.5em;
+                    padding: 0em;
+                    border: solid medium $main;
+                }
+            }
+
+        }
+    }
+}

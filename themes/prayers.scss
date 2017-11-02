@@ -1,0 +1,367 @@
+@media screen {
+/*Prayers*/
+    #prayers {
+    $green: #4C833B;
+    $vermillion: #F67400;
+    $red: #EE3400;
+    
+    $dgreen: #1e530b;
+    $dark: #201f1e;
+    
+    /*$bg: #1e530b;*/
+    $bg: #164007;
+    $behind-bg: #000f29;
+    $sleeve: #fff;
+    $box: wheat;
+    $textc: #201f1e;
+    $outt: #eee;
+    $accent: #EE3400;
+    /* Default (small) screens */
+        * {
+            box-sizing: content-box;
+        }
+        body {
+            background: $bg;
+            color: $outt;
+            text-align: center;
+            font-size: 1.5em;
+            font-family: serif;
+            margin: 0em;
+        }
+
+        main {
+            color: $textc;
+            a:link {
+                color: #0032A3;
+                text-decoration: underline
+            }
+
+            a:visited {
+                color: #640FB9;
+            }
+
+            a:hover, a:focus, a:active {
+                color: #940000;
+            }
+        }
+
+        main, figure {
+            margin-left: 0em;
+            padding-left: 0em;
+        }
+
+        div, section, figure {
+            background: $sleeve;
+            border: double thick $accent;
+        }
+        
+        main div, main section {
+            background-color: $sleeve;
+        }
+
+        h1 {
+            margin: 0em;
+            font-size: 1.2em;
+        }
+
+        h2 {
+            font-size: 1em;
+            padding-bottom: 0.5em;
+            border-bottom: medium dashed $accent;
+        }
+        figure {
+            padding: 0.3em;
+            text-align: center;
+            margin-right: 0;
+        }
+        
+        .cominavbox {
+            max-width: 100%;
+            li {
+                max-width: 20%;
+            }
+        }
+        .cominavbox, .cominavbox li {
+            display: inline-block;
+            padding: 0em;
+        }
+        
+        .cominavbox li a {
+            &, img {
+                display: block;
+            }
+            &:active, &:focus {
+                background: $sleeve;
+                outline: dashed medium $accent;
+            }
+        }
+
+        * + * {
+            margin-top: 0.5em
+        }
+        
+        header {
+            margin-top: 0;
+        }
+
+        /*TODO: Fix the skip link hiding method*/
+        #skippy {
+            text-align: left;
+            margin-bottom: 0em;
+            display: inline;
+        }
+        #skippy a, #skippy a:hover, #skippy a:visited {
+        position:absolute;
+        left:-10000px;
+        top:auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+        }
+
+        #skippy a:active, #skippy a:focus {
+          position: static;
+          height: auto;
+          width: auto;
+          font-size: 1em;
+          margin-top: 0em;
+          color: #00f;
+        }
+
+        nav li {
+            display: inline-block;
+            padding: 1em;
+            background: $box;
+            border: solid medium $dark;
+            color: $textc;
+            a:link {
+                color: #0300AD
+            }
+            a:visited {
+                color: #5B008A;
+            }
+            a:hover, a:active, a:focus {
+                color: #8A0000
+            }
+        }
+
+        #commentary, #transcript {
+            text-align: left;
+        }
+
+        a:link {
+            color: #99D1FF;
+            text-decoration: underline
+        }
+
+        a:visited {
+            color: #EBBDFF;
+        }
+
+        a:hover, a:focus, a:active {
+            color: #FFADB7;
+        }
+
+        .statline {
+            font-weight: bold;
+        }
+
+        footer p {
+            margin-left: 0em;
+            text-align: left;
+        }
+
+        .archive {
+            display: inline-block;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        main div, main section {
+            padding: .5em 1.4em 0em 1.2em;
+        }
+
+        img, embed, object, video {
+            max-width: 100%;
+        }
+
+        .archive li {
+            margin-top: 1em;
+        }
+            
+        .charname {
+            font-weight: bold;
+        }
+        
+        .action {
+            font-weight: bold;
+        }
+        
+        .char {
+            text-align: left;
+            dt {
+                font-weight: bold;
+                &:after {
+                    content: ":"
+                };
+            };
+            dd:after {
+                content: "\A"; white-space: pre;
+            };
+            dd {
+                margin-left: 0em;
+            };
+            dt, dd {
+                display: inline;
+                white-space: pre;
+            }
+        }
+
+    /*Medium screens*/
+
+        @media screen and (min-width: 40em) {
+
+            * + * {
+                margin-top: 1em
+            }
+            body {
+                margin-left: 1em;
+                background: url("torii.png") 99% 99% no-repeat fixed, url("trees.png") repeat-y -200px 0%, $behind-bg url("trees.png") repeat-y 101% 0%;
+            }
+
+            figure {
+                margin-left: 4em;
+                margin-bottom: 0em;
+                padding: 1em 1em 0em 1em;
+            }
+
+            figcaption {
+                margin-bottom: 1em;
+            }
+
+            .cominavbox {
+                margin: 0em 1em;
+                li {
+                    margin: 0.5em;
+                }
+            }
+
+            figure + .cominavbox {
+                margin-top: 1em;
+            }
+            
+            header {
+                background: url("shimenawa.png") 98% 0% no-repeat, url("shimenawa.png") 2% 0% no-repeat;                
+            }
+
+            h1 {
+                font-size: 1.4em;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 1.2em;
+                margin-bottom: 0.5em;
+                margin-top: 0.5em;
+            }
+
+            h3 {
+                font-size: 1em;
+            }
+
+            nav {
+                max-width: 75%;
+                margin-left: 10%;
+                margin-bottom: 1em;
+                padding-bottom: 0.1em;
+            }
+
+            nav li {
+                padding: 1em;
+                margin: 0em;
+            }
+
+            main {
+                max-width: 65%;
+                line-height: 1.2em;
+            }
+
+            .statline {
+                font-size: 0.8em;
+            }
+
+            footer p {
+                font-size: 0.7em;
+            }
+            
+            .action {
+                text-indent: 1em;
+            }
+
+            .archive {
+                margin: 1em;
+                padding: 1em 1em 0em 1em;
+                & h2 {
+                    margin: 0em 0em 1em 0em;
+                    padding-top: 0.5em;
+                    padding-bottom: 0em;
+                };
+                & + .archive {
+                    margin-top: 0em;
+                }
+            }
+
+            main div, main section {
+                margin: 1.2em;
+                width: 80%;
+                text-align: left;
+            }
+            
+            .main {
+                padding: 0.5em;
+                margin: auto;
+                width: 80%;
+                & p {
+                    margin-left: 0em;
+                }
+            }
+            
+            .intro {
+                border: none;
+                background: none;
+                margin: 0em;
+                padding: 0em;
+                text-align: left;
+                h2 {
+                    margin-bottom: 0.5em;
+                };
+                img {
+                    display: inline;
+                };
+                .author {
+                    font-size: 0.8em;
+                    font-weight: bold;
+                };
+                .desc {
+                    font-weight: bold;
+                }
+            }
+            
+            .main, .intro {
+                text-align: left;
+                & p {
+                  text-align: left;
+                  margin: 1em;
+                }
+            }
+            
+            .char {
+                img {
+                    float: left;
+                    margin-right: 1em;
+                }
+            }
+
+        }
+    }
+}

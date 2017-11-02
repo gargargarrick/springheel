@@ -1,0 +1,202 @@
+@media screen {
+  /*Cherry*/
+  #cherry {
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #cherry * {
+      box-sizing: content-box; }
+    #cherry body {
+      background: #fff;
+      background: url("bloom.png") fixed no-repeat 110% -10%, #fff url("cherrywind.png") 0% 0%;
+      color: #2e1f27;
+      text-align: center;
+      font-size: 1.5em;
+      font-family: sans-serif;
+      margin: 0em; }
+    #cherry main, #cherry figure {
+      margin-left: 0em;
+      padding-left: 0em; }
+    #cherry div, #cherry section, #cherry nav li, #cherry figure, #cherry .cominavbox {
+      background: #fff6f9;
+      border-right: solid thin #cc006d;
+      border-bottom: solid thin #cc006d; }
+    #cherry h1 {
+      margin: 0em;
+      font-size: 1.2em; }
+    #cherry h2 {
+      font-size: 1em; }
+    #cherry figure {
+      padding: 0.3em;
+      text-align: center;
+      margin-right: 0; }
+    #cherry .cominavbox, #cherry .cominavbox li {
+      display: inline-block;
+      padding: 0em; }
+    #cherry .cominavbox li a, #cherry .cominavbox li a img {
+      display: block; }
+    #cherry .cominavbox li a:hover img {
+      background: #ffcaec; }
+    #cherry .cominavbox li a:active, #cherry .cominavbox li a:focus {
+      outline-width: medium; }
+    #cherry * + * {
+      margin-top: 0.5em; }
+    #cherry header {
+      margin-top: 0; }
+    #cherry #skippy {
+      text-align: left;
+      margin-bottom: 0em;
+      display: inline; }
+    #cherry #skippy a, #cherry #skippy a:hover, #cherry #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #cherry #skippy a:active, #cherry #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #00f; }
+    #cherry nav li {
+      display: inline-block;
+      padding: 0.5em; }
+    #cherry #commentary, #cherry #transcript {
+      text-align: left; }
+    #cherry .statline {
+      font-weight: bold; }
+    #cherry a:link {
+      color: #444470;
+      text-decoration: underline; }
+    #cherry a:visited {
+      color: #6e495e; }
+    #cherry a:hover, #cherry a:focus, #cherry a:active {
+      color: #9e0054; }
+    #cherry footer p {
+      margin-left: 0em;
+      text-align: left; }
+    #cherry .archive {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left; }
+    #cherry main div, #cherry main section {
+      padding: .5em 1.4em 0em 1.2em;
+      background-image: url("bloom.png");
+      background-size: 1.5em;
+      background-repeat: no-repeat;
+      background-position: 1% 1%; }
+    #cherry img, #cherry embed, #cherry object, #cherry video {
+      max-width: 100%; }
+    #cherry .archive li {
+      margin-top: 1em; }
+    #cherry .charname {
+      font-weight: bold; }
+    #cherry .action {
+      font-weight: bold; }
+    #cherry .char {
+      text-align: left; }
+      #cherry .char dt {
+        font-weight: bold; }
+        #cherry .char dt:after {
+          content: ":"; }
+      #cherry .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #cherry .char dd {
+        margin-left: 0em; }
+      #cherry .char dt, #cherry .char dd {
+        display: inline;
+        white-space: pre; } }
+  @media screen and (min-width: 40em) {
+    #cherry * + * {
+      margin-top: 1em; }
+    #cherry body {
+      margin-left: 1em; }
+    #cherry figure {
+      margin-left: 4em;
+      margin-bottom: 0em;
+      padding: 1em 1em 0em 1em; }
+    #cherry figcaption {
+      margin-bottom: 1em; }
+    #cherry .cominavbox {
+      margin: 0em 1em; }
+      #cherry .cominavbox li {
+        margin: 0.5em; }
+    #cherry figure + .cominavbox {
+      margin-top: 1em; }
+    #cherry h1 {
+      font-size: 1.4em;
+      text-align: center; }
+    #cherry h2 {
+      font-size: 1.2em;
+      border-bottom: thin solid #ffcaec;
+      margin-bottom: 0.5em;
+      margin-top: 0.5em; }
+    #cherry h3 {
+      font-size: 1em; }
+    #cherry h1, #cherry h2, #cherry h3, #cherry h4, #cherry h5, #cherry h6 {
+      letter-spacing: .06em; }
+    #cherry nav {
+      max-width: 75%;
+      margin-left: 10%;
+      margin-bottom: 1em;
+      padding-bottom: 0.1em; }
+    #cherry nav li {
+      padding: 0.5em;
+      margin: 0em; }
+    #cherry main {
+      max-width: 70%;
+      line-height: 1.2em; }
+    #cherry .statline {
+      font-size: 0.8em; }
+    #cherry footer p {
+      font-size: 0.7em; }
+    #cherry .action {
+      text-indent: 1em; }
+    #cherry .archive {
+      margin: 1em;
+      padding: 1em 1em 0em 1em; }
+      #cherry .archive h2 {
+        margin: 0em 0em 1em 0em;
+        padding-top: 0.5em;
+        padding-bottom: 0em; }
+      #cherry .archive + .archive {
+        margin-top: 0em; }
+    #cherry main div, #cherry main section {
+      margin: 1em;
+      width: 80%;
+      text-align: left; }
+    #cherry .main {
+      padding: 0.5em;
+      margin: auto;
+      width: 80%; }
+      #cherry .main p {
+        margin-left: 0em; }
+    #cherry .intro {
+      border: none;
+      background: none;
+      margin: 0em;
+      padding: 0em;
+      text-align: left; }
+      #cherry .intro h2 {
+        margin-bottom: 0.5em; }
+      #cherry .intro img {
+        display: inline; }
+      #cherry .intro .author {
+        font-size: 0.8em;
+        font-weight: bold; }
+      #cherry .intro .desc {
+        font-weight: bold; }
+    #cherry .main, #cherry .intro {
+      text-align: left; }
+      #cherry .main p, #cherry .intro p {
+        text-align: left;
+        margin: 1em; }
+    #cherry .char img {
+      float: left;
+      margin-right: 1em; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,362 @@
+@import "rounded.scss";
+@media screen {
+/*Book*/
+    #book {
+    $bg: #fdf5e6;
+    $out-text: #ffd;
+    $in-text: #111;
+    /* Default (small) screens */
+        * {
+            box-sizing: content-box;
+        }
+        body {
+            background-color: #501916;
+            background: url("leather.jpg");
+            color: $out-text;
+            text-align: center;
+            font-size: 1.2em;
+            font-family: serif;
+            margin: 0em;
+        }
+
+        main, figure {
+            margin-left: 0em;
+            padding-left: 0em;
+        }
+        
+        figure, main div, .archives {
+            background-color: $bg;
+            background-image: url("paper.gif");
+            color: $in-text;
+        }
+
+        h1 {
+            margin: 0em;
+        }
+        figure {
+            padding: 1em 0em 1em 0em;
+            margin-left: 0em;
+            margin-right: 0em;
+            text-align: center;
+            border: none;
+            img {
+                padding: 0em;
+                margin: 0em;
+                max-width: 100%;
+            }
+        }
+
+        p + p, li + li, div + div {
+            margin-top: 0.5em
+        }
+
+        .cominavbox, .cominavbox li {
+            display: inline-block;
+        }
+        
+        .cominavbox {
+            background-color: $bg;
+            background-image: url("paper.gif");
+            @include rounded(0.5em);
+            width: auto;
+            margin: 0.5em;
+            padding: 0.5em;
+            li {
+                padding: 0em;
+                margin: 0em;
+                img {
+                    max-width: 25%;
+                }
+            }
+        }
+
+        /*TODO: Fix the skip link hiding method*/
+        #skippy {
+            text-align: left;
+        }
+        #skippy a, #skippy a:hover, #skippy a:visited {
+            position:absolute;
+            left:-10000px;
+            top:auto;
+            width:1px;
+            height:1px;
+            overflow:hidden;
+        }
+
+        #skippy a:active, #skippy a:focus {
+          position: static;
+          height: auto;
+          width: auto;
+          font-size: 1em;
+          margin-top: 0em;
+          color: #0000ff;
+        }
+
+        nav li {
+            display: inline-block;
+            & + li:before {
+                content: "— "
+            };
+        }
+
+        main div, main section {
+            text-align: left;
+        }
+
+        .statline {
+            font-weight: bold;
+        }
+        
+        a:link {
+            color: #aec2eb;
+            text-decoration: underline
+        }
+
+        a:visited {
+            color: #d2b6d9;
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        a:hover, a:focus, a:active {
+            color: #ffa4a4;
+        }
+
+        main div, main section {
+            padding-top: 1em;
+            padding-bottom: 1em;
+            a:link {
+                color: #214184;
+                text-decoration: underline
+            }
+
+            a:visited {
+                color: #5c3566;
+            }
+
+            a:hover {
+                text-decoration: underline
+            }
+
+            a:hover, a:focus, a:active {
+                color: #cc0000;
+            }
+        }
+
+        footer p {
+            margin-left: 0em;
+            text-align: left;
+        }
+        
+        .archives {
+            margin-top: 1em;
+            padding-bottom: 1em
+        }
+
+        .archive {
+            text-align: left;
+        }
+
+        img, embed, object, video {
+            max-width: 100%;
+        }
+
+        .action {
+            font-weight: bold;
+        }
+
+        .charname {
+            font-weight: bold
+        }
+        
+        .char {
+            text-align: left;
+            dt:after {
+                content: ":"
+            };
+            dd:after {
+                content: "\A"; white-space: pre;
+            };
+            dd {
+                margin-left: 0em;
+            };
+            dt, dd {
+                display: inline;
+                white-space: pre;
+            };
+            dt {
+                font-weight: bold;
+            };
+            dl {
+                font-size: 0.9em;
+            };
+            img {
+                float: left;
+                margin: 2em;
+            };
+            p {
+                text-indent: 1em;
+            }
+        }
+
+    /*Medium screens*/
+
+        @media screen and (min-width: 40em) {
+            body {
+                font-size: 1.5em;
+            }
+
+            figure {
+                margin: 0em 1em 0em 1em;
+                padding: 1em;
+                img {
+                    padding: 1em;
+                    margin: 1em;
+                    max-width: 90%;
+                }
+            }
+
+            main div {
+                padding: 0.5em 1em 0.5em 1em;
+                width: 80%;
+                margin-left: 1em;
+                & p, & h2 {
+                    margin-left: 2em;
+                    margin-right: 2em;
+                };
+            }
+        
+            figure, main div, .archives {
+                background-color: $bg;
+                background: url("pages_l.png") repeat-y 0% 0%, url("pages_r.png") repeat-y 100% 0%, url("paper.gif");
+            }
+
+            div + div {
+                margin-bottom: 0em;
+                margin-top: 1em;
+            }
+
+            .cominavbox {
+                    margin: 1em;
+                    li {
+                        margin: 0.5em 1em;
+                        padding: 0.5em 1em;
+                        img {
+                            max-width: inherit;
+                        }
+                    }
+                }
+
+/*            figure + .cominavbox {*/
+/*                margin-top: 0em;*/
+/*            }*/
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+                font-variant: small-caps;
+            }
+            
+            h3 {
+                font-size: 1.1em;
+                font-variant: small-caps;
+            }
+            
+            nav ul {
+                background-color: $bg;
+                background-image: url("paper.gif");
+                @include rounded(1.0em);
+                width: auto;
+                margin-left: 10%;
+                margin-right: 10%;
+                padding: 0em;
+            }
+
+            nav li {
+                padding-top: 1em;
+                padding-left: 0em;
+                padding-right: 0em;
+                padding-bottom: 0.8em;
+                margin: 0em;
+                color: $in-text;
+                & a:link {
+                    color: #214184;
+                    text-decoration: underline
+                };
+
+                & a:visited {
+                    color: #5c3566;
+                };
+
+                & a:hover {
+                    text-decoration: underline
+                };
+
+                & a:hover, & a:focus, & a:active {
+                    color: #cc0000;
+                };
+            }
+
+            .statline {
+                font-size: 0.8em;
+                text-align: right;
+            }
+
+            footer p {
+                font-size: 0.7em;
+                text-indent: 1em;
+            }
+            
+            .archives {
+                margin: 1em;
+            }
+
+            .archive {
+                margin-left: 2em;
+                margin-right: 2em;
+                padding: 1em 2em;
+                padding-bottom: 0em;
+                margin-top: 1em;
+                ol {
+                    margin-left: 1em;
+                };
+                & + .archive {
+                    padding-bottom: 1em;
+                    h2 {
+                        margin-top: 0em;
+                        padding-top: 1em;
+                        border-top: solid thin $in-text;
+                    }
+                }
+            }
+            
+            .main {
+                padding: 0.5em;
+                margin: auto;
+                margin-top: 1em;
+                width: 70%;
+                text-align: left;
+                & p {
+                    margin-left: 2em;
+                };
+                & h2 {
+                    margin-left: 1em;
+                }
+            }
+            
+            .intro {
+                background: none;
+            }
+            
+            .author, .charname {
+                font-weight: bold;
+                font-variant: small-caps
+            }
+        }
+    }
+}

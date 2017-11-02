@@ -1,0 +1,208 @@
+@media screen {
+  /*City*/
+  #city {
+    /*Blues*/
+    /*$bg: #3161D0;*/
+    /*Purples*/
+    /*Accents*/
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #city * {
+      box-sizing: content-box; }
+    #city body {
+      background-color: #1d397a;
+      color: #99ffff;
+      text-align: center;
+      font-size: 1.2em;
+      font-family: "Lato", "Noto Sans", "DejaVu Sans", sans-serif;
+      margin: 0em; }
+    #city header {
+      margin: 0em; }
+    #city footer {
+      padding-top: 1em;
+      margin-bottom: 0em; }
+      #city footer p:last-of-type {
+        margin-bottom: 0em; }
+    #city main, #city figure {
+      margin-left: 0em;
+      padding-left: 0em; }
+    #city main div, #city main section, #city figcaption, #city nav li {
+      background-color: #24489d;
+      color: #ccffcc;
+      border: solid thick #ddff77; }
+    #city main div, #city main section {
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 1em; }
+    #city h1 {
+      margin: 0em; }
+    #city figure {
+      padding: 0em;
+      margin: 0em;
+      border: none;
+      background: none; }
+    #city figcaption {
+      padding: 1em; }
+    #city .cominavbox, #city .cominavbox li {
+      display: inline-block;
+      padding: 0em; }
+      #city .cominavbox a, #city .cominavbox img, #city .cominavbox li a, #city .cominavbox li img {
+        display: block; }
+    #city .cominavbox li img {
+      padding: 0.5rem; }
+    #city .cominavbox li a:active, #city .cominavbox li a:focus {
+      outline: dashed medium #DA8DD3; }
+      #city .cominavbox li a:active img, #city .cominavbox li a:focus img {
+        background: #24489d; }
+    #city main, #city p + p, #city li + li, #city div + div, #city section + section {
+      margin-top: 0.5em; }
+    #city #skippy {
+      text-align: left;
+      margin: 0em; }
+    #city #skippy a, #city #skippy a:hover, #city #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #city #skippy a:active, #city #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #fff; }
+    #city nav ul {
+      padding-left: 0em; }
+      #city nav ul li {
+        display: inline-block;
+        padding: 0.5em; }
+    #city main div, #city main section {
+      text-align: left; }
+    #city .statline {
+      font-weight: bold; }
+    #city a:link, #city a:visited {
+      color: #ECFFB3;
+      text-decoration: underline; }
+    #city a:hover {
+      text-decoration: underline; }
+    #city a:hover, #city a:focus, #city a:active {
+      color: #99ffff; }
+    #city footer p {
+      margin-left: 0em;
+      text-align: left; }
+    #city .archive {
+      vertical-align: top;
+      text-align: left; }
+    #city img, #city embed, #city object, #city video {
+      max-width: 100%; }
+    #city .action {
+      font-weight: bold; }
+    #city .charname {
+      font-weight: bold; }
+    #city .intro {
+      border: none; }
+    #city .char {
+      text-align: left; }
+      #city .char dt:after {
+        content: ":"; }
+      #city .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #city .char dd {
+        margin-left: 0em; }
+      #city .char dt, #city .char dd {
+        display: inline;
+        white-space: pre; }
+      #city .char dt {
+        font-weight: bold; }
+      #city .char dl {
+        font-size: 0.9em; }
+      #city .char img {
+        float: left;
+        margin: 1em; } }
+  @media screen and (min-width: 40em) {
+    #city body {
+      font-size: 1.5em;
+      background-color: #1d397a;
+      background: url("skyline.png"); }
+    #city figure {
+      margin-left: 1em;
+      margin-top: 0em;
+      margin-bottom: 0em;
+      padding: 1em;
+      width: 70%; }
+    #city header {
+      background-color: #1d397a;
+      background: #1d397a url("moon.png") no-repeat 95% 95%; }
+      #city header h1 {
+        padding-bottom: 1em;
+        margin-bottom: 1em; }
+    #city main {
+      text-align: left; }
+      #city main div, #city main section {
+        padding-left: 1em;
+        padding-right: 1em;
+        width: 80%;
+        margin: 1em; }
+        #city main div h2, #city main section h2 {
+          background: url("5check.png") repeat-x 0% 100%;
+          margin-bottom: 0.5em;
+          padding-bottom: 0.5em; }
+    #city .cominavbox {
+      margin: 0em;
+      padding-left: 25%; }
+      #city .cominavbox li {
+        margin-top: 0em;
+        margin-right: 1em;
+        margin-bottom: 0em;
+        margin-left: 1em; }
+    #city figure {
+      margin-left: 1em; }
+    #city h1 {
+      font-size: 1.6em; }
+    #city h2 {
+      font-size: 1.3em; }
+    #city nav li {
+      padding-top: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 0.8em;
+      margin: 0em; }
+    #city .statline {
+      font-size: 0.8em;
+      text-align: right; }
+    #city footer {
+      background: #1d397a;
+      margin-top: 1em; }
+      #city footer p {
+        font-size: 0.7em;
+        margin-left: 0.5em; }
+    #city .action {
+      text-indent: 1em;
+      font-weight: bold; }
+    #city .archive {
+      margin: 1em;
+      padding-left: 1em;
+      padding-right: 1em; }
+    #city .main {
+      padding: 0.5em;
+      margin: auto;
+      width: 50%;
+      text-align: left; }
+      #city .main p {
+        margin-left: 0em; }
+      #city .main .author {
+        text-indent: 2em; }
+    #city .intro {
+      border: none;
+      margin: 0em 0.2em 0em 0.2em;
+      padding: 0em 0.2em 0em 0.2em;
+      width: 90%; }
+      #city .intro h2 {
+        margin-top: 0em;
+        margin-left: 0em; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,169 @@
+@media screen {
+  /*Cute*/
+  #cute {
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #cute * {
+      box-sizing: content-box; }
+    #cute body {
+      background-color: #e7dfc2;
+      background: url("cakeMid.png") repeat-x 0 0, url("cakeCenter.png") repeat 0 0;
+      color: #000;
+      text-align: center;
+      font-size: 1.2em;
+      font-family: "Lato", "Noto Sans", "DejaVu Sans", sans-serif;
+      margin: 0em; }
+    #cute main, #cute figure {
+      margin-left: 0em;
+      padding-left: 0em; }
+    #cute h1 {
+      margin: 0em; }
+    #cute figure {
+      padding: 1em;
+      text-align: center;
+      border: none; }
+    #cute .cominavbox, #cute .cominavbox li {
+      display: inline-block;
+      padding: 0em; }
+    #cute figure, #cute main div, #cute nav li, #cute .archive {
+      border: thick solid #FFCCFF;
+      background: #fff;
+      padding-top: .3em;
+      padding-bottom: .3em;
+      padding-left: 1.2em;
+      padding-right: 1.5em; }
+    #cute p + p, #cute li + li, #cute div + div {
+      margin-top: 0.5em; }
+    #cute #skippy {
+      text-align: left; }
+    #cute #skippy a, #cute #skippy a:hover, #cute #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #cute #skippy a:active, #cute #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #0000ff; }
+    #cute nav li {
+      display: inline-block; }
+    #cute main div {
+      text-align: left; }
+    #cute .statline {
+      font-weight: bold; }
+    #cute a:link {
+      color: #a700a4;
+      text-decoration: underline; }
+    #cute a:visited {
+      color: #7024a6; }
+    #cute a:hover, #cute a:focus, #cute a:active {
+      color: #ff0000; }
+    #cute footer p {
+      margin-left: 0em;
+      text-align: left; }
+    #cute .archive {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left; }
+    #cute img, #cute embed, #cute object, #cute video {
+      max-width: 100%; }
+    #cute .action {
+      font-weight: bold; }
+    #cute figure, #cute main div {
+      max-width: 100%;
+      margin-left: 0em;
+      margin-right: 0em;
+      border-left: 0em;
+      border-right: 0em; }
+    #cute .char {
+      text-align: left; }
+      #cute .char dt:after {
+        content: ":"; }
+      #cute .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #cute .char dd {
+        margin-left: 0em; }
+      #cute .char dt, #cute .char dd {
+        display: inline;
+        white-space: pre; } }
+  @media screen and (min-width: 40em) {
+    #cute body {
+      font-size: 1.5em;
+      margin-left: 1em; }
+    #cute figure {
+      margin-left: 1em; }
+    #cute figure, #cute nav li, #cute .archive, #cute main div {
+      border: thick solid #FFCCFF;
+      border-image-slice: 20 20 20 20 fill;
+      border-image-width: 10px 10px 10px 10px;
+      border-image-outset: 0px 0px 0px 0px;
+      border-image-repeat: round round;
+      border-image-source: url("stripe-border.png"); }
+    #cute main div {
+      padding: 1em;
+      width: 80%;
+      margin-top: 1em; }
+    #cute .cominavbox, #cute .cominavbox li {
+      margin-left: 1em;
+      margin-right: 1em;
+      margin-top: 0.5em;
+      margin-bottom: 0em; }
+    #cute figure {
+      width: 60%;
+      margin-left: 15%; }
+      #cute figure + .cominavbox {
+        margin-top: 0em; }
+    #cute h1 {
+      font-size: 1.5em; }
+    #cute h2 {
+      font-size: 1.2em;
+      margin: 0em; }
+    #cute nav li {
+      padding-top: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 0.8em;
+      margin: 0em; }
+    #cute .statline {
+      font-size: 0.8em;
+      text-align: right; }
+    #cute footer p {
+      font-size: 0.7em; }
+    #cute .action {
+      text-indent: 1em; }
+    #cute .archive {
+      margin: 1em;
+      padding: 1em; }
+    #cute .main {
+      padding: 0.5em;
+      margin: auto;
+      margin-top: 1em;
+      width: 50%;
+      text-align: center; }
+      #cute .main p {
+        margin-left: 0em; }
+    #cute .intro {
+      border: none;
+      margin: 0em;
+      padding: 0em;
+      text-align: left; }
+      #cute .intro h2, #cute .intro p {
+        margin: 0.5em;
+        padding: 0.5em; }
+      #cute .intro img {
+        display: inline; }
+      #cute .intro .author {
+        font-size: 0.8em;
+        font-weight: bold;
+        text-indent: 1em; }
+      #cute .intro .desc {
+        font-weight: bold; } }
+
+/*# sourceMappingURL=style.css.map */

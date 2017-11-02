@@ -1,0 +1,300 @@
+@media screen {
+/*Starship*/
+    #starship {
+    /* Default (small) screens */
+    $bg: #1e1e1e;
+    $outt: #eee;
+    $box: #D0D0D0;
+    $int: #222;
+    $acc: #ffff66;
+        * {
+            box-sizing: content-box;
+        }
+        body {
+            background-color: $bg;
+            background-image: url(stars.png);
+            background-attachment: fixed;
+            color: $outt;
+            text-align: center;
+            font-size: 1.5em;
+            font-family: sans-serif;
+            margin: 0em;
+        }
+
+        main, figure {
+            margin-left: 0em;
+            padding-left: 0em;
+        }
+
+        h1 {
+            margin: 0em;
+            font-size: 1.2em;
+        }
+
+        h2 {
+            font-size: 1em;
+        }
+        figure {
+            padding: 1em;
+            text-align: center;
+            border: none;
+            margin: 0em;
+        }
+        .cominavbox, .cominavbox li {
+            display: inline-block;
+            padding: 0em;
+        }
+        
+        .cominavbox li {
+            padding: 0.5em;
+            a:active, a:focus {
+                outline: dashed medium $acc;
+            }
+        }
+
+        * + * {
+            margin-top: 0.5em
+        }
+
+        /*TODO: Fix the skip link hiding method*/
+        #skippy {
+            text-align: left;
+        }
+        #skippy a, #skippy a:hover, #skippy a:visited {
+        position:absolute;
+        left:-10000px;
+        top:auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+        }
+
+        #skippy a:active, #skippy a:focus {
+          position: static;
+          height: auto;
+          width: auto;
+          font-size: 1em;
+          margin-top: 0em;
+          color: #ffffff;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        #commentary, #transcript {
+            text-align: left;
+        }
+
+        .statline {
+            font-weight: bold;
+        }
+
+        a:link {
+            color: #214184;
+            text-decoration: underline
+        }
+
+        a:visited {
+            color: #5c3566;
+        }
+
+        a:hover, a:focus, a:active {
+            color: #cc0000;
+        }
+
+        footer {     
+            border-top: solid thin $acc;
+            margin: 1em 0em 0em 0em;
+            padding: 0em;
+            p {
+                margin-left: 0em;
+                text-align: left;
+            }
+            a {
+                &:link {
+                    color: #73b9ff;
+                }
+                &:visited {
+                    color: #dea6ff;
+                }
+                &:hover, &:focus, &:active {
+                    color: #ff8793;
+                }
+            }
+        }
+
+        .archive {
+            vertical-align: top;
+            text-align: left;
+        }
+
+        nav li, main div, main section {
+            background: $box;
+            color: $int;
+            padding: 0.5em;
+            border: groove medium $box;
+        }
+
+        #commentary, #transcript {
+            padding-top: .5em;
+            padding-bottom: .5em;
+            padding-left: 1.2em;
+            padding-right: 1.4em;
+        }
+
+        img, embed, object, video {
+            max-width: 100%;
+        }
+
+        .archive li {
+            margin-top: 1em;
+        }
+        
+        .char {
+            text-align: left;
+            dt:after {
+                content: ":"
+            }
+            dd:after {
+                content: "\A"; white-space: pre;
+            }
+            dd {
+                margin-left: 0em;
+            }
+            dt, dd {
+                display: inline;
+                white-space: pre;
+            }
+        }
+
+    /*Medium screens*/
+
+        @media screen and (min-width: 40em) {
+            figure {
+                margin-left: 1em;
+            }
+
+            .cominavbox, .cominavbox li {
+                margin-left: 1em;
+                margin-right: 1em;
+                margin-bottom: 0em;
+            }
+
+            figure + .cominavbox {
+                margin-top: 0em;
+            }
+
+            h1 {
+                font-size: 1.4em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+                border-bottom: inset medium $int;                
+            }
+            
+            h3 {
+                font-size: 1em
+            }
+            
+            h2, h3, h4, h5, h6, nav li {
+                text-shadow: 0.05em 0.05em 0em #ffe;
+                font-weight: normal;
+            }
+
+            nav li {
+                padding: 0.5em;
+                margin: 0em;
+            }
+
+            .statline {
+                font-size: 0.8em;
+            }
+
+            footer p {
+                font-size: 0.7em;
+                margin-left: 1em;
+            }
+
+            .archive {
+                margin: 1em;
+                padding: 1em;
+                & h2 {
+                    margin: 0em 0em 1em 0em;
+                }
+            }
+
+            main div, main section {
+                margin: 1em;
+                width: 80%;
+            }
+            
+            .main {
+                padding: 0.5em;
+                margin: auto;
+                width: 50%;
+                & p {
+                    margin-left: 0em;
+                }
+            }
+            
+            .intro {
+                border: none;
+                margin: 0em;
+                padding: 0em;
+                text-align: left;
+                & h2 {
+                    margin-bottom: 0.5em;
+                };
+                & img {
+                    display: inline;
+                };
+                & .author {
+                    font-size: 0.8em;
+                    font-weight: bold;
+                }
+                & .desc {
+                    font-weight: bold;
+                }
+            }
+            
+            .main, .intro {
+                text-align: left;
+                & p {
+                  text-align: left;
+                  margin: 1em;
+                }
+            }
+
+            .action {
+                font-weight: bold;
+            }
+
+            .charname {
+                font-weight: bold
+            }
+            
+            .char {
+                h2 {
+                    margin-top: 0em;
+                };
+                dl {
+                    font-size: 0.8em;
+                    margin-left: 1em;
+                };
+                p {
+                    text-indent: 1em;
+                };
+                img {
+                    float: left;
+                    margin: 0em;
+                    margin-right: 1em;
+                    padding: 0em;
+                    border: solid medium $acc;
+                }
+            }
+
+        }
+    }
+}

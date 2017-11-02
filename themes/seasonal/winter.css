@@ -1,0 +1,265 @@
+@media screen {
+  /*seasonal*/
+  #seasonal {
+    /*Spring*/
+    /*$bbg: #4866c5;
+    $mbg: #fafafa;
+    $la: #73cfd9;
+    $ma: #429ad7;
+    $dt: #eee;
+    $lt: #111;
+    $bgi: url("spring.png");
+    $aa: #315040;
+    $av: #324b9e;
+    $ahaf: #3c7949;
+    $anh: #46a946;*/
+    /*Summer*/
+    /*$bbg: #4866c5;
+    $mbg: #fafafa;
+    $la: #73cfd9;
+    $ma: #429ad7;
+    $dt: #eee;
+    $lt: #111;
+    $bgi: url("summer.png");
+    $aa: #315040;
+    $av: #324b9e;
+    $ahaf: #3c7949;
+    $anh: #46a946;*/
+    /*Fall*/
+    /*$bbg: #504170;
+    $mbg: #fed4aa;
+    $la: #c26e3d;
+    $ma: #c26e3d;
+    $dt: #180e0e;
+    $lt: #111;
+    $bgi: url("autumn.png");
+    $aa: #6d2e2e;
+    $av: #42365d;
+    $ahaf: #a93444;
+    $anh: #f88f32;*/
+    /*Winter*/
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #seasonal * {
+      box-sizing: content-box; }
+    #seasonal body {
+      background-color: #504170;
+      background-image: url("winter.png");
+      background-position: 0 100%;
+      background-repeat: repeat-x;
+      background-attachment: fixed;
+      color: #111;
+      text-align: center;
+      font-size: 1.2em;
+      font-family: sans-serif;
+      margin: 0em; }
+    #seasonal main, #seasonal figure {
+      margin-left: 0em;
+      padding-left: 0em; }
+    #seasonal main div, #seasonal figure, #seasonal .archive {
+      background-color: #fafafa;
+      padding-left: 0.5em;
+      padding-right: 0.5em; }
+    #seasonal main div, #seasonal main section, #seasonal figure, #seasonal .archive, #seasonal h1 {
+      border: solid thick #b88fb4;
+      border-left: none;
+      border-right: none; }
+    #seasonal nav li {
+      border: solid thick #facb1e; }
+    #seasonal h1 {
+      margin: 0em;
+      margin-top: 1em;
+      background-color: #fafafa;
+      padding: 1em; }
+    #seasonal figure {
+      padding: 1em 0em;
+      margin: 1em 0em;
+      text-align: center; }
+    #seasonal .cominavbox, #seasonal .cominavbox li {
+      display: inline-block;
+      padding: 0em;
+      margin: 1em; }
+    #seasonal #skippy {
+      text-align: left;
+      margin: 0em; }
+    #seasonal #skippy a, #seasonal #skippy a:hover, #seasonal #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #seasonal #skippy a:active, #seasonal #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #fff; }
+    #seasonal nav ul {
+      padding-left: 0em; }
+    #seasonal nav li {
+      display: inline-block;
+      background-color: #fafafa;
+      padding: 0.5em; }
+      #seasonal nav li + li {
+        margin-left: 0.5em; }
+    #seasonal #commentary, #seasonal #transcript {
+      text-align: left; }
+    #seasonal .statline {
+      font-weight: bold; }
+    #seasonal a:link {
+      color: #6d428f;
+      text-decoration: underline; }
+    #seasonal a:visited {
+      color: #504170; }
+    #seasonal a:hover {
+      text-decoration: underline; }
+    #seasonal a:hover, #seasonal a:focus, #seasonal a:active {
+      color: #8a325e; }
+    #seasonal a:focus, #seasonal a:active {
+      outline: dashed medium #8a325e; }
+    #seasonal footer {
+      margin-bottom: 0em; }
+      #seasonal footer p {
+        margin-left: 0em;
+        text-align: left;
+        background-color: #fafafa;
+        border: solid medium #facb1e;
+        border-left: none;
+        border-right: none;
+        padding: 0.3em; }
+        #seasonal footer p:last-of-type {
+          margin-bottom: 0em; }
+      #seasonal footer .sbuttons {
+        background: none;
+        border: none; }
+    #seasonal .archive {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left; }
+    #seasonal img, #seasonal embed, #seasonal object, #seasonal video {
+      max-width: 100%; }
+    #seasonal .action {
+      font-weight: bold; }
+    #seasonal .cominavbox a:focus, #seasonal .cominavbox a:active {
+      outline: medium dashed #8a325e; }
+    #seasonal .cominavbox li img {
+      display: inline; }
+    #seasonal .cominavbox li a:active, #seasonal .cominavbox li a:focus {
+      display: block;
+      outline: dashed medium #b88fb4; }
+      #seasonal .cominavbox li a:active img, #seasonal .cominavbox li a:focus img {
+        background-color: #b88fb4; }
+    #seasonal .cominavbox li img {
+      background-color: #8a325e;
+      display: block; }
+      #seasonal .cominavbox li img:active, #seasonal .cominavbox li img:focus, #seasonal .cominavbox li img:hover {
+        background-color: #b88fb4; }
+    #seasonal .char {
+      text-align: left; }
+      #seasonal .char dt:after {
+        content: ":"; }
+      #seasonal .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #seasonal .char dd {
+        margin-left: 0em; }
+      #seasonal .char dt, #seasonal .char dd {
+        display: inline;
+        white-space: pre; }
+    #seasonal * + * {
+      margin-top: 1em; }
+    #seasonal header {
+      margin-top: 0em; }
+    #seasonal main div, #seasonal main section {
+      padding: 1em 0.5em; }
+    #seasonal main .main, #seasonal main .allchars, #seasonal main .char {
+      margin-top: 2em; }
+    #seasonal .intro {
+      border: none;
+      background: none;
+      margin: 0em;
+      padding: 0 0;
+      width: 100%; }
+      #seasonal .intro img {
+        display: inline;
+        margin: 0em;
+        padding: 0em; }
+    #seasonal div + div, #seasonal section + section {
+      margin-top: 2em; } }
+  @media screen and (min-width: 40em) {
+    #seasonal body {
+      font-size: 1.5em;
+      margin: 0;
+      padding-bottom: 0; }
+    #seasonal main div, #seasonal main section, #seasonal figure, #seasonal .archive, #seasonal h1 {
+      border: solid thick #b88fb4; }
+    #seasonal figure {
+      padding: 1em;
+      margin: 0em 1em;
+      background-color: #fafafa;
+      background-image: url("beach_sand.png"); }
+      #seasonal figure + .cominavbox {
+        margin-top: 1.5em;
+        margin-bottom: 0em; }
+    #seasonal main {
+      width: 80%;
+      margin-left: 2em;
+      margin-bottom: 2em; }
+    #seasonal main div, #seasonal main section {
+      margin-left: 1em;
+      padding: 0em;
+      padding: 0.1rem 1rem 0.2rem 1rem;
+      width: 80%; }
+    #seasonal .cominavbox, #seasonal .cominavbox li {
+      margin: 1em; }
+    #seasonal h1 {
+      font-size: 1.5em;
+      max-width: 70%;
+      margin: auto;
+      margin-top: 2em;
+      margin-bottom: 0em; }
+    #seasonal h2 {
+      font-size: 1.2em; }
+    #seasonal h3 {
+      font-size: 1em; }
+    #seasonal nav li {
+      padding: 1em 1em 0.8em 1em;
+      margin: 0em; }
+      #seasonal nav li + li {
+        margin-left: 1em; }
+    #seasonal .statline {
+      font-size: 0.8em;
+      text-align: right; }
+    #seasonal footer {
+      margin: 1em 0em 0em 0em;
+      padding: 0.2em; }
+      #seasonal footer p {
+        font-size: 0.7em;
+        text-align: left;
+        margin-left: 0.5em;
+        border: solid medium #facb1e; }
+    #seasonal .archive {
+      margin: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+      width: 90%; }
+    #seasonal .main {
+      padding: 0.5em;
+      margin: auto;
+      margin-top: 2em;
+      width: 80%;
+      text-align: left; }
+      #seasonal .main p {
+        margin-left: 0.5em; }
+    #seasonal .intro {
+      margin: 0em; }
+    #seasonal .intro + .intro {
+      border-top: dashed thin #504170; }
+    #seasonal .char img {
+      float: left;
+      margin: 0em 1em; } }
+
+/*# sourceMappingURL=style.css.map */

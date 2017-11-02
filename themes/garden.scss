@@ -1,0 +1,310 @@
+@import "shadow.scss";
+@media screen {
+/*Garden*/
+    #garden {
+    $leaf: #339966;
+    $petal: #ffccff;
+    $bg: #fefffe;
+    $textc: #202f20;
+    /* Default (small) screens */
+        * {
+            box-sizing: content-box;
+        }
+        body {
+            background: $bg;
+            color: $textc;
+            text-align: center;
+            font-size: 1.5em;
+            font-family: serif;
+            margin: 0em;
+        }
+
+        main, figure {
+            margin-left: 0em;
+            padding-left: 0em;
+        }
+
+        h1 {
+            margin: 0em;
+            font-size: 1.2em;
+        }
+
+        h2 {
+            font-size: 1em;
+        }
+        figure {
+            padding: 0.5em;
+            text-align: center;
+            border: none;
+        }
+        .cominavbox, .cominavbox li {
+            display: inline-block;
+            padding: 0em;
+        }
+
+        * + * {
+            margin-top: 0.5em
+        }
+
+        /*TODO: Fix the skip link hiding method*/
+        #skippy {
+            text-align: left;
+            margin-bottom: 0em;
+        }
+        #skippy a, #skippy a:hover, #skippy a:visited {
+        position:absolute;
+        left:-10000px;
+        top:auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+        }
+
+        #skippy a:active, #skippy a:focus {
+          position: static;
+          height: auto;
+          width: auto;
+          font-size: 1em;
+          margin-top: 0em;
+          color: #00f;
+        }
+        
+        nav {
+            background: url("leaf.png") repeat-x 0% 100%;
+            margin-bottom: 1em;
+            padding-bottom: 1em;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        #commentary, #transcript {
+            text-align: left;
+        }
+
+        .statline {
+            font-weight: bold;
+        }
+
+        a:link {
+            color: #214184;
+            text-decoration: underline
+        }
+
+        a:visited {
+            color: #5c3566;
+        }
+
+        a:hover, a:focus, a:active {
+            color: #c00;
+        }
+
+        footer p {
+            margin-left: 0em;
+            text-align: left;
+        }
+
+        .archive {
+            display: inline-block;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        main div, main section {
+            padding: .5em 1.4em 0em 1.2em;
+            background: url("leaf.png") repeat-x 0% 0%;
+            &:first-of-type {
+                background: none;
+            }
+        }
+
+        img, embed, object, video {
+            max-width: 100%;
+        }
+
+        .archive li {
+            margin-top: 1em;
+        }
+            
+        .charname {
+            font-weight: bold;
+        }
+        
+        .action {
+            font-weight: bold;
+        }
+        
+        .char {
+            text-align: left;
+            dt {
+                font-weight: bold;
+                &:after {
+                    content: ":"
+                };
+            };
+            dd:after {
+                content: "\A"; white-space: pre;
+            };
+            dd {
+                margin-left: 0em;
+            };
+            dt, dd {
+                display: inline;
+                white-space: pre;
+            }
+        }
+
+    /*Medium screens*/
+
+        @media screen and (min-width: 40em) {
+            body {
+                margin-left: 1em;
+                /*If anyone's wondering, I took this photo myself: https://www.flickr.com/photos/earthisthering/7144481115/*/
+                background: url("my-rose.jpg") fixed 95% 95% no-repeat;
+            }            
+            
+            figure {
+                margin-left: 4em;
+                margin-top: 2em;
+                /*I feel gross using px, but it is based on the actual image dimensions...*/
+                border: solid thick $petal;
+                border-image-slice: 60 93 60 93;
+                border-image-width: 50px 93px 50px 93px;
+                border-image-outset: 0em 2em 1em 2em;
+                border-image-repeat: round round;
+                border-image-source: url("rose-thorn-frame.png");
+                img {
+                    margin-top: 1em;
+                }
+            }
+            
+            figcaption {
+                margin-bottom: 1em;
+            }
+
+            .cominavbox, .cominavbox li {
+                margin: 0em 1em 0em 1em;
+            }
+
+            figure + .cominavbox {
+                margin-top: 1em;
+            }
+
+            h1 {
+                font-size: 1.4em;
+                text-align: left;
+                text-align: center;
+            }
+
+            h2 {
+                font-size: 1.2em;
+/*                border-bottom: dotted thin $petal;*/
+                text-shadow: 0em 0em 0.1em $petal;
+                padding-bottom: 0.5em;
+                margin-bottom: 0.5em
+            }
+            
+            h3 {
+                font-size: 1em;
+            }
+            
+            nav {
+                max-width: 75%;
+                margin-left: 10%;
+                margin-bottom: 1em;
+                padding-bottom: 0.1em
+            }
+
+            nav li {
+                padding: 0.5em 0.5em 0.5em 1.5em;
+                margin: 0em;
+                background: url("lupine.png") no-repeat 0 50%;
+            }
+            
+            main {
+                /*background: $bg url("rose.jpg") no-repeat 99% 99%;*/
+                max-width: 80%;
+            }
+
+            .statline {
+                font-size: 0.8em;
+            }
+
+            footer p {
+                font-size: 0.7em;
+            }
+            
+            .action {
+                text-indent: 1em;
+            }
+
+            .archive {
+                margin: 1em;
+                padding: 1em 1em 0em 1em;
+                & h2 {
+                    margin: 0em 0em 1em 0em;
+                    padding-top: 0.5em;
+                    padding-bottom: 0em;
+                };
+                & + .archive {
+                    margin-top: 0em;
+                }
+            }
+
+            main div, main section {
+                margin: 0.5em 1em 0.5em;
+                width: 80%;
+                text-align: left;
+            }
+            
+            .main {
+                padding: 0.5em;
+                margin: auto;
+                width: 80%;
+                background: none;
+                & p {
+                    margin-left: 0em;
+                }
+            }
+            
+            .intro {
+                border: none;
+                background: none;
+                margin: 0em;
+                padding: 0em;
+                text-align: left;
+                h2 {
+                    margin-bottom: 0.5em;
+                    background: url("leaf.png") repeat-x 0% 100%;
+                };
+                img {
+                    display: inline;
+                };
+                .author {
+                    font-size: 0.8em;
+                    font-weight: bold;
+                };
+                .desc {
+                    font-weight: bold;
+                }
+            }
+            
+            .main, .intro {
+                text-align: left;
+                & p {
+                  text-align: left;
+                  margin: 1em;
+                }
+            }
+            
+            .char {
+                img {
+                    float: left;
+                    margin-right: 1em;
+                }
+            }
+
+        }
+    }
+}

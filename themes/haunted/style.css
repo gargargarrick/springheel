@@ -1,0 +1,234 @@
+@media screen {
+  /*Haunted*/
+  #haunted {
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #haunted *
+    * {
+      box-sizing: content-box; }
+    #haunted body {
+      background-color: #181029;
+      background-image: url("web2.png");
+      background-position: 100% 0;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #ccc0d4;
+      text-align: center;
+      font-size: 1.2em;
+      font-family: serif;
+      margin: 0em; }
+    #haunted main, #haunted figure {
+      margin-left: 0em;
+      padding-left: 0em; }
+    #haunted main div, #haunted main section, #haunted figure, #haunted .archive {
+      background-color: #312845;
+      padding-left: 0.5em;
+      padding-right: 0.5em; }
+    #haunted main div, #haunted main section, #haunted figure, #haunted .archive, #haunted h1 {
+      border: solid thick #07000b;
+      border-left: none;
+      border-right: none; }
+    #haunted div, #haunted section {
+      background-image: url("bat.png");
+      background-repeat: no-repeat; }
+      #haunted div#transcript, #haunted div.archive, #haunted section#transcript, #haunted section.archive {
+        background-position: 98% 98%; }
+      #haunted div#commentary, #haunted div.main, #haunted div.char, #haunted section#commentary, #haunted section.main, #haunted section.char {
+        background-position: 98% 5%; }
+    #haunted figure {
+      background-image: url("bat.png");
+      background-repeat: no-repeat;
+      background-position: 2% 99%; }
+    #haunted nav li {
+      border: solid thick #07000b; }
+    #haunted h1 {
+      margin: 0em;
+      margin-top: 1em;
+      background-color: #312845;
+      padding: 1em;
+      font-weight: normal; }
+    #haunted figure {
+      padding: 1em 0em;
+      margin: 1em 0em;
+      text-align: center; }
+    #haunted #skippy {
+      text-align: left;
+      margin: 0em; }
+    #haunted #skippy a, #haunted #skippy a:hover, #haunted #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #haunted #skippy a:active, #haunted #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #fff; }
+    #haunted nav ul {
+      padding-left: 0em; }
+    #haunted nav li {
+      display: inline-block;
+      background-color: #312845;
+      padding: 0.5em; }
+      #haunted nav li + li {
+        margin-left: 0.5em; }
+    #haunted #commentary, #haunted #transcript {
+      text-align: left; }
+    #haunted .statline {
+      font-weight: bold; }
+    #haunted a:link {
+      color: #a3c1fe;
+      text-decoration: underline; }
+    #haunted a:visited {
+      color: #fab3ff; }
+    #haunted a:hover {
+      text-decoration: underline; }
+    #haunted a:hover, #haunted a:focus, #haunted a:active {
+      color: #6dd3d6; }
+    #haunted a:focus, #haunted a:active {
+      background: #181029;
+      outline: dashed medium #6dd3d6; }
+    #haunted footer {
+      margin-bottom: 0em;
+      border-top: solid medium #312845; }
+      #haunted footer p {
+        margin-left: 0em;
+        text-align: left; }
+        #haunted footer p:last-of-type {
+          margin-bottom: 0em; }
+    #haunted .archive {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left; }
+    #haunted img, #haunted embed, #haunted object, #haunted video {
+      max-width: 100%; }
+    #haunted .action {
+      font-weight: bold; }
+    #haunted .cominavbox {
+      display: inline-block;
+      padding: 0em;
+      margin: 0em 1em; }
+      #haunted .cominavbox a:focus, #haunted .cominavbox a:active {
+        outline: medium dashed #6dd3d6; }
+    #haunted .cominavbox li {
+      display: inline-block;
+      margin: 0em;
+      max-width: 20%; }
+      #haunted .cominavbox li a:active, #haunted .cominavbox li a:focus {
+        display: block;
+        outline: dashed medium #fab3ff; }
+      #haunted .cominavbox li img {
+        display: block;
+        margin: 0em; }
+    #haunted figure + .cominavbox {
+      margin-bottom: 1em;
+      margin-top: 0em; }
+    #haunted .char {
+      text-align: left; }
+      #haunted .char dt:after {
+        content: ":"; }
+      #haunted .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #haunted .char dd {
+        margin-left: 0em; }
+      #haunted .char dt, #haunted .char dd {
+        display: inline;
+        white-space: pre; }
+    #haunted h2 {
+      font-weight: normal;
+      font-weight: bold; }
+    #haunted * + * {
+      margin-top: 1em; }
+    #haunted header {
+      margin-top: 0em; }
+    #haunted main div, #haunted main section {
+      padding: 1em 0.5em; }
+    #haunted main .main, #haunted main .allchars, #haunted main .char {
+      margin-top: 2em; }
+    #haunted .intro {
+      border: none;
+      background: none;
+      margin: 0em;
+      padding: 0 0;
+      width: 100%; }
+      #haunted .intro img {
+        display: inline;
+        margin: 0em;
+        padding: 0em; }
+    #haunted div + div, #haunted section + section {
+      margin-top: 1em; } }
+  @media screen and (min-width: 40em) {
+    #haunted body {
+      font-size: 1.5em;
+      margin: 0;
+      padding-bottom: 0; }
+    #haunted main div, #haunted main section, #haunted figure, #haunted .archive, #haunted h1 {
+      border: solid thick #07000b; }
+    #haunted figure {
+      padding: 1em;
+      margin: 0em 1em; }
+    #haunted main {
+      width: 80%;
+      margin-left: 2em;
+      margin-bottom: 2em; }
+    #haunted main div, #haunted main section {
+      margin-left: 1em;
+      padding: 0.1rem 2rem 0.2rem 2rem;
+      width: 80%; }
+    #haunted h1 {
+      font-size: 1.5em;
+      max-width: 70%;
+      margin: auto;
+      margin-top: 1em;
+      margin-bottom: 0em; }
+    #haunted h2 {
+      font-size: 1.2em; }
+    #haunted h3 {
+      font-size: 1em; }
+    #haunted nav li {
+      padding: 1em 1em 0.8em 1em;
+      margin: 0em; }
+      #haunted nav li + li {
+        margin-left: 1em; }
+    #haunted .cominavbox li {
+      margin: 0em 1em;
+      max-width: 100%; }
+    #haunted .statline {
+      font-size: 0.8em;
+      text-align: right; }
+    #haunted footer {
+      margin: 1em 0em 0em 0em;
+      padding: 0.2em; }
+      #haunted footer p {
+        font-size: 0.7em;
+        text-align: left;
+        margin-left: 0.5em; }
+    #haunted .action {
+      text-indent: 1em; }
+    #haunted .archive {
+      margin: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+      width: 90%; }
+    #haunted .main {
+      padding: 0.5em;
+      margin: auto;
+      margin-top: 2em;
+      width: 80%;
+      text-align: left; }
+      #haunted .main p {
+        margin-left: 0.5em; }
+    #haunted .intro {
+      margin: 0em; }
+    #haunted .intro + .intro {
+      border-top: dashed thin #181029; }
+    #haunted .char img {
+      float: left;
+      margin: 0em 1em; } }
+
+/*# sourceMappingURL=style.css.map */

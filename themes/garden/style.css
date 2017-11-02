@@ -1,0 +1,199 @@
+@media screen {
+  /*Garden*/
+  #garden {
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #garden * {
+      box-sizing: content-box; }
+    #garden body {
+      background: #fefffe;
+      color: #202f20;
+      text-align: center;
+      font-size: 1.5em;
+      font-family: serif;
+      margin: 0em; }
+    #garden main, #garden figure {
+      margin-left: 0em;
+      padding-left: 0em; }
+    #garden h1 {
+      margin: 0em;
+      font-size: 1.2em; }
+    #garden h2 {
+      font-size: 1em; }
+    #garden figure {
+      padding: 0.5em;
+      text-align: center;
+      border: none; }
+    #garden .cominavbox, #garden .cominavbox li {
+      display: inline-block;
+      padding: 0em; }
+    #garden * + * {
+      margin-top: 0.5em; }
+    #garden #skippy {
+      text-align: left;
+      margin-bottom: 0em; }
+    #garden #skippy a, #garden #skippy a:hover, #garden #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #garden #skippy a:active, #garden #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #00f; }
+    #garden nav {
+      background: url("leaf.png") repeat-x 0% 100%;
+      margin-bottom: 1em;
+      padding-bottom: 1em; }
+    #garden nav li {
+      display: inline-block; }
+    #garden #commentary, #garden #transcript {
+      text-align: left; }
+    #garden .statline {
+      font-weight: bold; }
+    #garden a:link {
+      color: #214184;
+      text-decoration: underline; }
+    #garden a:visited {
+      color: #5c3566; }
+    #garden a:hover, #garden a:focus, #garden a:active {
+      color: #c00; }
+    #garden footer p {
+      margin-left: 0em;
+      text-align: left; }
+    #garden .archive {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left; }
+    #garden main div, #garden main section {
+      padding: .5em 1.4em 0em 1.2em;
+      background: url("leaf.png") repeat-x 0% 0%; }
+      #garden main div:first-of-type, #garden main section:first-of-type {
+        background: none; }
+    #garden img, #garden embed, #garden object, #garden video {
+      max-width: 100%; }
+    #garden .archive li {
+      margin-top: 1em; }
+    #garden .charname {
+      font-weight: bold; }
+    #garden .action {
+      font-weight: bold; }
+    #garden .char {
+      text-align: left; }
+      #garden .char dt {
+        font-weight: bold; }
+        #garden .char dt:after {
+          content: ":"; }
+      #garden .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #garden .char dd {
+        margin-left: 0em; }
+      #garden .char dt, #garden .char dd {
+        display: inline;
+        white-space: pre; } }
+  @media screen and (min-width: 40em) {
+    #garden body {
+      margin-left: 1em;
+      /*If anyone's wondering, I took this photo myself: https://www.flickr.com/photos/earthisthering/7144481115/*/
+      background: url("my-rose.jpg") fixed 95% 95% no-repeat; }
+    #garden figure {
+      margin-left: 4em;
+      margin-top: 2em;
+      /*I feel gross using px, but it is based on the actual image dimensions...*/
+      border: solid thick #ffccff;
+      border-image-slice: 60 93 60 93;
+      border-image-width: 50px 93px 50px 93px;
+      border-image-outset: 0em 2em 1em 2em;
+      border-image-repeat: round round;
+      border-image-source: url("rose-thorn-frame.png"); }
+      #garden figure img {
+        margin-top: 1em; }
+    #garden figcaption {
+      margin-bottom: 1em; }
+    #garden .cominavbox, #garden .cominavbox li {
+      margin: 0em 1em 0em 1em; }
+    #garden figure + .cominavbox {
+      margin-top: 1em; }
+    #garden h1 {
+      font-size: 1.4em;
+      text-align: left;
+      text-align: center; }
+    #garden h2 {
+      font-size: 1.2em;
+      /*                border-bottom: dotted thin $petal;*/
+      text-shadow: 0em 0em 0.1em #ffccff;
+      padding-bottom: 0.5em;
+      margin-bottom: 0.5em; }
+    #garden h3 {
+      font-size: 1em; }
+    #garden nav {
+      max-width: 75%;
+      margin-left: 10%;
+      margin-bottom: 1em;
+      padding-bottom: 0.1em; }
+    #garden nav li {
+      padding: 0.5em 0.5em 0.5em 1.5em;
+      margin: 0em;
+      background: url("lupine.png") no-repeat 0 50%; }
+    #garden main {
+      /*background: $bg url("rose.jpg") no-repeat 99% 99%;*/
+      max-width: 80%; }
+    #garden .statline {
+      font-size: 0.8em; }
+    #garden footer p {
+      font-size: 0.7em; }
+    #garden .action {
+      text-indent: 1em; }
+    #garden .archive {
+      margin: 1em;
+      padding: 1em 1em 0em 1em; }
+      #garden .archive h2 {
+        margin: 0em 0em 1em 0em;
+        padding-top: 0.5em;
+        padding-bottom: 0em; }
+      #garden .archive + .archive {
+        margin-top: 0em; }
+    #garden main div, #garden main section {
+      margin: 0.5em 1em 0.5em;
+      width: 80%;
+      text-align: left; }
+    #garden .main {
+      padding: 0.5em;
+      margin: auto;
+      width: 80%;
+      background: none; }
+      #garden .main p {
+        margin-left: 0em; }
+    #garden .intro {
+      border: none;
+      background: none;
+      margin: 0em;
+      padding: 0em;
+      text-align: left; }
+      #garden .intro h2 {
+        margin-bottom: 0.5em;
+        background: url("leaf.png") repeat-x 0% 100%; }
+      #garden .intro img {
+        display: inline; }
+      #garden .intro .author {
+        font-size: 0.8em;
+        font-weight: bold; }
+      #garden .intro .desc {
+        font-weight: bold; }
+    #garden .main, #garden .intro {
+      text-align: left; }
+      #garden .main p, #garden .intro p {
+        text-align: left;
+        margin: 1em; }
+    #garden .char img {
+      float: left;
+      margin-right: 1em; } }
+
+/*# sourceMappingURL=style.css.map */

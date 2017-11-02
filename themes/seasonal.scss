@@ -1,0 +1,403 @@
+@media screen {
+/*seasonal*/
+    #seasonal {
+    /*Spring*/
+    /*$bbg: #4866c5;
+    $mbg: #fafafa;
+    $la: #73cfd9;
+    $ma: #429ad7;
+    $dt: #eee;
+    $lt: #111;
+    $bgi: url("spring.png");
+    $aa: #315040;
+    $av: #324b9e;
+    $ahaf: #3c7949;
+    $anh: #46a946;*/
+
+    /*Summer*/
+    /*$bbg: #4866c5;
+    $mbg: #fafafa;
+    $la: #73cfd9;
+    $ma: #429ad7;
+    $dt: #eee;
+    $lt: #111;
+    $bgi: url("summer.png");
+    $aa: #315040;
+    $av: #324b9e;
+    $ahaf: #3c7949;
+    $anh: #46a946;*/
+
+    /*Fall*/
+    $bbg: #504170;
+    $mbg: #fed4aa;
+    $la: #c26e3d;
+    $ma: #c26e3d;
+    $dt: #180e0e;
+    $lt: #111;
+    $bgi: url("autumn.png");
+    $aa: #6d2e2e;
+    $av: #42365d;
+    $ahaf: #a93444;
+    $anh: #f88f32;*
+
+    /*Winter*/
+    /*$bbg: #504170;
+    $mbg: #fafafa;
+    $la: #facb1e;
+    $ma: #b88fb4;
+    $dt: #180e0e;
+    $lt: #111;
+    $bgi: url("winter.png");
+    $aa: #6d428f;
+    $av: #504170;
+    $ahaf: #8a325e;
+    $anh: #b88fb4;*/
+
+    /* Default (small) screens */
+        * {
+            box-sizing: content-box;
+        }
+        body {
+            background-color: $bbg;
+            background-image: $bgi;
+            background-position: 0 100%;
+            background-repeat: repeat-x;
+            background-attachment: fixed;
+            color: $lt;
+            text-align: center;
+            font-size: 1.2em;
+            font-family: sans-serif;
+            margin: 0em;
+        }
+
+        main, figure {
+            margin-left: 0em;
+            padding-left: 0em;
+        }
+
+        main div, figure, .archive {
+            background-color: $mbg;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+        }
+
+        main div, main section, figure, .archive, h1 {
+            border: solid thick $ma;
+            border-left: none;
+            border-right: none;
+        }
+        
+        nav li {
+            border: solid thick $la;
+        }
+
+        h1 {
+            margin: 0em;
+            margin-top: 1em;
+            background-color: $mbg;
+            padding: 1em;
+        }
+        figure {
+            padding: 1em 0em;
+            margin: 1em 0em;
+            text-align: center;
+        }
+        .cominavbox, .cominavbox li {
+            display: inline-block;
+            padding: 0em;
+            margin: 1em;
+        }
+
+        /*TODO: Fix the skip link hiding method*/
+        #skippy {
+            text-align: left;
+            margin: 0em;
+        }
+        #skippy a, #skippy a:hover, #skippy a:visited {
+            position:absolute;
+            left:-10000px;
+            top:auto;
+            width:1px;
+            height:1px;
+            overflow:hidden;
+        }
+
+        #skippy a:active, #skippy a:focus {
+          position: static;
+          height: auto;
+          width: auto;
+          font-size: 1em;
+          margin-top: 0em;
+          color: #fff;
+        }
+
+        nav ul {
+            padding-left: 0em;
+        }
+
+        nav li {
+            display: inline-block;
+            background-color: $mbg;
+            padding: 0.5em;
+            + li {
+                margin-left: 0.5em;
+            }
+        }
+
+        #commentary, #transcript {
+            text-align: left;
+        }
+
+        .statline {
+            font-weight: bold;
+        }
+
+        a:link {
+            color: $aa;
+            text-decoration: underline
+        }
+
+        a:visited {
+            color: $av;
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        a:hover, a:focus, a:active {
+            color: $ahaf;
+        }
+
+        a:focus, a:active {
+            outline: dashed medium $ahaf;
+        }
+
+        footer {
+            margin-bottom: 0em;
+            p {
+                margin-left: 0em;
+                text-align: left;
+                background-color: $mbg;
+                border: solid medium $la;
+                border-left: none;
+                border-right: none;
+                padding: 0.3em;
+                &:last-of-type {
+                    margin-bottom: 0em
+                }
+            }
+            .sbuttons {
+                background: none;
+                border: none;
+            }
+        }
+
+        .archive {
+            display: inline-block;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        img, embed, object, video {
+            max-width: 100%;
+        }
+
+        .action {
+            font-weight: bold;
+        }
+
+        .cominavbox {
+            a:focus, a:active {
+                outline: medium dashed $ahaf;
+            }
+        }
+
+        .cominavbox li img {
+            display: inline;
+        }
+
+        .cominavbox li {
+            a:active, a:focus {
+                display: block;
+                outline: dashed medium $anh;
+                img {
+                    background-color: $anh;
+                }
+            };
+            img {
+                background-color: $ahaf;
+                display: block;
+                &:active, &:focus, &:hover {
+                    background-color: $anh;
+                }
+            }
+        }
+
+        .char {
+            text-align: left;
+            dt:after {
+                content: ":"
+            };
+            dd:after {
+                content: "\A"; white-space: pre;
+            };
+            dd {
+                margin-left: 0em;
+            };
+            dt, dd {
+                display: inline;
+                white-space: pre;
+            };
+        }
+
+        * + * {
+            margin-top: 1em
+        }
+        
+        header {
+            margin-top: 0em;
+        }
+
+        main {
+            div, section {
+                padding: 1em 0.5em;
+            }
+            .main, .allchars, .char {
+                margin-top: 2em;
+            }
+        }
+
+        .intro {
+            border: none;
+            background: none;
+            margin: 0em;
+            padding: 0 0;
+            width: 100%;
+            & img {
+                display: inline;
+                margin: 0em;
+                padding: 0em;
+            };
+        }
+
+        div + div, section + section {
+            margin-top: 2em;
+        }
+
+    /*Medium screens*/
+
+        @media screen and (min-width: 40em) {
+            body {
+                font-size: 1.5em;
+                margin: 0;
+                padding-bottom: 0;
+            }
+
+            main div, main section, figure, .archive, h1 {
+                border: solid thick $ma;
+            }
+
+            figure {
+                padding: 1em;
+                margin: 0em 1em;
+                background-color: $mbg;
+                & + .cominavbox {
+                    margin-top: 1.5em;
+                    margin-bottom: 0em;
+                }
+            }
+
+            main {
+                width: 80%;
+                margin-left: 2em;
+                margin-bottom: 2em;
+            }
+
+            main div, main section {
+                margin-left: 1em;
+                padding: 0em;
+                padding: 0.1rem 1rem 0.2rem 1rem;
+                width: 80%;
+            }
+
+            .cominavbox, .cominavbox li {
+                margin: 1em;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                max-width: 70%;
+                margin: auto;
+                margin-top: 2em;
+                margin-bottom: 0em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            h3 {
+                font-size: 1em;
+            }
+
+            nav li {
+                padding: 1em 1em 0.8em 1em;
+                margin: 0em;
+                & + li {
+                    margin-left: 1em;
+                }
+            }
+
+            .statline {
+                font-size: 0.8em;
+                text-align: right;
+            }
+
+            footer {
+                margin: 1em 0em 0em 0em;
+                padding: 0.2em;
+                & p {
+                    font-size: 0.7em;
+                    text-align: left;
+                    margin-left: 0.5em;
+                    border: solid medium $la;
+                }
+            }
+
+            .archive {
+                margin: 1em;
+                padding-left: 1em;
+                padding-right: 1em;
+                width: 90%;
+            }
+
+            .main {
+                padding: 0.5em;
+                margin: auto;
+                margin-top: 2em;
+                width: 80%;
+                text-align: left;
+                & p {
+                    margin-left: 0.5em;
+                }
+            }
+
+            .intro {
+                margin: 0em;
+            }
+
+            .intro + .intro {
+                border-top: dashed thin $bbg;
+            }
+
+            .char {
+                img {
+                    float: left;
+                    margin: 0em 1em;
+                }
+            }
+
+        }
+    }
+}

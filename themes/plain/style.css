@@ -1,0 +1,143 @@
+@media screen {
+  /*Plain*/
+  #plain {
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #plain * {
+      box-sizing: content-box; }
+    #plain body {
+      background-color: #fdfdfd;
+      color: #222;
+      text-align: center;
+      font-size: 1.2em;
+      font-family: sans-serif; }
+    #plain main, #plain figure {
+      margin-left: 0em;
+      padding-left: 0em; }
+    #plain h1 {
+      margin: 0em; }
+    #plain figure {
+      padding: 1em;
+      text-align: center;
+      border: none; }
+    #plain .cominavbox, #plain .cominavbox li {
+      display: inline-block;
+      padding: 0em; }
+    #plain p + p, #plain li + li {
+      margin-top: 0.5em; }
+    #plain #skippy {
+      text-align: left; }
+    #plain #skippy a, #plain #skippy a:hover, #plain #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #plain #skippy a:active, #plain #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #0000ff; }
+    #plain nav li {
+      display: inline-block; }
+    #plain #commentary, #plain #transcript {
+      text-align: left; }
+    #plain .statline {
+      font-weight: bold; }
+    #plain a:link {
+      color: #214184;
+      text-decoration: underline; }
+    #plain a:visited {
+      color: #5c3566; }
+    #plain a:hover {
+      text-decoration: underline; }
+    #plain a:hover, #plain a:focus, #plain a:active {
+      color: #cc0000; }
+    #plain footer p {
+      margin-left: 0em;
+      text-align: left; }
+    #plain .archive {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left; }
+    #plain img, #plain embed, #plain object, #plain video {
+      max-width: 100%; }
+    #plain .action {
+      font-weight: bold; }
+    #plain .charname {
+      font-weight: bold; }
+    #plain .char dt:after {
+      content: ":"; }
+    #plain .char dd:after {
+      content: "\A";
+      white-space: pre; }
+    #plain .char dd {
+      margin-left: 0em; }
+    #plain .char dt, #plain .char dd {
+      display: inline;
+      white-space: pre; } }
+  @media screen and (min-width: 40em) {
+    #plain body {
+      font-size: 1.5em;
+      margin-left: 1em; }
+    #plain figure {
+      margin-left: 1em;
+      margin-top: 0em;
+      margin-bottom: 0em; }
+    #plain main div, #plain main section {
+      padding-left: 1em;
+      padding-right: 1em;
+      width: 80%;
+      margin-top: 1em; }
+    #plain div + div {
+      margin-bottom: 0em;
+      margin-top: 0em; }
+    #plain .cominavbox, #plain .cominavbox li {
+      margin-left: 1em;
+      margin-right: 1em;
+      margin-top: 0.5em;
+      margin-bottom: 0em; }
+    #plain figure + .cominavbox {
+      margin-top: 0em; }
+    #plain figure {
+      margin-left: 1em; }
+    #plain h1 {
+      font-size: 1.5em; }
+    #plain h2 {
+      font-size: 1.2em; }
+    #plain h3 {
+      font-size: 1em; }
+    #plain nav li {
+      padding-top: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 0.8em;
+      margin: 0em; }
+    #plain .statline {
+      font-size: 0.8em;
+      text-align: right; }
+    #plain footer p {
+      font-size: 0.7em; }
+    #plain .archive {
+      margin-left: 1em;
+      margin-right: 1em;
+      padding-left: 1em;
+      padding-right: 1em; }
+    #plain .main {
+      padding: 0.5em;
+      margin: auto;
+      width: 50%;
+      text-align: center; }
+      #plain .main p {
+        margin-left: 0em; }
+    #plain .char {
+      text-align: left; }
+      #plain .char img {
+        float: left;
+        margin: 1em; } }
+
+/*# sourceMappingURL=style.css.map */
