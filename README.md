@@ -11,6 +11,8 @@ Whether it's static site generators or Wordpress plugins, most existing software
 
 Springheel is built with Python 3.5, [Feedgenerator](https://github.com/lkiesow/python-feedgen), and [arrow](https://github.com/crsmithdev/arrow/).
 
+Keep in mind that I'm self-taught \([obligatory xkcd](http://www.xkcd.com/1513/)\) and maybe don't look too closely at the actual code.
+
 ## Features
 
 * Easy to use. Updating is a matter of putting a couple of files in a folder and running a single Python script.
