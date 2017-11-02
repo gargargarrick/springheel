@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="{lang}" id="{site_style}">
+<head>
+<title>{header_title}</title>
+<meta charset="utf-8"/>
+<meta name="robots" content="index,follow" />
+<meta name="viewport" content="initial-scale=1"/>
+<meta name="generator" content="Springheel"/>
+<link rel="stylesheet" type="text/css" href="assets/style.css" title="デフォルト"/>
+<link rel="icon" type="image/gif" href="assets/icon.gif"/>
+<link rel="home" href="index.html" title="ホーム"/>
+<link rel="contents" href="archive.html" title="目次"/>
+{linkrels}
+</head>
+<body>
+<p id="skippy"><a href="#maincontent">内容へ</a></p>
+
+<header>
+<img id="banner" role="banner" src="{banner}" alt="{banner_alt}"/>
+<nav aria-label="Navigation">
+{top_site_nav}
+</nav>
+<h1 id="comictitle">{title_line}</h1>
+</header>
+
+<main role="main" aria-labelledby="comictitle" id="maincontent">
+{chars}
+</main>
+<footer role="contentinfo">
+<p>&copy; {year} {author}. {clicense}</p>
+<p><a href="http://github.com/gargargarrick/springheel">Springheel</a>で作りました。</p>
+<p class="sbuttons"><a href="feed.xml"><img src="socialbuttons/rss.png" alt="RSSフィード" title="RSSフィード" width="24" height="24" /></a> {icons}</p>
+</footer>
+</body>
+</html>

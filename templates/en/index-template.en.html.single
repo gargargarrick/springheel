@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="{lang}" id="{site_style}">
+<head>
+<title>{header_title}</title>
+<meta charset="utf-8"/>
+<meta name="robots" content="index,follow" />
+<meta name="viewport" content="initial-scale=1"/>
+<meta name="generator" content="Springheel"/>
+<link rel="stylesheet" type="text/css" href="assets/style.css" title="Standard"/>
+<link rel="icon" type="image/gif" href="assets/icon.gif"/>
+<link rel="home" href="index.html" title="Home"/>
+<link rel="contents" href="archive.html" title="Contents"/>
+{linkrels}
+</head>
+<body>
+<p id="skippy"><a href="#maincontent">Skip to main content</a></p>
+
+<header>
+    <img id="banner" role="banner" src="{banner}" alt="{category}"/>
+    <nav aria-label="Navigation">
+{top_site_nav}
+    </nav>
+    <h1 id="comictitle">{site_title}</h1>
+</header>
+
+<main role="main" aria-labelledby="comictitle" id="maincontent">
+    <div class="main">
+        <p><a href="{latest}">Go to latest page</a></p>
+        <p><a href="{first}">Go to first page</a></p>
+        <p><a href="{archive}">Go to archive</a></p>
+    </div>
+</main>
+<footer role="contentinfo">
+    <p>&copy; {year} {author}. {clicense}</p>
+    <p>Built with <a href="http://github.com/gargargarrick/springheel">Springheel</a>.</p>
+    <p class="sbuttons"><a href="feed.xml"><img src="socialbuttons/rss.png" alt="RSS Feed" title="RSS Feed" width="24" height="24" /></a>  {icons}</p>
+</footer>
+</body>
+</html>
+

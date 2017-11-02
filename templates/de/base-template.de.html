@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="{lang}" id="{site_style}">
+<head>
+<title>{header_title}</title>
+<meta charset="utf-8"/>
+<meta name="robots" content="index,follow" />
+<meta name="viewport" content="initial-scale=1"/>
+<meta name="generator" content="Springheel"/>
+<link rel="stylesheet" type="text/css" href="assets/style.css" title="Normal"/>
+<link rel="icon" type="image/gif" href="assets/icon.gif"/>
+<link rel="home" href="index.html" title="Hauptseite"/>
+<link rel="contents" href="archive.html" title="Comicarchiv"/>
+{linkrels}
+</head>
+<body>
+<p id="skippy"><a href="#comic">Zum Inhalt</a></p>
+
+<header>
+<img id="banner" role="banner" src="{banner}" alt="{category}"/>
+
+<nav aria-label="Navigation">
+{top_site_nav}
+</nav>
+<h1 id="comictitle">{h1_title}</h1>
+</header>
+
+<main role="main" aria-labelledby="comictitle">
+
+{top_nav}
+
+<!--PAGE-->
+<figure class="comic" id="comic">
+<img src="{img_path}" alt="Seite {page}"/>
+<figcaption>{alt_text}</figcaption>
+</figure>
+<!--END PAGE-->
+
+{bottom_nav}
+
+<!--COMMENT AREA-->
+<div role="region" id="commentary" aria-label="Kommentar">
+<h2>Kommentar</h2>
+<p>{commentary}</p>
+{statline} <a href="{metadatafile}">Metadaten</a></p>
+</div>
+<!--CONCLUDE COMMENT AREA-->
+
+<!--TRANSCRIPT-->
+{tb}
+<!--CONCLUDE TRANSCRIPT-->
+</main>
+<footer role="contentinfo">
+{copyright_statement}
+<p>Mit <a href="http://github.com/gargargarrick/springheel">Springheel</a> gemacht./p>
+<p class="sbuttons"><a href="feed.xml"><img src="socialbuttons/rss.png" alt="RSS-Feed" title="RSS-Feed" width="24" height="24" /></a>  {icons}</p>
+</footer>
+</body>
+</html>
