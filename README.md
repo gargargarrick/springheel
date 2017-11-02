@@ -25,10 +25,6 @@ Springheel is built with Python 3.5, [Feedgenerator](https://github.com/lkiesow/
 
 Springheel requires at least **Python 3.**
 
-To install from PyPi, simply run
-
-    $ pip install springheel
-
 If you want to build from the git source, you'll need the following dependencies:
 
 * [Feedgenerator](https://github.com/lkiesow/python-feedgen)
