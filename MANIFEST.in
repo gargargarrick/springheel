@@ -1,0 +1,13 @@
+include README.txt
+include AUTHORS
+include LICENSE
+include jackie.png
+include springheel-icon.png
+include springheel-logo.png
+include jackie.svg
+include springheel-logo.svg
+include springheel/conf.py
+include springheel/arrows/*
+include springheel/socialbuttons/*
+recursive-include springheel/templates *
+recursive-include springheel/themes *
