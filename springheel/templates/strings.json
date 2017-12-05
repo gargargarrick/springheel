@@ -13,7 +13,9 @@
         "ja":"キャラクター"
     },
     "caption_s":{
-        "en":"Creator's Commentary"
+        "en":"Creator's Commentary",
+        "de":"Kommentar",
+        "ja":"解説"
     },
     "transcript_s":{
         "en":"Transcript",
@@ -24,6 +26,11 @@
         "en":"Archives",
         "de":"Comicarchiv",
         "ja":"バックナンバー"
+    },
+    "tags_s": {
+        "en":"Tags",
+        "de":"Tags",
+        "ja":"タグ"
     },
     "extra_s":{
         "en":"Extras",
@@ -72,14 +79,17 @@
     },
     "complete_s":{
         "en":"Complete",
+        "de":"Fertig",
         "ja":"完結"
     },
     "inprogress_s":{
         "en":"In-progress",
+        "de":"Laufend",
         "ja":"進行中"
     },
     "hiatus_s":{
         "en":"On hiatus",
+        "de":"In die Pause",
         "ja":"中断中"
     },
     "statline_s":{
@@ -91,5 +101,10 @@
     },
     "cc":{
         "en":"<a rel='license' href='{license_uri}'></a><span xmlns:dct='http://purl.org/dc/terms/' href='http://purl.org/dc/dcmitype/StillImage' property='dct:title' rel='dct:type'>{category}</span> by <a xmlns:cc='http://creativecommons.org/ns#' href='{base_url}' property='cc:attributionName' rel='cc:attributionURL'>{author}</a> is licensed under a <a rel='license' href='{license_uri}'>{clicense} License</a>."
+    },
+    "no_transcript":{
+    "en":"The author has not provided a transcript for this comic.",
+    "de":"Keine Abschrift existiert.",
+    "ja":"トランスクリプトがありません。"
     }
 }

@@ -19,7 +19,7 @@
 
 import os
 
-sep = os.linesep
+sep = "\n"
 
 def parseChars(charfile):
     ##fn = input("File name? > ")

@@ -22,21 +22,25 @@ import os
 ##Retrieve the transcript file.
 def readText(file_name):
     try:
-        f = open(file_name, "r")
+        f = open(file_name, "r", encoding="utf-8")
         try:
-            textToRead = f.read()
+            text_to_read = f.read()
         finally:
             f.close()
+        if text_to_read != "":
+            return(text_to_read)
+        else:
+            return("No transcript file found.")
     except IOError:
-        pass
-    return textToRead
-
-##TODO: functionify
+        return("No transcript file found.")
 
 def makeTranscript(file_name):
     raw_transcript = readText(file_name)
+    
+    if raw_transcript == "No transcript file found.":
+        return(raw_transcript)
 
-    sep = os.linesep
+    sep = "\n"
 
     ##separate the individual lines
     sep_transcript = raw_transcript.split(sep)
@@ -71,6 +75,6 @@ def makeTranscript(file_name):
             first_pass.append(charname_string)
         curr_loc += 1
 
-    sep = os.linesep
+    sep = "\n"
     second_pass = sep.join(first_pass)
     return(second_pass)

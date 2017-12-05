@@ -21,8 +21,6 @@ import os
 import springheel.parsemeta
 
 def getComics():
-    ##Demo values.
-    series = "Mimi and Eunice"
 
     original_path = os.getcwd()
 

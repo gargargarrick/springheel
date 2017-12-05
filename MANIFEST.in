@@ -1,4 +1,7 @@
-include README.txt
+include README.md
+include HOWTO.md
+include character-example.png
+include transcript-example.png
 include AUTHORS
 include LICENSE
 include jackie.png

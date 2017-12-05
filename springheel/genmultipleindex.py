@@ -20,7 +20,7 @@
 import os
 from slugify import slugify
 
-sep = os.linesep
+sep = "\n"
 
 def genMultipleIndex(comics,characters_page,translated_strings):
     print(characters_page)
@@ -32,7 +32,7 @@ def genMultipleIndex(comics,characters_page,translated_strings):
     gofirst_s = translated_strings["gofirst_s"]
 
     if characters_page == True:
-        character_s = "Characters"
+        character_s = translated_strings["char_s"]
 
     ltemplate = ["<h2>{category}</h2>",'<img src="{header}" alt="{category}" />',
                     '<p class="author">by {author}</p>','<p class="desc">{desc} (<span class="status">{status}</span>)</p>',

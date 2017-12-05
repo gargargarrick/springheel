@@ -5,7 +5,7 @@ def readme():
         return f.read()
 
 setup(name='springheel',
-      version='0.1',
+      version='0.2',
       description='Static site generator for webcomics',
       long_description="A simple static site generator designed for webcomics",
       classifiers=[
@@ -26,6 +26,9 @@ setup(name='springheel',
           'arrow',
           'awesome-slugify',
       ],
-      scripts=['bin/springheel-init','bin/springheel-build'],
+      entry_points = {
+          'console_scripts': ['springheel-init=springheel.command_line:init',
+                              'springheel-build=springheel.command_line:build']
+          },
       include_package_data=True,
       zip_safe=False)

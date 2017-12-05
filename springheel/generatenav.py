@@ -40,9 +40,6 @@ def navGen(navdirection,page_int,first_page,last_page,first,final,series_slug,si
     if page_int not in strips:
         print("""Building failed!\n\nNavigation could not be built because %s is an invalid page number. The .meta value "page" may have been set to something incorrect, or the scan may have failed to detect a comic. Please double-check.""" % (page_int))
 
-    navl = [' <ul class="cominavbox">']
-    linkl = [""" <link rel="home" href="index.html" title="Home">"""]
-
     if page_int == last_page:
         final = True
     elif page_int == 1:
@@ -54,6 +51,10 @@ def navGen(navdirection,page_int,first_page,last_page,first,final,series_slug,si
     prev_s = translated_strings["prev_s"]
     next_s = translated_strings["next_s"]
     last_s = translated_strings["last_s"]
+    home_s = translated_strings["home_s"]
+
+    navl = [' <ul class="cominavbox">']
+    linkl = [""" <link rel="home" href="index.html" title="{home_s}">""".format(home_s=home_s),"""<link rel="alternate" type="application/rss+xml" title="RSS" href="feed.xml">"""]
 
     image_template = """<li><a href="{series_slug}_{page}.html"><img src="arrows/{site_style}_{relation}.png" alt="{image_string}" title="{image_string}" /></a></li>"""
     linkrel_template = """<link rel="{relation}" href="{series_slug}_{page}.html" title="{page_string}">"""

@@ -28,7 +28,7 @@ import springheel.parseconf
 ##Retrieve the metadata file.
 def readText(file_name):
     try:
-        with open(file_name, "r") as f:
+        with open(file_name, "r", encoding="utf-8") as f:
             textToRead = f.readlines()
     except IOError:
         print("An I/O error has occurred.")

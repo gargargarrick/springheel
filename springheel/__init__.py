@@ -74,13 +74,8 @@ def makeFilename(series_slug,page):
     file_name = str("_".join(file_name_components)+".html")
     return(file_name)
 
-
-def getLineSep():
-    return(os.linesep)
-
-
 def build():
-    sep = getLineSep()
+    sep = "\n"
     sitewide_conf = parseconf.parseConf("conf.py")
     image_rename_pattern = str(sitewide_conf["image_rename_pattern"])
 
@@ -146,6 +141,9 @@ def build():
 
     if single == True:
         last_page,first_page = checkExtremes(all_page_ints)
+        cat = comics_base[0]["metadata"]["category"]
+        cats_raw = [cat]
+        cats_w_pages = [{'category':cat, 'first_page': first_page, 'last_page': last_page}]
     else:
         cats_raw = []
         cats_w_pages = []
@@ -212,6 +210,8 @@ def build():
             i["transcript"])
         transcript = parsetranscript.makeTranscript(
             transcript_file)
+        if transcript == "No transcript file found.":
+            transcript = translated_strings["no_transcript"]
         conf_file = os.path.join(
             i_path,
             meta["conf"])
@@ -268,7 +268,6 @@ def build():
 
         if match.chapters != False:
             match.chapters_list = springheel.parseconf.getChapters(match.chapters_file)
-            print(match.chapters_list)
 
         title = meta["title"]
         series_slug = slugs[1]
@@ -290,7 +289,7 @@ def build():
             if clicense.lower() == "public domain" or "publicdomain" in license_uri:
                 publicdomain = True
                 ## Creative Commons Public Domain Waiver
-                ccpdw = translated_strings("ccpdw")
+                ccpdw = translated_strings["ccpdw"]
                 license_s = ccpdw.format(
                     site_url=base_url,
                     author=author,
@@ -395,8 +394,10 @@ def build():
 
         stat_line = """<p class="statline">{stat_s}""".format(stat_s=stat_s)
 
-        if "tags" in meta.keys() == True:
-            tline = " &mdash; Tags: {tags} &mdash; ".format(tags=meta["tags"])
+        tags_in_keys = "tags" in meta.keys()
+        if tags_in_keys == True:
+            tline = " &mdash; {tags_s}: {tags} &mdash; ".format(tags_s=translated_strings["tags_s"],
+                                                                tags=meta["tags"])
             stat_line = stat_line+tline
 
         transcript_block = ["<!--TRANSCRIPT--> ", '<div role="region" id="transcript" aria-label="Transcript"><h2>{transcript_s}</h2>'.format(transcript_s = translated_strings["transcript_s"])]
@@ -453,6 +454,7 @@ def build():
             base_template = f.read()
 
         next_page=str(page_int+1)
+
         statline = stat_line
         if sitewide_conf["social_icons"] == "True":
             icons = springheel.process_icons.getButtons(sitewide_conf)[1]
@@ -503,9 +505,10 @@ def build():
             titleslug=title_slug,
             date=date,
             ext="transcript")
-        new_transcr_path = os.path.join(pages_path,new_transcr)
-        old_transcr_path = os.path.join(i_path,transcript_file)
-        shutil.copyfile(old_transcr_path,new_transcr_path)
+        if transcript_file[-24:] != "no_transcript.transcript":
+            new_transcr_path = os.path.join(pages_path,new_transcr)
+            old_transcr_path = os.path.join(i_path,transcript_file)
+            shutil.copyfile(old_transcr_path,new_transcr_path)
 
         n_string = base_template.format(
             lang=lang,
@@ -779,6 +782,7 @@ def build():
                 archive_link = generatearchive.getLinks(i)
                 archive_links_date.append(archive_link)
             archive_sections_date = generatearchive.generateSeriesArchives(category,
+                                                                           status,
                                                                            archive_links_page)
             archive_d_secs.append(archive_sections_date)
 
@@ -799,14 +803,18 @@ def build():
             if comic.chapters == True:
                 chapter_sections = []
                 for chapi in chapters:
+                    chapn = int(chapi)
+                    chapter_title = [item for item in comic.chapters_list if item["num"] == chapn]
+                    chapter_title = chapter_title[0]["title"]
                     in_this_chapter = []
                     for page in comic.pbp:
                         if hasattr(page,"chapter"):
                             chap = page.chapter
                             if chap == chapi:
-                                in_this_chapter.append(archive_link)
+                                in_this_chapter.append(page.archive_link)
                     archive_list = generatearchive.generateChapArchList(in_this_chapter,
                                                                         chapi,
+                                                                        chapter_title,
                                                                         translated_strings)
                     chapter_sections.append(archive_list)
                 chapter_sections_j = sep.join(chapter_sections)
@@ -814,18 +822,22 @@ def build():
                                                '<h2>{category}</h2>',
                                                '<p class="status">{status}</p>',
                                                chapter_sections_j,"</section>"])
-                chapter_archives = chapter_archives_r.format(category=comic.category)
+                chapter_archives = chapter_archives_r.format(category=comic.category,
+                                                             status=comic.statuss)
                 archives_r.append(chapter_archives)
             else:
                 archive_sections = sep.join(archive_d_secs)
                 archives_r.append(archive_sections)
 
         archives = sep.join(archives_r)
+        print(archives)
         
     arch_template_name = archive_t
     arch_template = os.path.join(c_path,arch_template_name)
 
-    link_rel = """<link rel="home" href="index.html" title="Home">"""
+    link_rel_l = ["""<link rel="home" href="index.html" title="{home_s}">""".format(home_s=translated_strings["home_s"]),
+                """<link rel="alternate" type="application/rss+xml" title="RSS" href="feed.xml">"""]
+    link_rel = sep.join(link_rel_l)
 
     out_file = os.path.join(o_path,"archive.html")
 
@@ -878,7 +890,7 @@ def build():
         out_file = os.path.join(o_path,"index.html")
 
         print("--First/last:--")
-        print("%s %s" % first_bypage,last_bypage)
+        print("{first_bypage}, {last_bypage}".format(first_bypage=first_bypage,last_bypage=last_bypage))
 
         with open(template) as f:
             index_template = f.read()
@@ -960,7 +972,7 @@ def build():
             print("Loading characters file %s..." % (fn))
 
             try:
-                with open(fp,"r") as f:
+                with open(fp,"r",encoding="utf-8") as f:
                     raw_text = f.read()
             except UnboundLocalError:
                 print("""An Unbound Local Error has occurred."""\
@@ -993,7 +1005,8 @@ def build():
 
             out_file = os.path.join(o_path,out_name)
 
-            chars_title_line = "{category} - Characters".format(category=conf["category"])
+            chars_title_line = "{category} - {char_s}".format(category=conf["category"],
+                                                              char_s=translated_strings["char_s"])
 
             with open(chars_template_path) as f:
                 chars_template = f.read()
@@ -1023,7 +1036,8 @@ def build():
             out_name = "characters.html"
             out_file = os.path.join(o_path,out_name)
 
-            chars_title_line = "{site_title} - Character Pages".format(site_title=site_title)
+            chars_title_line = "{site_title} - {char_s}".format(site_title=site_title,
+                                                              char_s=translated_strings["char_s"])
 
             charpage_elements = ['<div class="allchars">']
 

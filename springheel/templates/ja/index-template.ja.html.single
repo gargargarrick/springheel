@@ -32,7 +32,7 @@
 </main>
 <footer role="contentinfo">
 <p>&copy; {year} {author}. {clicense}</p>
-<p><a href="http://github.com/gargargarrick/springheel">Springheel</a>で作りました。.</p>
+<p><a href="http://github.com/gargargarrick/springheel">Springheel</a>で作りました。</p>
 <p class="sbuttons"><a href="feed.xml"><img src="socialbuttons/rss.png" alt="RSSフィード" title="RSS Feed" width="24" height="24" /></a>  {icons}</p>
 </footer>
 </body>

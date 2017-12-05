@@ -106,12 +106,10 @@ def comicCParse(conf):
     return(comic_config)
 
 def getChapters(chapter_file):
-    with open(chapter_file,"r") as f:
+    with open(chapter_file,"r",encoding="utf-8") as f:
         chapter_raws = f.readlines()
     chapters = []
     for line in chapter_raws:
-        ## For windows users
-        line = line.rstrip("\r\n")
         if line != "":
             split_line = line.split(" = ")
             d = {"num":int(split_line[0]), "title":split_line[1]}

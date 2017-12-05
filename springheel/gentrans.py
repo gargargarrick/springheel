@@ -29,11 +29,11 @@ def generateTranslations(lang,translation_path):
     print("Getting translation for {lang}...".format(lang=lang))
 
     strings_path = os.path.join(translation_path,"strings.json")
-    with open(strings_path,"r") as f:
+    with open(strings_path,"r",encoding="utf-8") as f:
         json_data = json.load(f)
 
     strings = {}
-    string_names = ["archive_by_date_s", "home_s", "char_s", "caption_s", "transcript_s", "archive_s", "extra_s", "store_s", "chapter_s", "first_s", "prev_s", "next_s", "last_s", "golatest_s", "gofirst_s", "complete_s", "inprogress_s", "hiatus_s", "statline_s", "ccpdw", "cc"]
+    string_names = ["archive_by_date_s", "home_s", "char_s", "caption_s", "transcript_s", "archive_s", "tags_s","extra_s", "store_s", "chapter_s", "first_s", "prev_s", "next_s", "last_s", "golatest_s", "gofirst_s", "complete_s", "inprogress_s", "hiatus_s", "statline_s", "ccpdw", "cc", "no_transcript"]
     for i in string_names:
         try:
             translated_value = json_data[i][lang]

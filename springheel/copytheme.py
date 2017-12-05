@@ -141,7 +141,7 @@ def copyMultiThemes(themes):
         t_path = os.path.join(c_path,"themes",theme)
         files = os.listdir(t_path)
         sheet = os.path.join(t_path,"style.css")
-        with open(sheet,"r") as f:
+        with open(sheet,"r",encoding="utf-8") as f:
             sheet_contents = f.read()
 
         theme_ds.append({"theme":theme,"o_path":t_path,"files":files,"sheet":sheet,"sheet_contents":sheet_contents})

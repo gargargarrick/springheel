@@ -29,7 +29,7 @@ def getLinks(i):
     return(archive_link)
 
 def generateArchives(archive,translated_strings):
-    sep = os.linesep
+    sep = "\n"
     link_list = sep.join(archive)
     archive_by_date_s = translated_strings["archive_by_date_s"]
     sect = """<section class="archive">
@@ -46,7 +46,7 @@ def generateArchives(archive,translated_strings):
     return(arch_section)
 
 def generateChapArchList(archive,chapter,chapter_title,translated_strings):
-    sep = os.linesep
+    sep = "\n"
     link_list = sep.join(archive)
 
     chapter_s = translated_strings["chapter_s"].format(chapter=chapter,chapter_title=chapter_title)
@@ -61,7 +61,7 @@ def generateChapArchList(archive,chapter,chapter_title,translated_strings):
     return(arch_list)
 
 def generateSeriesArchives(category,status,archive):
-    sep = os.linesep
+    sep = "\n"
     link_list = sep.join(archive)
     sect = """<section class="archive">
 <h2>{category}</h2>
