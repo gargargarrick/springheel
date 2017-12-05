@@ -35,8 +35,7 @@ site_title = Springheel Comics
 
 ## The country from which you are publishing, or are under the legal jurisdiction of.
 ## This is mostly relevant if you have waived copyright to your work.
-country = ประเทศไทย
-##country = United States
+country = United States
 
 [SiteLayout]
 ## What type of site will this be? Choices are:
@@ -70,12 +69,13 @@ store_page = False
 
 ## Setting this to True will create an Extras page, which you can use for
 ## extra art, wallpapers, guest comics, and so forth.
+## I mean, eventually. It does nothing for now.
 extras_page = False
 
 ## What license is the comic available under?
 ## Some choices might be "Released into the public domain", the HTML snippet
 ## from the Creative Commons license chooser, or "all rights reserved".
-license = To the extent possible under law, Piti Yindee has waived all copyright and related or neighboring rights to Wuffle Comic.
+license = All rights reserved.
 
 ## The metaphorical direction used for navigation arrows.
 ## In languages that read left-to-right, like English, "back" arrows point
@@ -118,7 +118,7 @@ page_name_trigger = page
 ## Site style.
 ## Defaults are: "plain", "dark", "beach", "book", "brandy", "cherry", "city",
 ## "cute", "cyber", "fantasy", "garden", "gothic", "haunted", "magiccircle",
-## "note", "starship", "steam", "twothousand", "seasonal"
+## "note", "prayers", "starship", "steam", "twothousand", "seasonal"
 site_style = plain
 
 ## The filename for the site header banner (the image that appears at the) top
