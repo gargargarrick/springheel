@@ -535,7 +535,7 @@ def build():
             copyright_statement=copyright_statement)
 
         print("Writing %s..." % (html_filename))
-        with open(out_file,"w+") as fout:
+        with open(out_file,"w+",encoding="utf-8") as fout:
             fout.write(n_string)
         print("%s written." % (html_filename))
             
@@ -863,7 +863,7 @@ def build():
             icons=icons)
 
         print("Writing %s..." % ("archive.html"))
-        with open(out_file,"w+") as fout:
+        with open(out_file,"w+",encoding="utf-8") as fout:
             fout.write(arch_string)
         print("%s written." % ("archive.html"))
 
@@ -914,7 +914,7 @@ def build():
 
 
             print("Writing %s..." % ("index.html"))
-            with open(out_file,"w+") as fout:
+            with open(out_file,"w+",encoding="utf-8") as fout:
                 fout.write(n_string)
             print("%s written." % ("index.html"))
     else:
@@ -956,7 +956,7 @@ def build():
 
 
             print("Writing %s..." % ("index.html"))
-            with open(out_file,"w+") as fout:
+            with open(out_file,"w+",encoding="utf-8") as fout:
                 fout.write(n_string)
             print("%s written." % ("index.html"))
 
@@ -1028,7 +1028,7 @@ def build():
 
 
                 print("Writing %s..." % (out_name))
-                with open(out_file,"w+") as fout:
+                with open(out_file,"w+",encoding="utf-8") as fout:
                     fout.write(n_string)
                 print("%s written." % (out_name))
 
@@ -1069,7 +1069,7 @@ def build():
 
 
                 print("Writing %s..." % (out_name))
-                with open(out_file,"w+") as fout:
+                with open(out_file,"w+",encoding="utf-8") as fout:
                     fout.write(n_string)
                 print("%s written." % (out_name))
 
