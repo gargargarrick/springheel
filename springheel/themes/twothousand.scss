@@ -17,7 +17,7 @@
             background-color: $head-color;
             color: #111;
             text-align: center;
-            font-size: 1.2em;
+            font-size: 1.5em;
             font-family: sans-serif;
             margin: 0;
         }
@@ -236,6 +236,11 @@
             font-weight: bold;
             margin-top: 0em;
         }
+        
+        .char:first-of-type h2 {
+            border-top: none;
+            margin-top: 0em
+        }
 
     /*Medium screens*/
 
@@ -263,7 +268,6 @@
                     padding-left: 0em;
                     padding-right: 0em;
                     margin: 1em 0em 1em 0em;
-
                     & p {
                         margin-left: 1em
                     }
@@ -386,14 +390,24 @@
             }
             
             .char {
+                padding: 0em;
                 img {
-                    float: left;
-                    margin: 0em 1em;
-                };
+                    margin: 0em 1em 1em 0em
+                }
+                .chartext {
+                    margin: 0em;
+                    text-align: left
+                }
+                .chartext, img {
+                    display: inline-block;
+                    vertical-align: top;
+                    max-width: 70%;
+                }
                 &:first-of-type {
                     margin-top: 0em;
                     h2 {
                         border-top: none;
+                        margin-top: 0em
                     }
                 }
             }

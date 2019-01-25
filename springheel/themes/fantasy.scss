@@ -10,12 +10,12 @@
             background-image: url(leaves.jpg);
             color: #eee;
             text-align: center;
-            font-size: 1.2em;
+            font-size: 1.5em;
             font-family: serif;
             margin: 0em;
         }
         
-        nav li, figure, main div, main section {
+        nav li, figure, main div, main section, .cominavbox {
             background-color: #f5ebda;
             background-image: url(paper.gif);
             color: #222;
@@ -95,7 +95,6 @@
 
         a:hover, a:focus, a:active {
             color: #ffdddd;
-            outline: medium dashed #ffdddd;
         }
         
         main div, main section {
@@ -115,7 +114,6 @@
 
             a:hover, a:focus, a:active {
                 color: #910c26;
-                outline: thin dotted #910c26;
             }
         }
 
@@ -157,6 +155,13 @@
                 display: inline;
                 white-space: pre;
             }
+            img {
+                border: thick ridge gold;
+                margin: 0em;
+            }
+            .chartext {
+                margin: 0em;
+            }
         }
 
         main, figure {
@@ -184,10 +189,7 @@
 
     /*Medium screens*/
 
-        @media screen and (min-width: 40em) {
-            body {
-                font-size: 1.5em;
-            }
+        @media screen and (min-width: 1024px) {
     
             nav li, figure, main div, main section {
                 border: thick ridge gold;
@@ -281,8 +283,12 @@
             .char {
                 text-align: left;
                 img {
-                    float: left;
-                    margin: 1em
+                    margin: 0em 1em 0em 0em
+                }
+                .chartext, img {
+                    display: inline-block;
+                    vertical-align: top;
+                    max-width: 60%;
                 }
             }
         }

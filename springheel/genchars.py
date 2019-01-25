@@ -26,7 +26,7 @@ def parseChars(charfile):
 
     l = []
     divider = "---"+sep
-    sectioned = charfile.split(divider)[:-1]
+    sectioned = charfile.split(divider)
     for i in sectioned:
         s_text = i.split(sep)[:-1]
         l.append(s_text)
@@ -35,18 +35,20 @@ def parseChars(charfile):
     category = raw_page_m[0].split("category: ")[1]
     lang = raw_page_m[1].split("lang: ")[1]
 
-    print("This seems to be a file for the category %s in %s language." % (category,lang))
+    print("This seems to be a file for the category {category} in {lang} language.".format(category=category,lang=lang))
 
     cl = [category,lang]
 
     characters = l[1:]
 
     for char in characters:
-        d = {}
-        for item in char:
-            attr,val = item.split(": ")
-            d[attr] = val
-        cl.append(d)
+        ## Make sure it isn't just a newline
+        if char != []:
+            d = {}
+            for item in char:
+                attr,val = item.split(": ")
+                d[attr] = val
+            cl.append(d)
 
     return(cl)
 
@@ -61,23 +63,27 @@ def genCharsPage(chars_list):
             if item["img"] != 'None':
                 img = '<img src="{img}" alt="" />'.format(img=item["img"])
                 char_elements.append(img)
-            char_elements.append("<dl>")
             keys = list(item.keys())
-            dls = []
-            for key in keys:
-                if key == "name" or key == "img" or key == "desc":
-                    pass
-                else:
-                    line = "<dt>{attr}</dt>{sep}<dd>{val}</dd>".format(
-                                                                       attr=key,
-                                                                       val=item[key],
-                                                                       sep=sep)
-                    dls.append(line)
-            dl = sep.join(dls)
-            char_elements.append(dl)
-            char_elements.append("</dl>")
+            char_elements.append('<div class="chartext">')
+            ## We only need to worry about the DL element if there are custom attributes.
+            if len(keys) > 3:
+                dls = []
+                char_elements.append("<dl>")
+                for key in keys:
+                    if key == "name" or key == "img" or key == "desc":
+                        pass
+                    else:
+                        line = "<dt>{attr}</dt>{sep}<dd>{val}</dd>".format(
+                            attr=key,
+                            val=item[key],
+                            sep=sep)
+                        dls.append(line)
+                dl = sep.join(dls)
+                char_elements.append(dl)
+                char_elements.append("</dl>")
             desc = "<p>{desc}</p>".format(desc=item["desc"])
             char_elements.append(desc)
+            char_elements.append("</div>")
             char_elements.append("</div>")
             char_fin = sep.join(char_elements)
             chars.append(char_fin)

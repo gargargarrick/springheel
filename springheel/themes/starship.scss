@@ -40,6 +40,12 @@
             border: none;
             margin: 0em;
         }
+        
+        .cominavbox {
+            background: $bg;
+            border: groove medium $box;
+        }
+        
         .cominavbox, .cominavbox li {
             display: inline-block;
             padding: 0em;
@@ -111,16 +117,17 @@
                 margin-left: 0em;
                 text-align: left;
             }
-            a {
-                &:link {
-                    color: #73b9ff;
-                }
-                &:visited {
-                    color: #dea6ff;
-                }
-                &:hover, &:focus, &:active {
-                    color: #ff8793;
-                }
+        }
+        
+        footer a, .cominavbox a {
+            &:link {
+                color: #73b9ff;
+            }
+            &:visited {
+                color: #dea6ff;
+            }
+            &:hover, &:focus, &:active {
+                color: #ff8793;
             }
         }
 
@@ -170,7 +177,7 @@
 
     /*Medium screens*/
 
-        @media screen and (min-width: 40em) {
+        @media screen and (min-width: 1024px) {
             figure {
                 margin-left: 1em;
             }
@@ -278,21 +285,24 @@
             .char {
                 h2 {
                     margin-top: 0em;
-                };
-                dl {
-                    font-size: 0.8em;
-                    margin-left: 1em;
-                };
+                };                
+                padding: 1em;
+                img {
+                    margin: 0em 1em 1em 0em;
+                    border: groove medium $box;
+                }
+                .chartext {
+                    margin: 0em;
+                    text-align: left
+                }
+                .chartext, img {
+                    display: inline-block;
+                    vertical-align: top;
+                    max-width: 70%;
+                }
                 p {
                     text-indent: 1em;
                 };
-                img {
-                    float: left;
-                    margin: 0em;
-                    margin-right: 1em;
-                    padding: 0em;
-                    border: solid medium $acc;
-                }
             }
 
         }

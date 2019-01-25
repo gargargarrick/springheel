@@ -11,8 +11,8 @@
             url("cakeCenter.png") repeat 0 0;
             color: #000;
             text-align: center;
-            font-size: 1.2em;
-            font-family: "Lato", "Noto Sans", "DejaVu Sans", sans-serif;
+            font-size: 1.5em;
+            font-family: sans-serif;
             margin: 0em;
         }
 
@@ -29,9 +29,18 @@
             text-align: center;
             border: none;
         }
+        
+        .cominavbox {
+            background: #fff;
+            border: thick solid #FFCCFF;
+            padding: 1em;
+            & li {
+                padding: 0em;
+            }
+        }
+        
         .cominavbox, .cominavbox li {
             display: inline-block;
-            padding: 0em;
         }
 
         figure, main div, nav li, .archive {
@@ -136,13 +145,15 @@
                 display: inline;
                 white-space: pre;
             }
+            .chartext, .chartext p {
+                margin: 0em;
+            }
         }
 
     /*Medium screens*/
 
-        @media screen and (min-width: 40em) {
+        @media screen and (min-width: 1024px) {
             body {
-                font-size: 1.5em;
                 margin-left: 1em;
             }
 
@@ -150,7 +161,7 @@
                 margin-left: 1em;
             }
 
-            figure, nav li, .archive, main div {
+            figure, nav li, .archive, main div, .cominavbox {
                 border: thick solid #FFCCFF;
                 border-image-slice: 20 20 20 20 fill;
                 border-image-width: 10px 10px 10px 10px;
@@ -170,6 +181,7 @@
                 margin-right: 1em;
                 margin-top: 0.5em;
                 margin-bottom: 0em;
+                padding: 0.5em;
             }
 
             figure {
@@ -226,8 +238,11 @@
                 }
             }
             
-            .intro {
+            .intro, .chartext {
                 border: none;
+            }
+            
+            .intro {
                 margin: 0em;
                 padding: 0em;
                 text-align: left;
@@ -246,6 +261,16 @@
                 & .desc {
                     font-weight: bold;
                 }
+            }
+            
+            .char img {
+                margin: 1em;
+            }
+            
+            .chartext, .char img {
+                display: inline-block;
+                vertical-align: top;
+                max-width: 60%;
             }
         }
     }

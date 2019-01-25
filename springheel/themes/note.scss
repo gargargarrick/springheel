@@ -78,22 +78,25 @@
             border: none;
             margin: 0em;
         }
-            
+        .cominavbox {
+            text-align: center;
+        }
+
         .cominavbox, .cominavbox li {
-            display: inline-block;
             padding: 0em;
             margin-top: 1em;
             margin-bottom: 0em;
         }
         
         .cominavbox li {
+            display: inline-block;
             a:active, a:focus {
                 display: block;
                 outline: dotted medium #ff4081;
             };
             img {
                 background-color: $navc;
-                display: block;
+                // display: block;
                 @include trans(background-color, 0.2s, ease);
                 &:active, &:focus, &:hover {
                     background-color: $navch;
@@ -283,7 +286,7 @@
 
     /*Medium screens*/
 
-        @media screen and (min-width: 40em) {
+        @media screen and (min-width: 1024px) {
             figure {
                 margin-left: 1em;
             }
@@ -377,17 +380,27 @@
                 h2 {
                     margin-top: 0em;
                 };
-                dl {
-                    font-size: 0.8em;
-                    margin-left: 1em;
-                };
+                // img {
+                //     margin: 0em;
+                //     margin-right: 1em;
+                //     margin-left: 0.5em;
+                //     padding: 0em;
+                // }
+                
+                padding: 0em;
                 img {
-                    float: left;
-                    margin: 0em;
-                    margin-right: 1em;
-                    margin-left: 0.5em;
+                    margin: 0em 1em 1em 0.5em;
                     padding: 0em;
                     border: solid medium $main;
+                }
+                .chartext {
+                    margin: 0em;
+                    text-align: left
+                }
+                .chartext, img {
+                    display: inline-block;
+                    vertical-align: top;
+                    max-width: 75%;
                 }
             }
 

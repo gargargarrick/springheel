@@ -157,7 +157,7 @@
 
     /*Medium screens*/
 
-        @media screen and (min-width: 40em) {
+        @media screen and (min-width: 1024px) {
             body {
                 margin-left: 1em;
                 /*If anyone's wondering, I took this photo myself: https://www.flickr.com/photos/earthisthering/7144481115/*/
@@ -300,8 +300,15 @@
             
             .char {
                 img {
-                    float: left;
-                    margin-right: 1em;
+                    margin: 0em 1em 0em 0em
+                }
+                .chartext {
+                    margin: 0em
+                }
+                .chartext, img {
+                    display: inline-block;
+                    vertical-align: top;
+                    max-width: 50%;
                 }
             }
 

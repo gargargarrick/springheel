@@ -137,7 +137,7 @@
     #plain .char {
       text-align: left; }
       #plain .char img {
-        float: left;
-        margin: 1em; } }
+        margin: 1em;
+        border: solid thin #222; } }
 
 /*# sourceMappingURL=style.css.map */

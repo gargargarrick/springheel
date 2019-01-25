@@ -1,0 +1,433 @@
+@import "shadow.scss";
+@import "gradient.scss";
+@media screen {
+/*Western*/
+    #western {
+
+    $bg-color: saddlebrown;
+    $box-color: wheat;
+    $borders: saddlebrown;
+    $out-text: #ffd;
+    $in-text: #111;
+    /* Default (small) screens */
+        * {
+            box-sizing: content-box;
+        }
+        body {
+            background-color: $bg-color;
+            color: $out-text;
+            text-align: center;
+            font-size: 1.5em;
+            font-family: sans-serif;
+            margin: 0;
+        }
+        
+        figure, .archive, main div {
+            border: double thick $borders;
+        }
+        .intro {
+            border: none;
+        }
+
+        main, figure {
+            margin-left: 0em;
+            padding-left: 0em;
+        }
+        
+        figure, .archive {
+            background-color: $box-color;
+            background-image: url("horseshoe.png");
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            color: $in-text;
+        }
+        
+        .archive, .main {
+            margin-top: 1em
+        }
+        
+        main div {
+            background: $box-color;
+            color: $in-text;
+        }
+
+        h1 {
+            margin: 1em 0em 0em 0em;
+        }
+        
+        h1, h2, h3, h4, h5, p.status {
+            font-variant: small-caps;
+            text-align: center;
+        }
+
+        figure {
+            padding: 1em 0em 0em 0em;
+            margin: 0em;
+            text-align: center;
+            & img {
+                margin: 0em;
+            }
+        }
+
+        figcaption {
+            margin-top: 0.5em;
+            margin-bottom: 0em;
+            padding: 0.5em 0em;
+        }
+        
+        .cominavbox {
+            background: #3B1E07;
+            border: double medium $borders;
+            border-bottom: none;
+            padding: 0.5em;
+            margin: 0em;
+        }
+        
+        figure + .cominavbox {
+            border: double thick $borders;
+            border-top: none
+        }
+        
+        .cominavbox, .cominavbox li {
+            display: inline-block;
+            padding: 0em;
+            margin: 0em 0.5em 0em 0.5em;
+        }
+
+        .cominavbox {
+            & a:link {
+                color: #bbf;
+                text-decoration: underline
+            };
+            & a:visited {
+                color: #daf;
+            };
+            & a:hover, & a:focus, & a:active {
+                color: #ffaaaa;
+            };
+            & p {
+                margin-left: 0em;
+                text-align: left;
+            }
+        }
+
+        p + p, li + li {
+            margin-top: 0.5em
+        }
+
+        /*TODO: Fix the skip link hiding method*/
+        #skippy {
+            text-align: left;
+            margin: 0em
+        }
+        #skippy a, #skippy a:hover, #skippy a:visited {
+            position:absolute;
+            left:-10000px;
+            top:auto;
+            width:1px;
+            height:1px;
+            overflow:hidden;
+        }
+
+        #skippy a:active, #skippy a:focus {
+          position: static;
+          height: auto;
+          width: auto;
+          font-size: 1em;
+          margin-top: 0em;
+          color: #bbf;
+          margin: 1em;
+          outline: dotted medium #bbf
+        }
+
+        nav {
+            margin-bottom: 0em;
+            & ul {
+                margin: 0em;
+                padding-left: 0em;
+            };
+            & li {
+                display: inline-block;
+                padding: 0.5em;
+                background: $box-color;
+                color: $in-text;
+            };
+            & li + li {
+                margin-left: 1em;
+            };
+            a:link, a:visited {
+                text-decoration: none;
+            };
+            a:hover {
+                text-decoration: underline;
+            };
+        }
+
+        header {
+            margin-top: 0em;
+            padding-top: 0em;
+            padding-bottom: 1em;
+            background-image: url("rope.png");
+            background-repeat: repeat-x;
+            background-position: bottom left;
+            & img {
+                margin-top: 0em;
+                padding-top: 0em;
+                display: inline
+            }
+        }
+
+        main {
+            & div {
+                text-align: left;
+                padding: 1em 0.5em 0.5em 0.2em;
+            }
+        }
+
+        .statline {
+            font-weight: bold;
+        }
+
+        a:link {
+            color: #0000c1;
+            text-decoration: underline
+        }
+
+        a:visited {
+            color: #46284c;
+        }
+
+        a:hover, a:focus, a:active {
+            color: #700404;
+        }
+
+        footer {
+            color: $in-text;
+            padding-top: 0.5em;
+            margin-top: 1em;
+            background: url("rope.png") repeat-x top left, $box-color url("horseshoe.png") no-repeat bottom right;
+            & p {
+                margin-left: 0em;
+                text-align: left;
+            }
+            & .sbuttons {
+                margin-bottom: 0em;
+            }
+        }
+
+        .archive {
+            vertical-align: top;
+            text-align: left;
+            & h2 {
+                border: none;
+                margin-top: 0.5em;
+            };
+            & ol {
+                margin-top: 0em
+            }
+        }
+
+        img, embed, object, video {
+            max-width: 100%;
+        }
+
+        .action {
+            font-weight: bold;
+        }
+        
+        .char {
+            text-align: left;
+            border-bottom: double medium $borders;
+            dt:after {
+                content: ":"
+            };
+            dd:after {
+                content: "\A"; white-space: pre;
+            };
+            dd {
+                margin-left: 0em;
+            };
+            dt, dd {
+                display: inline;
+                white-space: pre;
+            };
+        }
+        
+        .chartext {
+            border: none;
+        }
+        
+        .status {
+            text-indent: 0.5em;
+            font-weight: bold;
+        }
+
+    /*Medium screens*/
+
+        @media screen and (min-width: 1024px) {
+
+            figure {
+                padding: 1em 1em 0em 1em;
+                margin-left: 1em;
+                margin-top: 0em;
+                margin-bottom: 0em;
+                & + .cominavbox {
+                    margin-top: 0em;
+                }
+            }
+
+            main {
+                & div {
+                    padding: 1em 0.5em;
+                    margin: 1em 0em;
+                    & p {
+                        margin-left: 1em
+                    }
+                }
+            }
+
+            .transcript {
+                margin-bottom: 0em;
+                margin-top: 0em;
+            }
+            
+            .cominavbox {
+                padding: 1em;
+            }
+
+            .cominavbox, .cominavbox li {
+                margin: 0.5em 1em 0em 1em;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                border-bottom: none;
+                border-top: none;
+                padding-top: 0.5em;
+                padding-bottom: 0.5em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+                margin: 0em;
+                padding: 0.5em 0em 0.5em 0.5em;
+                border-left: none;
+                border-right: none
+            }
+            
+            h3 {
+                font-size: 1em;
+                margin-left: 0.5em;
+            }
+
+            nav {
+                text-align: center;
+                background: none;
+            }
+
+            nav li {
+                padding: 1em 1em 0.8em 1em;
+                margin: 0em;
+                border: none;
+                & + li {
+                    margin-left: 0em;
+                    border: none;
+                };
+            }
+            
+            h2, nav li {
+                font-weight: normal
+            }
+
+            .statline {
+                font-size: 0.8em;
+                text-align: right;
+                margin-right: 1em
+            }
+
+            footer p {
+                font-size: 0.7em;
+                margin-left: 1em
+            }
+
+            h1, main {
+                width: 70%;
+                margin-left: 10%;
+            }
+
+            .action {
+                text-indent: 1em;
+            }
+            
+            .archive {
+                padding: 0.5em 1em;
+                margin: 1em;
+                width: 70%;
+                & ol {
+                    margin-top: 1em;
+                    margin-left: 1em;
+                }
+            }
+            
+            .main {
+                padding: 0em;
+                margin: 1em auto;
+                width: 60%;
+                text-align: center;
+                & p {
+                    margin-left: 0em;
+                }
+            }
+            
+            .intro {
+                padding: 0em;
+                margin: 0em;
+                margin-top: 1em;
+                p {
+                    padding: 0em 0.5em 1em 1em;
+                }
+                img {
+                    padding-top: 1em;
+                }
+                .author {
+                    font-weight: bold;
+                }
+                .desc {
+                    font-weight: bold;
+                }
+            }
+            
+            .char {
+                dl {
+                    font-size: 0.9em;
+                    padding-bottom: 0.5em;
+                };
+                img {
+                    margin: 0em 1em;
+                    border: double medium $borders;
+                };
+                .chartext {
+                    padding: 0em;
+                    margin: 0em;
+                    & dl {
+                        padding: 1em;
+                        margin: 0em;
+                    }
+                    & p {
+                        margin: 0em;
+                        padding: 1em;
+                    };
+                    & dl + p {
+                        border-top: double medium $borders;
+                    }
+                };
+                img, .chartext {
+                    max-width: 50%;
+                    display: inline-block;
+                    vertical-align: top;
+                }
+            }
+
+        }
+    }
+}

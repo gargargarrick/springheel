@@ -1,0 +1,217 @@
+@media screen {
+  /*Rock*/
+  #rock {
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #rock * {
+      box-sizing: content-box; }
+    #rock body {
+      background: url("gradient.png") fixed repeat-x 0% 0%, #100;
+      color: #ffffff;
+      text-align: center;
+      font-size: 1.5em;
+      font-family: sans-serif; }
+    #rock main, #rock figure {
+      margin-left: 0em;
+      padding-left: 0em; }
+    #rock h1 {
+      margin: 0em;
+      font-size: 1.2em; }
+    #rock h2 {
+      font-size: 1em; }
+    #rock figure {
+      text-align: center;
+      border: none;
+      padding: 0em;
+      margin-left: 0em;
+      margin-right: 0em;
+      max-width: 99%; }
+    #rock .cominavbox, #rock .cominavbox li {
+      display: inline-block;
+      padding: 0em; }
+    #rock * + * {
+      margin-top: 0.5em; }
+    #rock #skippy {
+      text-align: left; }
+    #rock #skippy a, #rock #skippy a:hover, #rock #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #rock #skippy a:active, #rock #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #ffffff; }
+    #rock nav li {
+      display: inline-block;
+      margin: 0em; }
+    #rock li + li {
+      margin-left: 1em; }
+    #rock ol li {
+      margin-left: 0em; }
+    #rock #commentary, #rock #transcript {
+      text-align: left; }
+    #rock .statline {
+      font-weight: bold; }
+    #rock a:link {
+      color: #7c7cff;
+      text-decoration: underline; }
+    #rock a:visited {
+      color: #b97cff; }
+    #rock a:hover, #rock a:focus, #rock a:active {
+      color: #ffffff; }
+    #rock footer p {
+      margin-left: 0em;
+      text-align: left; }
+    #rock .archive {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left; }
+    #rock nav li, #rock main div, #rock .archive {
+      background: #000;
+      border: solid #3413ff thick;
+      padding: 0.5em; }
+    #rock figure img {
+      border: solid #3413ff thick; }
+    #rock figcaption {
+      margin: 1em 1em 0em 1em;
+      background: #000;
+      border: solid #3413ff medium;
+      padding: 0.5em; }
+    #rock #commentary, #rock #transcript {
+      padding-top: .5em;
+      padding-bottom: .5em;
+      padding-left: 1.2em;
+      padding-right: 1.4em; }
+    #rock img, #rock embed, #rock object, #rock video {
+      max-width: 100%; }
+    #rock .archive li {
+      margin-top: 1em; }
+    #rock .char {
+      text-align: left; }
+      #rock .char dt:after {
+        content: ":"; }
+      #rock .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #rock .char dd {
+        margin-left: 0em; }
+      #rock .char dt, #rock .char dd {
+        display: inline;
+        white-space: pre; }
+      #rock .char dl {
+        font-size: 0.9em; }
+      #rock .char img {
+        margin: 1em; }
+      #rock .char .chartext {
+        border: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        padding: none;
+        margin: none; }
+    #rock .intro {
+      border: none;
+      margin: 0em;
+      padding: 0em; } }
+  @media screen and (min-width: 1024px) {
+    #rock body {
+      margin-left: 1em; }
+    #rock main div, #rock main section, #rock nav li {
+      -webkit-box-shadow: 0em 0em 0.5em 0.5em #fff;
+      -moz-box-shadow: 0em 0em 0.5em 0.5em #fff;
+      box-shadow: 0em 0em 0.5em 0.5em #fff; }
+    #rock figure {
+      padding: 1em;
+      margin: 0em 0em 0em 1em; }
+      #rock figure img {
+        -webkit-box-shadow: 0em 0em 1em 0.5em #ffb917;
+        -moz-box-shadow: 0em 0em 1em 0.5em #ffb917;
+        box-shadow: 0em 0em 1em 0.5em #ffb917; }
+    #rock figcaption {
+      -webkit-box-shadow: 0em 0em 0.5em 0.5em #ffb917;
+      -moz-box-shadow: 0em 0em 0.5em 0.5em #ffb917;
+      box-shadow: 0em 0em 0.5em 0.5em #ffb917; }
+    #rock .cominavbox li {
+      margin-left: 1em;
+      margin-right: 1em;
+      margin-bottom: 0em; }
+    #rock .cominavbox {
+      margin: 1em; }
+    #rock figure + .cominavbox {
+      margin-top: 0em;
+      margin-bottom: 0em; }
+    #rock h1 {
+      font-size: 1.4em; }
+    #rock h2 {
+      font-size: 1.2em;
+      background: url("starw.png") no-repeat top left, #000;
+      background-size: contain;
+      padding-left: 2em; }
+    #rock h3 {
+      font-size: 1em; }
+    #rock nav li {
+      padding: 0.5em; }
+    #rock .statline {
+      font-size: 0.8em; }
+    #rock footer p {
+      font-size: 0.7em; }
+    #rock .archive {
+      margin: 1em;
+      padding: 1em; }
+      #rock .archive h2 {
+        margin: 0em 0em 1em 0em; }
+    #rock main div, #rock main section {
+      margin: 2em;
+      padding: .5em 1.4em .5em 1.2em;
+      width: 80%; }
+    #rock .main {
+      padding: 0.5em;
+      margin: 1em auto 1em auto;
+      width: 50%; }
+      #rock .main p {
+        margin-left: 0em; }
+    #rock .intro {
+      text-align: left;
+      background: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none; }
+      #rock .intro h2 {
+        margin-bottom: 0.5em; }
+      #rock .intro img {
+        display: inline; }
+      #rock .intro .author {
+        font-size: 0.8em;
+        font-weight: bold; }
+      #rock .intro .desc {
+        font-weight: bold; }
+    #rock .main, #rock .intro {
+      text-align: left; }
+      #rock .main p, #rock .intro p {
+        text-align: left;
+        margin: 1em; }
+    #rock .char img {
+      margin: 0em 1em 1em 0em; }
+    #rock .char .chartext {
+      margin: 0em;
+      text-align: left; }
+    #rock .char .chartext, #rock .char img {
+      display: inline-block;
+      vertical-align: top;
+      max-width: 50%; }
+    #rock .chartext {
+      border: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      padding: none;
+      margin: none; } }
+
+/*# sourceMappingURL=style.css.map */

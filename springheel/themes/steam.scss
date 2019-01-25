@@ -40,8 +40,7 @@
 
         figure {
             padding: 1em 0em 0em 0em;
-            margin-left: 0em;
-            margin-right: 0em;
+            margin: 0em;
             text-align: center;
             background: $box-color url("frame.gif") no-repeat 100% 0%;
             & img {
@@ -51,12 +50,25 @@
 
         figcaption {
             margin-top: 0.5em;
-            margin-bottom: 0.5em;
+            margin-bottom: 0em;
             padding: 0em
         }
+        
+        .cominavbox {
+            background: $bg-color;
+            border: double medium $borders;
+            border-bottom: none;
+            padding: 0.5em;
+            margin: 0em;
+        }
+        
+        figure + .cominavbox {
+            border: double thick $borders;
+            border-top: none
+        }
+
         .cominavbox, .cominavbox li {
             display: inline-block;
-            padding: 0em;
         }
 
         p + p, li + li {
@@ -154,7 +166,7 @@
             color: #700404;
         }
 
-        footer {
+        footer, .cominavbox {
             color: #ffd;
             & a:link {
                 color: #bbf;
@@ -210,6 +222,9 @@
                 display: inline;
                 white-space: pre;
             };
+            .chartext {
+                background: none
+            }
         }
         
         .status {
@@ -219,7 +234,7 @@
 
     /*Medium screens*/
 
-        @media screen and (min-width: 40rem) {
+        @media screen and (min-width: 1024px) {
             body {
                 font-size: 1.5em;
             }
@@ -234,10 +249,6 @@
                     margin-top: 0em;
                 }
             }
-
-/*            nav, h1, h2, h3, main {*/
-/*                border: solid medium $borders;*/
-/*            }*/
 
             main {
                 & div {
@@ -382,18 +393,21 @@
                 border: none;
                 dl {
                     font-size: 0.9em;
-                    margin-left: 1em;
                     border-bottom: double medium $borders;
-                    padding-bottom: 0.5em;
                 };
+                padding: 0em;
                 img {
-                    float: left;
                     margin: 1em;
-                    margin-bottom: 0em;
                     border: double medium $borders;
-                };
-                p {
-                    margin-right: 2em;
+                }
+                .chartext {
+                    margin: 0em;
+                    text-align: left
+                }
+                .chartext, img {
+                    display: inline-block;
+                    vertical-align: top;
+                    max-width: 50%;
                 }
             }
 

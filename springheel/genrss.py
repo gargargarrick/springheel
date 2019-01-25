@@ -18,7 +18,8 @@
 ## along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 from feedgen.feed import FeedGenerator
-import arrow, os
+import datetime, os
+from datetime import timezone
 
 def generateFeed(base_url,rssmeta,comics):
     from feedgen.feed import FeedGenerator
@@ -41,9 +42,9 @@ def generateFeed(base_url,rssmeta,comics):
         fe.author(authord)
         ## Feedgen throws a fit if it doesn't get a timezone. This'll
         ## fix its little red wagon.
-        adate = arrow.get(i.date)
-        date_date = adate.datetime
-        fe.published(date_date)
+        utc = timezone.utc
+        adate = i.date.replace(tzinfo=utc)
+        fe.published(adate)
         fe.title(i.title)
         page = str(i.page_int)
         fe.description(str(i.category+" #"+page))

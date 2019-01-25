@@ -130,7 +130,7 @@
             text-align: left;
         }
 
-        nav li, main div, main section {
+        nav li, main div, main section, .cominavbox {
             background: $box;
             color: $t;
             border: ridge medium $acc;
@@ -175,6 +175,9 @@
                 display: inline;
                 white-space: pre;
             }
+            .chartext {
+                margin: 0em;
+            }
         }
         
         .intro {
@@ -192,7 +195,7 @@
 
     /*Medium screens*/
 
-        @media screen and (min-width: 40em) {
+        @media screen and (min-width: 1024px) {
             figure {
                 margin-left: 1em;
             }
@@ -310,11 +313,15 @@
                     text-indent: 1em;
                 };
                 img {
-                    float: left;
                     margin: 0em;
                     margin-right: 1em;
                     padding: 0em;
                     border: solid medium $acc;
+                }
+                .chartext, img {
+                    display: inline-block;
+                    vertical-align: top;
+                    max-width: 60%;
                 }
             }
 

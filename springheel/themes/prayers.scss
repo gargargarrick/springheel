@@ -50,7 +50,7 @@
             padding-left: 0em;
         }
 
-        div, section, figure {
+        div, section, figure, .cominavbox {
             background: $sleeve;
             border: double thick $accent;
         }
@@ -77,9 +77,6 @@
         
         .cominavbox {
             max-width: 100%;
-            li {
-                max-width: 20%;
-            }
         }
         .cominavbox, .cominavbox li {
             display: inline-block;
@@ -87,9 +84,6 @@
         }
         
         .cominavbox li a {
-            &, img {
-                display: block;
-            }
             &:active, &:focus {
                 background: $sleeve;
                 outline: dashed medium $accent;
@@ -214,12 +208,19 @@
             dt, dd {
                 display: inline;
                 white-space: pre;
-            }
+            };
+        }
+        
+        .intro {
+            border: none;
+            background: none;
+            margin: 0em;
+            padding: 0em;
         }
 
     /*Medium screens*/
 
-        @media screen and (min-width: 40em) {
+        @media screen and (min-width: 1024px) {
 
             * + * {
                 margin-top: 1em
@@ -243,6 +244,7 @@
                 margin: 0em 1em;
                 li {
                     margin: 0.5em;
+                    padding: 0.5em;
                 }
             }
 
@@ -327,10 +329,6 @@
             }
             
             .intro {
-                border: none;
-                background: none;
-                margin: 0em;
-                padding: 0em;
                 text-align: left;
                 h2 {
                     margin-bottom: 0.5em;
@@ -356,9 +354,19 @@
             }
             
             .char {
+                padding: 0em;
                 img {
-                    float: left;
-                    margin-right: 1em;
+                    margin: 0em 1em 1em 0em
+                }
+                .chartext {
+                    border: none;
+                    margin: 0em;
+                    text-align: left
+                }
+                .chartext, img {
+                    display: inline-block;
+                    vertical-align: top;
+                    max-width: 50%;
                 }
             }
 

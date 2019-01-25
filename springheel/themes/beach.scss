@@ -18,7 +18,7 @@
             background: url("palm.png") no-repeat fixed 100% 100%, url("sea.jpg") repeat fixed;
             color: $lt;
             text-align: center;
-            font-size: 1.2em;
+            font-size: 1.5em;
             font-family: serif;
             margin: 0em;
         }
@@ -28,14 +28,14 @@
             padding-left: 0em;
         }
 
-        main div, figure, .archive, footer {
+        main div, figure, .archive, footer, .cominavbox {
             background-color: $mbg;
             background-image: url("beach_sand.png");
             padding-left: 0.5em;
             padding-right: 0.5em;
         }
         
-        main div, main section, figure, .archive, h1 {
+        main div, main section, figure, .archive, h1, .cominavbox {
             @include shadow(0em, 0em, 0.5em, 0.5em, #94e8e8)
         }
         
@@ -188,6 +188,11 @@
                 display: inline;
                 white-space: pre;
             };
+            .chartext {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+            }
         }
 
         * + * {
@@ -210,9 +215,8 @@
 
     /*Medium screens*/
 
-        @media screen and (min-width: 40em) {
+        @media screen and (min-width: 1024px) {
             body {
-                font-size: 1.5em;
                 margin: 0;
                 padding-bottom: 0;
             }
@@ -312,7 +316,6 @@
             
             .char {
                 img {
-                    float: left;
                     margin: 0em 1em;
                 }
             }

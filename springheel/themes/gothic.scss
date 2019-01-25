@@ -12,8 +12,13 @@
             background-color: $bg-color;
             color: $readable;
             text-align: center;
-            font-size: 1.2em;
+            font-size: 1.5em;
             font-family: serif;
+            margin: 0em;
+        }
+        
+        img, embed, object, video {
+            max-width: 100%;
         }
 
         main, figure {
@@ -21,10 +26,9 @@
             padding-left: 0em;
         }
         figure {
-            padding: 1em;
+            padding: 0em;
             text-align: center;
             border: none;
-            margin: 0em 1em 0em 0em
         }
 
         /*TODO: Fix the skip link hiding method*/
@@ -98,20 +102,12 @@
             vertical-align: top;
             text-align: left;
         }
-
-        img, embed, object, video {
-            max-width: 100%;
-        }
         
         .cominavbox {
             margin: 0em;
             padding: 0em;
-            & img {
-                max-width: 15%;
-            };
             & li {
-                display: inline;
-                max-width: 15%;
+                display: inline-block;
                 padding: 0.5em;
                 margin: 0em
             }
@@ -158,8 +154,7 @@
                 font-size: 0.9em;
             };
             img {
-                float: left;
-                margin: 2em;
+                margin: 1em;
                 border: double medium $accent;
             };
             p {
@@ -169,7 +164,7 @@
 
     /*Medium screens*/
 
-        @media screen and (min-width: 40em) {
+        @media screen and (min-width: 1024px) {
             body {
                 font-size: 1.5em;
                 margin-left: 1em;
@@ -288,7 +283,20 @@
                     font-weight: bold;
                 }
             }
-
+            
+            .char {
+                img {
+                    margin: 0em 1em 1em 0em
+                }
+                .chartext {
+                    margin: 0em
+                }
+                .chartext, img {
+                    display: inline-block;
+                    vertical-align: top;
+                    max-width: 50%;
+                }
+            }
 
         }
     }

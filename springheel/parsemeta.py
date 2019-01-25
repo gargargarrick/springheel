@@ -17,8 +17,6 @@
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-
-
 ## This script returns a dictionary of metadata (title, author, etc.), the commentary, the navigation boxes, and link rel navigation.
 
 from slugify import slugify
@@ -39,7 +37,7 @@ def readText(file_name):
     return textToRead
 
 ##Separate the metadata from formatting info, and from the commentary.
-def getMetaCom(meta_raw):
+def getMetaCom(meta_raw,translated_strings):
     meta_nl = []
     comments = []
     for i in meta_raw:
@@ -51,13 +49,13 @@ def getMetaCom(meta_raw):
             else:
                 comments.append(i[:-1])
     if comments == []:
-        comments = ["No commentary provided"]
+        comments = [translated_strings["no_comment"]]
     return(meta_nl,comments)
 
 ##Separate the metadata from the commentary.
-def splitMC(file_name):
+def splitMC(file_name,translated_strings):
     meta_raw = readText(file_name)
-    mc = getMetaCom(meta_raw)
+    mc = getMetaCom(meta_raw,translated_strings)
     m = mc[0]
     c = mc[1]
     return(mc)
@@ -77,10 +75,10 @@ def dictizeMeta(m):
 
     return(meta)
 
-def parseMetadata(single,file_name):
+def parseMetadata(single,file_name,translated_strings):
 
     ##We now have a formatted list of metadata items, and of the commentary lines.
-    mc = splitMC(file_name)
+    mc = splitMC(file_name,translated_strings)
     m = mc[0]
     c = mc[1]
 

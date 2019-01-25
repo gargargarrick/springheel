@@ -1,0 +1,279 @@
+@media screen {
+  /*Western*/
+  #western {
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #western * {
+      box-sizing: content-box; }
+    #western body {
+      background-color: saddlebrown;
+      color: #ffd;
+      text-align: center;
+      font-size: 1.5em;
+      font-family: sans-serif;
+      margin: 0; }
+    #western figure, #western .archive, #western main div {
+      border: double thick saddlebrown; }
+    #western .intro {
+      border: none; }
+    #western main, #western figure {
+      margin-left: 0em;
+      padding-left: 0em; }
+    #western figure, #western .archive {
+      background-color: wheat;
+      background-image: url("horseshoe.png");
+      background-repeat: no-repeat;
+      background-position: bottom right;
+      color: #111; }
+    #western .archive, #western .main {
+      margin-top: 1em; }
+    #western main div {
+      background: wheat;
+      color: #111; }
+    #western h1 {
+      margin: 1em 0em 0em 0em; }
+    #western h1, #western h2, #western h3, #western h4, #western h5, #western p.status {
+      font-variant: small-caps;
+      text-align: center; }
+    #western figure {
+      padding: 1em 0em 0em 0em;
+      margin: 0em;
+      text-align: center; }
+      #western figure img {
+        margin: 0em; }
+    #western figcaption {
+      margin-top: 0.5em;
+      margin-bottom: 0em;
+      padding: 0.5em 0em; }
+    #western .cominavbox {
+      background: #3B1E07;
+      border: double medium saddlebrown;
+      border-bottom: none;
+      padding: 0.5em;
+      margin: 0em; }
+    #western figure + .cominavbox {
+      border: double thick saddlebrown;
+      border-top: none; }
+    #western .cominavbox, #western .cominavbox li {
+      display: inline-block;
+      padding: 0em;
+      margin: 0em 0.5em 0em 0.5em; }
+    #western .cominavbox a:link {
+      color: #bbf;
+      text-decoration: underline; }
+    #western .cominavbox a:visited {
+      color: #daf; }
+    #western .cominavbox a:hover, #western .cominavbox a:focus, #western .cominavbox a:active {
+      color: #ffaaaa; }
+    #western .cominavbox p {
+      margin-left: 0em;
+      text-align: left; }
+    #western p + p, #western li + li {
+      margin-top: 0.5em; }
+    #western #skippy {
+      text-align: left;
+      margin: 0em; }
+    #western #skippy a, #western #skippy a:hover, #western #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #western #skippy a:active, #western #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #bbf;
+      margin: 1em;
+      outline: dotted medium #bbf; }
+    #western nav {
+      margin-bottom: 0em; }
+      #western nav ul {
+        margin: 0em;
+        padding-left: 0em; }
+      #western nav li {
+        display: inline-block;
+        padding: 0.5em;
+        background: wheat;
+        color: #111; }
+      #western nav li + li {
+        margin-left: 1em; }
+      #western nav a:link, #western nav a:visited {
+        text-decoration: none; }
+      #western nav a:hover {
+        text-decoration: underline; }
+    #western header {
+      margin-top: 0em;
+      padding-top: 0em;
+      padding-bottom: 1em;
+      background-image: url("rope.png");
+      background-repeat: repeat-x;
+      background-position: bottom left; }
+      #western header img {
+        margin-top: 0em;
+        padding-top: 0em;
+        display: inline; }
+    #western main div {
+      text-align: left;
+      padding: 1em 0.5em 0.5em 0.2em; }
+    #western .statline {
+      font-weight: bold; }
+    #western a:link {
+      color: #0000c1;
+      text-decoration: underline; }
+    #western a:visited {
+      color: #46284c; }
+    #western a:hover, #western a:focus, #western a:active {
+      color: #700404; }
+    #western footer {
+      color: #111;
+      padding-top: 0.5em;
+      margin-top: 1em;
+      background: url("rope.png") repeat-x top left, wheat url("horseshoe.png") no-repeat bottom right; }
+      #western footer p {
+        margin-left: 0em;
+        text-align: left; }
+      #western footer .sbuttons {
+        margin-bottom: 0em; }
+    #western .archive {
+      vertical-align: top;
+      text-align: left; }
+      #western .archive h2 {
+        border: none;
+        margin-top: 0.5em; }
+      #western .archive ol {
+        margin-top: 0em; }
+    #western img, #western embed, #western object, #western video {
+      max-width: 100%; }
+    #western .action {
+      font-weight: bold; }
+    #western .char {
+      text-align: left;
+      border-bottom: double medium saddlebrown; }
+      #western .char dt:after {
+        content: ":"; }
+      #western .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #western .char dd {
+        margin-left: 0em; }
+      #western .char dt, #western .char dd {
+        display: inline;
+        white-space: pre; }
+    #western .chartext {
+      border: none; }
+    #western .status {
+      text-indent: 0.5em;
+      font-weight: bold; } }
+  @media screen and (min-width: 1024px) {
+    #western figure {
+      padding: 1em 1em 0em 1em;
+      margin-left: 1em;
+      margin-top: 0em;
+      margin-bottom: 0em; }
+      #western figure + .cominavbox {
+        margin-top: 0em; }
+    #western main div {
+      padding: 1em 0.5em;
+      margin: 1em 0em; }
+      #western main div p {
+        margin-left: 1em; }
+    #western .transcript {
+      margin-bottom: 0em;
+      margin-top: 0em; }
+    #western .cominavbox {
+      padding: 1em; }
+    #western .cominavbox, #western .cominavbox li {
+      margin: 0.5em 1em 0em 1em; }
+    #western h1 {
+      font-size: 1.5em;
+      border-bottom: none;
+      border-top: none;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em; }
+    #western h2 {
+      font-size: 1.2em;
+      margin: 0em;
+      padding: 0.5em 0em 0.5em 0.5em;
+      border-left: none;
+      border-right: none; }
+    #western h3 {
+      font-size: 1em;
+      margin-left: 0.5em; }
+    #western nav {
+      text-align: center;
+      background: none; }
+    #western nav li {
+      padding: 1em 1em 0.8em 1em;
+      margin: 0em;
+      border: none; }
+      #western nav li + li {
+        margin-left: 0em;
+        border: none; }
+    #western h2, #western nav li {
+      font-weight: normal; }
+    #western .statline {
+      font-size: 0.8em;
+      text-align: right;
+      margin-right: 1em; }
+    #western footer p {
+      font-size: 0.7em;
+      margin-left: 1em; }
+    #western h1, #western main {
+      width: 70%;
+      margin-left: 10%; }
+    #western .action {
+      text-indent: 1em; }
+    #western .archive {
+      padding: 0.5em 1em;
+      margin: 1em;
+      width: 70%; }
+      #western .archive ol {
+        margin-top: 1em;
+        margin-left: 1em; }
+    #western .main {
+      padding: 0em;
+      margin: 1em auto;
+      width: 60%;
+      text-align: center; }
+      #western .main p {
+        margin-left: 0em; }
+    #western .intro {
+      padding: 0em;
+      margin: 0em;
+      margin-top: 1em; }
+      #western .intro p {
+        padding: 0em 0.5em 1em 1em; }
+      #western .intro img {
+        padding-top: 1em; }
+      #western .intro .author {
+        font-weight: bold; }
+      #western .intro .desc {
+        font-weight: bold; }
+    #western .char dl {
+      font-size: 0.9em;
+      padding-bottom: 0.5em; }
+    #western .char img {
+      margin: 0em 1em;
+      border: double medium saddlebrown; }
+    #western .char .chartext {
+      padding: 0em;
+      margin: 0em; }
+      #western .char .chartext dl {
+        padding: 1em;
+        margin: 0em; }
+      #western .char .chartext p {
+        margin: 0em;
+        padding: 1em; }
+      #western .char .chartext dl + p {
+        border-top: double medium saddlebrown; }
+    #western .char img, #western .char .chartext {
+      max-width: 50%;
+      display: inline-block;
+      vertical-align: top; } }
+
+/*# sourceMappingURL=style.css.map */

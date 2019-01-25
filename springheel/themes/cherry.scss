@@ -50,12 +50,6 @@
         }
         
         .cominavbox li a {
-            &, img {
-                display: block;
-            }
-            &:hover img {
-                background: $petal;
-            }
             &:active, &:focus {
                 outline-width: medium;
             }
@@ -173,10 +167,13 @@
                 white-space: pre;
             }
         }
+        .chartext, .intro {
+            border: none;
+        }
 
     /*Medium screens*/
 
-        @media screen and (min-width: 40em) {
+        @media screen and (min-width: 1024px) {
 
             * + * {
                 margin-top: 1em
@@ -314,7 +311,6 @@
             
             .char {
                 img {
-                    float: left;
                     margin-right: 1em;
                 }
             }

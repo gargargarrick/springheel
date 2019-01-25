@@ -113,7 +113,7 @@
       #brandy .char dt, #brandy .char dd {
         display: inline;
         white-space: pre; } }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 1024px) {
     #brandy * + * {
       margin-top: 2em; }
     #brandy main {
@@ -210,11 +210,20 @@
       font-size: 0.8em;
       margin-left: 1em; }
     #brandy .char p {
-      text-indent: 1em; }
+      text-indent: 1em;
+      margin: 0em; }
     #brandy .char img {
-      float: left;
       margin: 0em;
       margin-right: 1em;
-      padding: 0em; } }
+      padding: 0em; }
+    #brandy .char .chartext {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      border: none;
+      margin-top: 0em; }
+    #brandy .char .chartext, #brandy .char .char img {
+      display: inline-block;
+      vertical-align: top; } }
 
 /*# sourceMappingURL=style.css.map */

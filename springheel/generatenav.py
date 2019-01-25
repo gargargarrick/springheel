@@ -22,9 +22,9 @@ import springheel.parseconf, springheel.parsemeta
 ##Check for navigation math errors.
 def checkNavMath(page_int,first_page,last_page):
     if page_int == False or first_page == False or last_page == False:
-        print("One or more needed values not set. Make sure there is a page value in %s and the first and last page values are set, then try again." % (file_name))
+        print("One or more needed values not set. Make sure there is a page value in {file_name} and the first and last page values are set, then try again.".format(file_name=file_name))
     elif page_int <= 0:
-        print("%s is not a valid page number. Please check the page number set in %s and try again." % (str(page_int),file_name))
+        print("{page_int} is not a valid page number. Please check the page number set in {file_name} and try again.".format(page_int=str(page_int),file_name=file_name))
     elif first_page < 0:
         print("The first page is set to a number less than zero. Please change it and try again.")
     elif last_page < first_page:
@@ -38,7 +38,7 @@ def navGen(navdirection,page_int,first_page,last_page,first,final,series_slug,si
 
     strips = range(1,(last_page+1))
     if page_int not in strips:
-        print("""Building failed!\n\nNavigation could not be built because %s is an invalid page number. The .meta value "page" may have been set to something incorrect, or the scan may have failed to detect a comic. Please double-check.""" % (page_int))
+        print("""Building failed!\n\nNavigation could not be built because {page_int} is an invalid page number. The .meta value "page" may have been set to something incorrect, or the scan may have failed to detect a comic. Please double-check.""".format(page_int=page_int))
 
     if page_int == last_page:
         final = True
@@ -56,7 +56,7 @@ def navGen(navdirection,page_int,first_page,last_page,first,final,series_slug,si
     navl = [' <ul class="cominavbox">']
     linkl = [""" <link rel="home" href="index.html" title="{home_s}">""".format(home_s=home_s),"""<link rel="alternate" type="application/rss+xml" title="RSS" href="feed.xml">"""]
 
-    image_template = """<li><a href="{series_slug}_{page}.html"><img src="arrows/{site_style}_{relation}.png" alt="{image_string}" title="{image_string}" /></a></li>"""
+    image_template = """<li><a href="{series_slug}_{page}.html"><img src="arrows/{site_style}_{relation}.png" alt="{image_string}" /><br/>{image_string}</a></li>"""
     linkrel_template = """<link rel="{relation}" href="{series_slug}_{page}.html" title="{page_string}">"""
 
 
@@ -183,7 +183,7 @@ def bigGenerator(page_int,first_page,last_page,first,final,series_slug,site_styl
         nav_boxes = navs[0]
         linkrels = navs[1]
     else:
-        print("The navigation for %s could not be generated. Check the above messages for errors." % (file_name))
+        print("The navigation for {file_name} could not be generated. Check the above messages for errors.".format(file_name=file_name))
         return(False)
 
     return(nav_boxes,linkrels)

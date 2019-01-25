@@ -168,7 +168,7 @@
 
     /*Medium screens*/
 
-        @media screen and (min-width: 40em) {
+        @media screen and (min-width: 1024px) {
         
             * + * {
                 margin-top: 2em;
@@ -320,12 +320,23 @@
                 };
                 p {
                     text-indent: 1em;
+                    margin: 0em;
                 };
                 img {
-                    float: left;
                     margin: 0em;
                     margin-right: 1em;
                     padding: 0em;
+                };
+                .chartext {
+                    -webkit-box-shadow: none;
+                    -moz-box-shadow: none;
+                    box-shadow: none;
+                    border: none;
+                    margin-top: 0em;
+                }
+                .chartext, .char img {
+                    display: inline-block;
+                    vertical-align: top;
                 }
             }
 

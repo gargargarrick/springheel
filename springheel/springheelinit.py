@@ -47,9 +47,9 @@ def getTemplatesPath(lang):
     ## Get the usr directory of Springheel.
     try:
         raw_springheel_path = sys.modules['springheel'].__path__[0]
-        print("Springheel directory found at %s..." % (raw_springheel_path))
+        print("Springheel directory found at {path}...".format(path=raw_springheel_path))
     except KeyError:
-        print("Could not initialize because the Springheel directory was not found, somehow. I have no idea how you are running this at all. File an issue with the full details and be prepared for me to take 6 months to get back to you because of my social anxiety.")
+        print("Could not initialize because the Springheel directory was not found, somehow. I have no idea how you are running this at all. File an issue with the full details, but I may take some time to get back to you.")
         return False
     ## From there, find the path where templates are stored.
     templates_path = os.path.join(raw_springheel_path,"templates")
@@ -57,12 +57,13 @@ def getTemplatesPath(lang):
 
 def copyAssets(lang):
     raw_springheel_path,templates_path = getTemplatesPath(lang)
+    strings_path = os.path.join(templates_path, "strings.json")
     ## It's divided up by language.
     my_lang_templates = os.path.join(templates_path,lang)
-    print("Getting %s templates from %s..." % (lang,my_lang_templates))
+    print("Getting {lang} templates from {my_lang_templates}...".format(lang=lang,my_lang_templates=my_lang_templates))
     if os.path.exists(my_lang_templates) == False and lang != "en":
         lang="en"
-        print("Templates for [%s] language were not found, using default language [English] templates..." % (lang))
+        print("Templates for [{lang}] language were not found, using default language [English] templates...".format(lang=lang))
         my_lang_templates = os.path.join(templates_path,lang)
     elif os.path.exists(my_lang_templates) == False and lang == "en":
         print("The Springheel module was found, but template files in the default language, English, do not exist. What did you do?")
@@ -71,19 +72,27 @@ def copyAssets(lang):
 
     templates_o = os.path.join(current_dir,"templates",lang)
     
-    print("Copying templates to %s..." % (templates_o))
+    print("Copying templates to {templates_output}...".format(templates_output=templates_o))
     copy_tree(my_lang_templates,templates_o)
 
     ## Now get the stuff that's the same in any language.
 
+    print("Copying strings file...")
+    new_strings_path = os.path.join(current_dir,"templates","strings.json")
+    shutil.copy(strings_path,new_strings_path)
+    print("Strings file copied from {old} to {new}.".format(old=strings_path,new=new_strings_path))
+
     ## input
     input_path = initDir(current_dir,"input")
 
-    ## conf.py
-    o_conf = os.path.join(raw_springheel_path,"conf.py")
-    n_conf = os.path.join(current_dir,"conf.py")
+    ## conf.ini
+    o_conf = os.path.join(raw_springheel_path,"conf.ini")
+    n_conf = os.path.join(current_dir,"conf.ini")
     if os.path.exists(n_conf) == False:
-        confpy_path = shutil.copy(o_conf,n_conf)
+        try:
+            confpy_path = shutil.copy(o_conf,n_conf)
+        except FileNotFoundError:
+            print("Couldn't find conf.ini in the Springheel install directory. Did you delete it somehow?")
 
     ##arrows
     base_arrows_path = os.path.join(raw_springheel_path,"arrows")
@@ -101,7 +110,7 @@ def copyAssets(lang):
     copy_tree(base_themes_path,themes_path)
     copy_tree(base_socialbuttons_path,socialbuttons_path)
 
-    ## I have reasons!
+    ## I have reasons! Now we shall see!
     return(templates_path)
 
 def getLang():

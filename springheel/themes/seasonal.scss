@@ -2,46 +2,46 @@
 /*seasonal*/
     #seasonal {
     /*Spring*/
-    /*$bbg: #4866c5;
-    $mbg: #fafafa;
-    $la: #73cfd9;
-    $ma: #429ad7;
-    $dt: #eee;
-    $lt: #111;
-    $bgi: url("spring.png");
-    $aa: #315040;
-    $av: #324b9e;
-    $ahaf: #3c7949;
-    $anh: #46a946;*/
+    // $bbg: #4866c5;
+    // $mbg: #fafafa;
+    // $la: #73cfd9;
+    // $ma: #429ad7;
+    // $dt: #eee;
+    // $lt: #111;
+    // $bgi: url("spring.png");
+    // $aa: #315040;
+    // $av: #324b9e;
+    // $ahaf: #3c7949;
+    // $anh: #46a946;
 
     /*Summer*/
-    /*$bbg: #4866c5;
-    $mbg: #fafafa;
-    $la: #73cfd9;
-    $ma: #429ad7;
-    $dt: #eee;
-    $lt: #111;
-    $bgi: url("summer.png");
-    $aa: #315040;
-    $av: #324b9e;
-    $ahaf: #3c7949;
-    $anh: #46a946;*/
+    // $bbg: #4866c5;
+    // $mbg: #fafafa;
+    // $la: #73cfd9;
+    // $ma: #429ad7;
+    // $dt: #eee;
+    // $lt: #111;
+    // $bgi: url("summer.png");
+    // $aa: #315040;
+    // $av: #324b9e;
+    // $ahaf: #3c7949;
+    // $anh: #46a946;
 
     /*Fall*/
-    $bbg: #504170;
-    $mbg: #fed4aa;
-    $la: #c26e3d;
-    $ma: #c26e3d;
-    $dt: #180e0e;
-    $lt: #111;
-    $bgi: url("autumn.png");
-    $aa: #6d2e2e;
-    $av: #42365d;
-    $ahaf: #a93444;
-    $anh: #f88f32;*
+    // $bbg: #504170;
+    // $mbg: #fed4aa;
+    // $la: #c26e3d;
+    // $ma: #c26e3d;
+    // $dt: #180e0e;
+    // $lt: #111;
+    // $bgi: url("autumn.png");
+    // $aa: #6d2e2e;
+    // $av: #42365d;
+    // $ahaf: #a93444;
+    // $anh: #f88f32;
 
     /*Winter*/
-    /*$bbg: #504170;
+    $bbg: #504170;
     $mbg: #fafafa;
     $la: #facb1e;
     $ma: #b88fb4;
@@ -51,7 +51,7 @@
     $aa: #6d428f;
     $av: #504170;
     $ahaf: #8a325e;
-    $anh: #b88fb4;*/
+    $anh: #b88fb4;
 
     /* Default (small) screens */
         * {
@@ -208,18 +208,17 @@
         }
 
         .cominavbox {
+            background-color: $mbg;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            border: solid thick $ma;
             a:focus, a:active {
                 outline: medium dashed $ahaf;
             }
         }
 
-        .cominavbox li img {
-            display: inline;
-        }
-
         .cominavbox li {
             a:active, a:focus {
-                display: block;
                 outline: dashed medium $anh;
                 img {
                     background-color: $anh;
@@ -227,7 +226,6 @@
             };
             img {
                 background-color: $ahaf;
-                display: block;
                 &:active, &:focus, &:hover {
                     background-color: $anh;
                 }
@@ -287,7 +285,7 @@
 
     /*Medium screens*/
 
-        @media screen and (min-width: 40em) {
+        @media screen and (min-width: 1024px) {
             body {
                 font-size: 1.5em;
                 margin: 0;
@@ -392,9 +390,25 @@
             }
 
             .char {
+                padding: 0em;
+                h2 {
+                    text-indent: 1em
+                }
                 img {
-                    float: left;
-                    margin: 0em 1em;
+                    margin: 0em 1em 1em 1em
+                }
+                .chartext {
+                    margin: 0em;
+                    text-align: left;
+                    border: none;
+                }
+                p {
+                    margin-top: 0em;
+                }
+                .chartext, img {
+                    display: inline-block;
+                    vertical-align: top;
+                    max-width: 50%;
                 }
             }
 

@@ -11,10 +11,10 @@
       background-image: url(leaves.jpg);
       color: #eee;
       text-align: center;
-      font-size: 1.2em;
+      font-size: 1.5em;
       font-family: serif;
       margin: 0em; }
-    #fantasy nav li, #fantasy figure, #fantasy main div, #fantasy main section {
+    #fantasy nav li, #fantasy figure, #fantasy main div, #fantasy main section, #fantasy .cominavbox {
       background-color: #f5ebda;
       background-image: url(paper.gif);
       color: #222;
@@ -62,8 +62,7 @@
     #fantasy a:hover {
       text-decoration: underline; }
     #fantasy a:hover, #fantasy a:focus, #fantasy a:active {
-      color: #ffdddd;
-      outline: medium dashed #ffdddd; }
+      color: #ffdddd; }
     #fantasy main div h2, #fantasy main div h3, #fantasy main div h4, #fantasy main section h2, #fantasy main section h3, #fantasy main section h4 {
       border-bottom: thin solid goldenrod; }
     #fantasy nav a:link, #fantasy main a:link {
@@ -71,8 +70,7 @@
     #fantasy nav a:visited, #fantasy main a:visited {
       color: #441347; }
     #fantasy nav a:hover, #fantasy nav a:focus, #fantasy nav a:active, #fantasy main a:hover, #fantasy main a:focus, #fantasy main a:active {
-      color: #910c26;
-      outline: thin dotted #910c26; }
+      color: #910c26; }
     #fantasy footer p {
       margin-left: 0em;
       text-align: left; }
@@ -97,6 +95,11 @@
     #fantasy .char dt, #fantasy .char dd {
       display: inline;
       white-space: pre; }
+    #fantasy .char img {
+      border: thick ridge gold;
+      margin: 0em; }
+    #fantasy .char .chartext {
+      margin: 0em; }
     #fantasy main, #fantasy figure {
       margin-left: 0em;
       padding-left: 0em;
@@ -114,9 +117,7 @@
       border: none;
       margin: 0em;
       padding: 0em; } }
-  @media screen and (min-width: 40em) {
-    #fantasy body {
-      font-size: 1.5em; }
+  @media screen and (min-width: 1024px) {
     #fantasy nav li, #fantasy figure, #fantasy main div, #fantasy main section {
       border: thick ridge gold; }
     #fantasy figure {
@@ -178,7 +179,10 @@
     #fantasy .char {
       text-align: left; }
       #fantasy .char img {
-        float: left;
-        margin: 1em; } }
+        margin: 0em 1em 0em 0em; }
+      #fantasy .char .chartext, #fantasy .char img {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 60%; } }
 
 /*# sourceMappingURL=style.css.map */

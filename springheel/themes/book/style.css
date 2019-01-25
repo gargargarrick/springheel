@@ -12,7 +12,7 @@
       background: url("leather.jpg");
       color: #ffd;
       text-align: center;
-      font-size: 1.2em;
+      font-size: 1.5em;
       font-family: serif;
       margin: 0em; }
     #book main, #book figure {
@@ -50,8 +50,6 @@
       #book .cominavbox li {
         padding: 0em;
         margin: 0em; }
-        #book .cominavbox li img {
-          max-width: 25%; }
     #book #skippy {
       text-align: left; }
     #book #skippy a, #book #skippy a:hover, #book #skippy a:visited {
@@ -85,17 +83,17 @@
       text-decoration: underline; }
     #book a:hover, #book a:focus, #book a:active {
       color: #ffa4a4; }
-    #book main div, #book main section {
+    #book main div, #book main section, #book .cominavbox {
       padding-top: 1em;
       padding-bottom: 1em; }
-      #book main div a:link, #book main section a:link {
+      #book main div a:link, #book main section a:link, #book .cominavbox a:link {
         color: #214184;
         text-decoration: underline; }
-      #book main div a:visited, #book main section a:visited {
+      #book main div a:visited, #book main section a:visited, #book .cominavbox a:visited {
         color: #5c3566; }
-      #book main div a:hover, #book main section a:hover {
+      #book main div a:hover, #book main section a:hover, #book .cominavbox a:hover {
         text-decoration: underline; }
-      #book main div a:hover, #book main div a:focus, #book main div a:active, #book main section a:hover, #book main section a:focus, #book main section a:active {
+      #book main div a:hover, #book main div a:focus, #book main div a:active, #book main section a:hover, #book main section a:focus, #book main section a:active, #book .cominavbox a:hover, #book .cominavbox a:focus, #book .cominavbox a:active {
         color: #cc0000; }
     #book footer p {
       margin-left: 0em;
@@ -128,17 +126,17 @@
       #book .char dl {
         font-size: 0.9em; }
       #book .char img {
-        float: left;
-        margin: 2em; }
+        margin: 0.5em; }
       #book .char p {
-        text-indent: 1em; } }
-  @media screen and (min-width: 40em) {
+        text-indent: 1em; }
+      #book .char .chartext {
+        margin: 0em;
+        padding: 0em; } }
+  @media screen and (min-width: 1024px) {
     #book {
       /*            figure + .cominavbox {*/
       /*                margin-top: 0em;*/
       /*            }*/ }
-      #book body {
-        font-size: 1.5em; }
       #book figure {
         margin: 0em 1em 0em 1em;
         padding: 1em; }
@@ -232,10 +230,16 @@
           margin-left: 2em; }
         #book .main h2 {
           margin-left: 1em; }
-      #book .intro {
+      #book .intro, #book .chartext {
         background: none; }
       #book .author, #book .charname {
         font-weight: bold;
-        font-variant: small-caps; } }
+        font-variant: small-caps; }
+      #book .char img {
+        margin-left: 2em; }
+      #book .char img, #book .chartext {
+        vertical-align: top;
+        display: inline-block;
+        max-width: 60%; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -23,9 +23,9 @@ def getLinks(i):
     ## Oh no u don't
     link_format = """<li><a href="{html_filename}">#{page}: {title} ({date})</a></li>"""
     archive_link = link_format.format(html_filename=i.html_filename,
-                                      page=i.page_number,
+                                      page=i.page,
                                       title=i.title,
-                                      date=i.date)
+                                      date=i.date_s)
     return(archive_link)
 
 def generateArchives(archive,translated_strings):
@@ -45,19 +45,20 @@ def generateArchives(archive,translated_strings):
                                archive_by_date_s=archive_by_date_s)
     return(arch_section)
 
-def generateChapArchList(archive,chapter,chapter_title,translated_strings):
+def generateChapArchList(archive,chapter,chapter_title,translated_strings,l):
     sep = "\n"
     link_list = sep.join(archive)
 
     chapter_s = translated_strings["chapter_s"].format(chapter=chapter,chapter_title=chapter_title)
     
-    sect = """<h3>{chapter_s}</h3>
+    sect = """<h{l}>{chapter_s}</h{l}>
 <ol class="chapterarch">
 {link_list}
 </ol>"""
 
     arch_list = sect.format(chapter_s=chapter_s,
-                            link_list=link_list)
+                            link_list=link_list,
+                            l=l)
     return(arch_list)
 
 def generateSeriesArchives(category,status,archive):

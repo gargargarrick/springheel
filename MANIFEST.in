@@ -9,7 +9,7 @@ include springheel-icon.png
 include springheel-logo.png
 include jackie.svg
 include springheel-logo.svg
-include springheel/conf.py
+include springheel/conf.ini
 include springheel/arrows/*
 include springheel/socialbuttons/*
 recursive-include springheel/templates *

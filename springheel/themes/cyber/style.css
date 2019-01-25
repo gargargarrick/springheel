@@ -84,7 +84,7 @@
     #cyber .archive {
       vertical-align: top;
       text-align: left; }
-    #cyber nav li, #cyber main div, #cyber main section {
+    #cyber nav li, #cyber main div, #cyber main section, #cyber .cominavbox {
       background: #06376f;
       color: #d2f7ff;
       border: ridge medium #066ed1; }
@@ -116,6 +116,8 @@
       #cyber .char dt, #cyber .char dd {
         display: inline;
         white-space: pre; }
+      #cyber .char .chartext {
+        margin: 0em; }
     #cyber .intro {
       border: none;
       background: none;
@@ -126,7 +128,7 @@
         display: inline;
         margin: 0em;
         padding: 0em; } }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 1024px) {
     #cyber figure {
       margin-left: 1em; }
     #cyber .cominavbox, #cyber .cominavbox li {
@@ -198,10 +200,13 @@
     #cyber .char p {
       text-indent: 1em; }
     #cyber .char img {
-      float: left;
       margin: 0em;
       margin-right: 1em;
       padding: 0em;
-      border: solid medium #066ed1; } }
+      border: solid medium #066ed1; }
+    #cyber .char .chartext, #cyber .char img {
+      display: inline-block;
+      vertical-align: top;
+      max-width: 60%; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -45,25 +45,27 @@
       text-align: center;
       border: none;
       margin: 0em; }
+    #note .cominavbox {
+      text-align: center; }
     #note .cominavbox, #note .cominavbox li {
-      display: inline-block;
       padding: 0em;
       margin-top: 1em;
       margin-bottom: 0em; }
-    #note .cominavbox li a:active, #note .cominavbox li a:focus {
-      display: block;
-      outline: dotted medium #ff4081; }
-    #note .cominavbox li img {
-      background-color: #01579b;
-      display: block;
-      -webkit-transition: background-color 0.2s ease;
-      -moz-transition: background-color 0.2s ease;
-      transition: background-color 0.2s ease; }
-      #note .cominavbox li img:active, #note .cominavbox li img:focus, #note .cominavbox li img:hover {
-        background-color: #00BCD4;
+    #note .cominavbox li {
+      display: inline-block; }
+      #note .cominavbox li a:active, #note .cominavbox li a:focus {
+        display: block;
+        outline: dotted medium #ff4081; }
+      #note .cominavbox li img {
+        background-color: #01579b;
         -webkit-transition: background-color 0.2s ease;
         -moz-transition: background-color 0.2s ease;
         transition: background-color 0.2s ease; }
+        #note .cominavbox li img:active, #note .cominavbox li img:focus, #note .cominavbox li img:hover {
+          background-color: #00BCD4;
+          -webkit-transition: background-color 0.2s ease;
+          -moz-transition: background-color 0.2s ease;
+          transition: background-color 0.2s ease; }
     #note figure + .cominavbox {
       margin-top: 0em; }
     #note header {
@@ -199,7 +201,7 @@
       #note .char dt, #note .char dd {
         display: inline;
         white-space: pre; } }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 1024px) {
     #note figure {
       margin-left: 1em; }
     #note .cominavbox, #note .cominavbox li {
@@ -255,17 +257,20 @@
         margin: 1em; }
     #note .action {
       font-weight: bold; }
-    #note .char h2 {
-      margin-top: 0em; }
-    #note .char dl {
-      font-size: 0.8em;
-      margin-left: 1em; }
-    #note .char img {
-      float: left;
-      margin: 0em;
-      margin-right: 1em;
-      margin-left: 0.5em;
-      padding: 0em;
-      border: solid medium #4a148c; } }
+    #note .char {
+      padding: 0em; }
+      #note .char h2 {
+        margin-top: 0em; }
+      #note .char img {
+        margin: 0em 1em 1em 0.5em;
+        padding: 0em;
+        border: solid medium #4a148c; }
+      #note .char .chartext {
+        margin: 0em;
+        text-align: left; }
+      #note .char .chartext, #note .char img {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 75%; } }
 
 /*# sourceMappingURL=style.css.map */

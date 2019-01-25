@@ -5,11 +5,11 @@ def readme():
         return f.read()
 
 setup(name='springheel',
-      version='0.2',
+      version='1.0',
       description='Static site generator for webcomics',
       long_description="A simple static site generator designed for webcomics",
       classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
         'Programming Language :: Python :: 3',
         'Intended Audience :: End Users/Desktop',
@@ -23,8 +23,7 @@ setup(name='springheel',
       packages=['springheel'],
       install_requires=[
           'feedgen',
-          'arrow',
-          'awesome-slugify',
+          'awesome-slugify'
       ],
       entry_points = {
           'console_scripts': ['springheel-init=springheel.command_line:init',

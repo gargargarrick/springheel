@@ -33,10 +33,6 @@
     #cherry .cominavbox, #cherry .cominavbox li {
       display: inline-block;
       padding: 0em; }
-    #cherry .cominavbox li a, #cherry .cominavbox li a img {
-      display: block; }
-    #cherry .cominavbox li a:hover img {
-      background: #ffcaec; }
     #cherry .cominavbox li a:active, #cherry .cominavbox li a:focus {
       outline-width: medium; }
     #cherry * + * {
@@ -109,8 +105,10 @@
         margin-left: 0em; }
       #cherry .char dt, #cherry .char dd {
         display: inline;
-        white-space: pre; } }
-  @media screen and (min-width: 40em) {
+        white-space: pre; }
+    #cherry .chartext, #cherry .intro {
+      border: none; } }
+  @media screen and (min-width: 1024px) {
     #cherry * + * {
       margin-top: 1em; }
     #cherry body {
@@ -196,7 +194,6 @@
         text-align: left;
         margin: 1em; }
     #cherry .char img {
-      float: left;
       margin-right: 1em; } }
 
 /*# sourceMappingURL=style.css.map */

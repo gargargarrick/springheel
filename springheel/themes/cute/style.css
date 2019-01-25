@@ -11,8 +11,8 @@
       background: url("cakeMid.png") repeat-x 0 0, url("cakeCenter.png") repeat 0 0;
       color: #000;
       text-align: center;
-      font-size: 1.2em;
-      font-family: "Lato", "Noto Sans", "DejaVu Sans", sans-serif;
+      font-size: 1.5em;
+      font-family: sans-serif;
       margin: 0em; }
     #cute main, #cute figure {
       margin-left: 0em;
@@ -23,9 +23,14 @@
       padding: 1em;
       text-align: center;
       border: none; }
+    #cute .cominavbox {
+      background: #fff;
+      border: thick solid #FFCCFF;
+      padding: 1em; }
+      #cute .cominavbox li {
+        padding: 0em; }
     #cute .cominavbox, #cute .cominavbox li {
-      display: inline-block;
-      padding: 0em; }
+      display: inline-block; }
     #cute figure, #cute main div, #cute nav li, #cute .archive {
       border: thick solid #FFCCFF;
       background: #fff;
@@ -92,14 +97,15 @@
         margin-left: 0em; }
       #cute .char dt, #cute .char dd {
         display: inline;
-        white-space: pre; } }
-  @media screen and (min-width: 40em) {
+        white-space: pre; }
+      #cute .char .chartext, #cute .char .chartext p {
+        margin: 0em; } }
+  @media screen and (min-width: 1024px) {
     #cute body {
-      font-size: 1.5em;
       margin-left: 1em; }
     #cute figure {
       margin-left: 1em; }
-    #cute figure, #cute nav li, #cute .archive, #cute main div {
+    #cute figure, #cute nav li, #cute .archive, #cute main div, #cute .cominavbox {
       border: thick solid #FFCCFF;
       border-image-slice: 20 20 20 20 fill;
       border-image-width: 10px 10px 10px 10px;
@@ -114,7 +120,8 @@
       margin-left: 1em;
       margin-right: 1em;
       margin-top: 0.5em;
-      margin-bottom: 0em; }
+      margin-bottom: 0em;
+      padding: 0.5em; }
     #cute figure {
       width: 60%;
       margin-left: 15%; }
@@ -149,8 +156,9 @@
       text-align: center; }
       #cute .main p {
         margin-left: 0em; }
+    #cute .intro, #cute .chartext {
+      border: none; }
     #cute .intro {
-      border: none;
       margin: 0em;
       padding: 0em;
       text-align: left; }
@@ -164,6 +172,12 @@
         font-weight: bold;
         text-indent: 1em; }
       #cute .intro .desc {
-        font-weight: bold; } }
+        font-weight: bold; }
+    #cute .char img {
+      margin: 1em; }
+    #cute .chartext, #cute .char img {
+      display: inline-block;
+      vertical-align: top;
+      max-width: 60%; } }
 
 /*# sourceMappingURL=style.css.map */

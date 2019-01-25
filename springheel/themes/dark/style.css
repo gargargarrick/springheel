@@ -93,7 +93,6 @@
       #dark .char dl {
         font-size: 0.9em; }
       #dark .char img {
-        float: left;
         margin: 1em; }
       #dark .char p {
         text-indent: 1em; } }
@@ -154,6 +153,10 @@
       text-align: left; }
       #dark .main p, #dark .intro p {
         text-align: left;
-        margin: 1em; } }
+        margin: 1em; }
+    #dark .char img, #dark .chartext {
+      display: inline-block;
+      vertical-align: top;
+      max-width: 50%; } }
 
 /*# sourceMappingURL=style.css.map */

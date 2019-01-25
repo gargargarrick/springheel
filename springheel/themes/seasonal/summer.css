@@ -2,30 +2,8 @@
   /*seasonal*/
   #seasonal {
     /*Spring*/
-    /*$bbg: #4866c5;
-    $mbg: #fafafa;
-    $la: #73cfd9;
-    $ma: #429ad7;
-    $dt: #eee;
-    $lt: #111;
-    $bgi: url("spring.png");
-    $aa: #315040;
-    $av: #324b9e;
-    $ahaf: #3c7949;
-    $anh: #46a946;*/
     /*Summer*/
     /*Fall*/
-    /*$bbg: #504170;
-    $mbg: #fed4aa;
-    $la: #c26e3d;
-    $ma: #c26e3d;
-    $dt: #180e0e;
-    $lt: #111;
-    $bgi: url("autumn.png");
-    $aa: #6d2e2e;
-    $av: #42365d;
-    $ahaf: #a93444;
-    $anh: #f88f32;*/
     /*Winter*/
     /*$bbg: #504170;
     $mbg: #fafafa;
@@ -143,18 +121,19 @@
       max-width: 100%; }
     #seasonal .action {
       font-weight: bold; }
-    #seasonal .cominavbox a:focus, #seasonal .cominavbox a:active {
-      outline: medium dashed #3c7949; }
-    #seasonal .cominavbox li img {
-      display: inline; }
+    #seasonal .cominavbox {
+      background-color: #fafafa;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      border: solid thick #429ad7; }
+      #seasonal .cominavbox a:focus, #seasonal .cominavbox a:active {
+        outline: medium dashed #3c7949; }
     #seasonal .cominavbox li a:active, #seasonal .cominavbox li a:focus {
-      display: block;
       outline: dashed medium #46a946; }
       #seasonal .cominavbox li a:active img, #seasonal .cominavbox li a:focus img {
         background-color: #46a946; }
     #seasonal .cominavbox li img {
-      background-color: #3c7949;
-      display: block; }
+      background-color: #3c7949; }
       #seasonal .cominavbox li img:active, #seasonal .cominavbox li img:focus, #seasonal .cominavbox li img:hover {
         background-color: #46a946; }
     #seasonal .char {
@@ -189,7 +168,7 @@
         padding: 0em; }
     #seasonal div + div, #seasonal section + section {
       margin-top: 2em; } }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 1024px) {
     #seasonal body {
       font-size: 1.5em;
       margin: 0;
@@ -257,8 +236,21 @@
       margin: 0em; }
     #seasonal .intro + .intro {
       border-top: dashed thin #4866c5; }
-    #seasonal .char img {
-      float: left;
-      margin: 0em 1em; } }
+    #seasonal .char {
+      padding: 0em; }
+      #seasonal .char h2 {
+        text-indent: 1em; }
+      #seasonal .char img {
+        margin: 0em 1em 1em 1em; }
+      #seasonal .char .chartext {
+        margin: 0em;
+        text-align: left;
+        border: none; }
+      #seasonal .char p {
+        margin-top: 0em; }
+      #seasonal .char .chartext, #seasonal .char img {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 50%; } }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=summer.css.map */

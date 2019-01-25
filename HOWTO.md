@@ -10,13 +10,12 @@ To install from PyPi, simply run
 
     $ pip install springheel
 
-If you want to build from the git source, you'll need the following dependencies:
+To install from source, you'll need the following dependencies:
 
 * [Feedgenerator](https://github.com/lkiesow/python-feedgen)
-* [arrow](https://github.com/crsmithdev/arrow/)
 * [awesome-slugify](https://github.com/dimka665/awesome-slugify)
 
-Then navigate to the springheel directory, and run `setup.py install` (you may need to run this with `su -c` depending on the type of Python install you have).
+Navigate to the springheel directory, and run `setup.py install` (you may need to run this with `su -c` depending on the type of Python install you have).
 
 **Important**: If you're on Windows and get an error about Visual C++ while installing dependencies (lxml especially), do not panic! Just use PyPi to install that specific library directly, then try to install springheel again.
 
@@ -25,8 +24,8 @@ Then navigate to the springheel directory, and run `setup.py install` (you may n
 Springheel is designed to be as simple and bare-bones as possible, so there are some features it doesn't have (or just doesn't have *yet*). E.g.:
 
 * There is no real tagging system; if you enter anything into the metadata field "tags", it's just displayed as plain text, and there is no way to browse pages by tag.
-* The RSS feed may list items out of order, especially if multiple comics have the same posting date.
-* Page commentaries and character descriptions are plain text only (no HTML) and don't support line breaks. This is because parsing markup in those blocks would be *much* more complicated and slow.
+* The RSS feed may list items out of order if multiple comics have the same posting date.
+* Page commentaries and character descriptions are plain text only (no HTML). This is because parsing markup in those blocks would be *much* more complicated and slow.
 * Comic pages must be one image each -- you can't yet create "webtoon"-style comics that are split up into multiple images, and have them all display on one page. I've included hooks to change this eventually, at least.
 * Templates have not been translated into many languages yet; so far, they're only available in the languages I personally speak. You also can't have a single site with multiple languages yet.
 * There is no out-of-the-box support for ads or analytics.
@@ -108,26 +107,28 @@ Springheel comes equipped with a whopping 20 default themes, in order to match a
 
 These are the themes available by default:
 
-* plain -- an extremely simple theme. Uses no images. 3.7KiB + 3.6Kib arrows.
-* dark -- a simple dark theme. Uses no images. 4.1KiB + 3.4KiB arrows.
-* beach -- a relaxed and fun theme inspired by the blue ocean. 36.8KiB + 5.7KiB arrows.
-* book -- an elegant theme inspired by hardbound books. 12.8KiB + 2.8KiB arrows.
-* brandy -- a hard-boiled noir theme of stark light and darkness. 835B + 9.9KiB arrows.
-* cherry -- a girly pink theme for shoujo dreamers. Kib + KiB arrows.
-* city -- a dreamy, twinkly theme. 6.1KiB + 735B arrows.
-* cute -- a cute, candy-themed pink and brown theme. Might be good for comics about sweets or children. 6.1KiB + 4.5KiB arrows.
-* cyber -- a theme inspired by 90s cyberpunk. 5.6KiB + 7.7KiB arrows.
-* fantasy -- a lush theme with green, gems, and parchment, perfect for "high fantasy" comics. 20KiB + 18.2KiB arrows.
-* garden -- a soothing floral theme. **Warning: large theme.** 125.7KiB + 17.7KiB arrows.
-* gothic -- featuring blood, roses, and bloody roses. 14.6KiB + 31.3KiB arrows.
-* haunted -- a slightly cute, slightly spooky theme inspired by haunted houses. Suited for comedic horror comics. 19.8KiB + 38.5KiB arrows.
-* magiccircle -- a mysterious, fantastical theme. **Warning: large theme.** 100.3KiB + 16.2KiB arrows.
-* note -- a striking, modern theme, designed to look "native" on phones. Uses no images. 7.7KiB + 3.5KiB arrows.
-* prayers -- a peaceful theme in the image of a Shinto shrine. 14.1KiB + 39.7KiB arrows.
-* starship -- a retro sci-fi theme with stars and metal. 7.2KiB + 700B arrows.
-* steam -- a "steampunk" theme with plenty of gears. 17.6KiB + 22.3KiB arrows.
-* twothousand -- a theme inspired by typical comic site designs from the early 2000s. Uses no images. 6.9KiB + 4.4KiB arrows.
+* plain -- an extremely simple theme. Uses no images. 7.6KiB + 3.6Kib arrows.
+* dark -- a simple dark theme. Uses no images. 8.1KiB + 3.4KiB arrows.
+* beach -- a relaxed and fun theme inspired by the blue ocean. 41KiB + 7.8KiB arrows.
+* book -- an elegant theme inspired by hardbound books. 17.2KiB + 2.8KiB arrows.
+* brandy -- a hard-boiled noir theme of stark light and darkness. 11.1KiB + 9.9KiB arrows.
+* cherry -- a girly pink theme for shoujo dreamers. 21.2KiB + 13.1KiB arrows.
+* city -- a dreamy, twinkly theme. 10.2KiB + 735B arrows.
+* cute -- a cute, candy-themed pink and brown theme. Might be good for comics about sweets or children. 10.5KiB + 4.5KiB arrows.
+* cyber -- a theme inspired by 90s cyberpunk. 10.5KiB + 7.7KiB arrows.
+* fantasy -- a lush theme with green, gems, and parchment, perfect for "high fantasy" comics. 24.2KiB + 18.2KiB arrows.
+* garden -- a soothing floral theme. **Warning: large theme.** 129.9KiB + 17.7KiB arrows.
+* gothic -- featuring blood, roses, and bloody roses. 18.7KiB + 19.2KiB arrows.
+* haunted -- a slightly cute, slightly spooky theme inspired by haunted houses. Suited for comedic horror comics. 24.2KiB + 38.5KiB arrows.
+* magiccircle -- a mysterious, fantastical theme. **Warning: large theme.** 79.4KiB + 16.2KiB arrows.
+* note -- a striking, modern theme, designed to look "native" on phones. Uses no images. 12.3KiB + 3.5KiB arrows.
+* prayers -- a peaceful theme in the image of a Shinto shrine. Mostly included because fans of a certain scrolling-shooter game might prefer red-white over black. ^\_\- 18.5KiB + 39.7KiB arrows.
+* rock -- a theme with plenty of star power, perfect for comics involving three chords and cowboys of the rhinestone variety. 15.8KiB + 22.1KiB arrows.
+* starship -- a retro sci-fi theme with stars and metal. 11.8KiB + 700B arrows.
+* steam -- a "steampunk" theme with plenty of gears. 17.6KiB + 8.2KiB arrows.
+* twothousand -- a theme inspired by typical comic site designs from the early 2000s. Uses no images. 12.7KiB + 4.4KiB arrows.
 * seasonal -- a theme you can change to match the seasons. **Requires configuration before use.** ~8KiB each + 1.6KiB arrows.
+* western -- a rugged theme fit for a cowpoke. 14.7KiB + 18.6KiB arrows
 
 To use any of these themes, just enter its name as `site_style` in `conf.py`. Plain is the default.
 

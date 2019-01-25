@@ -14,7 +14,7 @@
       background-attachment: fixed;
       color: #ccc0d4;
       text-align: center;
-      font-size: 1.2em;
+      font-size: 1.5em;
       font-family: serif;
       margin: 0em; }
     #haunted main, #haunted figure {
@@ -33,7 +33,7 @@
       background-repeat: no-repeat; }
       #haunted div#transcript, #haunted div.archive, #haunted section#transcript, #haunted section.archive {
         background-position: 98% 98%; }
-      #haunted div#commentary, #haunted div.main, #haunted div.char, #haunted section#commentary, #haunted section.main, #haunted section.char {
+      #haunted div#commentary, #haunted div.main, #haunted section#commentary, #haunted section.main {
         background-position: 98% 5%; }
     #haunted figure {
       background-image: url("bat.png");
@@ -116,19 +116,18 @@
         outline: medium dashed #6dd3d6; }
     #haunted .cominavbox li {
       display: inline-block;
-      margin: 0em;
-      max-width: 20%; }
+      margin: 0em; }
       #haunted .cominavbox li a:active, #haunted .cominavbox li a:focus {
         display: block;
         outline: dashed medium #fab3ff; }
       #haunted .cominavbox li img {
-        display: block;
         margin: 0em; }
     #haunted figure + .cominavbox {
       margin-bottom: 1em;
       margin-top: 0em; }
     #haunted .char {
-      text-align: left; }
+      text-align: center;
+      background-image: none; }
       #haunted .char dt:after {
         content: ":"; }
       #haunted .char dd:after {
@@ -139,6 +138,9 @@
       #haunted .char dt, #haunted .char dd {
         display: inline;
         white-space: pre; }
+      #haunted .char .chartext {
+        margin: none;
+        border: none; }
     #haunted h2 {
       font-weight: normal;
       font-weight: bold; }
@@ -162,9 +164,8 @@
         padding: 0em; }
     #haunted div + div, #haunted section + section {
       margin-top: 1em; } }
-  @media screen and (min-width: 40em) {
+  @media screen and (min-width: 1024px) {
     #haunted body {
-      font-size: 1.5em;
       margin: 0;
       padding-bottom: 0; }
     #haunted main div, #haunted main section, #haunted figure, #haunted .archive, #haunted h1 {
@@ -227,8 +228,16 @@
       margin: 0em; }
     #haunted .intro + .intro {
       border-top: dashed thin #181029; }
-    #haunted .char img {
-      float: left;
-      margin: 0em 1em; } }
+    #haunted .char {
+      padding: 0em; }
+      #haunted .char img {
+        margin: 0em 1em 1em 0em; }
+      #haunted .char .chartext {
+        margin: 0em;
+        text-align: left; }
+      #haunted .char .chartext, #haunted .char img {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 50%; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -28,7 +28,7 @@
             background-color: $vbg;
             color: $vc;
             text-align: center;
-            font-size: 1.2em;
+            font-size: 1.5em;
             font-family: "Lato", "Noto Sans", "DejaVu Sans", sans-serif;
             margin: 0em;
         }
@@ -50,7 +50,7 @@
             padding-left: 0em;
         }
         
-        main div, main section, figcaption, nav li {
+        main div, main section, figcaption, nav li, .cominavbox {
             background-color: $bg;
             color: $vt;
             border: solid thick $twinkle;
@@ -85,14 +85,11 @@
         }
         
         .cominavbox li img {
-            padding: 0.5rem;
+            padding: 0.5em;
         }
         
         .cominavbox li a:active, .cominavbox li a:focus {
             outline: dashed medium $moon;
-            img {
-                background: $bg;
-            }
         }
 
         main, p + p, li + li, div+div, section+section {
@@ -173,7 +170,7 @@
             font-weight: bold
         }
         
-        .intro {
+        .intro, .chartext {
             border: none;
         }
         
@@ -199,16 +196,14 @@
                 font-size: 0.9em;
             };
             img {
-                float: left;
                 margin: 1em;
             };
         }
 
     /*Medium screens*/
 
-        @media screen and (min-width: 40em) {
+        @media screen and (min-width: 1024px) {
             body {
-                font-size: 1.5em;
                 background-color: $vbg;
                 background: url("skyline.png");
             }
@@ -246,8 +241,8 @@
             }
 
             .cominavbox {
-                margin: 0em;
-                padding-left: 25%;
+                margin: 0em 0em 0em 1em;
+                padding: 1em;
                 li {
                     margin-top: 0em;
                     margin-right: 1em;
@@ -323,6 +318,14 @@
                     margin-top: 0em;
                     margin-left: 0em;
                 };
+            }
+            .chartext {
+                margin: 0em;
+                &, .char img {
+                    display: inline-block;
+                    vertical-align: top;
+                    max-width: 60%
+                }
             }
         }
     }

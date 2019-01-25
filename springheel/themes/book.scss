@@ -14,7 +14,7 @@
             background: url("leather.jpg");
             color: $out-text;
             text-align: center;
-            font-size: 1.2em;
+            font-size: 1.5em;
             font-family: serif;
             margin: 0em;
         }
@@ -64,9 +64,9 @@
             li {
                 padding: 0em;
                 margin: 0em;
-                img {
-                    max-width: 25%;
-                }
+                // img {
+                //     max-width: 25%;
+                // }
             }
         }
 
@@ -124,7 +124,7 @@
             color: #ffa4a4;
         }
 
-        main div, main section {
+        main div, main section, .cominavbox {
             padding-top: 1em;
             padding-bottom: 1em;
             a:link {
@@ -193,20 +193,20 @@
                 font-size: 0.9em;
             };
             img {
-                float: left;
-                margin: 2em;
+                margin: 0.5em;
             };
             p {
                 text-indent: 1em;
+            }
+            .chartext {
+                margin: 0em;
+                padding: 0em;
             }
         }
 
     /*Medium screens*/
 
-        @media screen and (min-width: 40em) {
-            body {
-                font-size: 1.5em;
-            }
+        @media screen and (min-width: 1024px) {
 
             figure {
                 margin: 0em 1em 0em 1em;
@@ -349,13 +349,23 @@
                 }
             }
             
-            .intro {
+            .intro, .chartext {
                 background: none;
             }
             
             .author, .charname {
                 font-weight: bold;
                 font-variant: small-caps
+            }
+            
+            .char img {
+                margin-left: 2em;
+            }
+            
+            .char img, .chartext {
+                vertical-align: top;
+                display: inline-block;
+                max-width: 60%;
             }
         }
     }
