@@ -19,7 +19,7 @@
 
 name = "springheel"
 author = "gargargarrick"
-__version__ = '1.0.1'
+__version__ = '1.0.2'
 
 class Site:
     def __init__(self):
@@ -1020,7 +1020,7 @@ def build():
                                                chapter_sections_j,
                                                "</section>"])
             chapter_archives = chapter_archives_r.format(
-                status=comic.statuss)
+                category=comic.category,status=comic.statuss)
             archives_r.append(chapter_archives)
         else:
             archive_sections = sep.join(archive_d_secs)
