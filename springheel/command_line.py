@@ -5,3 +5,6 @@ def build():
 
 def init():
     springheel.init()
+
+def version():
+    springheel.version()

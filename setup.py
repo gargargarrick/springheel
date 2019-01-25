@@ -27,7 +27,8 @@ setup(name='springheel',
       ],
       entry_points = {
           'console_scripts': ['springheel-init=springheel.command_line:init',
-                              'springheel-build=springheel.command_line:build']
+                              'springheel-build=springheel.command_line:build',
+                              'springheel=springheel.command_line:version']
           },
       include_package_data=True,
       zip_safe=False)

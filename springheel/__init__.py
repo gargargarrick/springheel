@@ -1286,6 +1286,11 @@ def build():
 def init():
     lang=springheelinit.getLang()
     springheelinit.copyAssets(lang)
+
+def version():
+    print("{name} {version} copyright 2017-2019 {author}. Some rights reserved. See LICENSE.".format(name=springheel.name,author=springheel.author,version=springheel.__version__))
+    print("Installed to {dir}.".format(dir=sys.modules['springheel'].__path__[0]))
+    print("Run springheel-init to create a new site in the current directory, or springheel-build to regenerate the site.")
         
         
 
