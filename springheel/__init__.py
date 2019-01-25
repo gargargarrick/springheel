@@ -92,8 +92,9 @@ def getButtons(site,rss_s):
 
     social_links = []
     
-    rss_link = {"url":"feed.xml", "site":"", "title":rss_s, "image":"rss.png"}
-    social_links.append(rss_link)
+    if site.config.social_icons == "False":
+        rss_link = {"url":"feed.xml", "site":"", "title":rss_s, "image":"rss.png"}
+        social_links.append(rss_link)
 
     if twitter_handle != "False":
         twitter_url = "http://twitter.com/"+twitter_handle
@@ -124,7 +125,6 @@ def getButtons(site,rss_s):
     for i in social_links:
         icon = wrapImage(i["url"],i["title"],i["image"])
         social_icons.append(icon)
-        logMsg(icon)
 
     icons = " ".join(social_icons)
     
@@ -203,7 +203,7 @@ def copyBanner(old_banner_path,new_banner_path,banner):
     logmesg = "Banner {banner} copied.".format(banner=banner)
     logMsg(logmesg)
 
-def copyMultiThemes(themes):
+def copyMultiThemes(themes,c_path,o_path,assets_path):
 
     theme_path = os.path.join(c_path,"themes")
     new_theme_path = os.path.join(o_path,assets_path)
@@ -224,12 +224,13 @@ def copyMultiThemes(themes):
         sc = d["sheet_contents"]      
         style.append(sc)        
         for i in d["files"]:
-            source_path = d["o_path"]
+            source_dir = d["o_path"]
+            source_path = os.path.join(source_dir,i)
             try:
                 shutil.copy(source_path,new_theme_path)
             except IsADirectoryError:
                 pass
-            logmesg = "Assets copied to {new_theme_path}".format(new_theme_path=new_theme_path)
+            logmesg = "{source_path} copied to {new_theme_path}".format(source_path=source_path,new_theme_path=new_theme_path)
             logMsg(logmesg)
 
     cstyle = "".join(style)
@@ -241,7 +242,7 @@ def copyMultiThemes(themes):
 
     return()
 
-def copyMultiArrows(themes):
+def copyMultiArrows(themes,c_path,o_path,assets_path):
 
     for theme in themes:
 
@@ -356,6 +357,7 @@ def makeFilename(series_slug,page):
 def build():
     site = Site()
     sep = "\n"
+    falses = [False,"False"]
     config = Config("conf.ini")
     site.config = config
     image_rename_pattern = site.config.image_rename_pattern
@@ -534,7 +536,7 @@ def build():
             match.mode = conf["mode"]
             match.status = conf["status"]
             match.chapters = conf["chapters"]
-            if match.chapters != "False":
+            if match.chapters not in falses:
                 match.chapters = True
                 match.chapters_file = os.path.join(i_path,conf["chapters"])
             else:
@@ -563,7 +565,7 @@ def build():
         if characters_page == True:
             chars_file = conf["chars"]
 
-        if match.chapters != False:
+        if match.chapters not in falses:
             chapters_dicts = getChapters(match.chapters_file)
             match.chapters_dicts = chapters_dicts
             for chapter in chapters_dicts:
@@ -579,6 +581,9 @@ def build():
             logMsg("Chapters:")
             for asdf in match.chapters_list:
                 logMsg(str(asdf.__dict__))
+        else:
+            logMsg("{match} has a chapter setting of {chapter}.".format(match=match.category,chapter=match.chapters))
+            match.chapters_list = []
 
         title = meta["title"]
         series_slug = i.series_slug
@@ -864,9 +869,9 @@ def build():
         i.page_int = page_int
         i.title_slug = title_slug
         i.transcr_fn = new_transcr
-        #if match.chapters != "False":
+        if match.chapters not in falses:
             #meta["chapter"] = chapter
-            #this_page.chapter = chapter
+            i.chapter = chapter
 
         banner_path = os.path.join(o_path,banner)
 
@@ -885,8 +890,8 @@ def build():
     if category_theme:
         logmesg = "Categories have separate themes. Concatenating stylesheets..."
         logMsg(logmesg)
-        copytheme.copyMultiThemes(themes)
-        copytheme.copyMultiArrows(themes)
+        copyMultiThemes(themes,c_path,o_path,assets_path)
+        copyMultiArrows(themes,c_path,o_path,assets_path)
 
     ## Generate archives
     logmesg = "Generating archives..."
@@ -962,35 +967,46 @@ def build():
         logMsg(logmesg)
         category = comic.category
         status = comic.statuss
-        #header = comic.header
+        comic_header = comic.header
         desc = comic.desc
         logmesg = "Currently working on {category}.".format(category=category)
         logMsg(logmesg)
+
+        ## Get the comic-specific header.
+        old_cheader_path = os.path.join(c_path,"input",comic_header)
+        new_cheader_path = o_path
+
+        copyHeader(old_cheader_path,new_cheader_path)
+        ## This got reset somewhere? Huh
+        match = [item for item in ccomics if item.category == page.category][0]
+
         archive_links_page = []
         archive_links_date = []
         for i in comic.pbp:
             archive_link = generatearchive.getLinks(i)
             i.archive_link = archive_link
             archive_links_page.append(archive_link)
-        for i in comic.pbd:
-            archive_link = generatearchive.getLinks(i)
-            archive_links_date.append(archive_link)
-        archive_sections_date = generatearchive.generateSeriesArchives(
-            category,
-            status,
-            archive_links_page)
-        archive_d_secs.append(archive_sections_date)
+        if match.chapters not in falses:
+            for i in comic.pbd:
+                archive_link = generatearchive.getLinks(i)
+                archive_links_date.append(archive_link)
+            archive_sections_date = generatearchive.generateSeriesArchives(
+                category,
+                status,
+                archive_links_page)
+            archive_d_secs.append(archive_sections_date)
 
-        if comic.chapters == True:
+        if comic.chapters not in falses:
             for page in comic.pbp:
                 if hasattr(page,"chapter"):
+                    match = [item for item in ccomics if item.category == page.category][0]
                     cho = [item for item in match.chapters_list if item.chap_number == int(page.chapter)][0]
                     cho.pages.append(page)
                 else:
                     logmesg = "No chapters found."
                     logMsg(logmesg)
 
-        if comic.chapters == True:
+        if comic.chapters not in falses:
             chapter_sections = []
             for chapi in match.chapters_list:
                 in_this_chapter = []

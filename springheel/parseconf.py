@@ -98,7 +98,7 @@ def comicCParse(conf):
         pass
 
     try:
-        category_theme = cc.get("ComicConfig","theme")
+        category_theme = cc.get("ComicConfig","category_theme")
         comic_config["category_theme"] = category_theme
     except configparser.NoOptionError:
         pass
