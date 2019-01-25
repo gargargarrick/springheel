@@ -1,5 +1,5 @@
 # Springheel
-A static site generator for webcomics (in alpha)
+A static site generator for webcomics (in beta)
 
 ![](springheel-logo.svg)
 
@@ -9,7 +9,7 @@ Springheel is a static site generator for webcomics.
 
 Whether it's static site generators or Wordpress plugins, most existing software is geared towards blogs, not comics. Adapting them to work with comics is kludgey and fragile, and unecessarily exposes you to security problems. But why force a square peg into a round hole when round pegs are easy enough to make? With that in mind I created Springheel. (The name comes from Spring-heel Jack, for the "English monster" naming scheme that many static generators keep to.)
 
-Springheel is built with Python 3.5, [Feedgenerator](https://github.com/lkiesow/python-feedgen), and [arrow](https://github.com/crsmithdev/arrow/).
+Springheel is built with Python 3.5, [Feedgenerator](https://github.com/lkiesow/python-feedgen), and [awesome-slugify](https://github.com/dimka665/awesome-slugify).
 
 Keep in mind that I'm self-taught \([obligatory xkcd](http://www.xkcd.com/1513/)\) and maybe don't look too closely at the actual code.
 
@@ -30,7 +30,6 @@ Springheel requires at least **Python 3.**
 If you want to build from the git source, you'll need the following dependencies:
 
 * [Feedgenerator](https://github.com/lkiesow/python-feedgen)
-* [arrow](https://github.com/crsmithdev/arrow/)
 * [awesome-slugify](https://github.com/dimka665/awesome-slugify)
 
 Then navigate to the springheel directory, and run `setup.py install` (you may need to run this with `su -c` depending on the type of Python install you have).
