@@ -111,7 +111,7 @@ These are the themes available by default:
 * dark -- a simple dark theme. Uses no images. 8.1KiB + 3.4KiB arrows.
 * beach -- a relaxed and fun theme inspired by the blue ocean. 41KiB + 7.8KiB arrows.
 * book -- an elegant theme inspired by hardbound books. 17.2KiB + 2.8KiB arrows.
-* brandy -- a hard-boiled noir theme of stark light and darkness. 11.1KiB + 9.9KiB arrows.
+* brandy -- a hard-boiled noir theme of stark light and darkness. 11.1KiB + 23.1KiB arrows.
 * cherry -- a girly pink theme for shoujo dreamers. 21.2KiB + 13.1KiB arrows.
 * city -- a dreamy, twinkly theme. 10.2KiB + 735B arrows.
 * cute -- a cute, candy-themed pink and brown theme. Might be good for comics about sweets or children. 10.5KiB + 4.5KiB arrows.
@@ -122,7 +122,7 @@ These are the themes available by default:
 * haunted -- a slightly cute, slightly spooky theme inspired by haunted houses. Suited for comedic horror comics. 24.2KiB + 38.5KiB arrows.
 * magiccircle -- a mysterious, fantastical theme. **Warning: large theme.** 79.4KiB + 16.2KiB arrows.
 * note -- a striking, modern theme, designed to look "native" on phones. Uses no images. 12.3KiB + 3.5KiB arrows.
-* prayers -- a peaceful theme in the image of a Shinto shrine. Mostly included because fans of a certain scrolling-shooter game might prefer red-white over black. ^\_\- 18.5KiB + 39.7KiB arrows.
+* prayers -- a peaceful theme in the image of a Shinto shrine. Mostly included because fans of a certain scrolling-shooter game might prefer red-white over black. ^\_\- 18.5KiB + 27.5KiB arrows.
 * rock -- a theme with plenty of star power, perfect for comics involving three chords and cowboys of the rhinestone variety. 15.8KiB + 22.1KiB arrows.
 * starship -- a retro sci-fi theme with stars and metal. 11.8KiB + 700B arrows.
 * steam -- a "steampunk" theme with plenty of gears. 17.6KiB + 8.2KiB arrows.
