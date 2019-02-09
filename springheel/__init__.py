@@ -19,7 +19,7 @@
 
 name = "springheel"
 author = "gargargarrick"
-__version__ = '1.0.2'
+__version__ = '2.0.0'
 
 class Site:
     def __init__(self):
@@ -396,7 +396,7 @@ def build():
     comics_base = getComics()
 
     ## Get template paths
-    base_t,chars_t,archive_t,index_t = gettemplatenames.getTemplateNames(site.config.language)
+    base_t,chars_t,archive_t,index_t = gettemplatenames.getTemplateNames()
 
     ## Select the right template for the specific site type we have
     all_page_ints = []
@@ -413,7 +413,7 @@ def build():
         archive_t = archive_t+".multi"
 
     ## Get translation strings, too.
-    templates_path = springheelinit.getTemplatesPath(site.config.language)[1]
+    templates_path = springheelinit.getTemplatesPath()[1]
     translated_strings = gentrans.generateTranslations(site.config.language, templates_path)
 
     #### Get basic info first.
@@ -848,7 +848,17 @@ def build():
             year=year,
             author=author,
             icons=icons,
-            copyright_statement=copyright_statement)
+            home_s=translated_strings["home_s"],
+            archive_s=translated_strings["archive_s"],
+            caption_s=translated_strings["caption_s"],
+            metadata_s=translated_strings["meta_s"],
+            copyright_statement=copyright_statement,
+            stylesheet_name_s=translated_strings["stylesheet_name_s"],
+            skip_s=translated_strings["skip_s"],
+            page_s=translated_strings["page_s"],
+            meta_s=translated_strings["meta_s"],
+            generator_s=translated_strings["generator_s"],
+            goarchive_s=translated_strings["goarchive_s"])
 
         logmesg = "Writing {html_fn}...".format(html_fn=html_filename)
         logMsg(logmesg)
@@ -983,12 +993,12 @@ def build():
         archive_links_page = []
         archive_links_date = []
         for i in comic.pbp:
-            archive_link = generatearchive.getLinks(i)
+            archive_link = generatearchive.getLinks(i,translated_strings)
             i.archive_link = archive_link
             archive_links_page.append(archive_link)
         if match.chapters not in falses:
             for i in comic.pbd:
-                archive_link = generatearchive.getLinks(i)
+                archive_link = generatearchive.getLinks(i,translated_strings)
                 archive_links_date.append(archive_link)
             archive_sections_date = generatearchive.generateSeriesArchives(
                 category,
@@ -1047,9 +1057,7 @@ def build():
     arch_template_name = archive_t
     arch_template = os.path.join(c_path,arch_template_name)
 
-    link_rel_l = ["""<link rel="home" href="index.html" title="{home_s}">""".format(
-        home_s=translated_strings["home_s"]),
-        """<link rel="alternate" type="application/rss+xml" title="RSS" href="feed.xml">"""]
+    link_rel_l = ['<link rel="alternate" type="application/rss+xml" title="{rss_s}" href="feed.xml">'.format(rss_s=translated_strings["rss_s"])]
     link_rel = sep.join(link_rel_l)
 
     out_file = os.path.join(o_path,"archive.html")
@@ -1073,7 +1081,15 @@ def build():
             year=year,
             author=site.config.site_author,
             copyright_statement=copyright_statement,
-            icons=icons)
+            icons=icons,
+            home_s=translated_strings["home_s"],
+            archive_s=translated_strings["archive_s"],
+            stylesheet_name_s=translated_strings["stylesheet_name_s"],
+            skip_s=translated_strings["skip_s"],
+            page_s=translated_strings["page_s"],
+            meta_s=translated_strings["meta_s"],
+            generator_s=translated_strings["generator_s"],
+            goarchive_s=translated_strings["goarchive_s"])
 
         logmesg = "Writing {archive}...".format(archive="archive.html")
         logMsg(logmesg)
@@ -1128,7 +1144,17 @@ def build():
                 year=year,
                 author=site.config.site_author,
                 copyright_statement=copyright_statement,
-                icons=icons)
+                icons=icons,
+                home_s=translated_strings["home_s"],
+                archive_s=translated_strings["archive_s"],
+                stylesheet_name_s=translated_strings["stylesheet_name_s"],
+                skip_s=translated_strings["skip_s"],
+                page_s=translated_strings["page_s"],
+                meta_s=translated_strings["meta_s"],
+                golatest_s=translated_strings["golatest_s"],
+                gofirst_s=translated_strings["gofirst_s"],
+                generator_s=translated_strings["generator_s"],
+                goarchive_s=translated_strings["goarchive_s"])
 
 
             logmesg = "Writing {indexh}...".format(indexh="index.html")
@@ -1164,7 +1190,15 @@ def build():
                 year=year,
                 author=site.config.site_author,
                 copyright_statement=copyright_statement,
-                icons=icons)
+                icons=icons,
+                home_s=translated_strings["home_s"],
+                archive_s=translated_strings["archive_s"],
+                stylesheet_name_s=translated_strings["stylesheet_name_s"],
+                skip_s=translated_strings["skip_s"],
+                page_s=translated_strings["page_s"],
+                meta_s=translated_strings["meta_s"],
+                generator_s=translated_strings["generator_s"],
+                goarchive_s=translated_strings["goarchive_s"])
 
 
             logmesg = "Writing {indexh}...".format(indexh="index.html")
@@ -1239,7 +1273,15 @@ def build():
                     year=year,
                     author=site.config.site_author,
                     copyright_statement=copyright_statement,
-                    icons=icons)
+                    icons=icons,
+                    home_s=translated_strings["home_s"],
+                    archive_s=translated_strings["archive_s"],
+                    stylesheet_name_s=translated_strings["stylesheet_name_s"],
+                    skip_s=translated_strings["skip_s"],
+                    page_s=translated_strings["page_s"],
+                    meta_s=translated_strings["meta_s"],
+                    generator_s=translated_strings["generator_s"],
+                    goarchive_s=translated_strings["goarchive_s"])
 
 
                 logmesg = "Writing {out_name}...".format(out_name=out_name)
@@ -1285,7 +1327,15 @@ def build():
                     year=year,
                     author=site.config.site_author,
                     copyright_statement=copyright_statement,
-                    icons=icons)
+                    icons=icons,
+                    home_s=translated_strings["home_s"],
+                    archive_s=translated_strings["archive_s"],
+                    stylesheet_name_s=translated_strings["stylesheet_name_s"],
+                    skip_s=translated_strings["skip_s"],
+                    page_s=translated_strings["page_s"],
+                    meta_s=translated_strings["meta_s"],
+                    generator_s=translated_strings["generator_s"],
+                    goarchive_s=translated_strings["goarchive_s"])
 
 
                 logmesg = "Writing {out_name}...".format(out_name=out_name)

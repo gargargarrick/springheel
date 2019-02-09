@@ -19,13 +19,13 @@
 
 import springheel.parseconf, os
 
-def getLinks(i):
+def getLinks(i,translated_strings):
     ## Oh no u don't
-    link_format = """<li><a href="{html_filename}">#{page}: {title} ({date})</a></li>"""
+    #link_format = """<li><a href="{html_filename}">#{page}: {title} ({date})</a></li>"""
+    archive_l = translated_strings["archive_l_s"].format(title=i.title,page=i.page)
+    link_format = "<li><a href='{html_filename}'>{archive_l}</a></li>"
     archive_link = link_format.format(html_filename=i.html_filename,
-                                      page=i.page,
-                                      title=i.title,
-                                      date=i.date_s)
+                                      archive_l=archive_l)
     return(archive_link)
 
 def generateArchives(archive,translated_strings):

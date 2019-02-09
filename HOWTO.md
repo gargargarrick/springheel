@@ -91,7 +91,7 @@ As per the name, this holds the comic files (images and metadata). Site banners 
 
 ### Templates
 
-These are the HTML templates used to generate the finished pages. They're divided up by language; for our test, which uses an English-language comic, there will only be an "en" directory.
+These are the templates used to generate the finished pages. One is a JSON file that contains all the translations, and the rest are HTML files.
 
 As long as they're not based on machine translations, pull requests for languages I haven't provided are welcome!
 
@@ -435,7 +435,7 @@ A. This is the method I use:
 
 2. Put each one in its own directory (./en, ./ja, ./de).
 
-3. Use a bit of sed wizardry to point all assets to a central location, to save on bandwidth.
+3. Use a bit of sed/awk wizardry to point all assets to a central location, to save on bandwidth.
 
 It's admittedly a bit kludgey, and in the future I'd like to implement a more straightforward method for multiple-language sites.
 

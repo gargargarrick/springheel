@@ -52,11 +52,17 @@ def navGen(navdirection,page_int,first_page,last_page,first,final,series_slug,si
     next_s = translated_strings["next_s"]
     last_s = translated_strings["last_s"]
     home_s = translated_strings["home_s"]
+    last_page = str(last_page)
+
+    firsts_s = translated_strings["firsts_s"]
+    prevs_s = translated_strings["prevs_s"]
+    nexts_s = translated_strings["nexts_s"]
+    lasts_s = translated_strings["lasts_s"]
 
     navl = [' <ul class="cominavbox">']
-    linkl = [""" <link rel="home" href="index.html" title="{home_s}">""".format(home_s=home_s),"""<link rel="alternate" type="application/rss+xml" title="RSS" href="feed.xml">"""]
+    linkl = ['<link rel="alternate" type="application/rss+xml" title="RSS" href="feed.xml">']
 
-    image_template = """<li><a href="{series_slug}_{page}.html"><img src="arrows/{site_style}_{relation}.png" alt="{image_string}" /><br/>{image_string}</a></li>"""
+    image_template = """<li><a href="{series_slug}_{page}.html"><img src="arrows/{site_style}_{relation}.png" alt="{image_long_string}" /><br/>{image_short_string}</a></li>"""
     linkrel_template = """<link rel="{relation}" href="{series_slug}_{page}.html" title="{page_string}">"""
 
 
@@ -67,13 +73,15 @@ def navGen(navdirection,page_int,first_page,last_page,first,final,series_slug,si
                                        page=last_page,
                                        site_style=site_style,
                                        relation="first",
-                                       image_string=last_s)
+                                       image_long_string=last_s,
+                                       image_short_string=lasts_s)
             navl.append(ns)
             ns = image_template.format(series_slug=series_slug,
                                        page=next_page,
                                        site_style=site_style,
                                        relation="prev",
-                                       image_string=next_s)
+                                       image_long_string=next_s,
+                                       image_short_string=nexts_s)
             navl.append(ns)
 
             ls = linkrel_template.format(relation="last",
@@ -92,13 +100,15 @@ def navGen(navdirection,page_int,first_page,last_page,first,final,series_slug,si
                                        page=prev_page,
                                        site_style=site_style,
                                        relation="next",
-                                       image_string=prev_s)
+                                       image_long_string=prev_s,
+                                       image_short_string=prevs_s)
             navl.append(ns)
             ns = image_template.format(series_slug=series_slug,
                                        page=first_page,
                                        site_style=site_style,
                                        relation="last",
-                                       image_string=first_s)
+                                       image_long_string=first_s,
+                                       image_short_string=firsts_s)
             navl.append(ns)
 
             ls = linkrel_template.format(relation="prev",
@@ -117,14 +127,16 @@ def navGen(navdirection,page_int,first_page,last_page,first,final,series_slug,si
                                        page=first_page,
                                        site_style=site_style,
                                        relation="first",
-                                       image_string=first_s)
+                                       image_long_string=first_s,
+                                       image_short_string=firsts_s)
             navl.append(ns)
             prev_page = str(page_int-1)
             ns = image_template.format(series_slug=series_slug,
                                        page=prev_page,
                                        site_style=site_style,
                                        relation="prev",
-                                       image_string=prev_s)
+                                       image_long_string=prev_s,
+                                       image_short_string=prevs_s)
             navl.append(ns)
 
             ls = linkrel_template.format(relation="first",
@@ -143,13 +155,15 @@ def navGen(navdirection,page_int,first_page,last_page,first,final,series_slug,si
                                        page=next_page,
                                        site_style=site_style,
                                        relation="next",
-                                       image_string=next_s)
+                                       image_long_string=next_s,
+                                       image_short_string=nexts_s)
             navl.append(ns)
             ns = image_template.format(series_slug=series_slug,
                                        page=last_page,
                                        site_style=site_style,
                                        relation="last",
-                                       image_string=last_s)
+                                       image_long_string=last_s,
+                                       image_short_string=lasts_s)
             navl.append(ns)
 
             ls = linkrel_template.format(relation="next",

@@ -19,7 +19,7 @@
 
 import os
 
-def getTemplateNames(lang):
+def getTemplateNames():
     base = "base-template"
     characters = "characters-template"
     archive = "archive-template"
@@ -31,14 +31,11 @@ def getTemplateNames(lang):
 
     root="templates"
 
-    lang_path=os.path.join(root,lang)
-    print(lang_path)
-
     fulls=[]
 
     for pattern in patterns:
-        file=".".join([pattern,lang,extension])
-        full=os.path.join(lang_path,file)
+        file=".".join([pattern,extension])
+        full=os.path.join(root,file)
         fulls.append(full)
 
     templates=tuple(fulls)

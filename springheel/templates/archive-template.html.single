@@ -6,21 +6,21 @@
 <meta name="robots" content="index,follow" />
 <meta name="viewport" content="initial-scale=1" />
 <meta name="generator" content="Springheel" />
-<link rel="stylesheet" type="text/css" href="assets/style.css" title="Standard" />
+<link rel="stylesheet" type="text/css" href="assets/style.css" title="{stylesheet_name_s}" />
 <link rel="icon" type="image/gif" href="assets/icon.gif" />
-<link rel="home" href="index.html" title="Home" />
+<link rel="home" href="index.html" title="{home_s}" />
 {linkrels}
 </head>
 <body>
-<p id="skippy"><a href="#maincontent">Skip to main content</a></p>
+<p id="skippy"><a href="#maincontent">{skip_s}</a></p>
 
 <header>
     <img id="banner" role="banner" src="{banner}" alt="{category}" />
 
-    <nav aria-label="Navigation">
+    <nav>
 {top_site_nav}
     </nav>
-    <h1 id="comictitle">{category} - Archive</h1>
+    <h1 id="comictitle">{category} - {archive_s}</h1>
 </header>
 
 <main role="main" aria-labelledby="comictitle" id="maincontent" class="archives">
@@ -28,7 +28,7 @@
 </main>
 <footer role="contentinfo">
     {copyright_statement}
-    <p>Built with <a href="http://github.com/gargargarrick/springheel">Springheel</a>.</p>
+    <p>{generator_s}</p>
     <p class="sbuttons"><a href="feed.xml"><img src="socialbuttons/rss.png" alt="RSS Feed" width="24" height="24" /></a>  {icons}</p>
 </footer>
 </body>

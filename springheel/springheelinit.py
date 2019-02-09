@@ -43,7 +43,7 @@ def makeOutput():
 
     return(c_path,output_path,pages_path,assets_path,arrows_path,socialbuttons_path)
 
-def getTemplatesPath(lang):
+def getTemplatesPath():
     ## Get the usr directory of Springheel.
     try:
         raw_springheel_path = sys.modules['springheel'].__path__[0]
@@ -56,10 +56,11 @@ def getTemplatesPath(lang):
     return(raw_springheel_path,templates_path)
 
 def copyAssets(lang):
-    raw_springheel_path,templates_path = getTemplatesPath(lang)
+    raw_springheel_path,templates_path = getTemplatesPath()
     strings_path = os.path.join(templates_path, "strings.json")
     ## It's divided up by language.
-    my_lang_templates = os.path.join(templates_path,lang)
+    #my_lang_templates = os.path.join(templates_path,lang)
+    my_lang_templates = templates_path
     print("Getting {lang} templates from {my_lang_templates}...".format(lang=lang,my_lang_templates=my_lang_templates))
     if os.path.exists(my_lang_templates) == False and lang != "en":
         lang="en"
@@ -70,7 +71,7 @@ def copyAssets(lang):
         return False
     current_dir = os.getcwd()
 
-    templates_o = os.path.join(current_dir,"templates",lang)
+    templates_o = os.path.join(current_dir,"templates")
     
     print("Copying templates to {templates_output}...".format(templates_output=templates_o))
     copy_tree(my_lang_templates,templates_o)
@@ -93,6 +94,8 @@ def copyAssets(lang):
             confpy_path = shutil.copy(o_conf,n_conf)
         except FileNotFoundError:
             print("Couldn't find conf.ini in the Springheel install directory. Did you delete it somehow?")
+    else:
+        print("conf.ini already exists in output directory; not overwriting.")
 
     ##arrows
     base_arrows_path = os.path.join(raw_springheel_path,"arrows")

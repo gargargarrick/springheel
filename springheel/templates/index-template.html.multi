@@ -6,18 +6,18 @@
 <meta name="robots" content="index,follow" />
 <meta name="viewport" content="initial-scale=1" />
 <meta name="generator" content="Springheel" />
-<link rel="stylesheet" type="text/css" href="assets/style.css" title="デフォルト" />
+<link rel="stylesheet" type="text/css" href="assets/style.css" title="{stylesheet_name_s}" />
 <link rel="icon" type="image/gif" href="assets/icon.gif" />
-<link rel="home" href="index.html" title="ホーム" />
-<link rel="contents" href="archive.html" title="目次" />
+<link rel="home" href="index.html" title="{home_s}" />
+<link rel="contents" href="archive.html" title="{archive_s}" />
 {linkrels}
 </head>
 <body>
-<p id="skippy"><a href="#maincontent">内容へ</a></p>
+<p id="skippy"><a href="#maincontent">{skip_s}</a></p>
 
 <header>
     <img id="banner" role="banner" src="{banner}" alt="{category}" />
-    <nav aria-label="Navigation">
+    <nav>
 {top_site_nav}
     </nav>
     <h1 id="comictitle">{site_title}</h1>
@@ -30,8 +30,8 @@
 </main>
 <footer role="contentinfo">
     {copyright_statement}
-    <p><a href="http://github.com/gargargarrick/springheel">Springheel</a>で作りました。</p>
-    <p class="sbuttons"><a href="feed.xml"><img src="socialbuttons/rss.png" alt="RSSフィード" width="24" height="24" /></a>  {icons}</p>
+    <p>{generator_s}</p>
+    <p class="sbuttons"><a href="feed.xml"><img src="socialbuttons/rss.png" alt="RSS Feed" width="24" height="24" /></a>  {icons}</p>
 </footer>
 </body>
 </html>

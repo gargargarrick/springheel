@@ -1,5 +1,10 @@
 # Springheel Changelog
 
+## 2.0.0
++ Condensed template files into one
++ Improved accessibility
++ Updated translations
+
 ## 1.0.2
 + Fixed a bug where archives couldn't be generated for multi-comic sites.
 

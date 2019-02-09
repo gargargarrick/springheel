@@ -13,7 +13,7 @@
         "ja":"キャラクター"
     },
     "caption_s":{
-        "en":"Creator's Commentary",
+        "en":"Commentary",
         "de":"Kommentar",
         "ja":"解説"
     },
@@ -45,27 +45,47 @@
     "chapter_s":{
         "en":"Chapter {chapter}: {chapter_title}",
         "de":"Kapitel {chapter}: {chapter_title}",
-        "ja":"第{chapter}話 − {chapter_title}"
+        "ja":"第{chapter}話 「{chapter_title}」"
     },
     "first_s":{
         "en":"First Page",
-        "de":"Erste Seite",
+        "de":"erste Seite",
         "ja":"最初から読む"
     },
     "prev_s":{
         "en":"Previous Page",
-        "de":"Vorherige Seite",
+        "de":"vorige Seite",
         "ja":"前に戻る"
     },
     "next_s":{
         "en":"Next Page",
-        "de":"Volgende Seite",
+        "de":"nächste Seite",
         "ja":"次に進む"
     },
     "last_s":{
         "en":"Last Page",
-        "de":"Endseite",
+        "de":"letzte Seite",
         "ja":"最新に進む"
+    },
+    "firsts_s":{
+        "en":"First",
+        "de":"erste",
+        "ja":"初"
+    },
+    "prevs_s":{
+        "en":"Previous",
+        "de":"vorige",
+        "ja":"前"
+    },
+    "nexts_s":{
+        "en":"Next",
+        "de":"nächste",
+        "ja":"次"
+    },
+    "lasts_s":{
+        "en":"Last",
+        "de":"letzte",
+        "ja":"新"
     },
     "golatest_s":{
         "en":"Go to latest page",
@@ -76,6 +96,11 @@
         "en":"Go to first page",
         "de":"Zu erste Seite",
         "ja":"最初のページへ"
+    },
+    "goarchive_s":{
+        "en":"Go to archive",
+        "de":"Zu das Comicarchiv",
+        "ja":"目次へ"
     },
     "complete_s":{
         "en":"Complete",
@@ -123,6 +148,36 @@
     "h1_s":{
         "en":"{category} #{page} &ldquo;{title}&rdquo;",
         "de":"{category} #{page} &bdquo;{title}&ldquo;",
-        "ja":"{category} 第{page}話 「{title}」"
+        "ja":"{category} 第{page}回 「{title}」"
+    },
+    "archive_l_s":{
+        "en":"#{page} &ldquo;{title}&rdquo;",
+        "de":"#{page} &bdquo;{title}&ldquo;",
+        "ja":"第{page}回「{title}」"
+    },
+    "stylesheet_name_s":{
+        "en":"Standard",
+        "de":"Normal",
+        "ja":"デフォルト"
+    },
+    "skip_s":{
+        "en":"Skip to main content",
+        "de":"zum Inhalt",
+        "ja":"内容へ"
+    },
+    "page_s":{
+        "en":"Page",
+        "de":"Seite",
+        "ja":"ページ"
+    },
+    "meta_s":{
+        "en":"Metadata",
+        "de":"Metadaten",
+        "ja":"メタ情報"
+    },
+    "generator_s":{
+        "en":"Built with <a href='http://github.com/gargargarrick/springheel'>Springheel</a>",
+        "de":"Mit <a href='http://github.com/gargargarrick/springheel'>Springheel</a> gemacht.",
+        "ja":"<a href='http://github.com/gargargarrick/springheel'>Springheel</a>で作りました。"
     }
 }
