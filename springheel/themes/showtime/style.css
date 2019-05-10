@@ -1,0 +1,150 @@
+@media screen {
+  /*Showtime*/
+  #showtime {
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #showtime * {
+      box-sizing: content-box; }
+    #showtime body {
+      background-color: #171717;
+      background: #171717 url("curtaint.png") repeat-x 0% 0%;
+      color: #d9d9d9;
+      text-align: center;
+      font-size: 1.5em;
+      font-family: sans-serif; }
+    #showtime main, #showtime figure {
+      margin-left: 0em;
+      padding-left: 0em; }
+    #showtime h1 {
+      margin: 0em; }
+    #showtime figure#comic {
+      padding: 1em;
+      text-align: center; }
+    #showtime .cominavbox, #showtime .cominavbox li {
+      display: inline-block;
+      padding: 0em; }
+    #showtime p + p, #showtime li + li {
+      margin-top: 0.5em; }
+    #showtime #skippy {
+      text-align: left; }
+    #showtime #skippy a, #showtime #skippy a:hover, #showtime #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #showtime #skippy a:active, #showtime #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #0000ff; }
+    #showtime nav li {
+      display: inline-block; }
+    #showtime #commentary, #showtime #transcript {
+      text-align: left; }
+    #showtime .statline {
+      font-weight: bold; }
+    #showtime a:link {
+      color: #9E9EFF;
+      text-decoration: underline; }
+    #showtime a:visited {
+      color: #C38FFF; }
+    #showtime a:hover {
+      text-decoration: underline; }
+    #showtime a:hover, #showtime a:focus, #showtime a:active {
+      color: #FF8585; }
+    #showtime footer p {
+      margin-left: 0em;
+      text-align: left; }
+    #showtime .archive {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left; }
+    #showtime img, #showtime embed, #showtime object, #showtime video {
+      max-width: 100%; }
+    #showtime .action {
+      font-weight: bold; }
+    #showtime .charname {
+      font-weight: bold; }
+    #showtime .char dt:after {
+      content: ":"; }
+    #showtime .char dd:after {
+      content: "\A";
+      white-space: pre; }
+    #showtime .char dd {
+      margin-left: 0em; }
+    #showtime .char dt, #showtime .char dd {
+      display: inline;
+      white-space: pre; } }
+  @media screen and (min-width: 1024px) {
+    #showtime body {
+      margin: 0em;
+      background: url("curtaint.png") repeat-x 0% 0%, url("curtainr.png") fixed repeat-y 100% 0%, #171717 url("curtainl.png") fixed repeat-y 0% 0%; }
+    #showtime figure#comic {
+      margin-left: 1em;
+      margin-top: 0em;
+      margin-bottom: 0em; }
+      #showtime figure#comic img {
+        border: 1em solid #A06D3D; }
+    #showtime main div, #showtime main section {
+      text-align: left;
+      padding-left: 1em;
+      padding-right: 1em;
+      width: 70%;
+      margin: auto; }
+    #showtime div + div {
+      margin-bottom: 0em;
+      margin-top: 0em; }
+    #showtime .cominavbox, #showtime .cominavbox li {
+      margin-left: 1em;
+      margin-right: 1em;
+      margin-top: 0.5em;
+      margin-bottom: 0em; }
+    #showtime figure + .cominavbox {
+      margin-top: 0em; }
+    #showtime figure {
+      margin-left: 1em; }
+    #showtime h1 {
+      font-size: 1.5em; }
+    #showtime h2 {
+      font-size: 1.2em; }
+    #showtime h3 {
+      font-size: 1em; }
+    #showtime nav li {
+      padding-top: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 0.8em;
+      margin: 0em; }
+    #showtime .statline {
+      font-size: 0.8em;
+      text-align: right; }
+    #showtime footer {
+      background: #171717;
+      margin: 0em;
+      padding: 0.5em; }
+    #showtime footer p {
+      font-size: 0.7em;
+      margin-bottom: 0em; }
+    #showtime .archive {
+      margin-left: 0em;
+      margin-right: 1em;
+      padding-left: 1em;
+      padding-right: 1em; }
+    #showtime .main {
+      padding: 0.5em;
+      margin: auto;
+      width: 50%; }
+      #showtime .main p {
+        margin-left: 0em; }
+    #showtime .char {
+      text-align: left; }
+    #showtime .chartext, #showtime .charimg {
+      display: inline-block;
+      vertical-align: top; } }
+
+/*# sourceMappingURL=style.css.map */

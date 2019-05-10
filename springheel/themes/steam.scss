@@ -38,7 +38,7 @@
             margin: 1em 0em 0em 0em;
         }
 
-        figure {
+        figure#comic {
             padding: 1em 0em 0em 0em;
             margin: 0em;
             text-align: center;
@@ -239,7 +239,7 @@
                 font-size: 1.5em;
             }
 
-            figure {
+            figure#comic {
                 padding: 1em 1em 0em 1em;
                 margin-left: 1em;
                 margin-top: 0em;
@@ -363,7 +363,7 @@
             }
             
             .main {
-                padding: 0em;
+                padding: 1em;
                 margin: auto;
                 width: 60%;
                 text-align: center;

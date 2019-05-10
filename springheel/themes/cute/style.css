@@ -14,12 +14,12 @@
       font-size: 1.5em;
       font-family: sans-serif;
       margin: 0em; }
-    #cute main, #cute figure {
+    #cute main, #cute figure#comic {
       margin-left: 0em;
       padding-left: 0em; }
     #cute h1 {
       margin: 0em; }
-    #cute figure {
+    #cute figure#comic {
       padding: 1em;
       text-align: center;
       border: none; }
@@ -31,7 +31,7 @@
         padding: 0em; }
     #cute .cominavbox, #cute .cominavbox li {
       display: inline-block; }
-    #cute figure, #cute main div, #cute nav li, #cute .archive {
+    #cute figure#comic, #cute main div, #cute nav li, #cute .archive {
       border: thick solid #FFCCFF;
       background: #fff;
       padding-top: .3em;
@@ -80,7 +80,7 @@
       max-width: 100%; }
     #cute .action {
       font-weight: bold; }
-    #cute figure, #cute main div {
+    #cute figure#comic, #cute main div {
       max-width: 100%;
       margin-left: 0em;
       margin-right: 0em;
@@ -103,9 +103,9 @@
   @media screen and (min-width: 1024px) {
     #cute body {
       margin-left: 1em; }
-    #cute figure {
+    #cute figure#comic {
       margin-left: 1em; }
-    #cute figure, #cute nav li, #cute .archive, #cute main div, #cute .cominavbox {
+    #cute figure#comic, #cute nav li, #cute .archive, #cute main div, #cute .cominavbox {
       border: thick solid #FFCCFF;
       border-image-slice: 20 20 20 20 fill;
       border-image-width: 10px 10px 10px 10px;
@@ -122,10 +122,10 @@
       margin-top: 0.5em;
       margin-bottom: 0em;
       padding: 0.5em; }
-    #cute figure {
+    #cute figure#comic {
       width: 60%;
       margin-left: 15%; }
-      #cute figure + .cominavbox {
+      #cute figure#comic + .cominavbox {
         margin-top: 0em; }
     #cute h1 {
       font-size: 1.5em; }

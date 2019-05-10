@@ -25,7 +25,7 @@
             margin-left: 0em;
             padding-left: 0em;
         }
-        figure {
+        figure#comic {
             padding: 0em;
             text-align: center;
             border: none;
@@ -198,7 +198,7 @@
                 margin-top: 0em;
             }
 
-            figure {
+            figure#comic {
                 margin-left: 1em;
             }
 
@@ -230,7 +230,7 @@
                 padding-right: 1em;
             }
             
-            figure, main div, .archive, nav li {
+            figure#comic, main div, .archive, nav li {
                 border: double medium $accent;
                 background: $bg-color;
             }

@@ -24,8 +24,9 @@ def getTemplateNames():
     characters = "characters-template"
     archive = "archive-template"
     index = "index-template"
+    extra = "extras-template"
 
-    patterns=[base,characters,archive,index]
+    patterns=[base,characters,archive,index,extra]
 
     extension = "html"
 

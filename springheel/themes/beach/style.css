@@ -22,7 +22,7 @@
       background-image: url("beach_sand.png");
       padding-left: 0.5em;
       padding-right: 0.5em; }
-    #beach main div, #beach main section, #beach figure, #beach .archive, #beach h1, #beach .cominavbox {
+    #beach main div, #beach main section, #beach figure#comic, #beach .archive, #beach h1, #beach .cominavbox {
       -webkit-box-shadow: 0em 0em 0.5em 0.5em #94e8e8;
       -moz-box-shadow: 0em 0em 0.5em 0.5em #94e8e8;
       box-shadow: 0em 0em 0.5em 0.5em #94e8e8; }

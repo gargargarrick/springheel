@@ -1,22 +1,22 @@
 @media screen {
-/*Cute*/
-    #cute {
+/*Showtime*/
+    #showtime {
+    $text: #d9d9d9;
+    $bg: #171717;
     /* Default (small) screens */
         * {
             box-sizing: content-box;
         }
         body {
-            background-color: #e7dfc2;
-            background: url("cakeMid.png") repeat-x 0 0,
-            url("cakeCenter.png") repeat 0 0;
-            color: #000;
+            background-color: $bg;
+            background: $bg url("curtaint.png") repeat-x 0% 0%;
+            color: $text;
             text-align: center;
             font-size: 1.5em;
             font-family: sans-serif;
-            margin: 0em;
         }
 
-        main, figure#comic {
+        main, figure {
             margin-left: 0em;
             padding-left: 0em;
         }
@@ -27,32 +27,13 @@
         figure#comic {
             padding: 1em;
             text-align: center;
-            border: none;
         }
-        
-        .cominavbox {
-            background: #fff;
-            border: thick solid #FFCCFF;
-            padding: 1em;
-            & li {
-                padding: 0em;
-            }
-        }
-        
         .cominavbox, .cominavbox li {
             display: inline-block;
+            padding: 0em;
         }
 
-        figure#comic, main div, nav li, .archive {
-            border: thick solid #FFCCFF;
-            background: #fff;
-            padding-top: .3em;
-            padding-bottom: .3em;
-            padding-left: 1.2em;
-            padding-right: 1.5em;
-        }
-
-        p + p, li + li, div + div {
+        p + p, li + li {
             margin-top: 0.5em
         }
 
@@ -82,7 +63,7 @@
             display: inline-block;
         }
 
-        main div {
+        #commentary, #transcript {
             text-align: left;
         }
 
@@ -91,16 +72,20 @@
         }
 
         a:link {
-            color: #a700a4;
+            color: #9E9EFF;
             text-decoration: underline
         }
 
         a:visited {
-            color: #7024a6;
+            color: #C38FFF;
+        }
+
+        a:hover {
+            text-decoration: underline
         }
 
         a:hover, a:focus, a:active {
-            color: #ff0000;
+            color: #FF8585;
         }
 
         footer p {
@@ -121,17 +106,12 @@
         .action {
             font-weight: bold;
         }
-        
-        figure#comic, main div {
-            max-width: 100%;
-            margin-left: 0em;
-            margin-right: 0em;
-            border-left: 0em;
-            border-right: 0em
+
+        .charname {
+            font-weight: bold
         }
         
         .char {
-            text-align: left;
             dt:after {
                 content: ":"
             }
@@ -145,35 +125,36 @@
                 display: inline;
                 white-space: pre;
             }
-            .chartext, .chartext p {
-                margin: 0em;
-            }
         }
 
     /*Medium screens*/
 
         @media screen and (min-width: 1024px) {
             body {
-                margin-left: 1em;
+                margin: 0em;
+                background: url("curtaint.png") repeat-x 0% 0%, url("curtainr.png") fixed repeat-y 100% 0%, $bg url("curtainl.png") fixed repeat-y 0% 0%;
             }
 
             figure#comic {
                 margin-left: 1em;
+                margin-top: 0em;
+                margin-bottom: 0em;
+                img {
+                  border: 1em solid #A06D3D
+                }
             }
 
-            figure#comic, nav li, .archive, main div, .cominavbox {
-                border: thick solid #FFCCFF;
-                border-image-slice: 20 20 20 20 fill;
-                border-image-width: 10px 10px 10px 10px;
-                border-image-outset: 0px 0px 0px 0px;
-                border-image-repeat: round round;
-                border-image-source: url("stripe-border.png")
+            main div, main section {
+                text-align: left;
+                padding-left: 1em;
+                padding-right: 1em;
+                width: 70%;
+                margin: auto;
             }
 
-            main div {
-                padding: 1em;
-                width: 80%;
-                margin-top: 1em;
+            div + div {
+                margin-bottom: 0em;
+                margin-top: 0em;
             }
 
             .cominavbox, .cominavbox li {
@@ -181,15 +162,14 @@
                 margin-right: 1em;
                 margin-top: 0.5em;
                 margin-bottom: 0em;
-                padding: 0.5em;
             }
 
-            figure#comic {
-                width: 60%;
-                margin-left: 15%;
-                & + .cominavbox {
-                    margin-top: 0em;
-                }
+            figure + .cominavbox {
+                margin-top: 0em;
+            }
+
+            figure {
+                margin-left: 1em;
             }
 
             h1 {
@@ -198,7 +178,10 @@
 
             h2 {
                 font-size: 1.2em;
-                margin: 0em;
+            }
+            
+            h3 {
+                font-size: 1em;
             }
 
             nav li {
@@ -214,63 +197,38 @@
                 text-align: right;
             }
 
-            footer p {
-                font-size: 0.7em;
+            footer {
+              background: $bg;
+              margin: 0em;
+              padding: 0.5em;
             }
 
-            .action {
-                text-indent: 1em;
+            footer p {
+                font-size: 0.7em;
+                margin-bottom: 0em;
             }
 
             .archive {
-                margin: 1em;
-                padding: 1em;
+                margin-left: 0em;
+                margin-right: 1em;
+                padding-left: 1em;
+                padding-right: 1em;
             }
             
             .main {
                 padding: 0.5em;
                 margin: auto;
-                margin-top: 1em;
                 width: 50%;
-                text-align: center;
                 & p {
                     margin-left: 0em;
                 }
             }
-            
-            .intro, .chartext {
-                border: none;
-            }
-            
-            .intro {
-                margin: 0em;
-                padding: 0em;
+            .char {
                 text-align: left;
-                & h2, & p {
-                    margin: 0.5em;
-                    padding: 0.5em;
-                };
-                & img {
-                    display: inline;
-                };
-                & .author {
-                    font-size: 0.8em;
-                    font-weight: bold;
-                    text-indent: 1em;
-                };
-                & .desc {
-                    font-weight: bold;
-                }
             }
-            
-            .char img {
-                margin: 1em;
-            }
-            
-            .chartext, .char img {
-                display: inline-block;
-                vertical-align: top;
-                max-width: 60%;
+            .chartext, .charimg {
+              display: inline-block;
+              vertical-align: top
             }
         }
     }

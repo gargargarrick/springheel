@@ -4,7 +4,7 @@ This is a walkthrough for getting Springheel working, setting up a comic site, a
 
 ## Get Springheel
 
-Springheel requires at least **Python 3.** It will not work with Python 2, which is the default  version on many flavors of GNU/Linux, so watch out.
+Springheel requires at least **Python 3.** It will not work with Python 2, which is still the default  version on many flavors of GNU/Linux, so watch out.
 
 To install from PyPi, simply run
 
@@ -18,6 +18,8 @@ To install from source, you'll need the following dependencies:
 Navigate to the springheel directory, and run `setup.py install` (you may need to run this with `su -c` depending on the type of Python install you have).
 
 **Important**: If you're on Windows and get an error about Visual C++ while installing dependencies (lxml especially), do not panic! Just use PyPi to install that specific library directly, then try to install springheel again.
+
+If I release a new major version of Springheel, that means you should re-initialize any existing comic sites after updating, as there were most likely changes to the themes or template files.
 
 ## Limitations
 
@@ -124,6 +126,7 @@ These are the themes available by default:
 * note -- a striking, modern theme, designed to look "native" on phones. Uses no images. 12.3KiB + 3.5KiB arrows.
 * prayers -- a peaceful theme in the image of a Shinto shrine. Mostly included because fans of a certain scrolling-shooter game might prefer red-white over black. ^\_\- 18.5KiB + 27.5KiB arrows.
 * rock -- a theme with plenty of star power, perfect for comics involving three chords and cowboys of the rhinestone variety. 15.8KiB + 22.1KiB arrows.
+* showtime -- a dramatic theme based on theatrical staging. 18.8KiB + 6.7KiB arrows.
 * starship -- a retro sci-fi theme with stars and metal. 11.8KiB + 700B arrows.
 * steam -- a "steampunk" theme with plenty of gears. 17.6KiB + 8.2KiB arrows.
 * twothousand -- a theme inspired by typical comic site designs from the early 2000s. Uses no images. 12.7KiB + 4.4KiB arrows.
@@ -316,6 +319,25 @@ Suppose we want the first chapter to be called "4-Panel Series 1". We'll add the
  
  That's it! That title will appear on the archive page, as well as in the headings for all pages that are marked as being part of chapter 1.
 
+## Extras
+
+Springheel allows you to create a page to hold various extras. The main use case I was imagining was for guest art, wallpapers, textual side-stories, etc., but you can really put anything you want there.
+
+To create an extras page, pop open `conf.ini` and set `extras_page` to `True`. Then put a JSON file called `Extra.json` in `input`. Here's an example extras file for my sister's comic, *Brutus*:
+
+```{
+  "Fanart":[
+    {"title":"Alucanth","desc":"The very first Brutus fanart was a wonderful Alucanth by garrick!","type":"image","files":["garrick_fanart_01.png"]},
+    {"title":"Brutus MS Paint Poster","desc":"Also by garrick: a big poster!","type":"image","files":["garrick_fanart_02.png"]},
+    {"title":"Just As Brutus'd","desc":"Bardum contributes an amusing parody...","type":"image","files":["bardum_fanart_01.png"]}
+  ],
+  "Comic":[
+    {"title":"Brutus Comic Book Archive","desc":"CBZ files for offline viewing. Read them with most any modern document viewer.","type":"file","files":[{"path":"Brutus_-_1-8.cbz","link":"Brutus Chapters 1-8 [2.2M]"},{"path":"Brutus_Gaiden.cbz","link":"Brutus Gaiden [incomplete, 132.7K]"}]}
+  ]
+}```
+
+That will generate an extras page with Comic and Fanart as the second-order headings. `file`-type items will appear as textual links, and `image`-type ones will appear as image elements with figcaptions.
+
 ### Licensing
 
 You are by no means required to relinquish the copyright of a comic simply because you built the site for it with Springheel. The licensing of your work is *entirely* your decision.
@@ -482,6 +504,12 @@ JavaScript is overused for all sorts of purposes it's not remotely suited for, c
 JavaScript also poses numerous [security hazards](https://arstechnica.com/security/2016/12/millions-exposed-to-malvertising-that-hid-attack-code-in-banner-pixels/) and even [copyright problems](https://www.gnu.org/philosophy/javascript-trap.html), so I wanted vanilla Springheel sites to be perfectly usable even with JavaScript turned completely off. Even if you want really fancy effects, [you might not need JavaScript](http://youmightnotneedjs.com/).
 
 There is one use case that requires JS, but it's also the one thing I can't have Springheel work out on its own: serving up ads. Because virtually every ad service is different (what kind of script is it? Where does it go? What dependencies and other assets does it need?) there's no single, agreed-upon way for Springheel to insert the ad code. For now my recommendation is just reading up on sed, awk, or Perl and making a script to add the snippets for you. (Who knows? If Springheel ever becomes popular, maybe there'll be plugins one day that'll make this process easier.)
+
+---
+
+**Q. Why do extra pages, and only extra pages, use JSON when everything else uses some vaguely YAML-like crap?**
+
+Because I am a dumb ass.
 
 
 

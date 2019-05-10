@@ -22,7 +22,7 @@
             margin: 0;
         }
         
-        figure, .archive, main div {
+        figure#comic, .archive, main div {
             border: double thick $borders;
         }
         .intro {
@@ -34,7 +34,7 @@
             padding-left: 0em;
         }
         
-        figure, .archive {
+        figure#comic, .archive {
             background-color: $box-color;
             background-image: url("horseshoe.png");
             background-repeat: no-repeat;
@@ -60,7 +60,7 @@
             text-align: center;
         }
 
-        figure {
+        figure#comic {
             padding: 1em 0em 0em 0em;
             margin: 0em;
             text-align: center;
@@ -266,7 +266,7 @@
 
         @media screen and (min-width: 1024px) {
 
-            figure {
+            figure#comic {
                 padding: 1em 1em 0em 1em;
                 margin-left: 1em;
                 margin-top: 0em;
@@ -372,7 +372,7 @@
             .main {
                 padding: 0em;
                 margin: 1em auto;
-                width: 60%;
+                width: 70%;
                 text-align: center;
                 & p {
                     margin-left: 0em;

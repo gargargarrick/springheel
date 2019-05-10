@@ -1,5 +1,11 @@
 # Springheel Changelog
 
+## 3.0.0
++ Added extras page functionality
++ Added new theme "showtime"
++ Corrected <title> elements for character pages
++ Improved logging
+
 ## 2.0.0
 + Condensed template files into one
 + Improved accessibility

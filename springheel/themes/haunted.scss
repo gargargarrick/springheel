@@ -33,13 +33,13 @@
             padding-left: 0em;
         }
 
-        main div, main section, figure, .archive {
+        main div, main section, figure#comic, .archive {
             background-color: $mbg;
             padding-left: 0.5em;
             padding-right: 0.5em;
         }
 
-        main div, main section, figure, .archive, h1 {
+        main div, main section, figure#comic, .archive, h1 {
             border: solid thick $acc;
             border-left: none;
             border-right: none;
@@ -56,7 +56,7 @@
             }
         }
         
-        figure {
+        figure#comic {
             background-image: url("bat.png");
             background-repeat: no-repeat;
             background-position: 2% 99%;
@@ -73,7 +73,7 @@
             padding: 1em;
             font-weight: normal;
         }
-        figure {
+        figure#comic {
             padding: 1em 0em;
             margin: 1em 0em;
             text-align: center;
@@ -266,7 +266,7 @@
                 padding-bottom: 0;
             }
 
-            main div, main section, figure, .archive, h1 {
+            main div, main section, figure#comic, .archive, h1 {
                 border: solid thick $acc;
             }
 

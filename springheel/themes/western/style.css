@@ -13,14 +13,14 @@
       font-size: 1.5em;
       font-family: sans-serif;
       margin: 0; }
-    #western figure, #western .archive, #western main div {
+    #western figure#comic, #western .archive, #western main div {
       border: double thick saddlebrown; }
     #western .intro {
       border: none; }
     #western main, #western figure {
       margin-left: 0em;
       padding-left: 0em; }
-    #western figure, #western .archive {
+    #western figure#comic, #western .archive {
       background-color: wheat;
       background-image: url("horseshoe.png");
       background-repeat: no-repeat;
@@ -36,11 +36,11 @@
     #western h1, #western h2, #western h3, #western h4, #western h5, #western p.status {
       font-variant: small-caps;
       text-align: center; }
-    #western figure {
+    #western figure#comic {
       padding: 1em 0em 0em 0em;
       margin: 0em;
       text-align: center; }
-      #western figure img {
+      #western figure#comic img {
         margin: 0em; }
     #western figcaption {
       margin-top: 0.5em;
@@ -170,12 +170,12 @@
       text-indent: 0.5em;
       font-weight: bold; } }
   @media screen and (min-width: 1024px) {
-    #western figure {
+    #western figure#comic {
       padding: 1em 1em 0em 1em;
       margin-left: 1em;
       margin-top: 0em;
       margin-bottom: 0em; }
-      #western figure + .cominavbox {
+      #western figure#comic + .cominavbox {
         margin-top: 0em; }
     #western main div {
       padding: 1em 0.5em;
@@ -238,7 +238,7 @@
     #western .main {
       padding: 0em;
       margin: 1em auto;
-      width: 60%;
+      width: 70%;
       text-align: center; }
       #western .main p {
         margin-left: 0em; }

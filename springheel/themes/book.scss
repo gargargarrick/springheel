@@ -24,7 +24,7 @@
             padding-left: 0em;
         }
         
-        figure, main div, .archives {
+        figure#comic, main div, .archives {
             background-color: $bg;
             background-image: url("paper.gif");
             color: $in-text;
@@ -33,7 +33,7 @@
         h1 {
             margin: 0em;
         }
-        figure {
+        figure#comic {
             padding: 1em 0em 1em 0em;
             margin-left: 0em;
             margin-right: 0em;
@@ -208,7 +208,7 @@
 
         @media screen and (min-width: 1024px) {
 
-            figure {
+            figure#comic {
                 margin: 0em 1em 0em 1em;
                 padding: 1em;
                 img {
@@ -223,12 +223,19 @@
                 width: 80%;
                 margin-left: 1em;
                 & p, & h2 {
-                    margin-left: 2em;
-                    margin-right: 2em;
+                    margin-left: 3rem;
+                    margin-right: 3rem;
                 };
             }
+
+            #extras {
+              figure, p, h2, h3, ul {
+                margin-left: 3rem;
+                margin-right: 3rem;
+              }
+            }
         
-            figure, main div, .archives {
+            figure#comic, main div, .archives {
                 background-color: $bg;
                 background: url("pages_l.png") repeat-y 0% 0%, url("pages_r.png") repeat-y 100% 0%, url("paper.gif");
             }
@@ -259,12 +266,10 @@
 
             h2 {
                 font-size: 1.3em;
-                font-variant: small-caps;
             }
             
             h3 {
                 font-size: 1.1em;
-                font-variant: small-caps;
             }
             
             nav ul {
@@ -355,7 +360,6 @@
             
             .author, .charname {
                 font-weight: bold;
-                font-variant: small-caps
             }
             
             .char img {

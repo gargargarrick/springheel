@@ -17,7 +17,7 @@
     #cherry main, #cherry figure {
       margin-left: 0em;
       padding-left: 0em; }
-    #cherry div, #cherry section, #cherry nav li, #cherry figure, #cherry .cominavbox {
+    #cherry div, #cherry section, #cherry nav li, #cherry figure#comic, #cherry .cominavbox {
       background: #fff6f9;
       border-right: solid thin #cc006d;
       border-bottom: solid thin #cc006d; }
@@ -26,7 +26,7 @@
       font-size: 1.2em; }
     #cherry h2 {
       font-size: 1em; }
-    #cherry figure {
+    #cherry figure#comic {
       padding: 0.3em;
       text-align: center;
       margin-right: 0; }
@@ -113,7 +113,7 @@
       margin-top: 1em; }
     #cherry body {
       margin-left: 1em; }
-    #cherry figure {
+    #cherry figure#comic {
       margin-left: 4em;
       margin-bottom: 0em;
       padding: 1em 1em 0em 1em; }

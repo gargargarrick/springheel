@@ -18,19 +18,19 @@
     #book main, #book figure {
       margin-left: 0em;
       padding-left: 0em; }
-    #book figure, #book main div, #book .archives {
+    #book figure#comic, #book main div, #book .archives {
       background-color: #fdf5e6;
       background-image: url("paper.gif");
       color: #111; }
     #book h1 {
       margin: 0em; }
-    #book figure {
+    #book figure#comic {
       padding: 1em 0em 1em 0em;
       margin-left: 0em;
       margin-right: 0em;
       text-align: center;
       border: none; }
-      #book figure img {
+      #book figure#comic img {
         padding: 0em;
         margin: 0em;
         max-width: 100%; }
@@ -137,10 +137,10 @@
       /*            figure + .cominavbox {*/
       /*                margin-top: 0em;*/
       /*            }*/ }
-      #book figure {
+      #book figure#comic {
         margin: 0em 1em 0em 1em;
         padding: 1em; }
-        #book figure img {
+        #book figure#comic img {
           padding: 1em;
           margin: 1em;
           max-width: 90%; }
@@ -149,9 +149,12 @@
         width: 80%;
         margin-left: 1em; }
         #book main div p, #book main div h2 {
-          margin-left: 2em;
-          margin-right: 2em; }
-      #book figure, #book main div, #book .archives {
+          margin-left: 3rem;
+          margin-right: 3rem; }
+      #book #extras figure, #book #extras p, #book #extras h2, #book #extras h3, #book #extras ul {
+        margin-left: 3rem;
+        margin-right: 3rem; }
+      #book figure#comic, #book main div, #book .archives {
         background-color: #fdf5e6;
         background: url("pages_l.png") repeat-y 0% 0%, url("pages_r.png") repeat-y 100% 0%, url("paper.gif"); }
       #book div + div {
@@ -167,11 +170,9 @@
       #book h1 {
         font-size: 1.5em; }
       #book h2 {
-        font-size: 1.3em;
-        font-variant: small-caps; }
+        font-size: 1.3em; }
       #book h3 {
-        font-size: 1.1em;
-        font-variant: small-caps; }
+        font-size: 1.1em; }
       #book nav ul {
         background-color: #fdf5e6;
         background-image: url("paper.gif");
@@ -233,8 +234,7 @@
       #book .intro, #book .chartext {
         background: none; }
       #book .author, #book .charname {
-        font-weight: bold;
-        font-variant: small-caps; }
+        font-weight: bold; }
       #book .char img {
         margin-left: 2em; }
       #book .char img, #book .chartext {

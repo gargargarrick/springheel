@@ -44,7 +44,7 @@
                          0em 0em 0.5em $bg-color;
         }
 
-        figure {
+        figure#comic {
             padding: 1em 0em 0em 0em;
             margin-left: 0em;
             margin-right: 0em;
@@ -201,7 +201,7 @@
                 padding: 0.5em;
             }
         }
-        figure {
+        figure#comic {
             margin-top: 0em;
             padding-top: 0em;
             margin-bottom: 0em;
@@ -271,7 +271,7 @@
                 background-size: 50%;
             }
 
-            figure {
+            figure#comic {
                 padding: 0em;
                 @include shadow(0em,0em,0.5em,0.5em,$borders);
                 margin-left: 1em;

@@ -164,7 +164,7 @@
                 background: url("my-rose.jpg") fixed 95% 95% no-repeat;
             }            
             
-            figure {
+            figure#comic {
                 margin-left: 4em;
                 margin-top: 2em;
                 /*I feel gross using px, but it is based on the actual image dimensions...*/
@@ -181,13 +181,15 @@
             
             figcaption {
                 margin-bottom: 1em;
+                padding-left: 2em;
+                padding-right: 2em;
             }
 
             .cominavbox, .cominavbox li {
                 margin: 0em 1em 0em 1em;
             }
 
-            figure + .cominavbox {
+            figure#comic + .cominavbox {
                 margin-top: 1em;
             }
 

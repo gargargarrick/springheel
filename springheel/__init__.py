@@ -19,7 +19,7 @@
 
 name = "springheel"
 author = "gargargarrick"
-__version__ = '2.0.0'
+__version__ = '3.0.0'
 
 class Site:
     def __init__(self):
@@ -65,15 +65,17 @@ import springheel.gettemplatenames
 import springheel.parsemeta
 import springheel.parsetranscript
 import springheel.springheelinit
+import springheel.genextra
 
 import shutil
 import configparser, os, datetime, sys
 from operator import itemgetter
 from slugify import slugify
 
-def logMsg(message):
-    logfile = os.path.join(".","springheel.log")
-    message = "\n"+message
+def logMsg(message,path):
+    logfile = os.path.join(path,"springheel.log")
+    now = datetime.datetime.strftime(datetime.datetime.now(),"%Y-%m-%d %H:%M:%S")
+    message = "".join(["\n",now," -- ",message])
     with open(logfile,"a+") as lf:
         lf.write(message)
 
@@ -142,14 +144,14 @@ def copyTheme(site_theme_path,new_site_theme_path):
             pass
 
     logmesg = "Copied assets to {new_site_theme_path}".format(new_site_theme_path=new_site_theme_path)
-    logMsg(logmesg)
+    logMsg(logmesg,".")
 
 def copyButtons(site,old_buttons_path,socialbuttons_path):
 
     files = os.listdir(old_buttons_path)
     
     logmesg = "Social icons: {icons}".format(icons=site.config.social_icons)
-    logMsg(logmesg)
+    logMsg(logmesg,".")
     social_links = getButtons(site,"RSS")[0]
 
     for item in files:
@@ -165,7 +167,7 @@ def copyButtons(site,old_buttons_path,socialbuttons_path):
         logmesg = "Copied social buttons to {socialbuttons_path}".format(socialbuttons_path=socialbuttons_path)
     else:
         logmesg = "Copied RSS feed button to {socialbuttons_path}".format(socialbuttons_path=socialbuttons_path)
-    logMsg(logmesg)
+    logMsg(logmesg,".")
 
 def copyArrows(site,old_arrows_path,new_arrows_path):
 
@@ -179,29 +181,29 @@ def copyArrows(site,old_arrows_path,new_arrows_path):
             shutil.copy(source_path,new_arrows_path)
             tracking.append(str(arrow))
             logmesg = "{arrow} found. Adding...".format(arrow=str(arrow))
-            logMsg(logmesg)
+            logMsg(logmesg,".")
     if tracking == []:
         logmesg = "No navigation arrows found at {old_arrows_path} in the currently-set style.".format(old_arrows_path=old_arrows_path)
         return(False)
     elif len(tracking) < 3:
         trackingj = ", ".join(tracking)
         logmesg = "At least one navigation arrow is missing. The navigation will not display correctly. I was able to find the following arrows: {arrows}".format(arrows=trackingj)
-        logMsg(logmesg)
+        logMsg(logmesg,".")
     else:
         logmesg = "Copied navigation arrows to {new_arrows_path}".format(new_arrows_path=new_arrows_path)
-        logMsg(logmesg)
+        logMsg(logmesg,".")
 
 def copyHeader(old_header_path,new_header_path):
 
     shutil.copy(old_header_path,new_header_path)
     logmesg = "Site header copied."
-    logMsg(logmesg)
+    logMsg(logmesg,".")
 
 def copyBanner(old_banner_path,new_banner_path,banner):
 
     shutil.copy(old_banner_path,new_banner_path)
     logmesg = "Banner {banner} copied.".format(banner=banner)
-    logMsg(logmesg)
+    logMsg(logmesg,".")
 
 def copyMultiThemes(themes,c_path,o_path,assets_path):
 
@@ -231,14 +233,14 @@ def copyMultiThemes(themes,c_path,o_path,assets_path):
             except IsADirectoryError:
                 pass
             logmesg = "{source_path} copied to {new_theme_path}".format(source_path=source_path,new_theme_path=new_theme_path)
-            logMsg(logmesg)
+            logMsg(logmesg,".")
 
     cstyle = "".join(style)
     new_style_path = os.path.join(new_theme_path,"style.css")
     with open(new_style_path,"w+") as fout:
         fout.write(cstyle)
     logmesg = "Concatenated stylesheet written."
-    logMsg(logmesg)
+    logMsg(logmesg,".")
 
     return()
 
@@ -259,17 +261,17 @@ def copyMultiArrows(themes,c_path,o_path,assets_path):
                 shutil.copy(source_path,new_arrows_path)
                 tracking.append(str(arrow))
                 logmesg = "{arrow} found. Adding...".format(arrow=str(arrow))
-                logMsg(logmesg)
+                logMsg(logmesg,".")
         if tracking == []:
             logmesg = "No navigation arrows found at {old_arrows_path} in the currently-set style.".format(old_arrows_path=old_arrows_path)
-            logMsg(logmesg)
+            logMsg(logmesg,".")
             return(False)
         elif len(tracking) < 3:
             logmesg = "At least one navigation arrow is missing. The navigation will not display correctly. I was able to find the following arrows: {tracking}".format(tracking=", ".join(tracking))
-            logMsg(logmesg)
+            logMsg(logmesg,".")
         else:
             logmesg = "Copied navigation arrows to {new_arrows_path}".format(new_arrows_path=new_arrows_path)
-            logMsg(logmesg)
+            logMsg(logmesg,".")
 
     return()
 
@@ -299,25 +301,25 @@ def getComics():
         meta = noext+".meta"
         if transcr in files and meta in files:
             logmesg = "Metadata and transcript found for {image}.".format(image=i)
-            logMsg(logmesg)
+            logMsg(logmesg,original_path)
             comic = Strip(imagef=i,transf=transcr,metaf=meta)
             comics.append(comic)
         elif meta in files and transcr not in files:
             logmesg = "Metadata found, but no transcript for {image}. Please create {transcr}".format(image=i,transcr=transcr)
-            logMsg(logmesg)
+            logMsg(logmesg,original_path)
             comic = Strip(imagef=i,transf="no_transcript.transcript",metaf=meta)
             comics.append(comic)
         elif transcr in files and meta not in files:
             logmesg = "Transcript found, but no metadata for {image}. I can't build the page without metadata. Please create {meta}".format(image=i,meta=meta)
-            logMsg(logmesg)
+            logMsg(logmesg,original_path)
             return(False)
         else:
             logmesg = "{image} doesn't seem to be a comic, as it is missing a transcript and metadata.".format(image=i)
-            logMsg(logmesg)
+            logMsg(logmesg,original_path)
 
     if comics == []:
         logmesg = "The comics list is empty. Please add some comics and then try to build again."
-        logMsg(logmesg)
+        logMsg(logmesg,".")
         return(False)
 
     os.chdir(original_path)
@@ -396,7 +398,7 @@ def build():
     comics_base = getComics()
 
     ## Get template paths
-    base_t,chars_t,archive_t,index_t = gettemplatenames.getTemplateNames()
+    base_t,chars_t,archive_t,index_t,extra_t = gettemplatenames.getTemplateNames()
 
     ## Select the right template for the specific site type we have
     all_page_ints = []
@@ -494,6 +496,8 @@ def build():
     cpages = []
     themes = [site.config.site_style]
     chapters_list = []
+    logmesg = ", ".join(themes)
+    logMsg(logmesg,".")
 
     for i in comics_base:
         file_name = i.imagef
@@ -546,7 +550,7 @@ def build():
                 match.category_theme = category_theme
         else:
             logmesg = "{category} config already found...".format(category=category)
-            logMsg(logmesg)
+            logMsg(logmesg,".")
 
         old_banner_path = os.path.join(c_path,"input",match.banner)
         new_banner_path = o_path
@@ -578,11 +582,11 @@ def build():
                 except AttributeError:
                     pass
             match.chapters_list = chapters_list
-            logMsg("Chapters:")
+            logMsg("Chapters:",".")
             for asdf in match.chapters_list:
-                logMsg(str(asdf.__dict__))
+                logMsg(str(asdf.__dict__),".")
         else:
-            logMsg("{match} has a chapter setting of {chapter}.".format(match=match.category,chapter=match.chapters))
+            logMsg("{match} has a chapter setting of {chapter}.".format(match=match.category,chapter=match.chapters),".")
             match.chapters_list = []
 
         title = meta["title"]
@@ -861,11 +865,11 @@ def build():
             goarchive_s=translated_strings["goarchive_s"])
 
         logmesg = "Writing {html_fn}...".format(html_fn=html_filename)
-        logMsg(logmesg)
+        logMsg(logmesg,".")
         with open(out_file,"w+",encoding="utf-8") as fout:
             fout.write(n_string)
         logmesg = "{html_fn} written.".format(html_fn=html_filename)
-        logMsg(logmesg)
+        logMsg(logmesg,".")
             
         ###########################################################################
 
@@ -888,9 +892,9 @@ def build():
         if os.path.exists(banner_path) == False:
             old_banner_path = os.path.join(i_path,banner)
             shutil.copy(old_banner_path,banner_path)
-            logMsg(logmesg)
+            logMsg(logmesg,".")
             logmesg = "Banner {banner} copied.".format(banner=banner)
-            logMsg(logmesg)
+            logMsg(logmesg,".")
         else:
             pass
 
@@ -899,13 +903,13 @@ def build():
 
     if category_theme:
         logmesg = "Categories have separate themes. Concatenating stylesheets..."
-        logMsg(logmesg)
+        logMsg(logmesg,".")
         copyMultiThemes(themes,c_path,o_path,assets_path)
         copyMultiArrows(themes,c_path,o_path,assets_path)
 
     ## Generate archives
     logmesg = "Generating archives..."
-    logMsg(logmesg)
+    logMsg(logmesg,".")
 
     ## Some things are done by page and some things are done by year.
 
@@ -944,13 +948,13 @@ def build():
     ex_by_date = []
     for comic in ccomics:
         logmesg = "Category: "+comic.category
-        logMsg(logmesg)
+        logMsg(logmesg,".")
 
         first_bypage = comic.fbp_link
         last_bypage = comic.lbp_link
 
         logmesg = "First/last by page:" + ", ".join([first_bypage,last_bypage])
-        logMsg(logmesg)
+        logMsg(logmesg,".")
 
         d = {"category":category,"first_bypage":first_bypage,
              "last_bypage":last_bypage}
@@ -958,7 +962,7 @@ def build():
         
     for comic in ccomics:
         logmesg = "Category: "+comic.category
-        logMsg(logmesg)
+        logMsg(logmesg,".")
 
         first_bydate = comic.fbd_link
         last_bydate = comic.lbd_link
@@ -970,17 +974,17 @@ def build():
     archive_d_secs = []
 
     logmesg = "Got first and last strips for each series..."
-    logMsg(logmesg)
+    logMsg(logmesg,".")
 
     for comic in ccomics:
         logmesg = "Generating archive..."
-        logMsg(logmesg)
+        logMsg(logmesg,".")
         category = comic.category
         status = comic.statuss
         comic_header = comic.header
         desc = comic.desc
         logmesg = "Currently working on {category}.".format(category=category)
-        logMsg(logmesg)
+        logMsg(logmesg,".")
 
         ## Get the comic-specific header.
         old_cheader_path = os.path.join(c_path,"input",comic_header)
@@ -1014,7 +1018,7 @@ def build():
                     cho.pages.append(page)
                 else:
                     logmesg = "No chapters found."
-                    logMsg(logmesg)
+                    logMsg(logmesg,".")
 
         if comic.chapters not in falses:
             chapter_sections = []
@@ -1092,11 +1096,11 @@ def build():
             goarchive_s=translated_strings["goarchive_s"])
 
         logmesg = "Writing {archive}...".format(archive="archive.html")
-        logMsg(logmesg)
+        logMsg(logmesg,".")
         with open(out_file,"w+",encoding="utf-8") as fout:
             fout.write(arch_string)
         logmesg = "{archive} written.".format(archive="archive.html")
-        logMsg(logmesg)
+        logMsg(logmesg,".")
 
     ##Generate feed
 
@@ -1121,7 +1125,7 @@ def build():
         out_file = os.path.join(o_path,"index.html")
 
         logmesg = "First/last by page:" + ", ".join([first_bypage,last_bypage])
-        logMsg(logmesg)
+        logMsg(logmesg,".")
 
         with open(template) as f:
             index_template = f.read()
@@ -1158,11 +1162,11 @@ def build():
 
 
             logmesg = "Writing {indexh}...".format(indexh="index.html")
-            logMsg(logmesg)
+            logMsg(logmesg,".")
             with open(out_file,"w+",encoding="utf-8") as fout:
                 fout.write(n_string)
             logmesg = "{indexh} written.".format(indexh="index.html")
-            logMsg(logmesg)
+            logMsg(logmesg,".")
     else:
         multi_secs = genmultipleindex.genMultipleIndex(
             ccomics,
@@ -1202,11 +1206,11 @@ def build():
 
 
             logmesg = "Writing {indexh}...".format(indexh="index.html")
-            logMsg(logmesg)
+            logMsg(logmesg,".")
             with open(out_file,"w+",encoding="utf-8") as fout:
                 fout.write(n_string)
             logmesg = "{indexh} written.".format(indexh="index.html")
-            logMsg(logmesg)
+            logMsg(logmesg,".")
 
     ## Generate characters page if necessary.
     if characters_page == True:
@@ -1218,17 +1222,17 @@ def build():
             fn = conf["chars"]
             fp = os.path.join(i_path,fn)
             logmesg = "Loading characters file {fn}...".format(fn=fn)
-            logMsg(logmesg)
+            logMsg(logmesg,".")
 
             try:
                 with open(fp,"r",encoding="utf-8") as f:
                     raw_text = f.read()
             except UnboundLocalError:
                 logmesg = "An Unbound Local Error has occurred. I'm probably looking for a page that doesn't exist."
-                logMsg(logmesg)
+                logMsg(logmesg,".")
             except FileNotFoundError:
                 logmesg = "The characters page couldn't be built because I couldn't find the characters file at {fp}.".format(fp=fp)
-                logMsg(logmesg)
+                logMsg(logmesg,".")
             characters_parsed = genchars.parseChars(raw_text)
             character_elements = genchars.genCharsPage(characters_parsed)
 
@@ -1254,8 +1258,7 @@ def build():
 
             out_file = os.path.join(o_path,out_name)
 
-            chars_title_line = "{category} - {char_s}".format(category=conf["category"],
-                                                              char_s=translated_strings["char_s"])
+            chars_title_line = " - ".join([conf["category"],translated_strings["char_s"]])
 
             with open(chars_template_path) as f:
                 chars_template = f.read()
@@ -1263,11 +1266,11 @@ def build():
                 n_string = chars_template.format(
                     lang=lang,
                     site_style=site.config.site_style,
-                    header_title=site.config.site_title,
+                    header_title=chars_title_line,
                     linkrels=link_rel,
                     banner=banner,
                     banner_alt=category,
-                    title_line=chars_title_line,
+                    title_line=translated_strings["char_s"],
                     top_site_nav=top_site_nav,
                     chars = character_elements,
                     year=year,
@@ -1285,18 +1288,17 @@ def build():
 
 
                 logmesg = "Writing {out_name}...".format(out_name=out_name)
-                logMsg(logmesg)
+                logMsg(logmesg,".")
                 with open(out_file,"w+",encoding="utf-8") as fout:
                     fout.write(n_string)
                 logmesg = "{out_name} written.".format(out_name=out_name)
-                logMsg(logmesg)
+                logMsg(logmesg,".")
 
         if single == False:
             out_name = "characters.html"
             out_file = os.path.join(o_path,out_name)
 
-            chars_title_line = "{site_title} - {char_s}".format(site_title=site.config.site_title,
-              char_s=translated_strings["char_s"])
+            chars_title_line = " - ".join([site.config.site_title,translated_strings["char_s"]])
 
             charpage_elements = ['<div class="allchars">']
 
@@ -1317,7 +1319,7 @@ def build():
                 n_string = chars_template.format(
                     lang=lang,
                     site_style=site.config.site_style,
-                    header_title=site.config.site_title,
+                    header_title=chars_title_line,
                     linkrels=link_rel,
                     banner=site.config.banner_filename,
                     banner_alt=site.config.site_title,
@@ -1339,14 +1341,60 @@ def build():
 
 
                 logmesg = "Writing {out_name}...".format(out_name=out_name)
-                logMsg(logmesg)
+                logMsg(logmesg,".")
                 with open(out_file,"w+",encoding="utf-8") as fout:
                     fout.write(n_string)
                 logmesg = "{out_name} written.".format(out_name=out_name)
-                logMsg(logmesg)
+                logMsg(logmesg,".")
     logmesg = "Springheel compilation complete! ^_^"
     print(logmesg)
-    logMsg(logmesg)
+    logMsg(logmesg,".")
+
+    ## Generate extras page if necessary.
+    if extras_page == True:
+
+        extras_j = os.path.join(i_path,"Extra.json")
+        if os.path.exists(extras_j):
+            extras = genextra.gen_extra(i_path,o_path,extras_j,translated_strings)
+            
+            extr_title = " - ".join([category,translated_strings["extra_s"]])
+
+            ex_html_filename = "extras.html"
+            out_file = os.path.join(
+                o_path,
+                ex_html_filename)
+
+            with open(extra_t) as f:
+                extra_template = f.read()
+
+            extras_html = extra_template.format(
+                lang=lang,
+                site_style=site.config.site_style,
+                header_title=extr_title,
+                h1_title=translated_strings["extra_s"],
+                stylesheet_name_s=translated_strings["stylesheet_name_s"],
+                home_s=translated_strings["home_s"],
+                linkrels=linkrels,
+                skip_s=translated_strings["skip_s"],
+                banner=banner,
+                category=category,
+                top_site_nav=top_site_nav,
+                extras=extras.content,
+                copyright_statement=copyright_statement,
+                generator_s=translated_strings["generator_s"],
+                icons=icons,
+            )
+
+            with open(out_file,"w") as fout:
+                fout.write(extras_html)
+            logmesg = "Extras page written to {out_file}.".format(out_file=out_file)
+            logMsg(logmesg,".")
+        else:
+            logmesg = "Extra pages are supposed to be generated, but Extras.json wasn't found in input/. Make sure it exists and is valid, then try again."
+            logMsg(logmesg,".")
+    else:
+        logmesg = "Not generating extras page..."
+        logMsg(logmesg,".")
 
 ## Initialize a Springheel project.
 def init():

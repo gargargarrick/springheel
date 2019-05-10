@@ -25,7 +25,7 @@
             padding-left: 0em;
         }
         
-        div, section, nav li, figure, .cominavbox {
+        div, section, nav li, figure#comic, .cominavbox {
             background: $box;
             border-right: solid thin $accent;
             border-bottom: solid thin $accent;
@@ -39,7 +39,7 @@
         h2 {
             font-size: 1em;
         }
-        figure {
+        figure#comic {
             padding: 0.3em;
             text-align: center;
             margin-right: 0;
@@ -182,7 +182,7 @@
                 margin-left: 1em;
             }            
             
-            figure {
+            figure#comic {
                 margin-left: 4em;
                 margin-bottom: 0em;
                 padding: 1em 1em 0em 1em;

@@ -103,7 +103,7 @@
       margin-left: 1em;
       /*If anyone's wondering, I took this photo myself: https://www.flickr.com/photos/earthisthering/7144481115/*/
       background: url("my-rose.jpg") fixed 95% 95% no-repeat; }
-    #garden figure {
+    #garden figure#comic {
       margin-left: 4em;
       margin-top: 2em;
       /*I feel gross using px, but it is based on the actual image dimensions...*/
@@ -113,13 +113,15 @@
       border-image-outset: 0em 2em 1em 2em;
       border-image-repeat: round round;
       border-image-source: url("rose-thorn-frame.png"); }
-      #garden figure img {
+      #garden figure#comic img {
         margin-top: 1em; }
     #garden figcaption {
-      margin-bottom: 1em; }
+      margin-bottom: 1em;
+      padding-left: 2em;
+      padding-right: 2em; }
     #garden .cominavbox, #garden .cominavbox li {
       margin: 0em 1em 0em 1em; }
-    #garden figure + .cominavbox {
+    #garden figure#comic + .cominavbox {
       margin-top: 1em; }
     #garden h1 {
       font-size: 1.4em;
