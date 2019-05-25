@@ -334,7 +334,8 @@ To create an extras page, pop open `conf.ini` and set `extras_page` to `True`. T
   "Comic":[
     {"title":"Brutus Comic Book Archive","desc":"CBZ files for offline viewing. Read them with most any modern document viewer.","type":"file","files":[{"path":"Brutus_-_1-8.cbz","link":"Brutus Chapters 1-8 [2.2M]"},{"path":"Brutus_Gaiden.cbz","link":"Brutus Gaiden [incomplete, 132.7K]"}]}
   ]
-}```
+}
+```
 
 That will generate an extras page with Comic and Fanart as the second-order headings. `file`-type items will appear as textual links, and `image`-type ones will appear as image elements with figcaptions.
 
