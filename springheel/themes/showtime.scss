@@ -143,6 +143,10 @@
                   border: 1em solid #A06D3D
                 }
             }
+            figure#comic figcaption {
+              max-width: 80%;
+              margin: auto;
+            }
 
             main div, main section {
                 text-align: left;

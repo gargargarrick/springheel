@@ -90,6 +90,9 @@
       margin-bottom: 0em; }
       #showtime figure#comic img {
         border: 1em solid #A06D3D; }
+    #showtime figure#comic figcaption {
+      max-width: 80%;
+      margin: auto; }
     #showtime main div, #showtime main section {
       text-align: left;
       padding-left: 1em;

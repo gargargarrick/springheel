@@ -126,7 +126,7 @@ These are the themes available by default:
 * note -- a striking, modern theme, designed to look "native" on phones. Uses no images. 12.3KiB + 3.5KiB arrows.
 * prayers -- a peaceful theme in the image of a Shinto shrine. Mostly included because fans of a certain scrolling-shooter game might prefer red-white over black. ^\_\- 18.5KiB + 27.5KiB arrows.
 * rock -- a theme with plenty of star power, perfect for comics involving three chords and cowboys of the rhinestone variety. 15.8KiB + 22.1KiB arrows.
-* showtime -- a dramatic theme based on theatrical staging. 18.8KiB + 6.7KiB arrows.
+* showtime -- a dramatic theme based on theatrical staging. 18.9KiB + 6.7KiB arrows.
 * starship -- a retro sci-fi theme with stars and metal. 11.8KiB + 700B arrows.
 * steam -- a "steampunk" theme with plenty of gears. 17.6KiB + 8.2KiB arrows.
 * twothousand -- a theme inspired by typical comic site designs from the early 2000s. Uses no images. 12.7KiB + 4.4KiB arrows.

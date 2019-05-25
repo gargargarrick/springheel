@@ -1,5 +1,10 @@
 # Springheel Changelog
 
+## 3.0.1
++ Fixed a bug where archives weren't generating correctly for non-chaptered comics.
++ Fixed a bug where the ordering of character attributes changed randomly every time the page was regenerated.
++ Updated some information in the default conf.ini file.
+
 ## 3.0.0
 + Added extras page functionality
 + Added new theme "showtime"

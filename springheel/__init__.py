@@ -19,7 +19,7 @@
 
 name = "springheel"
 author = "gargargarrick"
-__version__ = '3.0.0'
+__version__ = '3.0.1'
 
 class Site:
     def __init__(self):
@@ -1000,15 +1000,14 @@ def build():
             archive_link = generatearchive.getLinks(i,translated_strings)
             i.archive_link = archive_link
             archive_links_page.append(archive_link)
-        if match.chapters not in falses:
-            for i in comic.pbd:
-                archive_link = generatearchive.getLinks(i,translated_strings)
-                archive_links_date.append(archive_link)
-            archive_sections_date = generatearchive.generateSeriesArchives(
-                category,
-                status,
-                archive_links_page)
-            archive_d_secs.append(archive_sections_date)
+        for i in comic.pbd:
+            archive_link = generatearchive.getLinks(i,translated_strings)
+            archive_links_date.append(archive_link)
+        archive_sections_date = generatearchive.generateSeriesArchives(
+            category,
+            status,
+            archive_links_page)
+        archive_d_secs.append(archive_sections_date)
 
         if comic.chapters not in falses:
             for page in comic.pbp:

@@ -64,6 +64,7 @@ def genCharsPage(chars_list):
                 img = '<img src="{img}" alt="" />'.format(img=item["img"])
                 char_elements.append(img)
             keys = list(item.keys())
+            keys = sorted(keys)
             char_elements.append('<div class="chartext">')
             ## We only need to worry about the DL element if there are custom attributes.
             if len(keys) > 3:
