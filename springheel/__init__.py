@@ -19,7 +19,7 @@
 
 name = "springheel"
 author = "gargargarrick"
-__version__ = '3.0.1'
+__version__ = '3.0.2'
 
 class Site:
     def __init__(self):
@@ -306,7 +306,7 @@ def getComics():
             comics.append(comic)
         elif meta in files and transcr not in files:
             logmesg = "Metadata found, but no transcript for {image}. Please create {transcr}".format(image=i,transcr=transcr)
-            logMsg(logmesg,original_path)
+            logMsg(logmesg,original_path) 
             comic = Strip(imagef=i,transf="no_transcript.transcript",metaf=meta)
             comics.append(comic)
         elif transcr in files and meta not in files:
@@ -825,7 +825,7 @@ def build():
             titleslug=title_slug,
             date=i.date_s,
             ext="transcript")
-        if transcript_file.split("/")[-1] != "no_transcript.transcript":
+        if os.path.basename(transcript_file) != "no_transcript.transcript":
             new_transcr_path = os.path.join(pages_path,new_transcr)
             old_transcr_path = os.path.join(i_path,transcript_file)
             shutil.copyfile(old_transcr_path,new_transcr_path)
@@ -1237,10 +1237,10 @@ def build():
 
             ##Get character images
             for char in characters_parsed:
-                if type(char) == dict:
-                    if char["img"] != "None":
-                        img_source_path = os.path.join(i_path,char["img"])
-                        img_out_path = os.path.join(o_path,char["img"])
+                if type(char) == list:
+                    if char[2][1] != "None":
+                        img_source_path = os.path.join(i_path,char[2][1])
+                        img_out_path = os.path.join(o_path,char[2][1])
                         shutil.copy(img_source_path,img_out_path)
             
             chars_template_path = os.path.join(c_path,chars_t)

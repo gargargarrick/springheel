@@ -45,10 +45,12 @@ def parseChars(charfile):
         ## Make sure it isn't just a newline
         if char != []:
             d = {}
+            char_attrs =[]
             for item in char:
                 attr,val = item.split(": ")
-                d[attr] = val
-            cl.append(d)
+                tup = (attr,val)
+                char_attrs.append(tup)
+            cl.append(char_attrs)
 
     return(cl)
 
@@ -57,32 +59,30 @@ def genCharsPage(chars_list):
     chars = []
     for item in chars_list:
         char_elements = ['<div class="char">']
-        if type(item) == dict:
-            title = "<h2>{name}</h2>".format(name=item["name"])
+        if type(item) == list:
+            title = "<h2>{name}</h2>".format(name=item[0][1])
             char_elements.append(title)
-            if item["img"] != 'None':
-                img = '<img src="{img}" alt="" />'.format(img=item["img"])
+            if item[2][1] != 'None':
+                img = '<img src="{img}" alt="" />'.format(img=item[2][1])
                 char_elements.append(img)
-            keys = list(item.keys())
-            keys = sorted(keys)
             char_elements.append('<div class="chartext">')
             ## We only need to worry about the DL element if there are custom attributes.
-            if len(keys) > 3:
+            if len(item) > 3:
                 dls = []
                 char_elements.append("<dl>")
-                for key in keys:
-                    if key == "name" or key == "img" or key == "desc":
+                for key in item:
+                    if key[0] == "name" or key[0] == "img" or key[0] == "desc":
                         pass
                     else:
                         line = "<dt>{attr}</dt>{sep}<dd>{val}</dd>".format(
-                            attr=key,
-                            val=item[key],
+                            attr=key[0],
+                            val=key[1],
                             sep=sep)
                         dls.append(line)
                 dl = sep.join(dls)
                 char_elements.append(dl)
                 char_elements.append("</dl>")
-            desc = "<p>{desc}</p>".format(desc=item["desc"])
+            desc = "<p>{desc}</p>".format(desc=item[1][1])
             char_elements.append(desc)
             char_elements.append("</div>")
             char_elements.append("</div>")
