@@ -19,7 +19,7 @@
 
 name = "springheel"
 author = "gargargarrick"
-__version__ = '3.0.2'
+__version__ = '3.0.3'
 
 class Site:
     def __init__(self):
@@ -614,7 +614,7 @@ def build():
                     site_url=site.config.base_url,
                     author=author,
                     site_title=category,
-                    author_country=site.config.base_url)
+                    author_country=site.config.country)
             elif "creativecommons.org/licenses/by" in license_uri:
                 cc = translated_strings["cc"]
                 license_s = cc.format(

@@ -1,5 +1,8 @@
 # Springheel Changelog
 
+### 3.0.3
++ Fixed a very stupid copy+paste error that caused public domain comics to be described as published from a U.R.L. (instead of their respective country).
+
 ### 3.0.2
 + Did a better job fixing the character bug from the previous version.
 + Fixed an error where non-transcribed comics wouldn't generate on Windows.
