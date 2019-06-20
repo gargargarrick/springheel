@@ -1,55 +1,35 @@
 @media screen {
-/*Showtime*/
-    #showtime {
-    $text: #d9d9d9;
-    $bg: #171717;
+/*Revolution*/
+    $bg: #060606;
+    $text: lavenderblush;
+    $lac: #e7568d;
+    #revolution {
     /* Default (small) screens */
         * {
             box-sizing: content-box;
         }
         body {
             background-color: $bg;
-            background: $bg url("curtaint.png") repeat-x 0% 0%;
+            background: $bg url("sparks.png") top left fixed no-repeat;
             color: $text;
             text-align: center;
             font-size: 1.5em;
             font-family: sans-serif;
-            display: grid;
-            grid-gap: 1em;
-            grid-template-areas:
-              'skip'
-              'header'
-              'main'
-              'footer';
-            grid-template-columns: auto;
-        }
-        #skippy {
-          grid-area: skip;
-        }
-        
-        header {
-          grid-area: header;
-        }
-        
-        main {
-          grid-area: main;
-        }
-        
-        footer {
-          grid-area: footer;
+            margin: 0em;
         }
 
         main, figure {
-            margin-left: 0em;
+            margin: 0em;
             padding-left: 0em;
+            padding-right: 0em;
         }
 
         h1 {
             margin: 0em;
         }
-        figure#comic {
-            padding: 1em;
+        figure {
             text-align: center;
+            border: none;
         }
         .cominavbox, .cominavbox li {
             display: inline-block;
@@ -95,12 +75,12 @@
         }
 
         a:link {
-            color: #9E9EFF;
+            color: #3e9fff;
             text-decoration: underline
         }
 
         a:visited {
-            color: #C38FFF;
+            color: #a78ae2;
         }
 
         a:hover {
@@ -108,7 +88,7 @@
         }
 
         a:hover, a:focus, a:active {
-            color: #FF8585;
+            color: #f77;
         }
 
         footer p {
@@ -129,12 +109,9 @@
         .action {
             font-weight: bold;
         }
-
-        .charname {
-            font-weight: bold
-        }
         
         .char {
+            text-align: left;
             dt:after {
                 content: ":"
             }
@@ -150,38 +127,48 @@
             }
         }
 
+        .charname {
+            font-weight: bold;
+        }
+        
+        .char img {
+          margin: 0em;
+          padding: 0em;
+        }
+        
+        .chartraits {
+          margin: 0em;
+          padding: 0em;
+        }
+        
+        .chardesc {
+          border: none;
+          padding: 0em;
+          margin: 0em;
+          line-height: 2em;
+        }
+
     /*Medium screens*/
 
         @media screen and (min-width: 1024px) {
             body {
-                margin: 0em;
-                background: url("curtaint.png") repeat-x 0% 0%, url("curtainr.png") fixed repeat-y 100% 0%, $bg url("curtainl.png") fixed repeat-y 0% 0%;
+              background-color: $bg;
+              background: $bg url("sparks.png") bottom right fixed no-repeat;
             }
-
-            figure#comic {
+            figure {
                 margin-left: 1em;
                 margin-top: 0em;
                 margin-bottom: 0em;
-                img {
-                  border: 1em solid #A06D3D
-                }
-            }
-            figure#comic figcaption {
-              max-width: 80%;
-              margin: auto;
             }
 
             main div, main section {
-                text-align: left;
-                padding-left: 1em;
-                padding-right: 1em;
-                width: 70%;
-                margin: auto;
+                padding: 2em 3em;
+                width: 80%;
             }
 
             div + div {
                 margin-bottom: 0em;
-                margin-top: 0em;
+                margin-top: 1em;
             }
 
             .cominavbox, .cominavbox li {
@@ -192,12 +179,43 @@
             }
 
             figure + .cominavbox {
-                margin-top: 0em;
+                margin-bottom: 1em;
             }
 
-            figure {
-                margin-left: 1em;
-            }
+            figure#comic, main div, main section {
+                background: $bg;
+                border: solid thick $lac;
+                border-image-slice: 68 66 70 64;
+                border-image-width: 48px 48px 48px 48px;
+                border-image-outset: 0px 0px 0px 0px;
+                border-image-repeat: repeat repeat;
+                border-image-source: url("rose_frame.png");
+              }
+              
+              figure {
+                padding: 0em 2em 2em 2em;
+                &#comic {
+                padding-top: 2em;
+                margin-top: 1em;
+                margin-left: 2em;
+                margin-right: 2em;
+                }
+              }
+              
+              .intro {
+                border: none;
+                margin: 1em;
+                padding: 1em;
+                & + .intro {
+                  padding-top: 0em;
+                  margin-top: 0em;
+                }
+              }
+              
+              figcaption {
+                  padding-left: 2em;
+                  padding-right: 2em;
+              }
 
             h1 {
                 font-size: 1.5em;
@@ -224,38 +242,35 @@
                 text-align: right;
             }
 
-            footer {
-              background: $bg;
-              margin: 0em;
-              padding: 0.5em;
-            }
-
             footer p {
                 font-size: 0.7em;
-                margin-bottom: 0em;
             }
 
             .archive {
-                margin-left: 0em;
-                margin-right: 1em;
-                padding-left: 1em;
-                padding-right: 1em;
+                padding: 1em 2em;
+                margin: 1em;
             }
             
             .main {
-                padding: 0.5em;
-                margin: auto;
-                width: 50%;
+                padding: 1em 2em;
+                margin: 1em;
+                text-align: left;
                 & p {
                     margin-left: 0em;
                 }
             }
             .char {
                 text-align: left;
+                img, .chartraits {
+                    display: inline-block;
+                    vertical-align: top;
+                }
             }
-            .chartext, .charimg {
-              display: inline-block;
-              vertical-align: top
+            .chartraits {
+                margin-left: 1em;
+            }
+            .chartraits * {
+                line-height: 1.5em
             }
         }
     }

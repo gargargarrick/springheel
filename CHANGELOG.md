@@ -1,5 +1,14 @@
 # Springheel Changelog
 
+### 4.0.0
++ Added new themes "revolution", "fairy", "sysadmin", and "might".
++ Separated traits from descriptions on character pages.
++ Fixed major error where a multi-comic site wouldn't generate if some comics had a characters file and some didn't.
++ Fixed bug where slugs were not URL-safe.
++ Fixed bug where the archive page's main heading wasn't getting translated.
++ Fixed bug where extras pages used a comic's title and banner, instead of the sitewide ones.
++ Slight improvements to "seasonal" and "showtime" themes.
+
 ### 3.0.3
 + Fixed a very stupid copy+paste error that caused public domain comics to be described as published from a U.R.L. (instead of their respective country).
 

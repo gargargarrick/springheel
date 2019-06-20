@@ -2,6 +2,7 @@
 /*seasonal*/
     #seasonal {
     /*Spring*/
+    // $bottom: #315040;
     // $bbg: #4866c5;
     // $mbg: #fafafa;
     // $la: #73cfd9;
@@ -15,6 +16,7 @@
     // $anh: #46a946;
 
     /*Summer*/
+    // $bottom: #429ad7;
     // $bbg: #4866c5;
     // $mbg: #fafafa;
     // $la: #73cfd9;
@@ -28,6 +30,7 @@
     // $anh: #46a946;
 
     /*Fall*/
+    // $bottom: #914533;
     // $bbg: #504170;
     // $mbg: #fed4aa;
     // $la: #c26e3d;
@@ -41,6 +44,7 @@
     // $anh: #f88f32;
 
     /*Winter*/
+    $bottom: #b88fb4;
     $bbg: #504170;
     $mbg: #fafafa;
     $la: #facb1e;
@@ -58,7 +62,7 @@
             box-sizing: content-box;
         }
         body {
-            background-color: $bbg;
+            background-color: $bottom;
             background-image: $bgi;
             background-position: 0 100%;
             background-repeat: repeat-x;

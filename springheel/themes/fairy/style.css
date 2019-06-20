@@ -1,0 +1,188 @@
+@media screen {
+  /*Fairy*/
+  #fairy {
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #fairy * {
+      box-sizing: content-box; }
+    #fairy body {
+      background: #ECAAC5 url("sparkles.png") 0% 5% repeat-x fixed;
+      color: black;
+      text-align: center;
+      font-size: 1.5em;
+      font-family: sans-serif;
+      margin: 0em; }
+    #fairy main, #fairy figure {
+      margin: 0em;
+      padding-left: 0em;
+      padding-right: 0em; }
+    #fairy figure#comic, #fairy main > div, #fairy main > section {
+      background: #DFE7C0;
+      border-top: solid thick #A685E7;
+      border-bottom: solid thick #A685E7; }
+    #fairy nav li, #fairy .cominavbox {
+      background: #DFE7C0;
+      border: solid thick #A685E7; }
+    #fairy h1 {
+      margin: 0em; }
+    #fairy h2 {
+      margin-top: 0em; }
+    #fairy figure {
+      text-align: center;
+      border: none; }
+    #fairy .cominavbox, #fairy .cominavbox li {
+      display: inline-block;
+      padding: 0em; }
+    #fairy p + p, #fairy li + li, #fairy div + div, #fairy section + section, #fairy footer {
+      margin-top: 0.5em; }
+    #fairy main > div, #fairy main > section {
+      padding: 0.5em; }
+    #fairy #skippy {
+      text-align: left; }
+    #fairy #skippy a, #fairy #skippy a:hover, #fairy #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #fairy #skippy a:active, #fairy #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #0000ff; }
+    #fairy nav {
+      font-size: 1.2em; }
+    #fairy nav li {
+      display: inline-block; }
+    #fairy #commentary, #fairy #transcript {
+      text-align: left; }
+    #fairy .statline {
+      font-weight: bold; }
+    #fairy a:link {
+      color: #3434A2;
+      text-decoration: underline; }
+    #fairy a:visited {
+      color: #582574; }
+    #fairy a:hover {
+      text-decoration: underline; }
+    #fairy a:hover, #fairy a:focus, #fairy a:active {
+      color: #8F0037; }
+    #fairy footer {
+      padding: 0.5em;
+      text-align: left;
+      background: #DFE7C0;
+      border-top: solid thick #A685E7; }
+      #fairy footer p {
+        margin: 0em; }
+    #fairy .archive {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left; }
+    #fairy img, #fairy embed, #fairy object, #fairy video {
+      max-width: 100%; }
+    #fairy .action {
+      font-weight: bold; }
+    #fairy .char {
+      text-align: left; }
+      #fairy .char dt:after {
+        content: ":"; }
+      #fairy .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #fairy .char dd {
+        margin-left: 0em; }
+      #fairy .char dt, #fairy .char dd {
+        display: inline;
+        white-space: pre; }
+    #fairy .charname {
+      font-weight: bold; }
+    #fairy .char img {
+      margin: 0em;
+      padding: 0em; }
+    #fairy .chartraits {
+      margin: 0em;
+      padding: 0em; }
+    #fairy .chardesc {
+      border: none;
+      padding: 0em;
+      margin: 0em;
+      line-height: 2em; }
+    #fairy .intro {
+      border: none; }
+      #fairy .intro + .intro {
+        border-top: solid medium #A685E7;
+        padding-top: 1em;
+        margin-top: 0em; } }
+  @media screen and (min-width: 1024px) {
+    #fairy main {
+      margin: 1em; }
+    #fairy figure {
+      margin-left: 1em;
+      margin-top: 0em;
+      margin-bottom: 0em; }
+    #fairy figure#comic, #fairy main > div, #fairy main > section {
+      background: #DFE7C0 url("mornglor.png") top right no-repeat;
+      border: solid thick #A685E7; }
+    #fairy main > div, #fairy main > section {
+      padding: 1em;
+      width: 80%; }
+    #fairy div + div {
+      margin-bottom: 0em;
+      margin-top: 1em; }
+    #fairy .cominavbox, #fairy .cominavbox li {
+      margin-left: 1em;
+      margin-right: 1em;
+      margin-top: 0.5em;
+      margin-bottom: 0em; }
+    #fairy .cominavbox li {
+      padding: 1em; }
+    #fairy figure + .cominavbox {
+      margin-bottom: 1em; }
+    #fairy figure {
+      padding: 0em 2em 2em 2em; }
+      #fairy figure#comic {
+        padding-top: 2em;
+        margin-top: 1em;
+        margin-left: 2em;
+        margin-right: 2em; }
+    #fairy figcaption {
+      padding-left: 2em;
+      padding-right: 2em; }
+    #fairy h1 {
+      font-size: 1.5em; }
+    #fairy h2 {
+      font-size: 1.2em; }
+    #fairy h3 {
+      font-size: 1em; }
+    #fairy nav li {
+      padding-top: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 0.8em;
+      margin: 0em; }
+    #fairy .statline {
+      font-size: 0.8em;
+      text-align: right; }
+    #fairy .archive {
+      padding: 1em 2em;
+      margin: 1em; }
+    #fairy .main {
+      margin: 1em;
+      text-align: left; }
+    #fairy .char {
+      text-align: left; }
+      #fairy .char img {
+        border: solid medium #A685E7; }
+      #fairy .char img, #fairy .char .chartraits {
+        display: inline-block;
+        vertical-align: top; }
+    #fairy .chartraits {
+      margin-left: 1em; }
+    #fairy .chartraits * {
+      line-height: 1.5em; } }
+
+/*# sourceMappingURL=style.css.map */

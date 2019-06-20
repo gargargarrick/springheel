@@ -105,7 +105,7 @@ Our *Wuffle* example uses the `plain` theme for simplicity, but it's by no means
 
 #### Defaults
 
-Springheel comes equipped with a whopping 20 default themes, in order to match a wide variety of comic genres. They're all written with [Sass](https://sass-lang.com/), then compiled to a Cascading Style Sheet. (This is done separately from the comic generation process; Springheel does not contain a Sass parser.)
+Springheel comes equipped with a whopping 27 default themes, in order to match a wide variety of comic genres. They're all written with [Sass](https://sass-lang.com/), then compiled to a Cascading Style Sheet. (This is done separately from the comic generation process; Springheel does not contain a Sass parser.)
 
 These are the themes available by default:
 
@@ -118,20 +118,24 @@ These are the themes available by default:
 * city -- a dreamy, twinkly theme. 10.2KiB + 735B arrows.
 * cute -- a cute, candy-themed pink and brown theme. Might be good for comics about sweets or children. 10.5KiB + 4.5KiB arrows.
 * cyber -- a theme inspired by 90s cyberpunk. 10.5KiB + 7.7KiB arrows.
+* fairy -- a fluffy theme with flowers and sparkles. 12.8KiB + 14.2KiB arrows.
 * fantasy -- a lush theme with green, gems, and parchment, perfect for "high fantasy" comics. 24.2KiB + 18.2KiB arrows.
 * garden -- a soothing floral theme. **Warning: large theme.** 129.9KiB + 17.7KiB arrows.
 * gothic -- featuring blood, roses, and bloody roses. 18.7KiB + 19.2KiB arrows.
 * haunted -- a slightly cute, slightly spooky theme inspired by haunted houses. Suited for comedic horror comics. 24.2KiB + 38.5KiB arrows.
 * magiccircle -- a mysterious, fantastical theme. **Warning: large theme.** 79.4KiB + 16.2KiB arrows.
+* might -- a bold theme for comics about heroes who are super. 6KiB + 8.4KiB arrows.
 * note -- a striking, modern theme, designed to look "native" on phones. Uses no images. 12.3KiB + 3.5KiB arrows.
 * prayers -- a peaceful theme in the image of a Shinto shrine. Mostly included because fans of a certain scrolling-shooter game might prefer red-white over black. ^\_\- 18.5KiB + 27.5KiB arrows.
+* revolution -- a dark theme with hearts, swords, and flowers (specifically roses, and lots of them) for those who want to live nobly and with style. **Warning: large theme.** 77.9KiB + 16.6KiB arrows.
 * rock -- a theme with plenty of star power, perfect for comics involving three chords and cowboys of the rhinestone variety. 15.8KiB + 22.1KiB arrows.
 * showtime -- a dramatic theme based on theatrical staging. 18.9KiB + 6.7KiB arrows.
 * starship -- a retro sci-fi theme with stars and metal. 11.8KiB + 700B arrows.
 * steam -- a "steampunk" theme with plenty of gears. 17.6KiB + 8.2KiB arrows.
+* sysadmin -- a no-nonsense monospaced theme for fighting in the eighties. Uses no images. 4.5KiB + 444B arrows.
 * twothousand -- a theme inspired by typical comic site designs from the early 2000s. Uses no images. 12.7KiB + 4.4KiB arrows.
 * seasonal -- a theme you can change to match the seasons. **Requires configuration before use.** ~8KiB each + 1.6KiB arrows.
-* western -- a rugged theme fit for a cowpoke. 14.7KiB + 18.6KiB arrows
+* western -- a rugged theme fit for a cowpoke. 14.7KiB + 18.6KiB arrows.
 
 To use any of these themes, just enter its name as `site_style` in `conf.py`. Plain is the default.
 

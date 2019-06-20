@@ -19,7 +19,7 @@
 
 name = "springheel"
 author = "gargargarrick"
-__version__ = '3.0.3'
+__version__ = '4.0.0'
 
 class Site:
     def __init__(self):
@@ -70,7 +70,7 @@ import springheel.genextra
 import shutil
 import configparser, os, datetime, sys
 from operator import itemgetter
-from slugify import slugify
+from slugify import slugify, slugify_url
 
 def logMsg(message,path):
     logfile = os.path.join(path,"springheel.log")
@@ -568,6 +568,9 @@ def build():
         header = conf["header"]
         if characters_page == True:
             chars_file = conf["chars"]
+            match.chars_file = chars_file
+        else:
+            match.chars_file = None
 
         if match.chapters not in falses:
             chapters_dicts = getChapters(match.chapters_file)
@@ -1065,7 +1068,7 @@ def build():
 
     out_file = os.path.join(o_path,"archive.html")
 
-    archive_header_title = "{site_title} - Archive".format(site_title=site.config.site_title)
+    archive_header_title = "{site_title} - {archive_s}".format(site_title=site.config.site_title, archive_s=translated_strings["archive_s"])
 
     with open(arch_template) as f:
         arch_template = f.read()
@@ -1219,79 +1222,85 @@ def build():
         for conf in configs:
             
             fn = conf["chars"]
-            fp = os.path.join(i_path,fn)
-            logmesg = "Loading characters file {fn}...".format(fn=fn)
-            logMsg(logmesg,".")
-
-            try:
-                with open(fp,"r",encoding="utf-8") as f:
-                    raw_text = f.read()
-            except UnboundLocalError:
-                logmesg = "An Unbound Local Error has occurred. I'm probably looking for a page that doesn't exist."
+            if fn == "None":
+                logmesg = "No character file found for {category}, skipping...".format(category=conf["category"])
                 logMsg(logmesg,".")
-            except FileNotFoundError:
-                logmesg = "The characters page couldn't be built because I couldn't find the characters file at {fp}.".format(fp=fp)
-                logMsg(logmesg,".")
-            characters_parsed = genchars.parseChars(raw_text)
-            character_elements = genchars.genCharsPage(characters_parsed)
-
-            ##Get character images
-            for char in characters_parsed:
-                if type(char) == list:
-                    if char[2][1] != "None":
-                        img_source_path = os.path.join(i_path,char[2][1])
-                        img_out_path = os.path.join(o_path,char[2][1])
-                        shutil.copy(img_source_path,img_out_path)
-            
-            chars_template_path = os.path.join(c_path,chars_t)
-
-            cat_slug = slugify(conf["category"])
-
-            if single == True:
-                out_name = "characters.html"
             else:
-                out_name = "".join([cat_slug,"-","characters.html"])
-                cpd = {"charpage":out_name,
-                       "category":conf["category"]}
-                character_pages.append(cpd)
-
-            out_file = os.path.join(o_path,out_name)
-
-            chars_title_line = " - ".join([conf["category"],translated_strings["char_s"]])
-
-            with open(chars_template_path) as f:
-                chars_template = f.read()
-
-                n_string = chars_template.format(
-                    lang=lang,
-                    site_style=site.config.site_style,
-                    header_title=chars_title_line,
-                    linkrels=link_rel,
-                    banner=banner,
-                    banner_alt=category,
-                    title_line=translated_strings["char_s"],
-                    top_site_nav=top_site_nav,
-                    chars = character_elements,
-                    year=year,
-                    author=site.config.site_author,
-                    copyright_statement=copyright_statement,
-                    icons=icons,
-                    home_s=translated_strings["home_s"],
-                    archive_s=translated_strings["archive_s"],
-                    stylesheet_name_s=translated_strings["stylesheet_name_s"],
-                    skip_s=translated_strings["skip_s"],
-                    page_s=translated_strings["page_s"],
-                    meta_s=translated_strings["meta_s"],
-                    generator_s=translated_strings["generator_s"],
-                    goarchive_s=translated_strings["goarchive_s"])
-
-
-                logmesg = "Writing {out_name}...".format(out_name=out_name)
+                fp = os.path.join(i_path,fn)
+                logmesg = "Loading characters file {fn}...".format(fn=fn)
                 logMsg(logmesg,".")
-                with open(out_file,"w+",encoding="utf-8") as fout:
-                    fout.write(n_string)
-                logmesg = "{out_name} written.".format(out_name=out_name)
+
+                try:
+                    with open(fp,"r",encoding="utf-8") as f:
+                        raw_text = f.read()
+                except UnboundLocalError:
+                    logmesg = "An Unbound Local Error has occurred. I'm probably looking for a page that doesn't exist."
+                    logMsg(logmesg,".")
+                except FileNotFoundError:
+                    logmesg = "The characters page couldn't be built because I couldn't find the characters file at {fp}.".format(fp=fp)
+                    logMsg(logmesg,".")
+                characters_parsed = genchars.parseChars(raw_text)
+                character_elements = genchars.genCharsPage(characters_parsed)
+
+                ##Get character images
+                for char in characters_parsed:
+                    if type(char) == list:
+                        if char[2][1] != "None":
+                            img_source_path = os.path.join(i_path,char[2][1])
+                            img_out_path = os.path.join(o_path,char[2][1])
+                            shutil.copy(img_source_path,img_out_path)
+                
+                chars_template_path = os.path.join(c_path,chars_t)
+
+                cat_slug = slugify_url(conf["category"])
+                logmesg = "Slugified category name: {cat_slug}".format(cat_slug=cat_slug)
                 logMsg(logmesg,".")
+
+                if single == True:
+                    out_name = "characters.html"
+                else:
+                    out_name = "".join([cat_slug,"-","characters.html"])
+                    cpd = {"charpage":out_name,
+                           "category":conf["category"]}
+                    character_pages.append(cpd)
+
+                out_file = os.path.join(o_path,out_name)
+
+                chars_title_line = " - ".join([conf["category"],translated_strings["char_s"]])
+
+                with open(chars_template_path) as f:
+                    chars_template = f.read()
+
+                    n_string = chars_template.format(
+                        lang=lang,
+                        site_style=site.config.site_style,
+                        header_title=chars_title_line,
+                        linkrels=link_rel,
+                        banner=banner,
+                        banner_alt=category,
+                        title_line=translated_strings["char_s"],
+                        top_site_nav=top_site_nav,
+                        chars = character_elements,
+                        year=year,
+                        author=site.config.site_author,
+                        copyright_statement=copyright_statement,
+                        icons=icons,
+                        home_s=translated_strings["home_s"],
+                        archive_s=translated_strings["archive_s"],
+                        stylesheet_name_s=translated_strings["stylesheet_name_s"],
+                        skip_s=translated_strings["skip_s"],
+                        page_s=translated_strings["page_s"],
+                        meta_s=translated_strings["meta_s"],
+                        generator_s=translated_strings["generator_s"],
+                        goarchive_s=translated_strings["goarchive_s"])
+
+
+                    logmesg = "Writing {out_name}...".format(out_name=out_name)
+                    logMsg(logmesg,".")
+                    with open(out_file,"w+",encoding="utf-8") as fout:
+                        fout.write(n_string)
+                    logmesg = "{out_name} written.".format(out_name=out_name)
+                    logMsg(logmesg,".")
 
         if single == False:
             out_name = "characters.html"
@@ -1301,6 +1310,8 @@ def build():
 
             charpage_elements = ['<div class="allchars">']
 
+            logmesg = "Character pages: {character_pages}".format(character_pages=character_pages)
+            logMsg(logmesg,".")
             for chpage in character_pages:
                 character_page_line = ['<p><a href="',
                     chpage["charpage"],
@@ -1345,9 +1356,6 @@ def build():
                     fout.write(n_string)
                 logmesg = "{out_name} written.".format(out_name=out_name)
                 logMsg(logmesg,".")
-    logmesg = "Springheel compilation complete! ^_^"
-    print(logmesg)
-    logMsg(logmesg,".")
 
     ## Generate extras page if necessary.
     if extras_page == True:
@@ -1355,8 +1363,8 @@ def build():
         extras_j = os.path.join(i_path,"Extra.json")
         if os.path.exists(extras_j):
             extras = genextra.gen_extra(i_path,o_path,extras_j,translated_strings)
-            
-            extr_title = " - ".join([category,translated_strings["extra_s"]])
+
+            extr_title = " - ".join([site.config.site_title,translated_strings["extra_s"]])
 
             ex_html_filename = "extras.html"
             out_file = os.path.join(
@@ -1375,7 +1383,7 @@ def build():
                 home_s=translated_strings["home_s"],
                 linkrels=linkrels,
                 skip_s=translated_strings["skip_s"],
-                banner=banner,
+                banner=site.config.banner_filename,
                 category=category,
                 top_site_nav=top_site_nav,
                 extras=extras.content,
@@ -1394,6 +1402,9 @@ def build():
     else:
         logmesg = "Not generating extras page..."
         logMsg(logmesg,".")
+    logmesg = "Springheel compilation complete! ^_^"
+    print(logmesg)
+    logMsg(logmesg,".")
 
 ## Initialize a Springheel project.
 def init():

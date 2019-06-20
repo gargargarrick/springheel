@@ -1,0 +1,248 @@
+@media screen {
+/*Sysadmin*/
+    #sysadmin {
+    $a: #87df32;
+    /* Default (small) screens */
+        * {
+            box-sizing: content-box;
+        }
+        body {
+            background: #000;
+            color: $a;
+            text-align: left;
+            font-size: 2.2em;
+            font-family: monospace;
+        }
+
+        main, figure {
+            margin-left: 0em;
+            padding-left: 0em;
+        }
+        
+        header {
+          text-align: center
+        }
+        
+        nav li {
+          margin: 1.5em
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+          font-size: 1em;
+        }
+
+        h1 {
+            margin: 0em;
+            text-align: left;
+        }
+        h2, h3 {
+          padding-bottom: 1em;
+          border-bottom: dashed medium $a
+        }
+
+        figure {
+            border: none;
+            margin: 0em
+        }
+        
+        figure#comic img {
+          padding: 0em;
+          margin: 0em;
+        }
+        .cominavbox, .cominavbox li {
+            display: inline-block;
+            padding: 0em;
+        }
+        
+        .cominavbox li {
+          margin: 0em 1em;
+        }
+
+        * + * {
+            margin-top: 0.5em
+        }
+
+        /*TODO: Fix the skip link hiding method*/
+        #skippy {
+            text-align: left;
+        }
+        #skippy a, #skippy a:hover, #skippy a:visited {
+        position:absolute;
+        left:-10000px;
+        top:auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+        }
+
+        #skippy a:active, #skippy a:focus {
+          position: static;
+          height: auto;
+          width: auto;
+          font-size: 1em;
+          margin-top: 0em;
+          color: #ffffff;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        #commentary, #transcript {
+            text-align: left;
+        }
+
+        .statline {
+            margin: 0em;
+            padding: 0.5em 0.5em 0em 0.5em;
+            font-weight: bold;
+            text-align: right;
+            border-top: dashed medium $a
+        }
+
+        a:link {
+            color: #429eff;
+            text-decoration: underline
+        }
+
+        a:visited {
+            color: #ac39ff;
+        }
+
+        a:hover, a:focus, a:active {
+            color: #ffffff;
+        }
+
+        footer p {
+            margin-left: 0em;
+            text-align: left;
+        }
+
+        .archive {
+            text-align: left;
+        }
+
+        main > div, main > section {
+            padding: 1em;
+            border: dashed medium $a
+        }
+        
+        #extras * + h2, #extras h3 {
+          padding-bottom: 0em;
+          border: none;
+          padding-top: 1em;
+          border-top: dashed medium $a
+        }
+        
+        #extras h2:first-of-type {
+            border: none;
+            padding: 0em;
+        }
+
+        img, embed, object, video {
+            max-width: 100%;
+        }
+
+        .archive li {
+            margin-top: 1em;
+        }
+        
+        .char {
+            text-align: left;
+            dt:after {
+                content: ":"
+            };
+            dd:after {
+                content: "\A"; white-space: pre;
+            };
+            dd {
+                margin-left: 0em;
+            };
+            dt, dd {
+                display: inline;
+                white-space: pre;
+            };
+            img {
+                margin: 1em;
+            };
+            p {
+                text-indent: 1em;
+            }
+        }
+
+    /*Medium screens*/
+
+        @media screen and (min-width: 1024px) {
+          
+          figure {
+              padding: 1em;
+            }
+
+            .cominavbox, .cominavbox li {
+                margin-left: 1em;
+                margin-right: 1em;
+                margin-bottom: 0em;
+            }
+
+            figure + .cominavbox {
+                margin-top: 0em;
+            }
+
+            nav li {
+                padding: 1em;
+                margin: 0em;
+            }
+
+            .archive {
+                margin: 1em;
+                padding: 1em;
+                & h2 {
+                    margin: 0em 0em 1em 0em;
+                }
+            }
+
+            main > div, main > section {
+                margin: 1em;
+                h2 {
+                  margin-top: 0em;
+                }
+            }
+
+            img, embed, object, video {
+                max-width: auto;
+            }
+            
+            .main {
+                padding: 1em;
+            }
+            
+            .intro {
+                border: none;
+                margin: 0em;
+                padding: 0em;
+                text-align: left;
+                & h2 {
+                    margin-bottom: 0.5em;
+                };
+                & img {
+                    display: inline;
+                };
+                & .author {
+                    font-weight: bold;
+                }
+                & .desc {
+                    font-weight: bold;
+                }
+            }
+            
+            .main, .intro {
+                text-align: left;
+                & p {
+                  text-align: left;
+                  margin: 1em;
+                }
+            }
+
+        }
+    }
+}

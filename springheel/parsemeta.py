@@ -19,7 +19,7 @@
 
 ## This script returns a dictionary of metadata (title, author, etc.), the commentary, the navigation boxes, and link rel navigation.
 
-from slugify import slugify
+from slugify import slugify, slugify_url
 import springheel.parseconf
 ##import arrow
 
@@ -87,8 +87,8 @@ def parseMetadata(single,file_name,translated_strings):
 
     ##Title slug and line are created.
 
-    series_slug = slugify(meta["category"])
-    title_slug = slugify(meta["title"])
+    series_slug = slugify_url(meta["category"])
+    title_slug = slugify_url(meta["title"])
     title_line = [meta["category"], " #", meta["page"], ": ", meta["title"]]
     title_line = "".join(title_line)
 

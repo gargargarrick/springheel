@@ -35,8 +35,6 @@ def parseChars(charfile):
     category = raw_page_m[0].split("category: ")[1]
     lang = raw_page_m[1].split("lang: ")[1]
 
-    print("This seems to be a file for the category {category} in {lang} language.".format(category=category,lang=lang))
-
     cl = [category,lang]
 
     characters = l[1:]
@@ -65,11 +63,10 @@ def genCharsPage(chars_list):
             if item[2][1] != 'None':
                 img = '<img src="{img}" alt="" />'.format(img=item[2][1])
                 char_elements.append(img)
-            char_elements.append('<div class="chartext">')
             ## We only need to worry about the DL element if there are custom attributes.
             if len(item) > 3:
                 dls = []
-                char_elements.append("<dl>")
+                char_elements.append("<dl class='chartraits'>")
                 for key in item:
                     if key[0] == "name" or key[0] == "img" or key[0] == "desc":
                         pass
@@ -82,6 +79,7 @@ def genCharsPage(chars_list):
                 dl = sep.join(dls)
                 char_elements.append(dl)
                 char_elements.append("</dl>")
+            char_elements.append('<div class="chartext">')
             desc = "<p>{desc}</p>".format(desc=item[1][1])
             char_elements.append(desc)
             char_elements.append("</div>")

@@ -1,0 +1,349 @@
+@media screen {
+/*Might*/
+    #might {
+    $sky: #A5032C;
+    $ground: #000022;
+    $borders: #ff0042;
+    $altborders: #375490;
+    $box: #000022;
+    $t: #fff;
+    $link: #6694FF;
+    $vis: #D480FF;
+    $act: #FF7A7A;
+    $bglight: #ffed00;
+    /* Default (small) screens */
+        * {
+            box-sizing: content-box;
+        }
+        body {
+            background-color: $box;
+            color: $t;
+            text-align: center;
+            font-size: 1.5em;
+            font-family: sans-serif;
+            margin: 0em;
+            display: grid;
+            grid-gap: 0em;
+            grid-template-areas:
+              'skip'
+              'head'
+              'main'
+              'footer';
+        }
+        
+        header {
+            margin: 0em;
+            grid-area: head;
+            background-color: $bglight
+        }
+        
+        footer {
+            grid-area: footer;
+            padding: 0.5em;
+            background: $ground;
+            margin: 0em
+        }
+        
+        main {
+          grid-area: main;
+        }
+
+        main, figure {
+            margin-left: 0em;
+            padding-left: 0em;
+        }
+        
+        main div, main section, figcaption, nav li, .cominavbox {
+            background-color: $box;
+            color: $t;
+            border: solid thick $borders;
+        }
+        
+        main div, main section {
+          padding: 0em 1em;
+        }
+
+        h1 {
+            margin: 0em;
+        }
+        figure {
+            padding: 0em;
+            margin: 0em;
+            border: none;
+            background: none;
+            text-align: center;
+        }
+        
+        figcaption {
+            padding: 1em;
+            border: none;
+        }
+        
+        .cominavbox, .cominavbox li {
+            display: inline-block;
+            text-align: center;
+            padding: 0em;
+        }
+
+        li + li, div+div, section+section {
+            margin-top: 0.5em
+        }
+        
+        .cominavbox li {
+          padding: 0.5em;
+          text-align: center;
+          a {
+            line-height: 1rem
+          }
+        }
+        
+        figure + .cominavbox {
+          margin-bottom: 1em;
+        }
+
+        /*TODO: Fix the skip link hiding method*/
+        #skippy {
+            grid-area: skip;
+            text-align: left;
+            margin: 0em
+        }
+        #skippy a, #skippy a:hover, #skippy a:visited {
+            position:absolute;
+            left:-10000px;
+            top:auto;
+            width:1px;
+            height:1px;
+            overflow:hidden;
+        }
+
+        #skippy a:active, #skippy a:focus {
+          position: static;
+          height: auto;
+          width: auto;
+          font-size: 1em;
+          margin-top: 0em;
+          background: #000;
+          color: #fff;
+        }
+
+        nav ul {
+            padding-left: 0em;
+            li {
+                display: inline-block;
+                padding: 0.5em;
+            }
+        }
+
+        main div, main section {
+            text-align: left;
+        }
+
+        .statline {
+            font-weight: bold;
+        }
+
+        a:link {
+            color: $link;
+            text-decoration: underline
+        }
+        
+        a:visited {
+          color: $vis;
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        a:hover, a:focus, a:active {
+            color: $act;
+        }
+
+        footer p {
+            margin-left: 0em;
+            text-align: left;
+        }
+
+        .archive {
+            vertical-align: top;
+            text-align: left;
+        }
+
+        img, embed, object, video {
+            max-width: 100%;
+        }
+
+        .action {
+            font-weight: bold;
+        }
+
+        .charname {
+            font-weight: bold
+        }
+        
+        .intro, .chartext {
+            border: none;
+        }
+        
+        .char {
+            text-align: left;
+            dt:after {
+                content: ":"
+            };
+            dd:after {
+                content: "\A"; white-space: pre;
+            };
+            dd {
+                margin-left: 0em;
+            };
+            dt, dd {
+                display: inline;
+                white-space: pre;
+            };
+            dt {
+                font-weight: bold;
+            };
+            dl {
+                font-size: 0.9em;
+            };
+            img {
+                margin: 1em;
+            };
+        }
+        
+        .char img , .chartraits {
+          margin: 0em;
+          padding: 0em;
+        }
+        
+        .chartext {
+          border: none;
+          padding: 0em;
+          margin: 0em;
+          line-height: 2em;
+        }
+
+    /*Medium screens*/
+
+        @media screen and (min-width: 1024px) {
+
+            figure#comic {
+                margin-left: 1em;
+                margin-top: 0em;
+                margin-bottom: 0em;
+                padding: 1em;
+            }
+            
+            header {
+                background-color: $bglight;
+                background: radial-gradient(circle at bottom center, $bglight 85%, $sky 86%);
+                // background: $bglight url("moon.png") no-repeat 95% 95%;
+                h1 {
+                    margin-bottom: 1em;
+                    color: black;
+                }
+            }
+
+            main {
+                background-color: $bglight;
+                background: url("skyline.png"), linear-gradient(to bottom, $bglight 0%,$sky 50%);
+                padding: 0.5em;
+                div, section {
+                    width: 80%;
+                    text-align: left;
+                    h2 {
+                        border-bottom: solid thick $bglight;
+                        margin-top: 0em;
+                    }
+                }
+            }
+
+            .cominavbox {
+                margin: 0em 0em 0em 1em;
+                padding: 1em;
+                li {
+                    margin: 0em 1em;
+                }
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            nav li {
+                padding-top: 1em;
+                padding-left: 1em;
+                padding-right: 1em;
+                padding-bottom: 0.8em;
+                margin: 0em;
+            }
+
+            .statline {
+                font-size: 0.8em;
+                text-align: right;
+            }
+
+            footer {
+                background: $ground;
+            }
+            
+            .action {
+                text-indent: 1em;
+                font-weight: bold;
+            }
+
+            .archive {
+                margin: 1em;
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+            
+            .main {
+                padding: 0.5em;
+                margin: auto;
+                text-align: left;
+                width: 80%;
+                & p {
+                    margin-left: 0em;
+                };
+                .author {
+                    text-indent: 2em;
+                }
+            }
+            
+            .intro {
+                border: none;
+                margin: 0em;
+                padding: 1em;
+                width: auto;
+                h2 {
+                    margin-top: 0em;
+                    margin-left: 0em;
+                };
+            }
+            .char {
+                text-align: left;
+                img {
+                  border: solid medium $altborders;
+                }
+                img, .chartraits {
+                    display: inline-block;
+                    vertical-align: top;
+                }
+                .chartext {
+                    width: auto;
+                }
+            }
+            .chartraits {
+                margin-left: 1em;
+            }
+            .chartraits * {
+                line-height: 1.5em
+            }
+        }
+    }
+}

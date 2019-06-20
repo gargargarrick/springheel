@@ -1,0 +1,180 @@
+@media screen {
+  /*Revolution*/
+  #revolution {
+    /* Default (small) screens */
+    /*TODO: Fix the skip link hiding method*/
+    /*Medium screens*/ }
+    #revolution * {
+      box-sizing: content-box; }
+    #revolution body {
+      background-color: #060606;
+      background: #060606 url("sparks.png") top left fixed no-repeat;
+      color: lavenderblush;
+      text-align: center;
+      font-size: 1.5em;
+      font-family: sans-serif;
+      margin: 0em; }
+    #revolution main, #revolution figure {
+      margin: 0em;
+      padding-left: 0em;
+      padding-right: 0em; }
+    #revolution h1 {
+      margin: 0em; }
+    #revolution figure {
+      text-align: center;
+      border: none; }
+    #revolution .cominavbox, #revolution .cominavbox li {
+      display: inline-block;
+      padding: 0em; }
+    #revolution p + p, #revolution li + li {
+      margin-top: 0.5em; }
+    #revolution #skippy {
+      text-align: left; }
+    #revolution #skippy a, #revolution #skippy a:hover, #revolution #skippy a:visited {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden; }
+    #revolution #skippy a:active, #revolution #skippy a:focus {
+      position: static;
+      height: auto;
+      width: auto;
+      font-size: 1em;
+      margin-top: 0em;
+      color: #0000ff; }
+    #revolution nav li {
+      display: inline-block; }
+    #revolution #commentary, #revolution #transcript {
+      text-align: left; }
+    #revolution .statline {
+      font-weight: bold; }
+    #revolution a:link {
+      color: #3e9fff;
+      text-decoration: underline; }
+    #revolution a:visited {
+      color: #a78ae2; }
+    #revolution a:hover {
+      text-decoration: underline; }
+    #revolution a:hover, #revolution a:focus, #revolution a:active {
+      color: #f77; }
+    #revolution footer p {
+      margin-left: 0em;
+      text-align: left; }
+    #revolution .archive {
+      display: inline-block;
+      vertical-align: top;
+      text-align: left; }
+    #revolution img, #revolution embed, #revolution object, #revolution video {
+      max-width: 100%; }
+    #revolution .action {
+      font-weight: bold; }
+    #revolution .char {
+      text-align: left; }
+      #revolution .char dt:after {
+        content: ":"; }
+      #revolution .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #revolution .char dd {
+        margin-left: 0em; }
+      #revolution .char dt, #revolution .char dd {
+        display: inline;
+        white-space: pre; }
+    #revolution .charname {
+      font-weight: bold; }
+    #revolution .char img {
+      margin: 0em;
+      padding: 0em; }
+    #revolution .chartraits {
+      margin: 0em;
+      padding: 0em; }
+    #revolution .chardesc {
+      border: none;
+      padding: 0em;
+      margin: 0em;
+      line-height: 2em; } }
+  @media screen and (min-width: 1024px) {
+    #revolution body {
+      background-color: #060606;
+      background: #060606 url("sparks.png") bottom right fixed no-repeat; }
+    #revolution figure {
+      margin-left: 1em;
+      margin-top: 0em;
+      margin-bottom: 0em; }
+    #revolution main div, #revolution main section {
+      padding: 2em 3em;
+      width: 80%; }
+    #revolution div + div {
+      margin-bottom: 0em;
+      margin-top: 1em; }
+    #revolution .cominavbox, #revolution .cominavbox li {
+      margin-left: 1em;
+      margin-right: 1em;
+      margin-top: 0.5em;
+      margin-bottom: 0em; }
+    #revolution figure + .cominavbox {
+      margin-bottom: 1em; }
+    #revolution figure#comic, #revolution main div, #revolution main section {
+      background: #060606;
+      border: solid thick #e7568d;
+      border-image-slice: 68 66 70 64;
+      border-image-width: 48px 48px 48px 48px;
+      border-image-outset: 0px 0px 0px 0px;
+      border-image-repeat: repeat repeat;
+      border-image-source: url("rose_frame.png"); }
+    #revolution figure {
+      padding: 0em 2em 2em 2em; }
+      #revolution figure#comic {
+        padding-top: 2em;
+        margin-top: 1em;
+        margin-left: 2em;
+        margin-right: 2em; }
+    #revolution .intro {
+      border: none;
+      margin: 1em;
+      padding: 1em; }
+      #revolution .intro + .intro {
+        padding-top: 0em;
+        margin-top: 0em; }
+    #revolution figcaption {
+      padding-left: 2em;
+      padding-right: 2em; }
+    #revolution h1 {
+      font-size: 1.5em; }
+    #revolution h2 {
+      font-size: 1.2em; }
+    #revolution h3 {
+      font-size: 1em; }
+    #revolution nav li {
+      padding-top: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-bottom: 0.8em;
+      margin: 0em; }
+    #revolution .statline {
+      font-size: 0.8em;
+      text-align: right; }
+    #revolution footer p {
+      font-size: 0.7em; }
+    #revolution .archive {
+      padding: 1em 2em;
+      margin: 1em; }
+    #revolution .main {
+      padding: 1em 2em;
+      margin: 1em;
+      text-align: left; }
+      #revolution .main p {
+        margin-left: 0em; }
+    #revolution .char {
+      text-align: left; }
+      #revolution .char img, #revolution .char .chartraits {
+        display: inline-block;
+        vertical-align: top; }
+    #revolution .chartraits {
+      margin-left: 1em; }
+    #revolution .chartraits * {
+      line-height: 1.5em; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -5,24 +5,13 @@
     /*Summer*/
     /*Fall*/
     /*Winter*/
-    /*$bbg: #504170;
-    $mbg: #fafafa;
-    $la: #facb1e;
-    $ma: #b88fb4;
-    $dt: #180e0e;
-    $lt: #111;
-    $bgi: url("winter.png");
-    $aa: #6d428f;
-    $av: #504170;
-    $ahaf: #8a325e;
-    $anh: #b88fb4;*/
     /* Default (small) screens */
     /*TODO: Fix the skip link hiding method*/
     /*Medium screens*/ }
     #seasonal * {
       box-sizing: content-box; }
     #seasonal body {
-      background-color: #4866c5;
+      background-color: #429ad7;
       background-image: url("summer.png");
       background-position: 0 100%;
       background-repeat: repeat-x;

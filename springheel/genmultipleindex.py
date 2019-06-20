@@ -18,12 +18,11 @@
 ## along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import os
-from slugify import slugify
+from slugify import slugify, slugify_url
 
 sep = "\n"
 
 def genMultipleIndex(comics,characters_page,translated_strings):
-    print(characters_page)
     elements = []
     dopen = "<div class='intro'>"
     dclose = "</div>"
@@ -55,8 +54,8 @@ def genMultipleIndex(comics,characters_page,translated_strings):
                             gofirst=gofirst
         )
         elements.append(div)
-        if characters_page == True:
-            cat_slug = slugify(i.category)
+        if characters_page == True and i.chars_file != "None":
+            cat_slug = slugify_url(i.category)
             characters_link = "".join([cat_slug,"-","characters.html"])
             char_line = '<p><a href="{characters_link}">{character_s}</a></p>'.format(characters_link=characters_link,
                                                                                       character_s=character_s)

@@ -1,63 +1,62 @@
 @media screen {
-/*Showtime*/
-    #showtime {
-    $text: #d9d9d9;
-    $bg: #171717;
+/*Fairy*/
+    $bg: #ECAAC5;
+    $text: black;
+    $lac: #A685E7;
+    $box: #DFE7C0;
+    #fairy {
     /* Default (small) screens */
         * {
             box-sizing: content-box;
         }
         body {
-            background-color: $bg;
-            background: $bg url("curtaint.png") repeat-x 0% 0%;
+            background: $bg url("sparkles.png") 0% 5% repeat-x fixed;
             color: $text;
             text-align: center;
             font-size: 1.5em;
             font-family: sans-serif;
-            display: grid;
-            grid-gap: 1em;
-            grid-template-areas:
-              'skip'
-              'header'
-              'main'
-              'footer';
-            grid-template-columns: auto;
-        }
-        #skippy {
-          grid-area: skip;
-        }
-        
-        header {
-          grid-area: header;
-        }
-        
-        main {
-          grid-area: main;
-        }
-        
-        footer {
-          grid-area: footer;
+            margin: 0em;
         }
 
         main, figure {
-            margin-left: 0em;
+            margin: 0em;
             padding-left: 0em;
+            padding-right: 0em;
+        }
+
+        figure#comic, main > div, main > section {
+            background: $box;
+            border-top: solid thick $lac;
+            border-bottom: solid thick $lac;
+        }
+        
+        nav li, .cominavbox {
+            background: $box;
+            border: solid thick $lac;
         }
 
         h1 {
             margin: 0em;
         }
-        figure#comic {
-            padding: 1em;
+
+        h2 {
+            margin-top: 0em
+        }
+        figure {
             text-align: center;
+            border: none;
         }
         .cominavbox, .cominavbox li {
             display: inline-block;
             padding: 0em;
         }
 
-        p + p, li + li {
+        p + p, li + li, div+div, section+section, footer {
             margin-top: 0.5em
+        }
+        
+        main > div, main > section {
+            padding: 0.5em;
         }
 
         /*TODO: Fix the skip link hiding method*/
@@ -81,6 +80,10 @@
           margin-top: 0em;
           color: #0000ff;
         }
+        
+        nav {
+            font-size: 1.2em;
+        }
 
         nav li {
             display: inline-block;
@@ -95,12 +98,12 @@
         }
 
         a:link {
-            color: #9E9EFF;
+            color: #3434A2;
             text-decoration: underline
         }
 
         a:visited {
-            color: #C38FFF;
+            color: #582574;
         }
 
         a:hover {
@@ -108,12 +111,17 @@
         }
 
         a:hover, a:focus, a:active {
-            color: #FF8585;
+            color: #8F0037;
         }
 
-        footer p {
-            margin-left: 0em;
+        footer {
+            padding: 0.5em;
             text-align: left;
+            background: $box;
+            border-top: solid thick $lac;
+            p {
+                margin: 0em;
+            }
         }
 
         .archive {
@@ -129,12 +137,9 @@
         .action {
             font-weight: bold;
         }
-
-        .charname {
-            font-weight: bold
-        }
         
         .char {
+            text-align: left;
             dt:after {
                 content: ":"
             }
@@ -150,38 +155,61 @@
             }
         }
 
+        .charname {
+            font-weight: bold;
+        }
+        
+        .char img {
+          margin: 0em;
+          padding: 0em;
+        }
+        
+        .chartraits {
+          margin: 0em;
+          padding: 0em;
+        }
+        
+        .chardesc {
+          border: none;
+          padding: 0em;
+          margin: 0em;
+          line-height: 2em;
+        }
+          
+        .intro {
+            border: none;
+            & + .intro {
+                border-top: solid medium $lac;
+                padding-top: 1em;
+                margin-top: 0em;
+            }
+        }
+
     /*Medium screens*/
 
         @media screen and (min-width: 1024px) {
-            body {
-                margin: 0em;
-                background: url("curtaint.png") repeat-x 0% 0%, url("curtainr.png") fixed repeat-y 100% 0%, $bg url("curtainl.png") fixed repeat-y 0% 0%;
+            main {
+                margin: 1em;
             }
-
-            figure#comic {
+            figure {
                 margin-left: 1em;
                 margin-top: 0em;
                 margin-bottom: 0em;
-                img {
-                  border: 1em solid #A06D3D
-                }
-            }
-            figure#comic figcaption {
-              max-width: 80%;
-              margin: auto;
             }
 
-            main div, main section {
-                text-align: left;
-                padding-left: 1em;
-                padding-right: 1em;
-                width: 70%;
-                margin: auto;
+            figure#comic, main > div, main > section {
+                background: $box url("mornglor.png") top right no-repeat;
+                border: solid thick $lac;
+            }
+
+            main > div, main > section {
+                padding: 1em;
+                width: 80%;
             }
 
             div + div {
                 margin-bottom: 0em;
-                margin-top: 0em;
+                margin-top: 1em;
             }
 
             .cominavbox, .cominavbox li {
@@ -190,14 +218,29 @@
                 margin-top: 0.5em;
                 margin-bottom: 0em;
             }
+            
+            .cominavbox li {
+                padding: 1em;
+            }
 
             figure + .cominavbox {
-                margin-top: 0em;
+                margin-bottom: 1em;
             }
-
+              
             figure {
-                margin-left: 1em;
+                padding: 0em 2em 2em 2em;
+                &#comic {
+                    padding-top: 2em;
+                    margin-top: 1em;
+                    margin-left: 2em;
+                    margin-right: 2em;
+                }
             }
+              
+              figcaption {
+                  padding-left: 2em;
+                  padding-right: 2em;
+              }
 
             h1 {
                 font-size: 1.5em;
@@ -224,38 +267,30 @@
                 text-align: right;
             }
 
-            footer {
-              background: $bg;
-              margin: 0em;
-              padding: 0.5em;
-            }
-
-            footer p {
-                font-size: 0.7em;
-                margin-bottom: 0em;
-            }
-
             .archive {
-                margin-left: 0em;
-                margin-right: 1em;
-                padding-left: 1em;
-                padding-right: 1em;
+                padding: 1em 2em;
+                margin: 1em;
             }
             
             .main {
-                padding: 0.5em;
-                margin: auto;
-                width: 50%;
-                & p {
-                    margin-left: 0em;
-                }
+                margin: 1em;
+                text-align: left;
             }
             .char {
                 text-align: left;
+                img {
+                    border: solid medium $lac;
+                }
+                img, .chartraits {
+                    display: inline-block;
+                    vertical-align: top;
+                }
             }
-            .chartext, .charimg {
-              display: inline-block;
-              vertical-align: top
+            .chartraits {
+                margin-left: 1em;
+            }
+            .chartraits * {
+                line-height: 1.5em
             }
         }
     }
