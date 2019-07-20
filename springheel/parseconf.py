@@ -22,7 +22,7 @@ import configparser, os
 def parseConf(config_file):
 
     config = configparser.ConfigParser()
-    config.read(config_file)
+    config.read(config_file,encoding="utf-8")
     config.sections()
 
     config_od = config._sections
@@ -70,7 +70,7 @@ def parseConf(config_file):
 
 def comicCParse(conf):
     cc = configparser.ConfigParser()
-    cc.read(conf)
+    cc.read(conf,encoding="utf-8")
     cc.sections()
 
     category = cc.get("ComicConfig","category")

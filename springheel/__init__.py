@@ -19,7 +19,7 @@
 
 name = "springheel"
 author = "gargargarrick"
-__version__ = '4.0.0'
+__version__ = '4.0.1'
 
 class Site:
     def __init__(self):
@@ -29,7 +29,7 @@ class Config(object):
     def __init__(self,*file_names):
       parser = configparser.ConfigParser()
       parser.optionxform = str
-      found = parser.read(file_names)
+      found = parser.read(file_names,encoding="utf-8")
       if not found:
           raise ValueError("No cfg file")
       for name in ["Config"]:
@@ -76,7 +76,7 @@ def logMsg(message,path):
     logfile = os.path.join(path,"springheel.log")
     now = datetime.datetime.strftime(datetime.datetime.now(),"%Y-%m-%d %H:%M:%S")
     message = "".join(["\n",now," -- ",message])
-    with open(logfile,"a+") as lf:
+    with open(logfile,"a+",encoding="utf-8") as lf:
         lf.write(message)
 
 def wrapImage(link,title,image):
