@@ -19,11 +19,12 @@
 
 name = "springheel"
 author = "gargargarrick"
-__version__ = '4.0.1'
+__version__ = '4.1.0'
 
 class Site:
     def __init__(self):
         self.comics = []
+        self.sitemap = []
 
 class Config(object):         
     def __init__(self,*file_names):
@@ -417,6 +418,8 @@ def build():
     ## Get translation strings, too.
     templates_path = springheelinit.getTemplatesPath()[1]
     translated_strings = gentrans.generateTranslations(site.config.language, templates_path)
+    logmesg = "Loading translation strings for {lang}...".format(lang=site.config.language)
+    logMsg(logmesg, ".")
 
     #### Get basic info first.
     for i in comics_base:
@@ -585,9 +588,6 @@ def build():
                 except AttributeError:
                     pass
             match.chapters_list = chapters_list
-            logMsg("Chapters:",".")
-            for asdf in match.chapters_list:
-                logMsg(str(asdf.__dict__),".")
         else:
             logMsg("{match} has a chapter setting of {chapter}.".format(match=match.category,chapter=match.chapters),".")
             match.chapters_list = []
@@ -873,6 +873,9 @@ def build():
             fout.write(n_string)
         logmesg = "{html_fn} written.".format(html_fn=html_filename)
         logMsg(logmesg,".")
+        modified_time = datetime.datetime.strftime(datetime.datetime.utcfromtimestamp(os.path.getmtime(out_file)),"%Y-%m-%dT%H:%M:%S.%fZ")
+        sitemap_loc = {"loc":site.config.base_url+html_filename,"lastmod":modified_time}
+        site.sitemap.append(sitemap_loc)
             
         ###########################################################################
 
@@ -1103,6 +1106,9 @@ def build():
             fout.write(arch_string)
         logmesg = "{archive} written.".format(archive="archive.html")
         logMsg(logmesg,".")
+        modified_time = datetime.datetime.strftime(datetime.datetime.utcfromtimestamp(os.path.getmtime(out_file)),"%Y-%m-%dT%H:%M:%S.%fZ")
+        sitemap_loc = {"loc":site.config.base_url+"archive.html","lastmod":modified_time}
+        site.sitemap.append(sitemap_loc)
 
     ##Generate feed
 
@@ -1169,6 +1175,9 @@ def build():
                 fout.write(n_string)
             logmesg = "{indexh} written.".format(indexh="index.html")
             logMsg(logmesg,".")
+            modified_time = datetime.datetime.strftime(datetime.datetime.utcfromtimestamp(os.path.getmtime(out_file)),"%Y-%m-%dT%H:%M:%S.%fZ")
+            sitemap_loc = {"loc":site.config.base_url+"index.html","lastmod":modified_time}
+            site.sitemap.append(sitemap_loc)
     else:
         multi_secs = genmultipleindex.genMultipleIndex(
             ccomics,
@@ -1213,6 +1222,9 @@ def build():
                 fout.write(n_string)
             logmesg = "{indexh} written.".format(indexh="index.html")
             logMsg(logmesg,".")
+            modified_time = datetime.datetime.strftime(datetime.datetime.utcfromtimestamp(os.path.getmtime(out_file)),"%Y-%m-%dT%H:%M:%S.%fZ")
+            sitemap_loc = {"loc":site.config.base_url+"index.html","lastmod":modified_time}
+            site.sitemap.append(sitemap_loc)
 
     ## Generate characters page if necessary.
     if characters_page == True:
@@ -1301,6 +1313,9 @@ def build():
                         fout.write(n_string)
                     logmesg = "{out_name} written.".format(out_name=out_name)
                     logMsg(logmesg,".")
+                    modified_time = datetime.datetime.strftime(datetime.datetime.utcfromtimestamp(os.path.getmtime(out_file)),"%Y-%m-%dT%H:%M:%S.%fZ")
+                    sitemap_loc = {"loc":site.config.base_url+out_name,"lastmod":modified_time}
+                    site.sitemap.append(sitemap_loc)
 
         if single == False:
             out_name = "characters.html"
@@ -1356,6 +1371,9 @@ def build():
                     fout.write(n_string)
                 logmesg = "{out_name} written.".format(out_name=out_name)
                 logMsg(logmesg,".")
+                modified_time = datetime.datetime.strftime(datetime.datetime.utcfromtimestamp(os.path.getmtime(out_file)),"%Y-%m-%dT%H:%M:%S.%fZ")
+                sitemap_loc = {"loc":site.config.base_url+out_name,"lastmod":modified_time}
+                site.sitemap.append(sitemap_loc)
 
     ## Generate extras page if necessary.
     if extras_page == True:
@@ -1392,16 +1410,40 @@ def build():
                 icons=icons,
             )
 
-            with open(out_file,"w") as fout:
+            with open(out_file,"w",encoding="utf-8") as fout:
                 fout.write(extras_html)
-            logmesg = "Extras page written to {out_file}.".format(out_file=out_file)
+            logmesg = "Extras page written to {out_file}.".format(out_file="extras.html")
             logMsg(logmesg,".")
+            modified_time = datetime.datetime.strftime(datetime.datetime.utcfromtimestamp(os.path.getmtime(out_file)),"%Y-%m-%dT%H:%M:%S.%fZ")
+            sitemap_loc = {"loc":site.config.base_url+ex_html_filename,"lastmod":modified_time}
+            site.sitemap.append(sitemap_loc)
         else:
             logmesg = "Extra pages are supposed to be generated, but Extras.json wasn't found in input/. Make sure it exists and is valid, then try again."
             logMsg(logmesg,".")
     else:
         logmesg = "Not generating extras page..."
         logMsg(logmesg,".")
+
+    ## Generate sitemap
+    sitemap_close = '</urlset>'
+    sitemap_sorted = sorted(site.sitemap,key=lambda k:k['loc'])
+    ## Move index to the beginning
+    for sitepage in sitemap_sorted:
+        if sitepage["loc"][-11:] == "/index.html":
+            smap_index_ind = sitemap_sorted.index(sitepage)
+    sitemap_sorted.insert(0, sitemap_sorted.pop(smap_index_ind))
+    formatted_sitemap = ['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for sitepage in sitemap_sorted:
+        smap_entry = "<url><loc>{loc}</loc><lastmod>{lastmod}</lastmod></url>".format(loc=sitepage["loc"],lastmod=sitepage["lastmod"])
+        formatted_sitemap.append(smap_entry)
+    formatted_sitemap.append("</urlset>")
+    sitemap = "\n".join(formatted_sitemap)
+    sitemap_xml_fn = "sitemap.xml"
+    sitemap_out = os.path.join(o_path, sitemap_xml_fn)
+    with open(sitemap_out,"w",encoding="utf-8") as fout:
+        fout.write(sitemap)
+    logmesg = "Generated sitemap at {sitemap_fn}.".format(sitemap_fn=sitemap_xml_fn)
+    logMsg(logmesg,".")
     logmesg = "Springheel compilation complete! ^_^"
     print(logmesg)
     logMsg(logmesg,".")

@@ -5,7 +5,7 @@ def readme():
         return f.read()
 
 setup(name='springheel',
-      version='4.0.1',
+      version='4.1.0',
       description='Static site generator for webcomics',
       long_description="A simple static site generator designed for webcomics",
       classifiers=[

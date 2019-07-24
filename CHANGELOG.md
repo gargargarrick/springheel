@@ -1,5 +1,10 @@
 # Springheel Changelog
 
+### 4.1.0
+
++ Springheel now generates XML site maps of comic sites.
++ Cleaned up logging a bit.
+
 ### 4.0.0
 + Added new themes "revolution", "fairy", "sysadmin", and "might".
 + Separated traits from descriptions on character pages.

@@ -26,8 +26,6 @@ import os, json
 
 def generateTranslations(lang,translation_path):
 
-    print("Getting translation for {lang}...".format(lang=lang))
-
     strings_path = os.path.join(translation_path,"strings.json")
     with open(strings_path,"r",encoding="utf-8") as f:
         json_data = json.load(f)
