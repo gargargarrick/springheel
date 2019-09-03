@@ -25,7 +25,6 @@ If I release a new major version of Springheel, that means you should re-initial
 
 Springheel is designed to be as simple and bare-bones as possible, so there are some features it doesn't have (or just doesn't have *yet*). E.g.:
 
-* There is no real tagging system; if you enter anything into the metadata field "tags", it's just displayed as plain text, and there is no way to browse pages by tag.
 * The RSS feed may list items out of order if multiple comics have the same posting date.
 * Page commentaries and character descriptions are plain text only (no HTML). This is because parsing markup in those blocks would be *much* more complicated and slow.
 * Comic pages must be one image each -- you can't yet create "webtoon"-style comics that are split up into multiple images, and have them all display on one page. I've included hooks to change this eventually, at least.
@@ -54,7 +53,7 @@ I know this is a bit of a mouthful compared to the GNU/Linux version, sorry.
 
 If all goes well, a prompt will appear in your terminal asking for the (ISO 639-1 two-letter code for the) language your site will use. *Wuffle* is in English, so type "en" and press enter. Some debug info will appear explaining what is going on: the script locates where Springheel was installed, grabs the templates and other base assets for the language in question, and copies them to your current directory.
 
-Now unzip the contents of the *Wuffle* pack, `springheel-wuffle-sample-site-pack.zip`, into the current directory. Everything in it *except* the `wuffle_conf.py` file should go into `input`. Remove the current `conf.py` file and rename `wuffle_conf.py` to simply `conf.py`.
+Now unzip the contents of the *Wuffle* pack, `springheel-wuffle-sample-site-pack.zip`, into the current directory. Everything in it *except* the `wuffle_conf.ini` file should go into `input`. Remove the current `conf.ini` file and rename `wuffle_conf.ini` to simply `conf.ini`.
 
 Your directory should now look something like this:
 
@@ -64,7 +63,7 @@ Your directory should now look something like this:
 	socialbuttons/
 	templates/
 	themes/
-    conf.py
+    conf.ini
 
 Let's look at each of these in more detail. You can also skip right down to "Trying to build" and work out this stuff once you already have a generated site to compare it to; the choice is yours.
 
@@ -72,7 +71,7 @@ Let's look at each of these in more detail. You can also skip right down to "Try
 
 This holds the sitewide configuration file and the input and output folders.
 
-`conf.py` is a sitewide configuration file. You'll definitely want to modify it before building, as we've done here -- some of the defaults are deliberately silly or non-working.
+`conf.ini` is a sitewide configuration file. You'll definitely want to modify it before building, as we've done here -- some of the defaults are deliberately silly or non-working.
 
 ### Asset folders
 
@@ -137,7 +136,7 @@ These are the themes available by default:
 * seasonal -- a theme you can change to match the seasons. **Requires configuration before use.** ~8KiB each + 1.6KiB arrows.
 * western -- a rugged theme fit for a cowpoke. 14.7KiB + 18.6KiB arrows.
 
-To use any of these themes, just enter its name as `site_style` in `conf.py`. Plain is the default.
+To use any of these themes, just enter its name as `site_style` in `conf.ini`. Plain is the default.
 
 If your site contains multiple comic series, you can even set individual styles for each one; just set "theme" in that comic's `.conf` to the theme name you want.
 
@@ -156,7 +155,7 @@ Creating your own styles is simple enough. Here's what you must do:
 1. Go to the `themes` directory, and make a folder there with the title of your theme. It must be a unique name, all lowercase, and without spaces.
 2. Create a file there called `style.css`. How you create `style.css` does not matter, as long as it is called that and in the right place. For neatness and ease of memory, I usually use Sass to make a .scss file in `themes`, and have it compile to a `style.css` in a matching directory (e.g. themes/plain.scss:themes/plain/style.css). If you're using any, put all other assets, like images, in the same directory as `style.css` too.
 3. Design your cool CSS theme. This is the easy part. :)
-4. Make a set of navigation arrows and put them in `arrows`. For compatibility with Springheel's code, they should be like this (even if you want the arrows to point the other way, just follow this schema, open up `conf.py`, and set `navdirection` to `rtl`):
+4. Make a set of navigation arrows and put them in `arrows`. For compatibility with Springheel's code, they should be like this (even if you want the arrows to point the other way, just follow this schema, open up `conf.ini`, and set `navdirection` to `rtl`):
  * {yourtheme}_first.png (pointing **left**)
  * {yourtheme}_prev.png (pointing **left**)
  * {yourtheme}_next.png (pointing **right**)
@@ -260,7 +259,7 @@ The .conf file has fields that are required for accurate copyright statements, R
 * **chapters** (whether or not the comic is divided into chapters. If you set this to True *or* the name of a .chapters file, the archives page will automatically be separated by chapter)
 * **desc** (a description of the comic; used for the index page and RSS feeds)
 * **status** (whether the series is finished or not; accepted values are `in-progress`, `complete`, and `dead`)
-* **chars** (optional; the filename of a .chars file. If characters_page in `conf.py` is set to True, this will generate a characters page based on the linked file.)
+* **chars** (optional; the filename of a .chars file. If characters_page in `conf.ini` is set to True, this will generate a characters page based on the linked file.)
 
 ### Character pages
 
@@ -349,11 +348,11 @@ You are by no means required to relinquish the copyright of a comic simply becau
 
 That being said, I want to promote [Free Cultural Works](https://freedomdefined.org/Licenses) in general, so Springheel comes with some tools to make it easier to indicate the rights that readers have.
 
-First off, there is a field, `license`, in `conf.py`. By default it is "All rights reserved". But if you want to release your comic into the public domain, as Piti Yindee did for *Wuffle*, you could do something like this:
+First off, there is a field, `license`, in `conf.ini`. By default it is "All rights reserved". But if you want to release your comic into the public domain, as Piti Yindee did for *Wuffle*, you could do something like this:
 
 	license = To the extent possible under law, Piti Yindee has waived all copyright and related or neighboring rights to Wuffle Comic.
 
-Note: if you are releasing your comic into the public domain, *please* make sure to edit `country` in `conf.py` to list the country you are publishing from! This is very important because different countries have different laws about the ability of authors to waive copyright.
+Note: if you are releasing your comic into the public domain, *please* make sure to edit `country` in `conf.ini` to list the country you are publishing from! This is very important because different countries have different laws about the ability of authors to waive copyright.
 
 If you'd rather use a Creative Commons license, you could add the HTML snippet from their [license chooser](https://creativecommons.org/choose/), as I do on my own site:
 

@@ -25,6 +25,7 @@
 
 <main role="main" aria-labelledby="comictitle" id="maincontent" class="archives">
 {archive_sections}
+{tag_section}
 </main>
 <footer role="contentinfo">
     {copyright_statement}

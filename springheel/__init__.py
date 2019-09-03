@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 ##  Copyright 2017-2019 garrick. Some rights reserved.
@@ -19,14 +19,14 @@
 
 name = "springheel"
 author = "gargargarrick"
-__version__ = '4.1.0'
+__version__ = '5.0.0'
 
 class Site:
     def __init__(self):
         self.comics = []
         self.sitemap = []
 
-class Config(object):         
+class Config(object):
     def __init__(self,*file_names):
       parser = configparser.ConfigParser()
       parser.optionxform = str
@@ -35,16 +35,20 @@ class Config(object):
           raise ValueError("No cfg file")
       for name in ["Config"]:
           self.__dict__.update(parser.items(name))
+class Tag:
+    def __init__(self,name):
+        self.name = name
+        self.slug = slugify_url(name)
+        self.strips = []
 class Strip:
     def __init__(self,imagef,metaf,transf):
         self.imagef = imagef
         self.metaf = metaf
         self.transf = transf
-      
+        self.tags = []
 class Comic:
     def __init__(self, category):
         self.category = category
-
     class Page:
         def __init__(self, category, page_number):
             self.category = category
@@ -94,7 +98,7 @@ def getButtons(site,rss_s):
     liberapay_handle= site.config.liberapay_handle
 
     social_links = []
-    
+
     if site.config.social_icons == "False":
         rss_link = {"url":"feed.xml", "site":"", "title":rss_s, "image":"rss.png"}
         social_links.append(rss_link)
@@ -130,7 +134,7 @@ def getButtons(site,rss_s):
         social_icons.append(icon)
 
     icons = " ".join(social_icons)
-    
+
     return(social_links,icons)
 
 def copyTheme(site_theme_path,new_site_theme_path):
@@ -150,7 +154,7 @@ def copyTheme(site_theme_path,new_site_theme_path):
 def copyButtons(site,old_buttons_path,socialbuttons_path):
 
     files = os.listdir(old_buttons_path)
-    
+
     logmesg = "Social icons: {icons}".format(icons=site.config.social_icons)
     logMsg(logmesg,".")
     social_links = getButtons(site,"RSS")[0]
@@ -224,8 +228,8 @@ def copyMultiThemes(themes,c_path,o_path,assets_path):
     style = []
 
     for d in theme_ds:
-        sc = d["sheet_contents"]      
-        style.append(sc)        
+        sc = d["sheet_contents"]
+        style.append(sc)
         for i in d["files"]:
             source_dir = d["o_path"]
             source_path = os.path.join(source_dir,i)
@@ -276,6 +280,22 @@ def copyMultiArrows(themes,c_path,o_path,assets_path):
 
     return()
 
+def getTags(meta,all_tags):
+    tags_raw = meta["tags"]
+    tags_sep = tags_raw.split(", ")
+    this_strips_tags = []
+    this_strips_wraps = []
+    for tag in tags_sep:
+        tago = Tag(name=tag)
+        wrapped = """<a href="tag-{tag_slug}.html">{tag}</a>""".format(tag_slug=tago.slug,tag=tago.name)
+        tago.link = wrapped
+        if tag not in (n.name for n in all_tags):
+            all_tags.append(tago)
+        this_strips_tags.append(tago)
+        this_strips_wraps.append(wrapped)
+    tagline = ", ".join(this_strips_wraps)
+    return(tagline,this_strips_tags)
+
 def getComics():
 
     original_path = os.getcwd()
@@ -284,7 +304,7 @@ def getComics():
     os.chdir(path)
 
     files = os.listdir()
-    
+
     ## Get a list of images that have the proper meta files.
 
     images = []
@@ -307,7 +327,7 @@ def getComics():
             comics.append(comic)
         elif meta in files and transcr not in files:
             logmesg = "Metadata found, but no transcript for {image}. Please create {transcr}".format(image=i,transcr=transcr)
-            logMsg(logmesg,original_path) 
+            logMsg(logmesg,original_path)
             comic = Strip(imagef=i,transf="no_transcript.transcript",metaf=meta)
             comics.append(comic)
         elif transcr in files and meta not in files:
@@ -372,6 +392,17 @@ def build():
     c_path,o_path,pages_path,assets_path,arrows_path,socialbuttons_path = springheelinit.makeOutput()
     i_path = os.path.join(c_path,"input")
 
+    try:
+        zero_padding = site.config.zero_padding
+    except AttributeError:
+        zero_padding = "False"
+        logmesg = "There is no config value for zero_padding. Please update your conf.ini."
+        logMsg(logmesg,".")
+    if zero_padding == "False":
+        zero_padding = False
+    else:
+        zero_padding = int(zero_padding)
+
     ## Get some config variables
 
     c_path,o_path,pages_path,assets_path,arrows_path,socialbuttons_path = springheel.springheelinit.makeOutput()
@@ -386,7 +417,7 @@ def build():
 
     old_header_path = os.path.join(c_path,"input",site.config.banner_filename)
     new_header_path = o_path
-    
+
     ## Copy assets from the Springheel installation directory
 
     copyTheme(site_theme_path,new_site_theme_path)
@@ -499,8 +530,7 @@ def build():
     cpages = []
     themes = [site.config.site_style]
     chapters_list = []
-    logmesg = ", ".join(themes)
-    logMsg(logmesg,".")
+    all_tags = []
 
     for i in comics_base:
         file_name = i.imagef
@@ -598,11 +628,15 @@ def build():
         match.slug = series_slug
         date = datetime.datetime.strptime(meta["date"],"%Y-%m-%d")
         year = date.year
+        if "height" in meta.keys():
+            height = meta["height"]
+        if "width" in meta.keys():
+            width = meta["width"]
         if "alt" in meta.keys():
             alt_text = meta["alt"]
         else:
             alt_text = False
-        
+
         ## Make hte license
         clicense = conf["license"]
         ### Init publicdomain
@@ -658,6 +692,10 @@ def build():
         i.banner = banner
         i.header = header
         i.page_int = int(page)
+        if height:
+            i.height = height
+        if width:
+            i.width = width
 
         i.series_slug = series_slug
         i.date = date
@@ -677,6 +715,7 @@ def build():
         if category_theme:
             navblock,linkrels = generatenav.navGen(
                 site.config.navdirection,
+                zero_padding,
                 page_int,
                 first_page,
                 last_page,
@@ -688,6 +727,7 @@ def build():
         else:
             navblock,linkrels = generatenav.navGen(
                 site.config.navdirection,
+                zero_padding,
                 page_int,
                 first_page,
                 last_page,
@@ -717,10 +757,16 @@ def build():
         stat_line = """<p class="statline">{stat_s}""".format(stat_s=stat_s)
 
         tags_in_keys = "tags" in meta.keys()
-        if tags_in_keys == True:
+        if tags_in_keys == True and meta["tags"] != "":
+            tagsline,these_tags = getTags(meta,all_tags)
+            i.tags = these_tags
+            for tag in i.tags:
+                tag_match = [item for item in all_tags if item.name == tag.name][0]
+                tag_match.strips.append(i)
+                tag_match.strips.sort(key=lambda x: x.h1_title)
             tline = " &mdash; {tags_s}: {tags} &mdash; ".format(
-                tags_s=translated_strings["tags_s"],
-                tags=meta["tags"])
+               tags_s=translated_strings["tags_s"],
+               tags=tagsline)
             stat_line = stat_line+tline
 
         transcript_block = ["<!--TRANSCRIPT--> ", '<div role="region" id="transcript" aria-label="Transcript"><h2>{transcript_s}</h2>'.format(transcript_s =
@@ -756,19 +802,26 @@ def build():
             status = statuses[3]
 
         match.statuss = wrapWithTag(status, "strong")
-        
+
         ###########################################################################
         # Generate the actual page!
         ###########################################################################
         
+        if zero_padding != False:
+            page_padded = "{page:0{zero_padding}}".format(page=page_int,zero_padding=zero_padding)
+            next_page = "{page:0{zero_padding}}".format(page=(page_int+1),zero_padding=zero_padding)
+        else:
+            page_padded = page
+            next_page=str(page_int+1)
+
         html_filename = makeFilename(
             series_slug,
-            page)
+            page_padded)
         html_filenames.append(html_filename)
         out_file = os.path.join(
             o_path,
             html_filename)
-        
+
         template_name = base_t
         template = os.path.join(
             c_path,
@@ -776,8 +829,6 @@ def build():
 
         with open(template) as f:
             base_template = f.read()
-
-        next_page=str(page_int+1)
 
         statline = stat_line
         if site.config.social_icons == "True":
@@ -789,16 +840,25 @@ def build():
             style = category_theme
         else:
             style = site.config.site_style
-
-        renamed_fn = image_rename_pattern.format(
-            comic=series_slug,
-            page=page,
-            titleslug=title_slug,
-            date=i.date_s,
-            ext=img_path[-3:])
-        renamed_path = os.path.join(
-            pages_path,
-            renamed_fn)
+            
+        if site.config.rename_images == "True":
+            renamed_fn = image_rename_pattern.format(
+                comic=series_slug,
+                page=page_padded,
+                chapter=i.chapter,
+                height=i.height,
+                width=i.width,
+                titleslug=title_slug,
+                date=i.date_s,
+                ext=os.path.splitext(img_path)[1][1:])
+            renamed_path = os.path.join(
+                pages_path,
+                renamed_fn)
+        else:
+            renamed_fn = img_path
+            renamed_path = os.path.join(
+                pages_path,
+                img_path)
         source_path = os.path.join(
             i_path,
             img_path)
@@ -806,12 +866,18 @@ def build():
             source_path,
             renamed_path)
 
-        new_meta = image_rename_pattern.format(
-            comic=series_slug,
-            page=page,
-            titleslug=title_slug,
-            date=i.date_s,
-            ext="meta")
+        if site.config.rename_images == "True":
+            new_meta = image_rename_pattern.format(
+                comic=series_slug,
+                page=page_padded,
+                chapter=i.chapter,
+                height=i.height,
+                width=i.width,
+                titleslug=title_slug,
+                date=i.date_s,
+                ext="meta")
+        else:
+            new_meta = i.metaf
         new_meta_path = os.path.join(
             pages_path,
             new_meta)
@@ -822,12 +888,18 @@ def build():
             old_meta_path,
             new_meta_path)
 
-        new_transcr = image_rename_pattern.format(
-            comic=series_slug,
-            page=page,
-            titleslug=title_slug,
-            date=i.date_s,
-            ext="transcript")
+        if site.config.rename_images == "True":
+            new_transcr = image_rename_pattern.format(
+                comic=series_slug,
+                page=page_padded,
+                chapter=i.chapter,
+                height=i.height,
+                width=i.width,
+                titleslug=title_slug,
+                date=i.date_s,
+                ext="transcript")
+        else:
+            new_transcr = transcript_file
         if os.path.basename(transcript_file) != "no_transcript.transcript":
             new_transcr_path = os.path.join(pages_path,new_transcr)
             old_transcr_path = os.path.join(i_path,transcript_file)
@@ -846,7 +918,7 @@ def build():
             top_nav = top_nav,
             next_page=next_page,
             img_path="pages/"+renamed_fn,
-            page = page,
+            page = page_padded,
             bottom_nav = bottom_nav,
             commentary = commentary,
             statline = statline,
@@ -876,7 +948,7 @@ def build():
         modified_time = datetime.datetime.strftime(datetime.datetime.utcfromtimestamp(os.path.getmtime(out_file)),"%Y-%m-%dT%H:%M:%S.%fZ")
         sitemap_loc = {"loc":site.config.base_url+html_filename,"lastmod":modified_time}
         site.sitemap.append(sitemap_loc)
-            
+
         ###########################################################################
 
         i.clicense = clicense
@@ -932,7 +1004,7 @@ def build():
             if page.category == cat:
                 cur_cat.append(page)
         match.pbp = cur_cat
-        
+
         cur_cat = []
         for page in cpages_by_date:
             if page.category == cat:
@@ -946,7 +1018,7 @@ def build():
 
         match.fbd_link = match.pbd[0].html_filename
         match.lbd_link = match.pbd[allp].html_filename
-        
+
     sdate_comics = cpages_by_date
     spage_comics = cpages_by_page
 
@@ -965,7 +1037,7 @@ def build():
         d = {"category":category,"first_bypage":first_bypage,
              "last_bypage":last_bypage}
         ex_by_page.append(d)
-        
+
     for comic in ccomics:
         logmesg = "Category: "+comic.category
         logMsg(logmesg,".")
@@ -1009,11 +1081,12 @@ def build():
         for i in comic.pbd:
             archive_link = generatearchive.getLinks(i,translated_strings)
             archive_links_date.append(archive_link)
-        archive_sections_date = generatearchive.generateSeriesArchives(
-            category,
-            status,
-            archive_links_page)
-        archive_d_secs.append(archive_sections_date)
+        if hasattr(i,"chapter") == False or i.chapter == False:
+            archive_sections_date = generatearchive.generateSeriesArchives(
+                category,
+                status,
+                archive_links_page)
+            archive_d_secs.append(archive_sections_date)
 
         if comic.chapters not in falses:
             for page in comic.pbp:
@@ -1062,7 +1135,19 @@ def build():
             archives_r.append(archive_sections)
 
     archives = sep.join(archives_r)
-        
+    
+    if len(all_tags) > 0:
+        tags_sorted = sorted(all_tags, key=lambda x: x.name)
+        tag_section_content = ["""<section class="archive">""","<h2>{tags_s}</h2>".format(tags_s=translated_strings["tags_s"]),"""<ul class="tagslist">"""]
+        for tag in tags_sorted:
+            tag_count = len(tag.strips)
+            tag_section_content.append("<li>{link} ({tag_count})</li>".format(link=tag.link,tag_count=tag_count))
+        tag_section_content.append("</ul>")
+        tag_section_content.append("</section>")
+        tag_sectionn = sep.join(tag_section_content)
+    else:
+        tag_sectionn = ""
+
     arch_template_name = archive_t
     arch_template = os.path.join(c_path,arch_template_name)
 
@@ -1087,6 +1172,7 @@ def build():
             status=status,
             top_site_nav=top_site_nav,
             archive_sections=archives,
+            tag_section=tag_sectionn,
             year=year,
             author=site.config.site_author,
             copyright_statement=copyright_statement,
@@ -1232,7 +1318,7 @@ def build():
         character_pages = []
 
         for conf in configs:
-            
+
             fn = conf["chars"]
             if fn == "None":
                 logmesg = "No character file found for {category}, skipping...".format(category=conf["category"])
@@ -1261,7 +1347,7 @@ def build():
                             img_source_path = os.path.join(i_path,char[2][1])
                             img_out_path = os.path.join(o_path,char[2][1])
                             shutil.copy(img_source_path,img_out_path)
-                
+
                 chars_template_path = os.path.join(c_path,chars_t)
 
                 cat_slug = slugify_url(conf["category"])
@@ -1424,6 +1510,69 @@ def build():
         logmesg = "Not generating extras page..."
         logMsg(logmesg,".")
 
+###############################################################################
+    ## Generate tags pages if necessary
+    if len(all_tags) > 0:
+        logmesg = "Generating tag indices..."
+        logMsg(logmesg,".")
+        
+        for tag in all_tags:
+            tags_links_page = ["""<ol class="tagslist">"""]
+            tag_outn = "tag-{tag_slug}.html".format(tag_slug=tag.slug)
+            tag_outf = os.path.join(o_path, tag_outn)
+            tag_h = "{tags_s}: {tag}".format(tags_s=translated_strings["tags_s"],tag=tag.name)
+            for strip in tag.strips:
+                tag_l = translated_strings["h1_s"].format(category=strip.category,title=strip.title,page=strip.page)
+                link_format = "<li><a href='{html_filename}'>{tag_l}</a></li>"
+                tag_link = link_format.format(html_filename=strip.html_filename,tag_l=tag_l)
+                tags_links_page.append(tag_link)
+            tags_links_page.append("</ol>")
+            tag_section = sep.join(tags_links_page)
+            
+            link_rel_l = ['<link rel="alternate" type="application/rss+xml" title="{rss_s}" href="feed.xml">'.format(rss_s=translated_strings["rss_s"])]
+            link_rel = sep.join(link_rel_l)
+            
+            tag_template_name = archive_t
+            tag_template = os.path.join(c_path,tag_template_name)
+            
+            with open(tag_template) as f:
+                tag_template = f.read()
+            
+            tag_html = tag_template.format(
+                lang=lang,
+                site_style=site.config.site_style,
+                site_title=site.config.site_title,
+                header_title=tag_h,
+                linkrels=link_rel,
+                banner=site.config.banner_filename,
+                category=category,
+                status=status,
+                top_site_nav=top_site_nav,
+                archive_sections=tag_section,
+                tag_section="",
+                year=year,
+                author=site.config.site_author,
+                copyright_statement=copyright_statement,
+                icons=icons,
+                home_s=translated_strings["home_s"],
+                archive_s=translated_strings["archive_s"],
+                stylesheet_name_s=translated_strings["stylesheet_name_s"],
+                skip_s=translated_strings["skip_s"],
+                page_s=translated_strings["page_s"],
+                meta_s=translated_strings["meta_s"],
+                generator_s=translated_strings["generator_s"],
+                goarchive_s=translated_strings["goarchive_s"])
+
+            with open(tag_outf,"w",encoding="utf-8") as fout:
+                fout.write(tag_html)
+            logmesg = "Tag page written to {out_file}.".format(out_file=tag_outn)
+            logMsg(logmesg,".")
+            modified_time = datetime.datetime.strftime(datetime.datetime.utcfromtimestamp(os.path.getmtime(out_file)),"%Y-%m-%dT%H:%M:%S.%fZ")
+            sitemap_loc = {"loc":site.config.base_url+tag_outn,"lastmod":modified_time}
+            site.sitemap.append(sitemap_loc)
+
+###############################################################################
+
     ## Generate sitemap
     sitemap_close = '</urlset>'
     sitemap_sorted = sorted(site.sitemap,key=lambda k:k['loc'])
@@ -1457,8 +1606,8 @@ def version():
     print("{name} {version} copyright 2017-2019 {author}. Some rights reserved. See LICENSE.".format(name=springheel.name,author=springheel.author,version=springheel.__version__))
     print("Installed to {dir}.".format(dir=sys.modules['springheel'].__path__[0]))
     print("Run springheel-init to create a new site in the current directory, or springheel-build to regenerate the site.")
-        
-        
+
+
 
 
 

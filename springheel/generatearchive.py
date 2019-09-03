@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 ########
 ##  Springheel - Comic Archive Page Generation
@@ -27,23 +27,6 @@ def getLinks(i,translated_strings):
     archive_link = link_format.format(html_filename=i.html_filename,
                                       archive_l=archive_l)
     return(archive_link)
-
-def generateArchives(archive,translated_strings):
-    sep = "\n"
-    link_list = sep.join(archive)
-    archive_by_date_s = translated_strings["archive_by_date_s"]
-    sect = """<section class="archive">
-<h2>{archive_by_date_s}</h2>
-<p class="status">{status}</p>
-<ol class="datearch">
-{link_list}
-</ol>
-</section>"""
-
-    arch_section = sect.format(link_list=link_list,
-                               status=status,
-                               archive_by_date_s=archive_by_date_s)
-    return(arch_section)
 
 def generateChapArchList(archive,chapter,chapter_title,translated_strings,l):
     sep = "\n"
@@ -76,29 +59,3 @@ def generateSeriesArchives(category,status,archive):
                                status=status,
                                link_list=link_list)
     return(arch_section)
-
-def generateArchPage(c_path,comics,archive,site_style):
-
-    if single:
-        template_name = "archive-template.html"
-    else:
-        template_name = "archive-template.multiple.html"
-    template = os.path.join(c_path,template_name)
-
-    with open(template) as f:
-        archive_template = f.read()
-
-        n_string = archive_template.format(lang=comics["lang"],
-                                           site_style=site_style,
-                                           header_title=header_title,
-                                           linkrels=linkrels,
-                                           banner=banner,
-                                           category=category,
-                                           status=status,
-                                           archive_sections=archive_sections,
-                                           year=year,
-                                           author=author,
-                                           clicense=clisense,
-                                           icons=icons)
-    return(n_string)
-

@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 ########
 ##  Springheel - Comic Navigation Block Generation
@@ -34,7 +34,7 @@ def checkNavMath(page_int,first_page,last_page):
     return(False)
 
 ## Generate navigation boxes and link rel navigation.
-def navGen(navdirection,page_int,first_page,last_page,first,final,series_slug,site_style,translated_strings):
+def navGen(navdirection,zero_padding,page_int,first_page,last_page,first,final,series_slug,site_style,translated_strings):
 
     strips = range(1,(last_page+1))
     if page_int not in strips:
@@ -44,8 +44,12 @@ def navGen(navdirection,page_int,first_page,last_page,first,final,series_slug,si
         final = True
     elif page_int == 1:
         first = True
-    first_page = str(first_page)
-    last_page = str(last_page)
+    if zero_padding == False:
+        first_page = str(first_page)
+        last_page = str(last_page)
+    else:
+        first_page = "{page:0{zero_padding}}".format(page=first_page,zero_padding=zero_padding)
+        last_page = "{page:0{zero_padding}}".format(page=last_page,zero_padding=zero_padding)
 
     first_s = translated_strings["first_s"]
     prev_s = translated_strings["prev_s"]
@@ -68,7 +72,10 @@ def navGen(navdirection,page_int,first_page,last_page,first,final,series_slug,si
 
     if  navdirection == "rtl":
         if not final:
-            next_page = str(page_int+1)
+            if zero_padding == False:
+                next_page = str(page_int+1)
+            else:
+                next_page = "{page:0{zero_padding}}".format(page=(page_int+1),zero_padding=zero_padding)
             ns = image_template.format(series_slug=series_slug,
                                        page=last_page,
                                        site_style=site_style,
@@ -95,7 +102,10 @@ def navGen(navdirection,page_int,first_page,last_page,first,final,series_slug,si
                                          page_string=next_s)
             linkl.append(ls)
         if not first:
-            prev_page = str(page_int-1)
+            if zero_padding == False:
+                prev_page = str(page_int-1)
+            else:
+                prev_page = "{page:0{zero_padding}}".format(page=(page_int-1),zero_padding=zero_padding)
             ns = image_template.format(series_slug=series_slug,
                                        page=prev_page,
                                        site_style=site_style,
@@ -130,7 +140,10 @@ def navGen(navdirection,page_int,first_page,last_page,first,final,series_slug,si
                                        image_long_string=first_s,
                                        image_short_string=firsts_s)
             navl.append(ns)
-            prev_page = str(page_int-1)
+            if zero_padding == False:
+                prev_page = str(page_int-1)
+            else:
+                prev_page = "{page:0{zero_padding}}".format(page=(page_int-1),zero_padding=zero_padding)
             ns = image_template.format(series_slug=series_slug,
                                        page=prev_page,
                                        site_style=site_style,
@@ -150,7 +163,10 @@ def navGen(navdirection,page_int,first_page,last_page,first,final,series_slug,si
                                          page_string=prev_s)
             linkl.append(ls)
         if not final:
-            next_page = str(page_int+1)
+            if zero_padding == False:
+                next_page = str(page_int+1)
+            else:
+                next_page = "{page:0{zero_padding}}".format(page=(page_int+1),zero_padding=zero_padding)
             ns = image_template.format(series_slug=series_slug,
                                        page=next_page,
                                        site_style=site_style,
@@ -183,21 +199,3 @@ def navGen(navdirection,page_int,first_page,last_page,first,final,series_slug,si
     linkrels = """\n""".join(linkl)
 
     return(nav,linkrels)
-
-    ##site_style =  sitewide_conf["site_style"]
-
-def bigGenerator(page_int,first_page,last_page,first,final,series_slug,site_style):
-
-    ##Page navigation.
-
-    valid_math = checkNavMath(page_int,first_page,last_page)
-
-    if valid_math == True:
-        navs = navGen(page_int,first_page,last_page,first,final,series_slug,site_style)
-        nav_boxes = navs[0]
-        linkrels = navs[1]
-    else:
-        print("The navigation for {file_name} could not be generated. Check the above messages for errors.".format(file_name=file_name))
-        return(False)
-
-    return(nav_boxes,linkrels)
