@@ -19,7 +19,7 @@
 
 name = "springheel"
 author = "gargargarrick"
-__version__ = '5.0.0'
+__version__ = '5.0.1'
 
 class Site:
     def __init__(self):
@@ -38,6 +38,7 @@ class Config(object):
 class Tag:
     def __init__(self,name):
         self.name = name
+        self.escaped = html.escape(name)
         self.slug = slugify_url(name)
         self.strips = []
 class Strip:
@@ -49,6 +50,7 @@ class Strip:
 class Comic:
     def __init__(self, category):
         self.category = category
+        self.category_escaped = html.escape(category)
     class Page:
         def __init__(self, category, page_number):
             self.category = category
@@ -57,6 +59,7 @@ class Comic:
         def __init__(self,chap_number,chap_title):
             self.chap_number = chap_number
             self.chap_title = chap_title
+            self.chap_title_escaped = html.escape(chap_title)
             self.pages = []
 
 import springheel.genchars
@@ -76,6 +79,7 @@ import shutil
 import configparser, os, datetime, sys
 from operator import itemgetter
 from slugify import slugify, slugify_url
+import html
 
 def logMsg(message,path):
     logfile = os.path.join(path,"springheel.log")
@@ -287,7 +291,7 @@ def getTags(meta,all_tags):
     this_strips_wraps = []
     for tag in tags_sep:
         tago = Tag(name=tag)
-        wrapped = """<a href="tag-{tag_slug}.html">{tag}</a>""".format(tag_slug=tago.slug,tag=tago.name)
+        wrapped = """<a href="tag-{tag_slug}.html">{tag}</a>""".format(tag_slug=tago.slug,tag=tago.escaped)
         tago.link = wrapped
         if tag not in (n.name for n in all_tags):
             all_tags.append(tago)
@@ -464,7 +468,6 @@ def build():
         i.slugs = slugs
         i.title_slug = slugs[0]
         i.series_slug = slugs[1]
-        i.title_line = slugs[2]
         i.category = i.metadata["category"]
         i.page = page
         i.page_int = page_int
@@ -578,7 +581,7 @@ def build():
                 match.chapters_file = os.path.join(i_path,conf["chapters"])
             else:
                 match.chapters = False
-            match.desc = conf["desc"]
+            match.desc = html.escape(conf["desc"])
             if category_theme:
                 match.category_theme = category_theme
         else:
@@ -594,7 +597,7 @@ def build():
         page = i.page
         page_int = i.page_int
 
-        author=conf["author"]
+        author=html.escape(conf["author"])
         author_email=conf["email"]
         mode = conf["mode"]
         banner = conf["banner"]
@@ -622,7 +625,7 @@ def build():
             logMsg("{match} has a chapter setting of {chapter}.".format(match=match.category,chapter=match.chapters),".")
             match.chapters_list = []
 
-        title = meta["title"]
+        title = html.escape(meta["title"])
         series_slug = i.series_slug
         title_slug = i.title_slug
         match.slug = series_slug
@@ -633,7 +636,7 @@ def build():
         if "width" in meta.keys():
             width = meta["width"]
         if "alt" in meta.keys():
-            alt_text = meta["alt"]
+            alt_text = html.escape(meta["alt"])
         else:
             alt_text = False
 
@@ -741,13 +744,13 @@ def build():
         top_nav = wrapWithComment(navblock,"TOP NAVIGATION")
         bottom_nav = wrapWithComment(navblock,"BOTTOM NAVIGATION")
 
-        page_title = "{category} #{page} - {title}".format(category=meta["category"],
+        page_title = "{category} #{page} - {title}".format(category=html.escape(meta["category"]),
             page=meta["page"],
-            title=meta["title"])
+            title=html.escape(meta["title"]))
 
         ##header_title = wrapWithTag(page_title,"title")
         header_title = page_title
-        h1_title = translated_strings["h1_s"].format(category=meta["category"],  page=meta["page"], title=meta["title"])
+        h1_title = translated_strings["h1_s"].format(category=html.escape(meta["category"]),  page=meta["page"], title=html.escape(meta["title"]))
         i.h1_title = h1_title
         i.header_title = header_title
 
@@ -911,7 +914,7 @@ def build():
             header_title=header_title,
             linkrels=linkrels,
             banner=banner,
-            category=category,
+            category=html.escape(category),
             top_site_nav=top_site_nav,
             h1_title = h1_title,
             alt_text = alt_text,
@@ -1083,7 +1086,7 @@ def build():
             archive_links_date.append(archive_link)
         if hasattr(i,"chapter") == False or i.chapter == False:
             archive_sections_date = generatearchive.generateSeriesArchives(
-                category,
+                comic.category_escaped,
                 status,
                 archive_links_page)
             archive_d_secs.append(archive_sections_date)
@@ -1111,7 +1114,7 @@ def build():
                 archive_list = generatearchive.generateChapArchList(
                     in_this_chapter,
                     chapi.chap_number,
-                    chapi.chap_title,
+                    chapi.chap_title_escaped,
                     translated_strings,
                     header_level)
                 chapter_sections.append(archive_list)
@@ -1128,7 +1131,7 @@ def build():
                                                chapter_sections_j,
                                                "</section>"])
             chapter_archives = chapter_archives_r.format(
-                category=comic.category,status=comic.statuss)
+                category=comic.category_escaped,status=comic.statuss)
             archives_r.append(chapter_archives)
         else:
             archive_sections = sep.join(archive_d_secs)

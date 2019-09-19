@@ -17,7 +17,7 @@
 ## You should have received a copy of the GNU Lesser General Public License
 ## along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import os
+import os, html
 
 ##Retrieve the transcript file.
 def readText(file_name):
@@ -55,12 +55,13 @@ def makeTranscript(file_name):
     for i in sep_transcript:
         ##Actions are offset by parentheses.
         if i[0:1] == "(":
-            action_list = ["""<p class="action">""",i,"</p>"]
+            escaped = html.escape(i)
+            action_list = ["""<p class="action">""",escaped,"</p>"]
             action_string = "".join(action_list)
             first_pass.append(action_string)
         ##Actual dialogues are indented by 2 spaces. They're part of the same line as names.
         elif i[0:2] == "  ":
-            line_stripped = i[2:]
+            line_stripped = html.escape(i[2:])
             #line_list = ["""<span class="linedia">""",line_stripped,"</span></p>"]
             line_list = ["""<span class="linedia">""",line_stripped,"</span></p>"]
             line_string = "".join(line_list)
@@ -70,7 +71,7 @@ def makeTranscript(file_name):
             pass
         ##Anything else is probably a character name.
         else:
-            charname_list = ["""<p class="line"><span class="charname">""",i,"</span>: "]
+            charname_list = ["""<p class="line"><span class="charname">""",html.escape(i),"</span>: "]
             charname_string = "".join(charname_list)
             first_pass.append(charname_string)
         curr_loc += 1

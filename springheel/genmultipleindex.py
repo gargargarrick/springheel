@@ -46,7 +46,7 @@ def genMultipleIndex(comics,characters_page,translated_strings):
         gofirst = "".join(gofirst)
         elements.append(dopen)
         div = maintemplate.format(header=i.header,
-                            category=i.category,
+                            category=i.category_escaped,
                             author=i.author,
                             desc=i.desc,
                             status=i.statuss,

@@ -21,7 +21,7 @@
 
 from slugify import slugify, slugify_url
 import springheel.parseconf
-##import arrow
+import html
 
 ##Retrieve the metadata file.
 def readText(file_name):
@@ -47,7 +47,7 @@ def getMetaCom(meta_raw,translated_strings):
             if i[0:2] == "  ":
                 meta_nl.append(i[2:-1])
             else:
-                comments.append(i[:-1])
+                comments.append(html.escape(i[:-1]))
     if comments == []:
         comments = [translated_strings["no_comment"]]
     return(meta_nl,comments)
@@ -89,10 +89,8 @@ def parseMetadata(single,file_name,translated_strings):
 
     series_slug = slugify_url(meta["category"])
     title_slug = slugify_url(meta["title"])
-    title_line = [meta["category"], " #", meta["page"], ": ", meta["title"]]
-    title_line = "".join(title_line)
 
-    slugs = [title_slug,series_slug,title_line]
+    slugs = [title_slug,series_slug]
 
     commentary = []
     for line in c:

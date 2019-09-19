@@ -1,12 +1,15 @@
 # Springheel Changelog
 
+## 5.0.1
++ Started escaping most things that will appear as HTML.
+
 ## 5.0.0 "Azumane"
 + Added proper tagging system.
 + Added option for zero-padding page numbers.
 + Cleared out some unused stuff from archive and navigation generation + the default conf.ini
 + Fixed some issues with image renaming.
 + Fixed error where chaptered works sometimes appeared twice on archive pages.
-+ Started naming versions ~~after hot anime dudes~~
++ Started naming major/minor versions ~~after hot anime dudes~~
 
 ## 4.1.0
 + Springheel now generates XML site maps of comic sites.
