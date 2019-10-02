@@ -12,23 +12,21 @@
       box-sizing: content-box; }
     #seasonal body {
       background-color: #914533;
-      background-image: url("autumn.png");
-      background-position: 0 100%;
-      background-repeat: repeat-x;
+      background: url("autumn.png") bottom 1em left 0em repeat-x, linear-gradient(to top, #914533 144px, #504170 145px, #504170);
       background-attachment: fixed;
       color: #111;
       text-align: center;
-      font-size: 1.2em;
+      font-size: 1.5em;
       font-family: sans-serif;
       margin: 0em; }
     #seasonal main, #seasonal figure {
       margin-left: 0em;
       padding-left: 0em; }
-    #seasonal main div, #seasonal figure, #seasonal .archive {
+    #seasonal main > div, #seasonal figure#comic, #seasonal main > section, #seasonal main > .tagslist {
       background-color: #fed4aa;
       padding-left: 0.5em;
       padding-right: 0.5em; }
-    #seasonal main div, #seasonal main section, #seasonal figure, #seasonal .archive, #seasonal h1 {
+    #seasonal main > div, #seasonal main > section, #seasonal figure#comic, #seasonal h1, #seasonal main > .tagslist {
       border: solid thick #c26e3d;
       border-left: none;
       border-right: none; }
@@ -39,7 +37,7 @@
       margin-top: 1em;
       background-color: #fed4aa;
       padding: 1em; }
-    #seasonal figure {
+    #seasonal figure#comic {
       padding: 1em 0em;
       margin: 1em 0em;
       text-align: center; }
@@ -103,8 +101,6 @@
         background: none;
         border: none; }
     #seasonal .archive {
-      display: inline-block;
-      vertical-align: top;
       text-align: left; }
     #seasonal img, #seasonal embed, #seasonal object, #seasonal video {
       max-width: 100%; }
@@ -117,16 +113,18 @@
       border: solid thick #c26e3d; }
       #seasonal .cominavbox a:focus, #seasonal .cominavbox a:active {
         outline: medium dashed #a93444; }
-    #seasonal .cominavbox li a:active, #seasonal .cominavbox li a:focus {
+    #seasonal .cominavbox li:active a, #seasonal .cominavbox li:focus a {
       outline: dashed medium #f88f32; }
-      #seasonal .cominavbox li a:active img, #seasonal .cominavbox li a:focus img {
+      #seasonal .cominavbox li:active a img, #seasonal .cominavbox li:focus a img {
         background-color: #f88f32; }
     #seasonal .cominavbox li img {
       background-color: #a93444; }
-      #seasonal .cominavbox li img:active, #seasonal .cominavbox li img:focus, #seasonal .cominavbox li img:hover {
-        background-color: #f88f32; }
+    #seasonal .cominavbox li:active img, #seasonal .cominavbox li:focus img, #seasonal .cominavbox li:hover img {
+      background-color: #f88f32; }
     #seasonal .char {
       text-align: left; }
+      #seasonal .char .chartraits {
+        overflow-wrap: break-word; }
       #seasonal .char dt:after {
         content: ":"; }
       #seasonal .char dd:after {
@@ -136,15 +134,13 @@
         margin-left: 0em; }
       #seasonal .char dt, #seasonal .char dd {
         display: inline;
-        white-space: pre; }
-    #seasonal * + * {
-      margin-top: 1em; }
+        white-space: pre-wrap; }
     #seasonal header {
       margin-top: 0em; }
-    #seasonal main div, #seasonal main section {
+    #seasonal main > div, #seasonal main > section, #seasonal main > .tagslist {
       padding: 1em 0.5em; }
     #seasonal main .main, #seasonal main .allchars, #seasonal main .char {
-      margin-top: 2em; }
+      margin-top: 1em; }
     #seasonal .intro {
       border: none;
       background: none;
@@ -156,30 +152,30 @@
         margin: 0em;
         padding: 0em; }
     #seasonal div + div, #seasonal section + section {
-      margin-top: 2em; } }
+      margin-top: 2em; }
+    #seasonal .tagslist, #seasonal .chapterarch {
+      list-style-type: none;
+      padding-left: 0em;
+      line-height: 2em; } }
   @media screen and (min-width: 1024px) {
     #seasonal body {
-      font-size: 1.5em;
       margin: 0;
       padding-bottom: 0; }
-    #seasonal main div, #seasonal main section, #seasonal figure, #seasonal .archive, #seasonal h1 {
+    #seasonal main > div, #seasonal main > section, #seasonal figure#comic, #seasonal h1, #seasonal main > .tagslist {
       border: solid thick #c26e3d; }
-    #seasonal figure {
+    #seasonal figure#comic {
       padding: 1em;
       margin: 0em 1em;
       background-color: #fed4aa; }
-      #seasonal figure + .cominavbox {
+      #seasonal figure#comic + .cominavbox {
         margin-top: 1.5em;
         margin-bottom: 0em; }
     #seasonal main {
-      width: 80%;
-      margin-left: 2em;
-      margin-bottom: 2em; }
-    #seasonal main div, #seasonal main section {
-      margin-left: 1em;
-      padding: 0em;
-      padding: 0.1rem 1rem 0.2rem 1rem;
-      width: 80%; }
+      margin: 0em; }
+    #seasonal main > div, #seasonal main > section, #seasonal main > .tagslist {
+      margin: 1em auto;
+      padding: 1em;
+      max-width: 70%; }
     #seasonal .cominavbox, #seasonal .cominavbox li {
       margin: 1em; }
     #seasonal h1 {
@@ -208,19 +204,8 @@
         text-align: left;
         margin-left: 0.5em;
         border: solid medium #c26e3d; }
-    #seasonal .archive {
-      margin: 1em;
-      padding-left: 1em;
-      padding-right: 1em;
-      width: 90%; }
     #seasonal .main {
-      padding: 0.5em;
-      margin: auto;
-      margin-top: 2em;
-      width: 80%;
       text-align: left; }
-      #seasonal .main p {
-        margin-left: 0.5em; }
     #seasonal .intro {
       margin: 0em; }
     #seasonal .intro + .intro {
@@ -231,15 +216,19 @@
         text-indent: 1em; }
       #seasonal .char img {
         margin: 0em 1em 1em 1em; }
-      #seasonal .char .chartext {
+      #seasonal .char .chartraits {
         margin: 0em;
         text-align: left;
         border: none; }
-      #seasonal .char p {
-        margin-top: 0em; }
-      #seasonal .char .chartext, #seasonal .char img {
+      #seasonal .char .chartext {
+        margin-top: 0em;
+        padding: 0em 1em; }
+      #seasonal .char .chartraits, #seasonal .char img {
         display: inline-block;
         vertical-align: top;
-        max-width: 50%; } }
+        max-width: 50%; }
+    #seasonal main > section .tagslist li {
+      display: inline-block;
+      vertical-align: top; } }
 
-/*# sourceMappingURL=autumn.css.map */
+/*# sourceMappingURL=style.css.map */

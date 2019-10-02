@@ -3,7 +3,7 @@
     #cute {
     /* Default (small) screens */
         * {
-            box-sizing: content-box;
+            box-sizing: border-box;
         }
         body {
             background-color: #e7dfc2;
@@ -35,7 +35,7 @@
             border: thick solid #FFCCFF;
             padding: 1em;
             & li {
-                padding: 0em;
+                padding: 0em 0.5em;
             }
         }
         
@@ -43,13 +43,21 @@
             display: inline-block;
         }
 
-        figure#comic, main div, nav li, .archive {
-            border: thick solid #FFCCFF;
+        main > div, main > section, main > .tagslist {
+            border-top: thick solid #FFCCFF;
+            border-bottom: thick solid #FFCCFF;
             background: #fff;
+            margin-left: 0em;
+            margin-right: 0em;
             padding-top: .3em;
             padding-bottom: .3em;
             padding-left: 1.2em;
             padding-right: 1.5em;
+        }
+        
+        figure#comic, nav li {
+            background: #fff;
+            border: thick solid #FFCCFF
         }
 
         p + p, li + li, div + div {
@@ -80,9 +88,10 @@
 
         nav li {
             display: inline-block;
+            padding: 0.5em
         }
 
-        main div {
+        main > div, main > section {
             text-align: left;
         }
 
@@ -108,7 +117,7 @@
             text-align: left;
         }
 
-        .archive {
+        main > section {
             display: inline-block;
             vertical-align: top;
             text-align: left;
@@ -122,12 +131,16 @@
             font-weight: bold;
         }
         
-        figure#comic, main div {
-            max-width: 100%;
+        main > div, main > section, main > .tagslist {
+            width: 100%;
             margin-left: 0em;
             margin-right: 0em;
             border-left: 0em;
             border-right: 0em
+        }
+        
+        div + div, section + section {
+            margin-top: 1em
         }
         
         .char {
@@ -143,7 +156,7 @@
             }
             dt, dd {
                 display: inline;
-                white-space: pre;
+                white-space: pre-wrap;
             }
             .chartext, .chartext p {
                 margin: 0em;
@@ -161,7 +174,7 @@
                 margin-left: 1em;
             }
 
-            figure#comic, nav li, .archive, main div, .cominavbox {
+            figure#comic, nav li, .archive, main > div, main > section, main > .tagslist, .cominavbox {
                 border: thick solid #FFCCFF;
                 border-image-slice: 20 20 20 20 fill;
                 border-image-width: 10px 10px 10px 10px;
@@ -170,7 +183,7 @@
                 border-image-source: url("stripe-border.png")
             }
 
-            main div {
+            main > div, main > section, main > .tagslist {
                 padding: 1em;
                 width: 80%;
                 margin-top: 1em;
@@ -267,10 +280,11 @@
                 margin: 1em;
             }
             
-            .chartext, .char img {
+            .chartraits, .char img {
                 display: inline-block;
                 vertical-align: top;
                 max-width: 60%;
+                overflow-wrap: break-word;
             }
         }
     }

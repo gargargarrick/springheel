@@ -1,5 +1,3 @@
-@import "shadow.scss";
-@import "gradient.scss";
 @media screen {
 /*Western*/
     #western {
@@ -11,7 +9,7 @@
     $in-text: #111;
     /* Default (small) screens */
         * {
-            box-sizing: content-box;
+            box-sizing: border-box;
         }
         body {
             background-color: $bg-color;
@@ -21,8 +19,8 @@
             font-family: sans-serif;
             margin: 0;
         }
-        
-        figure#comic, .archive, main div {
+
+        figure#comic, .archive, main > div, main > section, main > .tagslist {
             border: double thick $borders;
         }
         .intro {
@@ -34,19 +32,25 @@
             padding-left: 0em;
         }
         
+        figure, figure img {
+            vertical-align: middle;
+            margin: 0em;
+            padding: 0em;
+        }
+
         figure#comic, .archive {
             background-color: $box-color;
             background-image: url("horseshoe.png");
             background-repeat: no-repeat;
-            background-position: bottom right;
+            background-position: top 0.5em right 0.5em;
             color: $in-text;
         }
-        
+
         .archive, .main {
             margin-top: 1em
         }
-        
-        main div {
+
+        main > div, main > section, main > .tagslist {
             background: $box-color;
             color: $in-text;
         }
@@ -54,16 +58,23 @@
         h1 {
             margin: 1em 0em 0em 0em;
         }
-        
+
         h1, h2, h3, h4, h5, p.status {
             font-variant: small-caps;
+            text-align: center;
+        }
+        
+        h2, h3 {
+            margin-top: 0em;
+        }
+
+        figure {
             text-align: center;
         }
 
         figure#comic {
             padding: 1em 0em 0em 0em;
             margin: 0em;
-            text-align: center;
             & img {
                 margin: 0em;
             }
@@ -74,7 +85,7 @@
             margin-bottom: 0em;
             padding: 0.5em 0em;
         }
-        
+
         .cominavbox {
             background: #3B1E07;
             border: double medium $borders;
@@ -82,12 +93,12 @@
             padding: 0.5em;
             margin: 0em;
         }
-        
+
         figure + .cominavbox {
             border: double thick $borders;
             border-top: none
         }
-        
+
         .cominavbox, .cominavbox li {
             display: inline-block;
             padding: 0em;
@@ -111,7 +122,7 @@
             }
         }
 
-        p + p, li + li {
+        p + p, li + li, div + div, section + section {
             margin-top: 0.5em
         }
 
@@ -178,9 +189,10 @@
         }
 
         main {
-            & div {
+            & > div, & > .tagslist {
+                padding: 1em 0.5em;
                 text-align: left;
-                padding: 1em 0.5em 0.5em 0.2em;
+                padding: 0.5em;
             }
         }
 
@@ -234,10 +246,12 @@
         .action {
             font-weight: bold;
         }
-        
+
         .char {
             text-align: left;
-            border-bottom: double medium $borders;
+            .chartraits {
+                overflow-wrap: break-word;
+            };
             dt:after {
                 content: ":"
             };
@@ -249,17 +263,22 @@
             };
             dt, dd {
                 display: inline;
-                white-space: pre;
+                white-space: pre-wrap;
             };
         }
-        
+
         .chartext {
             border: none;
         }
-        
+
         .status {
             text-indent: 0.5em;
             font-weight: bold;
+        }
+
+        .tagslist, .chapterarch {
+            list-style-type: none;
+            padding-left: 0.5em;
         }
 
     /*Medium screens*/
@@ -268,7 +287,7 @@
 
             figure#comic {
                 padding: 1em 1em 0em 1em;
-                margin-left: 1em;
+                margin-left: 0em;
                 margin-top: 0em;
                 margin-bottom: 0em;
                 & + .cominavbox {
@@ -277,12 +296,16 @@
             }
 
             main {
-                & div {
-                    padding: 1em 0.5em;
+                & > div, & > section, & > .tagslist {
+                    padding: 0.5em;
                     margin: 1em 0em;
                     & p {
                         margin-left: 1em
                     }
+                }
+                h1, & > div, & > section, & > .tagslist {
+                    width: 70%;
+                    margin-left: 10%;
                 }
             }
 
@@ -290,7 +313,7 @@
                 margin-bottom: 0em;
                 margin-top: 0em;
             }
-            
+
             .cominavbox {
                 padding: 1em;
             }
@@ -314,7 +337,7 @@
                 border-left: none;
                 border-right: none
             }
-            
+
             h3 {
                 font-size: 1em;
                 margin-left: 0.5em;
@@ -334,7 +357,7 @@
                     border: none;
                 };
             }
-            
+
             h2, nav li {
                 font-weight: normal
             }
@@ -350,35 +373,10 @@
                 margin-left: 1em
             }
 
-            h1, main {
-                width: 70%;
-                margin-left: 10%;
-            }
-
             .action {
                 text-indent: 1em;
             }
-            
-            .archive {
-                padding: 0.5em 1em;
-                margin: 1em;
-                width: 70%;
-                & ol {
-                    margin-top: 1em;
-                    margin-left: 1em;
-                }
-            }
-            
-            .main {
-                padding: 0em;
-                margin: 1em auto;
-                width: 70%;
-                text-align: center;
-                & p {
-                    margin-left: 0em;
-                }
-            }
-            
+
             .intro {
                 padding: 0em;
                 margin: 0em;
@@ -396,33 +394,22 @@
                     font-weight: bold;
                 }
             }
-            
+
             .char {
-                dl {
-                    font-size: 0.9em;
-                    padding-bottom: 0.5em;
-                };
+                padding: 0em;
                 img {
-                    margin: 0em 1em;
+                    margin: 0.5em 1em;
                     border: double medium $borders;
                 };
-                .chartext {
-                    padding: 0em;
+                .chartraits {
+                    padding: 1em;
                     margin: 0em;
-                    & dl {
-                        padding: 1em;
-                        margin: 0em;
-                    }
-                    & p {
-                        margin: 0em;
-                        padding: 1em;
-                    };
-                    & dl + p {
-                        border-top: double medium $borders;
-                    }
                 };
-                img, .chartext {
-                    max-width: 50%;
+                .chartext {
+                    border-top: double medium $borders;
+                };
+                img, .chartraits {
+                    max-width: 45%;
                     display: inline-block;
                     vertical-align: top;
                 }

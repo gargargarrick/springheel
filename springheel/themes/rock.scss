@@ -106,12 +106,10 @@
         }
 
         .archive {
-            display: inline-block;
-            vertical-align: top;
             text-align: left;
         }
 
-        nav li, main div, .archive {
+        nav li, main > div, main > section, main > .tagslist {
             background: #000;
             border: solid #3413ff thick;
             padding: 0.5em;
@@ -145,6 +143,9 @@
         
         .char {
             text-align: left;
+            .chartraits {
+                overflow-wrap: break-word
+            };
             dt:after {
                 content: ":"
             };
@@ -156,7 +157,7 @@
             };
             dt, dd {
                 display: inline;
-                white-space: pre;
+                white-space: pre-wrap;
             };
             dl {
                 font-size: 0.9em;
@@ -179,6 +180,11 @@
             margin: 0em;
             padding: 0em;
         }
+        
+        .tagslist, .chapterarch {
+            list-style-type: none;
+            padding-left: 0em
+        }
 
     /*Medium screens*/
 
@@ -186,8 +192,18 @@
             body {
                 margin-left: 1em;
             }
-            main div, main section, nav li {
+            main {
+                margin: 0em;
+                margin-top: 1em
+            }
+            main > div, main > section, nav li, main > .tagslist {
                 @include shadow(0em, 0em, 0.5em, 0.5em, #fff);
+            }
+
+            main > div, main > section, main > .tagslist, #extras {
+                margin: 2em;
+                padding: .5em 1.4em .5em 1.2em;
+                max-width: 80%;
             }
             figure {
                 padding: 1em;
@@ -218,6 +234,7 @@
 
             h1 {
                 font-size: 1.4em;
+                margin-top: 2em
             }
 
             h2 {
@@ -242,29 +259,15 @@
             footer p {
                 font-size: 0.7em;
             }
-
-            .archive {
-                margin: 1em;
-                padding: 1em;
-                & h2 {
-                    margin: 0em 0em 1em 0em;
-                }
-            }
-
-            main div, main section {
-                margin: 2em;
-                padding: .5em 1.4em .5em 1.2em;
-                width: 80%;
-            }
             
-            .main {
-                padding: 0.5em;
-                margin: 1em auto 1em auto;
-                width: 50%;
-                & p {
-                    margin-left: 0em;
-                }
-            }
+            // .main {
+            //     padding: 0.5em;
+            //     margin: 1em auto 1em auto;
+            //     width: 50%;
+            //     & p {
+            //         margin-left: 0em;
+            //     }
+            // }
             
             .intro {
                 text-align: left;
@@ -303,14 +306,14 @@
                     margin: 0em;
                     text-align: left
                 }
-                .chartext, img {
+                .chartraits, img {
                     display: inline-block;
                     vertical-align: top;
                     max-width: 50%;
                 }
             }
 
-            .chartext {
+            .chartraits {
                 border: none;
                 -webkit-box-shadow: none;
                 -moz-box-shadow: none;

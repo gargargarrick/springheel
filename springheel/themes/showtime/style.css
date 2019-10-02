@@ -5,7 +5,7 @@
     /*TODO: Fix the skip link hiding method*/
     /*Medium screens*/ }
     #showtime * {
-      box-sizing: content-box; }
+      box-sizing: border-box; }
     #showtime body {
       background-color: #171717;
       background: #171717 url("curtaint.png") repeat-x 0% 0%;
@@ -14,28 +14,34 @@
       font-size: 1.5em;
       font-family: sans-serif;
       display: grid;
-      grid-gap: 1em;
-      grid-template-areas: 'skip' 'header' 'main' 'footer';
-      grid-template-columns: auto; }
+      grid-gap: 1em 0;
+      grid: auto auto 1fr / 0em 1fr 0em;
+      margin: 0;
+      min-height: 100vh; }
     #showtime #skippy {
-      grid-area: skip; }
+      grid-column: 2; }
     #showtime header {
-      grid-area: header; }
+      grid-column: 2;
+      margin-top: 1em; }
     #showtime main {
-      grid-area: main; }
+      grid-column: 2; }
     #showtime footer {
-      grid-area: footer; }
+      grid-column: 2;
+      align-self: end; }
     #showtime main, #showtime figure {
       margin-left: 0em;
       padding-left: 0em; }
     #showtime h1 {
       margin: 0em; }
     #showtime figure#comic {
-      padding: 1em;
+      padding: 0em;
+      margin: 0em;
       text-align: center; }
     #showtime .cominavbox, #showtime .cominavbox li {
       display: inline-block;
       padding: 0em; }
+    #showtime .cominavbox li {
+      margin: 0em 1em; }
     #showtime p + p, #showtime li + li {
       margin-top: 0.5em; }
     #showtime #skippy {
@@ -53,7 +59,8 @@
       width: auto;
       font-size: 1em;
       margin-top: 0em;
-      color: #0000ff; }
+      color: #fff;
+      background: #000; }
     #showtime nav li {
       display: inline-block; }
     #showtime #commentary, #showtime #transcript {
@@ -73,8 +80,6 @@
       margin-left: 0em;
       text-align: left; }
     #showtime .archive {
-      display: inline-block;
-      vertical-align: top;
       text-align: left; }
     #showtime img, #showtime embed, #showtime object, #showtime video {
       max-width: 100%; }
@@ -82,49 +87,59 @@
       font-weight: bold; }
     #showtime .charname {
       font-weight: bold; }
-    #showtime .char dt:after {
-      content: ":"; }
-    #showtime .char dd:after {
-      content: "\A";
-      white-space: pre; }
-    #showtime .char dd {
-      margin-left: 0em; }
-    #showtime .char dt, #showtime .char dd {
-      display: inline;
-      white-space: pre; } }
+    #showtime .char {
+      padding: 0em; }
+      #showtime .char .chartraits {
+        overflow-wrap: break-word; }
+      #showtime .char dt {
+        font-weight: bold;
+        line-height: 2em;
+        text-transform: uppercase; }
+      #showtime .char dt:after {
+        content: ":"; }
+      #showtime .char dd:after {
+        content: "\A";
+        white-space: pre; }
+      #showtime .char dd {
+        margin-left: 0em; }
+      #showtime .char dt, #showtime .char dd {
+        display: inline;
+        white-space: pre-wrap; }
+    #showtime .tagslist, #showtime .chapterarch {
+      list-style-type: none;
+      padding-left: 0em; } }
   @media screen and (min-width: 1024px) {
     #showtime body {
       margin: 0em;
+      grid: auto auto 1fr / 0em 1fr 0em;
       background: url("curtaint.png") repeat-x 0% 0%, url("curtainr.png") fixed repeat-y 100% 0%, #171717 url("curtainl.png") fixed repeat-y 0% 0%; }
     #showtime figure#comic {
-      margin-left: 1em;
-      margin-top: 0em;
-      margin-bottom: 0em; }
+      margin: 0em; }
       #showtime figure#comic img {
-        border: 1em solid #A06D3D; }
-    #showtime figure#comic figcaption {
-      max-width: 80%;
-      margin: auto; }
-    #showtime main div, #showtime main section {
+        border: solid 1em #c18d5c;
+        padding: 0em;
+        margin: 0em;
+        max-width: 100%; }
+    #showtime main > div, #showtime main > section, #showtime main > .tagslist, #showtime h1, #showtime figure#comic figcaption {
+      max-width: 70%;
+      margin-left: auto;
+      margin-right: auto; }
+    #showtime main > div, #showtime main > section, #showtime main > .tagslist {
       text-align: left;
       padding-left: 1em;
       padding-right: 1em;
-      width: 70%;
       margin: auto; }
     #showtime div + div {
       margin-bottom: 0em;
       margin-top: 0em; }
-    #showtime .cominavbox, #showtime .cominavbox li {
-      margin-left: 1em;
-      margin-right: 1em;
-      margin-top: 0.5em;
-      margin-bottom: 0em; }
-    #showtime figure + .cominavbox {
-      margin-top: 0em; }
-    #showtime figure {
-      margin-left: 1em; }
+    #showtime .cominavbox {
+      margin: 0.5em 1em; }
+    #showtime .cominavbox li {
+      margin: 0em 1.5em; }
     #showtime h1 {
-      font-size: 1.5em; }
+      font-size: 1.5em;
+      margin-left: auto;
+      margin-right: auto; }
     #showtime h2 {
       font-size: 1.2em; }
     #showtime h3 {
@@ -143,23 +158,23 @@
       margin: 0em;
       padding: 0.5em; }
     #showtime footer p {
-      font-size: 0.7em;
+      font-size: 0.8em;
       margin-bottom: 0em; }
-    #showtime .archive {
-      margin-left: 0em;
-      margin-right: 1em;
-      padding-left: 1em;
-      padding-right: 1em; }
     #showtime .main {
-      padding: 0.5em;
-      margin: auto;
-      width: 50%; }
+      padding: 0.5em; }
       #showtime .main p {
         margin-left: 0em; }
     #showtime .char {
       text-align: left; }
-    #showtime .chartext, #showtime .charimg {
-      display: inline-block;
-      vertical-align: top; } }
+      #showtime .char .chartraits, #showtime .char img {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 40%; }
+      #showtime .char .chartraits {
+        max-width: 50%;
+        margin-top: 0em;
+        margin-left: 1em; }
+    #showtime main > .tagslist {
+      padding: 1em; } }
 
 /*# sourceMappingURL=style.css.map */

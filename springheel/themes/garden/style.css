@@ -64,17 +64,19 @@
       color: #5c3566; }
     #garden a:hover, #garden a:focus, #garden a:active {
       color: #c00; }
+    #garden footer {
+      background: url("leaf.png") repeat-x 0% 0%;
+      padding-top: 1em; }
     #garden footer p {
       margin-left: 0em;
       text-align: left; }
-    #garden .archive {
-      display: inline-block;
-      vertical-align: top;
-      text-align: left; }
-    #garden main div, #garden main section {
+    #garden main > section {
+      text-align: left;
+      margin: 0em; }
+    #garden main > div, #garden main > section, #garden main > .tagslist {
       padding: .5em 1.4em 0em 1.2em;
       background: url("leaf.png") repeat-x 0% 0%; }
-      #garden main div:first-of-type, #garden main section:first-of-type {
+      #garden main > div:first-of-type, #garden main > section:first-of-type, #garden main > .tagslist:first-of-type {
         background: none; }
     #garden img, #garden embed, #garden object, #garden video {
       max-width: 100%; }
@@ -97,7 +99,9 @@
         margin-left: 0em; }
       #garden .char dt, #garden .char dd {
         display: inline;
-        white-space: pre; } }
+        white-space: pre-wrap; }
+    #garden .tagslist, #garden .chapterarch {
+      list-style-type: none; } }
   @media screen and (min-width: 1024px) {
     #garden body {
       margin-left: 1em;
@@ -106,7 +110,7 @@
     #garden figure#comic {
       margin-left: 4em;
       margin-top: 2em;
-      /*I feel gross using px, but it is based on the actual image dimensions...*/
+      /*Based on the image dimensions...*/
       border: solid thick #ffccff;
       border-image-slice: 60 93 60 93;
       border-image-width: 50px 93px 50px 93px;
@@ -162,7 +166,7 @@
         padding-bottom: 0em; }
       #garden .archive + .archive {
         margin-top: 0em; }
-    #garden main div, #garden main section {
+    #garden main > div, #garden main > section, #garden main > .tagslist {
       margin: 0.5em 1em 0.5em;
       width: 80%;
       text-align: left; }
@@ -196,9 +200,14 @@
         margin: 1em; }
     #garden .char img {
       margin: 0em 1em 0em 0em; }
-    #garden .char .chartext {
+    #garden .char .chartraits {
       margin: 0em; }
-    #garden .char .chartext, #garden .char img {
+    #garden .char .chartraits, #garden .char img {
+      display: inline-block;
+      vertical-align: top;
+      max-width: 50%;
+      overflow-wrap: break-word; }
+    #garden main > section .tagslist li {
       display: inline-block;
       vertical-align: top;
       max-width: 50%; } }

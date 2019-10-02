@@ -100,8 +100,8 @@
         display: inline-block;
         background: #fafafa;
         color: #212121;
-        font-size: 1rem;
-        margin: 0.5em 0.2em;
+        font-size: 0.8em;
+        margin: 0.5em;
         -webkit-border-radius: 0.2em;
         -moz-border-radius: 0.2em;
         border-radius: 0.2em;
@@ -114,7 +114,6 @@
       font-weight: bold; }
     #note a:link, #note a:visited {
       color: #4a148c;
-      text-decoration: underline;
       -webkit-transition: color 0.2s ease;
       -moz-transition: color 0.2s ease;
       transition: color 0.2s ease; }
@@ -140,13 +139,10 @@
         text-align: left; }
       #note footer a:link, #note footer a:visited {
         color: #fafafa; }
-    #note .archive {
-      vertical-align: top;
-      text-align: left; }
-    #note nav li, #note main div, #note main section {
+    #note nav li, #note main > div, #note main > section, #note main > .tagslist {
       color: #212121;
       padding: 0.5em; }
-    #note main div, #note main section {
+    #note main > div, #note main > section, #note main > .tagslist {
       /*padding: .5em 1.4em .5em 1.2em;*/
       padding: 0em;
       padding-bottom: 0.5em;
@@ -158,7 +154,7 @@
       box-shadow: 0em 0em 0.5em 0.2em #616161;
       margin: 1em 0em;
       width: 100%; }
-      #note main div h2, #note main section h2 {
+      #note main > div h2, #note main > section h2, #note main > .tagslist h2 {
         background: #4a148c;
         color: #fafafa;
         margin: 0em;
@@ -167,7 +163,7 @@
         -webkit-box-shadow: 0em 0.1em 0.2em 0.1em rgba(47, 47, 47, 0.5);
         -moz-box-shadow: 0em 0.1em 0.2em 0.1em rgba(47, 47, 47, 0.5);
         box-shadow: 0em 0.1em 0.2em 0.1em rgba(47, 47, 47, 0.5); }
-      #note main div p, #note main section p {
+      #note main > div p, #note main > section p, #note main > .tagslist p {
         padding-right: 1.4em;
         padding-left: 1.2em; }
     #note img, #note embed, #note object, #note video {
@@ -186,21 +182,63 @@
     #note .charname {
       font-weight: bold; }
     #note .char {
-      text-align: left; }
-      #note .char p {
-        line-height: 2em; }
-      #note .char dl {
-        margin-left: 0.5em; }
-      #note .char dt:after {
-        content: ":"; }
-      #note .char dd:after {
-        content: "\A";
-        white-space: pre; }
-      #note .char dd {
-        margin-left: 0em; }
-      #note .char dt, #note .char dd {
-        display: inline;
-        white-space: pre; } }
+      text-align: center; }
+      #note .char img {
+        border-radius: 50%; }
+    #note .chartraits {
+      text-align: left;
+      max-width: 80%;
+      margin-left: 1em; }
+      #note .chartraits dd {
+        margin-left: 0em;
+        border-bottom: solid thin #e5e5e5;
+        padding: 0.5em 0em;
+        color: #424242; }
+    #note .chartext {
+      text-align: left;
+      padding-bottom: 1em; }
+    #note .chapterarch, #note main > section .tagslist {
+      padding-left: 0em;
+      padding-bottom: 0em;
+      margin-bottom: 0em; }
+    #note .tagslist li, #note .chapterarch li {
+      padding: 1em;
+      margin: 0em; }
+    #note .tagslist li:nth-child(even), #note .chapterarch li:nth-child(even) {
+      background-color: #e5e5e5; }
+    #note .archive, #note main > .tagslist, #note main > section .tagslist {
+      padding-bottom: 0em; }
+    #note .archives .status {
+      padding: 1em 0em 0em 1em;
+      text-align: left;
+      font-style: italic;
+      color: #4a148c; }
+    #note #extras h3 {
+      margin-left: 1em; }
+    #note #extras p {
+      margin-left: 1em;
+      padding-left: 0em; }
+    #note #extras figure {
+      padding-bottom: 1em;
+      margin-left: 0em;
+      padding-left: 0em;
+      border-bottom: solid thin #e5e5e5; }
+      #note #extras figure:last-of-type {
+        border-bottom: none; }
+    #note #extras figcaption {
+      color: #424242; }
+    #note #extras ul {
+      padding: 0em;
+      border: solid thin #e5e5e5;
+      margin: 1em;
+      width: auto; }
+    #note #extras ul li {
+      list-style-type: none;
+      padding: 1em; }
+      #note #extras ul li:nth-child(even) {
+        background-color: #e5e5e5; }
+    #note .tagslist, #note .chapterarch {
+      list-style-type: none; } }
   @media screen and (min-width: 1024px) {
     #note figure {
       margin-left: 1em; }
@@ -231,8 +269,7 @@
       margin-left: 1em; }
     #note .main {
       padding: 0em;
-      margin: auto;
-      width: 50%; }
+      margin: auto; }
       #note .main p {
         margin-left: 0em; }
     #note .intro {
@@ -262,15 +299,7 @@
       #note .char h2 {
         margin-top: 0em; }
       #note .char img {
-        margin: 0em 1em 1em 0.5em;
         padding: 0em;
-        border: solid medium #4a148c; }
-      #note .char .chartext {
-        margin: 0em;
-        text-align: left; }
-      #note .char .chartext, #note .char img {
-        display: inline-block;
-        vertical-align: top;
-        max-width: 75%; } }
+        border: solid medium #4a148c; } }
 
 /*# sourceMappingURL=style.css.map */

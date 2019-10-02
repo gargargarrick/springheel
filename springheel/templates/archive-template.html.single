@@ -20,7 +20,7 @@
     <nav>
 {top_site_nav}
     </nav>
-    <h1 id="comictitle">{category} - {archive_s}</h1>
+    <h1 id="comictitle">{header_title}</h1>
 </header>
 
 <main role="main" aria-labelledby="comictitle" id="maincontent" class="archives">

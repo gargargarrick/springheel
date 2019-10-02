@@ -5,7 +5,9 @@
 /*Note*/
     #note {
     $bg: #fafafa;
+    $bgalt: #e5e5e5;
     $t: #212121;
+    $lt: #424242;
     $it: #fafafa;
     $acc: #01579b;
     $ac2: #00BCD4;
@@ -149,8 +151,8 @@
                 display: inline-block;
                 background: $bg;
                 color: $t;
-                font-size: 1rem;
-                margin: 0.5em 0.2em;
+                font-size: 0.8em;
+                margin: 0.5em;
                 @include rounded(0.2em);
                 @include shadow(0em,0em,0.5em,0.2em,$t);
             }
@@ -166,7 +168,7 @@
 
         a:link, a:visited {
             color: $main;
-            text-decoration: underline;
+            // text-decoration: underline;
             @include trans(color,0.2s,ease)
         }
         
@@ -179,10 +181,8 @@
             @include trans(color,0.2s,ease)
         }
         
-        header {
-            a:link {
-                text-decoration: none;
-            };
+        header a:link {
+            text-decoration: none;
         }
 
         footer {     
@@ -200,17 +200,12 @@
             }
         }
 
-        .archive {
-            vertical-align: top;
-            text-align: left;
-        }
-
-        nav li, main div, main section {
+        nav li, main > div, main > section, main > .tagslist {
             color: $t;
             padding: 0.5em;
         }
 
-        main div, main section {
+        main > div, main > section, main > .tagslist {
             /*padding: .5em 1.4em .5em 1.2em;*/
             padding: 0em;
             padding-bottom: 0.5em;
@@ -262,26 +257,110 @@
         }
         
         .char {
+            text-align: center;
+            // padding: 2em;
+            img {
+                border-radius: 50%
+            }
+        }
+        .chartraits {
             text-align: left;
-            p {
-                line-height: 2em;
-            };
-            dl {
-                margin-left: 0.5em;
-            };
-            dt:after {
-                content: ":"
-            };
-            dd:after {
-                content: "\A"; white-space: pre;
-            };
+            max-width: 80%;
+            margin-left: 1em;
             dd {
                 margin-left: 0em;
-            };
-            dt, dd {
-                display: inline;
-                white-space: pre;
+                border-bottom: solid thin $bgalt;
+                padding: 0.5em 0em;
+                color: $lt;
             }
+        }
+        .chartext {
+            text-align: left;
+            padding-bottom: 1em
+        }
+            // dl {
+            //     margin-left: 0.5em;
+            //     overflow-wrap: break-word;
+            // };
+            // dt {
+            //     color: $main;
+            //     line-height: 2em
+            // }
+            // dt:after {
+            //     content: ":"
+            // };
+            // dd:after {
+            //     content: "\A";
+            //     white-space: pre;
+            // };
+            // dd {
+            //     margin-left: 0em;
+            // };
+            // dt, dd {
+            //     display: inline;
+            //     white-space: pre-wrap;
+            // }
+        .chapterarch, main > section .tagslist {
+            padding-left: 0em;
+            padding-bottom: 0em;
+            margin-bottom: 0em;
+        }
+        .tagslist, .chapterarch {
+            li {
+                padding: 1em;
+                margin: 0em;
+            }
+            li:nth-child(even) {
+                background-color: $bgalt;
+            }
+        }
+        .archive, main > .tagslist, main > section .tagslist {
+            padding-bottom: 0em;
+        }
+        .archives .status {
+            padding: 1em 0em 0em 1em;
+            text-align: left;
+            font-style: italic;
+            color: $main;
+        }
+        
+        #extras {
+            h3 {
+                margin-left: 1em
+            }
+            p {
+                margin-left: 1em;
+                padding-left: 0em;
+            }
+            figure {
+                padding-bottom: 1em;
+                margin-left: 0em;
+                padding-left: 0em;
+                border-bottom: solid thin $bgalt;
+                &:last-of-type {
+                    border-bottom: none;
+                }
+            }
+            figcaption {
+                color: $lt;
+            }
+            ul {
+                padding: 0em;
+                border: solid thin $bgalt;
+                margin: 1em;
+                width: auto;
+            }
+            ul li {
+                list-style-type: none;
+                padding: 1em;
+                &:nth-child(even) {
+                    background-color: $bgalt;
+                }
+            }
+        }
+        
+        .tagslist, .chapterarch {
+            list-style-type: none
         }
 
     /*Medium screens*/
@@ -337,7 +416,6 @@
             .main {
                 padding: 0em;
                 margin: auto;
-                width: 50%;
                 & p {
                     margin-left: 0em;
                 }
@@ -380,28 +458,20 @@
                 h2 {
                     margin-top: 0em;
                 };
-                // img {
-                //     margin: 0em;
-                //     margin-right: 1em;
-                //     margin-left: 0.5em;
-                //     padding: 0em;
-                // }
-                
                 padding: 0em;
                 img {
-                    margin: 0em 1em 1em 0.5em;
                     padding: 0em;
                     border: solid medium $main;
                 }
-                .chartext {
-                    margin: 0em;
-                    text-align: left
-                }
-                .chartext, img {
-                    display: inline-block;
-                    vertical-align: top;
-                    max-width: 75%;
-                }
+                // .chartext, .chartraits {
+                //     margin: 0em;
+                //     text-align: left
+                // }
+                // .chartraits, img {
+                //     display: inline-block;
+                //     vertical-align: top;
+                //     max-width: 50%;
+                // }
             }
 
         }

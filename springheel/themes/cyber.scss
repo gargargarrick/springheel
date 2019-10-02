@@ -1,4 +1,3 @@
-@import "rounded.scss";
 @media screen {
 /*Cyber*/
     #cyber {
@@ -36,16 +35,23 @@
             font-size: 1em;
         }
         figure {
-            padding: 1em;
             text-align: center;
             border: none;
             margin: 0em;
+            padding: 0em;
+        }
+        figcaption {
+            background: $box;
+            color: $t;
+            border-top: ridge medium $acc;
+            border-bottom: ridge medium $acc;
+            padding: 0.5em
         }
         .cominavbox, .cominavbox li {
             display: inline-block;
             padding: 0em;
         }
-        
+
         .cominavbox li {
             padding: 0.5em;
             a:active, a:focus {
@@ -56,7 +62,7 @@
         * + * {
             margin-top: 0.5em
         }
-        
+
         header {
             margin-top: 0em;
             margin-right: 0em;
@@ -110,12 +116,12 @@
             color: #ffbcba;
         }
 
-        footer {     
+        footer {
             border-top: groove medium $acc;
             background: $box;
             color: $t;
             margin: 1em 0em 0em 0em;
-            padding: 0em;   
+            padding: 0em;
             p {
                 margin-left: 0em;
                 text-align: left;
@@ -130,19 +136,20 @@
             text-align: left;
         }
 
-        nav li, main div, main section, .cominavbox {
+        nav li, main > div, main > section, .cominavbox, main > .tagslist, h1 {
             background: $box;
             color: $t;
             border: ridge medium $acc;
         }
-        
-        main div, main section {
+
+        main > div, main > section, main > .tagslist, h1 {
             border-left: none;
             border-right: none;
             background-color: $box;
             background-image: url("button.png");
             background-repeat: no-repeat;
             background-position: 0 0;
+            padding: 0.5em
         }
 
         #commentary, #transcript {
@@ -159,27 +166,31 @@
         .archive li {
             margin-top: 1em;
         }
-        
+
         .char {
             text-align: left;
             dt:after {
                 content: ":"
             }
             dd:after {
-                content: "\A"; white-space: pre;
+                content: "\A";
+                white-space: pre;
             }
             dd {
                 margin-left: 0em;
+                display: inline;
+                white-space: pre-wrap
             }
-            dt, dd {
+            dt {
                 display: inline;
                 white-space: pre;
+                font-weight: bold
             }
             .chartext {
                 margin: 0em;
             }
         }
-        
+
         .intro {
             border: none;
             background: none;
@@ -193,11 +204,34 @@
             };
         }
 
+        .charname {
+            font-weight: bold;
+        }
+        
+        .char img {
+          margin: 0em;
+          padding: 0em;
+          border: ridge medium $acc;
+        }
+        
+        .chartraits {
+          margin: 0em;
+          padding: 0em;
+        }
+        
+        .chardesc {
+          border: none;
+          padding: 0em;
+          margin: 0em;
+          line-height: 2em;
+        }
+
     /*Medium screens*/
 
         @media screen and (min-width: 1024px) {
             figure {
                 margin-left: 1em;
+                padding: 1em
             }
 
             .cominavbox, .cominavbox li {
@@ -215,13 +249,13 @@
             }
 
             h2 {
-                font-size: 1.2em;            
+                font-size: 1.2em;
             }
-            
+
             h3 {
                 font-size: 1em
             }
-            
+
             h2, h3, h4, h5, h6, nav li {
                 font-weight: normal;
             }
@@ -248,16 +282,16 @@
                 }
             }
 
-            main div, main section {
+            main > div, main > section, main > .tagslist {
                 margin: 1em;
                 width: 80%;
             }
-            
-            nav li, main div, main section {
+
+            nav li, main > div, main > section, main > .tagslist, figcaption {
                 padding: 0.5em;
                 border: ridge medium $acc;
             }
-            
+
             .main {
                 padding: 0.5em;
                 margin: auto;
@@ -266,7 +300,7 @@
                     margin-left: 0em;
                 }
             }
-            
+
             .intro {
                 border: none;
                 margin: 0em;
@@ -284,7 +318,7 @@
                     font-weight: bold;
                 }
             }
-            
+
             .main, .intro {
                 text-align: left;
                 & p {
@@ -297,31 +331,36 @@
                 font-weight: bold;
             }
 
-            .charname {
-                font-weight: bold
-            }
-            
             .char {
                 h2 {
                     margin-top: 0em;
                 };
                 dl {
-                    font-size: 0.8em;
                     margin-left: 1em;
                 };
                 p {
                     text-indent: 1em;
                 };
-                img {
-                    margin: 0em;
-                    margin-right: 1em;
-                    padding: 0em;
-                    border: solid medium $acc;
-                }
-                .chartext, img {
+                img, .chartraits {
                     display: inline-block;
                     vertical-align: top;
-                    max-width: 60%;
+                    max-width: 50%;
+                }
+                .chartext, .chartraits {
+                    padding: 0.5em;
+                    border: ridge medium $acc;
+                }
+                img {
+                    margin: 0em 1em 0.5em 0em;
+                    padding: 0em;
+                }
+                .chartraits {
+                    margin-left: 1em;
+                    overflow-wrap: break-word;
+                    margin-bottom: 1em;
+                    & * {
+                        line-height: 1.5em
+                    }
                 }
             }
 

@@ -5,7 +5,7 @@
     /*TODO: Fix the skip link hiding method*/
     /*Medium screens*/ }
     #cherry * {
-      box-sizing: content-box; }
+      box-sizing: border-box; }
     #cherry body {
       background: #fff;
       background: url("bloom.png") fixed no-repeat 110% -10%, #fff url("cherrywind.png") 0% 0%;
@@ -17,7 +17,7 @@
     #cherry main, #cherry figure {
       margin-left: 0em;
       padding-left: 0em; }
-    #cherry div, #cherry section, #cherry nav li, #cherry figure#comic, #cherry .cominavbox {
+    #cherry main > div, #cherry main > section, #cherry nav li, #cherry figure#comic, #cherry .cominavbox, #cherry main > .tagslist {
       background: #fff6f9;
       border-right: solid thin #cc006d;
       border-bottom: solid thin #cc006d; }
@@ -30,15 +30,18 @@
       padding: 0.3em;
       text-align: center;
       margin-right: 0; }
-    #cherry .cominavbox, #cherry .cominavbox li {
-      display: inline-block;
+    #cherry .cominavbox {
       padding: 0em; }
+      #cherry .cominavbox li {
+        padding: 0.5em; }
+    #cherry .cominavbox, #cherry .cominavbox li {
+      display: inline-block; }
     #cherry .cominavbox li a:active, #cherry .cominavbox li a:focus {
       outline-width: medium; }
     #cherry * + * {
       margin-top: 0.5em; }
-    #cherry header {
-      margin-top: 0; }
+    #cherry header, #cherry h2, #cherry h3, #cherry .status {
+      margin-top: 0em; }
     #cherry #skippy {
       text-align: left;
       margin-bottom: 0em;
@@ -74,19 +77,20 @@
     #cherry footer p {
       margin-left: 0em;
       text-align: left; }
-    #cherry .archive {
+    #cherry main > section {
       display: inline-block;
       vertical-align: top;
       text-align: left; }
-    #cherry main div, #cherry main section {
+    #cherry main > div, #cherry main > section, #cherry main > .tagslist {
       padding: .5em 1.4em 0em 1.2em;
       background-image: url("bloom.png");
       background-size: 1.5em;
       background-repeat: no-repeat;
-      background-position: 1% 1%; }
+      background-position: 1% 1%;
+      width: 100%; }
     #cherry img, #cherry embed, #cherry object, #cherry video {
       max-width: 100%; }
-    #cherry .archive li {
+    #cherry main > section li {
       margin-top: 1em; }
     #cherry .charname {
       font-weight: bold; }
@@ -105,9 +109,15 @@
         margin-left: 0em; }
       #cherry .char dt, #cherry .char dd {
         display: inline;
-        white-space: pre; }
+        white-space: pre-wrap; }
     #cherry .chartext, #cherry .intro {
-      border: none; } }
+      border: none; }
+    #cherry main > .tagslist {
+      padding: 1em; }
+      #cherry main > .tagslist li + li {
+        margin-top: 1.2em; }
+    #cherry .tagslist, #cherry .chapterarch {
+      list-style-type: none; } }
   @media screen and (min-width: 1024px) {
     #cherry * + * {
       margin-top: 1em; }
@@ -130,6 +140,7 @@
       text-align: center; }
     #cherry h2 {
       font-size: 1.2em;
+      line-height: 1.2em;
       border-bottom: thin solid #ffcaec;
       margin-bottom: 0.5em;
       margin-top: 0.5em; }
@@ -151,21 +162,21 @@
     #cherry .statline {
       font-size: 0.8em; }
     #cherry footer p {
-      font-size: 0.7em; }
+      font-size: 0.8em; }
     #cherry .action {
       text-indent: 1em; }
-    #cherry .archive {
+    #cherry main > section {
       margin: 1em;
       padding: 1em 1em 0em 1em; }
-      #cherry .archive h2 {
+      #cherry main > section h2 {
         margin: 0em 0em 1em 0em;
         padding-top: 0.5em;
         padding-bottom: 0em; }
-      #cherry .archive + .archive {
+      #cherry main > section + section {
         margin-top: 0em; }
-    #cherry main div, #cherry main section {
+    #cherry main > div, #cherry main > section, #cherry main > .tagslist {
       margin: 1em;
-      width: 80%;
+      width: 100%;
       text-align: left; }
     #cherry .main {
       padding: 0.5em;
@@ -194,6 +205,18 @@
         text-align: left;
         margin: 1em; }
     #cherry .char img {
-      margin-right: 1em; } }
+      margin-right: 1em; }
+    #cherry .char .chartraits, #cherry .char .char img {
+      display: inline-block;
+      vertical-align: top;
+      max-width: 50%; }
+    #cherry .char .chartraits {
+      margin-top: 0em;
+      overflow-wrap: break-word; }
+    #cherry main > .tagslist {
+      padding: 1em; }
+    #cherry main > section .tagslist li {
+      display: inline-block;
+      vertical-align: top; } }
 
 /*# sourceMappingURL=style.css.map */

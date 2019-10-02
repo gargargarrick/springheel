@@ -55,28 +55,19 @@ def getTemplatesPath():
     templates_path = os.path.join(raw_springheel_path,"templates")
     return(raw_springheel_path,templates_path)
 
-def copyAssets(lang):
+def copyAssets():
     raw_springheel_path,templates_path = getTemplatesPath()
     strings_path = os.path.join(templates_path, "strings.json")
-    ## It's divided up by language.
-    #my_lang_templates = os.path.join(templates_path,lang)
-    my_lang_templates = templates_path
-    print("Getting {lang} templates from {my_lang_templates}...".format(lang=lang,my_lang_templates=my_lang_templates))
-    if os.path.exists(my_lang_templates) == False and lang != "en":
-        lang="en"
-        print("Templates for [{lang}] language were not found, using default language [English] templates...".format(lang=lang))
-        my_lang_templates = os.path.join(templates_path,lang)
-    elif os.path.exists(my_lang_templates) == False and lang == "en":
-        print("The Springheel module was found, but template files in the default language, English, do not exist. What did you do?")
+    print("Getting templates from {templates_path}...".format(templates_path=templates_path))
+    if os.path.exists(templates_path) == False:
+        print("The Springheel module was found, but template files do not exist. Please make sure {templates_path} exists and try again.".format(templates_path=templates_path))
         return False
     current_dir = os.getcwd()
 
     templates_o = os.path.join(current_dir,"templates")
     
     print("Copying templates to {templates_output}...".format(templates_output=templates_o))
-    copy_tree(my_lang_templates,templates_o)
-
-    ## Now get the stuff that's the same in any language.
+    copy_tree(templates_path,templates_o)
 
     print("Copying strings file...")
     new_strings_path = os.path.join(current_dir,"templates","strings.json")
@@ -115,11 +106,3 @@ def copyAssets(lang):
 
     ## I have reasons! Now we shall see!
     return(templates_path)
-
-def getLang():
-    lang = input("Language? > ")
-    return(lang)
-
-##lang = getLang()
-##copyAssets(lang)
-

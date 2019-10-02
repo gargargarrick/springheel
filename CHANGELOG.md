@@ -1,5 +1,12 @@
 # Springheel Changelog
 
+## 5.0.2
++ Fixed a bug where tag page results weren't being sorted correctly.
++ Archive page titles for single-comic sites are now translatable.
++ Fixed an error where colons couldn't be used in some metadata fields.
++ Removed the long-unnecessary language prompt when running `springheel-init`.
++ Lots of improvements to all themes. (Make sure to re-run `springheel-init` to update your stylesheets)
+
 ## 5.0.1
 + Started escaping most things that will appear as HTML.
 

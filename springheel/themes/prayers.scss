@@ -4,10 +4,10 @@
     $green: #4C833B;
     $vermillion: #F67400;
     $red: #EE3400;
-    
+
     $dgreen: #1e530b;
     $dark: #201f1e;
-    
+
     /*$bg: #1e530b;*/
     $bg: #164007;
     $behind-bg: #000f29;
@@ -18,7 +18,7 @@
     $accent: #EE3400;
     /* Default (small) screens */
         * {
-            box-sizing: content-box;
+            box-sizing: border-box;
         }
         body {
             background: $bg;
@@ -50,12 +50,12 @@
             padding-left: 0em;
         }
 
-        div, section, figure, .cominavbox {
+        main > div, main > section, figure#comic, , .cominavbox, main > .tagslist {
             background: $sleeve;
             border: double thick $accent;
         }
-        
-        main div, main section {
+
+        main > div, main > section, main > .tagslist {
             background-color: $sleeve;
         }
 
@@ -74,15 +74,18 @@
             text-align: center;
             margin-right: 0;
         }
-        
+
         .cominavbox {
             max-width: 100%;
-        }
-        .cominavbox, .cominavbox li {
             display: inline-block;
             padding: 0em;
         }
-        
+        .cominavbox li {
+            display: inline-block;
+            padding: 0em;
+            margin: 0em 1em;
+        }
+
         .cominavbox li a {
             &:active, &:focus {
                 background: $sleeve;
@@ -93,7 +96,7 @@
         * + * {
             margin-top: 0.5em
         }
-        
+
         header {
             margin-top: 0;
         }
@@ -165,14 +168,9 @@
             text-align: left;
         }
 
-        .archive {
-            display: inline-block;
-            vertical-align: top;
-            text-align: left;
-        }
-
-        main div, main section {
+        main > div, main > section, main > .tagslist {
             padding: .5em 1.4em 0em 1.2em;
+            text-align: left;
         }
 
         img, embed, object, video {
@@ -182,17 +180,20 @@
         .archive li {
             margin-top: 1em;
         }
-            
+
         .charname {
             font-weight: bold;
         }
-        
+
         .action {
             font-weight: bold;
         }
-        
+
         .char {
             text-align: left;
+            .chartraits {
+                overflow-wrap: break-word;
+            }
             dt {
                 font-weight: bold;
                 &:after {
@@ -200,22 +201,28 @@
                 };
             };
             dd:after {
-                content: "\A"; white-space: pre;
+                content: "\A";
+                white-space: pre;
             };
             dd {
                 margin-left: 0em;
             };
             dt, dd {
                 display: inline;
-                white-space: pre;
+                white-space: pre-wrap;
             };
         }
-        
+
         .intro {
             border: none;
             background: none;
             margin: 0em;
             padding: 0em;
+        }
+        
+        .tagslist, .chapterarch {
+            list-style-type: none;
+            padding-left: 0em
         }
 
     /*Medium screens*/
@@ -230,14 +237,16 @@
                 background: url("torii.png") 99% 99% no-repeat fixed, url("trees.png") repeat-y -200px 0%, $behind-bg url("trees.png") repeat-y 101% 0%;
             }
 
-            figure {
-                margin-left: 4em;
-                margin-bottom: 0em;
+            figure#comic {
+                margin: 1em 1em 0em 1em;
                 padding: 1em 1em 0em 1em;
-            }
-
-            figcaption {
-                margin-bottom: 1em;
+                img {
+                    max-width: 100%;
+                    border: solid thin $sleeve
+                }
+                figcaption {
+                    margin-bottom: 1em;
+                }
             }
 
             .cominavbox {
@@ -251,9 +260,9 @@
             figure + .cominavbox {
                 margin-top: 1em;
             }
-            
+
             header {
-                background: url("shimenawa.png") 98% 0% no-repeat, url("shimenawa.png") 2% 0% no-repeat;                
+                background: url("shimenawa.png") 98% 0% no-repeat, url("shimenawa.png") 2% 0% no-repeat;
             }
 
             h1 {
@@ -284,8 +293,12 @@
             }
 
             main {
-                max-width: 65%;
                 line-height: 1.2em;
+                & > div, & > section, & > .tagslist {
+                    max-width: 65%;
+                    text-align: left;
+                    padding: 1em;
+                }
             }
 
             .statline {
@@ -295,41 +308,25 @@
             footer p {
                 font-size: 0.7em;
             }
-            
+
             .action {
                 text-indent: 1em;
             }
 
-            .archive {
-                margin: 1em;
-                padding: 1em 1em 0em 1em;
-                & h2 {
-                    margin: 0em 0em 1em 0em;
-                    padding-top: 0.5em;
-                    padding-bottom: 0em;
+            main > section {
+                & + section {
+                    margin-top: 0em;
                 };
-                & + .archive {
+                .status {
                     margin-top: 0em;
                 }
             }
+            
+            #extras {
+                padding-top: 0em;
+            }
 
-            main div, main section {
-                margin: 1.2em;
-                width: 80%;
-                text-align: left;
-            }
-            
-            .main {
-                padding: 0.5em;
-                margin: auto;
-                width: 80%;
-                & p {
-                    margin-left: 0em;
-                }
-            }
-            
             .intro {
-                text-align: left;
                 h2 {
                     margin-bottom: 0.5em;
                 };
@@ -344,30 +341,22 @@
                     font-weight: bold;
                 }
             }
-            
-            .main, .intro {
-                text-align: left;
-                & p {
-                  text-align: left;
-                  margin: 1em;
-                }
-            }
-            
+
             .char {
-                padding: 0em;
+                padding: 1em;
                 img {
                     margin: 0em 1em 1em 0em
                 }
-                .chartext {
-                    border: none;
-                    margin: 0em;
-                    text-align: left
-                }
-                .chartext, img {
-                    display: inline-block;
-                    vertical-align: top;
-                    max-width: 50%;
-                }
+                // .chartext {
+                //     border: none;
+                //     margin: 0em;
+                //     text-align: left
+                // }
+                // .chartext, img {
+                //     display: inline-block;
+                //     vertical-align: top;
+                //     max-width: 50%;
+                // }
             }
 
         }

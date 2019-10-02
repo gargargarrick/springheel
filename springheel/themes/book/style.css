@@ -18,7 +18,7 @@
     #book main, #book figure {
       margin-left: 0em;
       padding-left: 0em; }
-    #book figure#comic, #book main div, #book .archives {
+    #book figure#comic, #book main > div, #book main > section, #book main > .tagslist {
       background-color: #fdf5e6;
       background-image: url("paper.gif");
       color: #111; }
@@ -48,7 +48,7 @@
       margin: 0.5em;
       padding: 0.5em; }
       #book .cominavbox li {
-        padding: 0em;
+        padding: 0em 0.5em;
         margin: 0em; }
     #book #skippy {
       text-align: left; }
@@ -83,17 +83,17 @@
       text-decoration: underline; }
     #book a:hover, #book a:focus, #book a:active {
       color: #ffa4a4; }
-    #book main div, #book main section, #book .cominavbox {
+    #book main > div, #book main > section, #book .cominavbox, #book main > .tagslist {
       padding-top: 1em;
       padding-bottom: 1em; }
-      #book main div a:link, #book main section a:link, #book .cominavbox a:link {
+      #book main > div a:link, #book main > section a:link, #book .cominavbox a:link, #book main > .tagslist a:link {
         color: #214184;
         text-decoration: underline; }
-      #book main div a:visited, #book main section a:visited, #book .cominavbox a:visited {
+      #book main > div a:visited, #book main > section a:visited, #book .cominavbox a:visited, #book main > .tagslist a:visited {
         color: #5c3566; }
-      #book main div a:hover, #book main section a:hover, #book .cominavbox a:hover {
+      #book main > div a:hover, #book main > section a:hover, #book .cominavbox a:hover, #book main > .tagslist a:hover {
         text-decoration: underline; }
-      #book main div a:hover, #book main div a:focus, #book main div a:active, #book main section a:hover, #book main section a:focus, #book main section a:active, #book .cominavbox a:hover, #book .cominavbox a:focus, #book .cominavbox a:active {
+      #book main > div a:hover, #book main > div a:focus, #book main > div a:active, #book main > section a:hover, #book main > section a:focus, #book main > section a:active, #book .cominavbox a:hover, #book .cominavbox a:focus, #book .cominavbox a:active, #book main > .tagslist a:hover, #book main > .tagslist a:focus, #book main > .tagslist a:active {
         color: #cc0000; }
     #book footer p {
       margin-left: 0em;
@@ -120,7 +120,7 @@
         margin-left: 0em; }
       #book .char dt, #book .char dd {
         display: inline;
-        white-space: pre; }
+        white-space: pre-wrap; }
       #book .char dt {
         font-weight: bold; }
       #book .char dl {
@@ -131,7 +131,21 @@
         text-indent: 1em; }
       #book .char .chartext {
         margin: 0em;
-        padding: 0em; } }
+        padding: 0em; }
+    #book main > section {
+      padding: 1em 2em;
+      padding-bottom: 0em; }
+      #book main > section ol {
+        margin-left: 1em;
+        margin-bottom: 0em; }
+      #book main > section + section {
+        padding-bottom: 1em; }
+        #book main > section + section h2 {
+          margin-top: 0em;
+          padding-top: 1em;
+          border-top: solid thin #111; }
+    #book .tagslist, #book .chapterarch {
+      list-style-type: none; } }
   @media screen and (min-width: 1024px) {
     #book {
       /*            figure + .cominavbox {*/
@@ -144,17 +158,17 @@
           padding: 1em;
           margin: 1em;
           max-width: 90%; }
-      #book main div {
+      #book main > div {
         padding: 0.5em 1em 0.5em 1em;
         width: 80%;
         margin-left: 1em; }
-        #book main div p, #book main div h2 {
+        #book main > div p, #book main > div h2 {
           margin-left: 3rem;
           margin-right: 3rem; }
       #book #extras figure, #book #extras p, #book #extras h2, #book #extras h3, #book #extras ul {
         margin-left: 3rem;
         margin-right: 3rem; }
-      #book figure#comic, #book main div, #book .archives {
+      #book figure#comic, #book main > div, #book main > section, #book main > .tagslist {
         background-color: #fdf5e6;
         background: url("pages_l.png") repeat-y 0% 0%, url("pages_r.png") repeat-y 100% 0%, url("paper.gif"); }
       #book div + div {
@@ -173,6 +187,8 @@
         font-size: 1.3em; }
       #book h3 {
         font-size: 1.1em; }
+      #book h2, #book h3, #book .status {
+        margin-top: 0em; }
       #book nav ul {
         background-color: #fdf5e6;
         background-image: url("paper.gif");
@@ -207,20 +223,18 @@
         text-indent: 1em; }
       #book .archives {
         margin: 1em; }
-      #book .archive {
+      #book main > section {
         margin-left: 2em;
         margin-right: 2em;
-        padding: 1em 2em;
+        padding: 1em 3em;
         padding-bottom: 0em;
         margin-top: 1em; }
-        #book .archive ol {
+        #book main > section ol {
           margin-left: 1em; }
-        #book .archive + .archive {
-          padding-bottom: 1em; }
-          #book .archive + .archive h2 {
-            margin-top: 0em;
-            padding-top: 1em;
-            border-top: solid thin #111; }
+        #book main > section + section h2 {
+          margin-top: 0em;
+          padding-top: 0em;
+          border-top: none; }
       #book .main {
         padding: 0.5em;
         margin: auto;
@@ -237,9 +251,11 @@
         font-weight: bold; }
       #book .char img {
         margin-left: 2em; }
-      #book .char img, #book .chartext {
+      #book .char img, #book .chartraits {
         vertical-align: top;
         display: inline-block;
-        max-width: 60%; } }
+        max-width: 50%; }
+      #book .chartraits {
+        overflow-wrap: break-word; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -32,7 +32,7 @@ def parseChars(charfile):
         l.append(s_text)
 
     raw_page_m = l[0]
-    category = raw_page_m[0].split("category: ")[1]
+    category = raw_page_m[0].split("category: ", 1)[1]
     lang = raw_page_m[1].split("lang: ")[1]
 
     cl = [category,lang]
@@ -45,7 +45,7 @@ def parseChars(charfile):
             d = {}
             char_attrs =[]
             for item in char:
-                attr,val = item.split(": ")
+                attr,val = item.split(": ", 1)
                 tup = (attr,val)
                 char_attrs.append(tup)
             cl.append(char_attrs)

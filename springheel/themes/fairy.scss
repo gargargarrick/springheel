@@ -1,13 +1,13 @@
 @media screen {
 /*Fairy*/
     $bg: #ECAAC5;
-    $text: black;
+    $text: #000;
     $lac: #A685E7;
     $box: #DFE7C0;
     #fairy {
     /* Default (small) screens */
         * {
-            box-sizing: content-box;
+            box-sizing: border-box;
         }
         body {
             background: $bg url("sparkles.png") 0% 5% repeat-x fixed;
@@ -24,7 +24,7 @@
             padding-right: 0em;
         }
 
-        figure#comic, main > div, main > section {
+        figure#comic, main > div, main > section, main > .tagslist {
             background: $box;
             border-top: solid thick $lac;
             border-bottom: solid thick $lac;
@@ -46,17 +46,28 @@
             text-align: center;
             border: none;
         }
+        
+        .cominavbox {
+            padding: 0em;
+        }
+        
         .cominavbox, .cominavbox li {
             display: inline-block;
-            padding: 0em;
+        }
+        
+        .cominavbox li {
+            padding: 1em;
         }
 
         p + p, li + li, div+div, section+section, footer {
             margin-top: 0.5em
         }
         
-        main > div, main > section {
+        main > div, main > section, main > .tagslist {
             padding: 0.5em;
+            margin-left: 0em;
+            margin-right: 0em;
+            width: 100vw;
         }
 
         /*TODO: Fix the skip link hiding method*/
@@ -87,6 +98,7 @@
 
         nav li {
             display: inline-block;
+            padding: 0.5em
         }
 
         #commentary, #transcript {
@@ -124,9 +136,7 @@
             }
         }
 
-        .archive {
-            display: inline-block;
-            vertical-align: top;
+        main > section {
             text-align: left;
         }
 
@@ -151,7 +161,7 @@
             }
             dt, dd {
                 display: inline;
-                white-space: pre;
+                white-space: pre-wrap;
             }
         }
 
@@ -197,12 +207,12 @@
                 margin-bottom: 0em;
             }
 
-            figure#comic, main > div, main > section {
+            figure#comic, main > div, main > section, main > .tagslist {
                 background: $box url("mornglor.png") top right no-repeat;
                 border: solid thick $lac;
             }
 
-            main > div, main > section {
+            main > div, main > section, main > .tagslist {
                 padding: 1em;
                 width: 80%;
             }
@@ -267,7 +277,7 @@
                 text-align: right;
             }
 
-            .archive {
+            main > section {
                 padding: 1em 2em;
                 margin: 1em;
             }
@@ -284,10 +294,12 @@
                 img, .chartraits {
                     display: inline-block;
                     vertical-align: top;
+                    max-width: 50%;
                 }
             }
             .chartraits {
                 margin-left: 1em;
+                overflow-wrap: break-word
             }
             .chartraits * {
                 line-height: 1.5em

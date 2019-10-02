@@ -19,7 +19,7 @@
             color: $lt;
             text-align: center;
             font-size: 1.5em;
-            font-family: serif;
+            font-family: sans-serif;
             margin: 0em;
         }
 
@@ -28,14 +28,14 @@
             padding-left: 0em;
         }
 
-        main div, figure, .archive, footer, .cominavbox {
+        main > div, main > section, figure, footer, .cominavbox, main > .tagslist {
             background-color: $mbg;
             background-image: url("beach_sand.png");
             padding-left: 0.5em;
             padding-right: 0.5em;
         }
         
-        main div, main section, figure#comic, .archive, h1, .cominavbox {
+        main > div, main > section, figure#comic, h1, .cominavbox, main > .tagslist {
             @include shadow(0em, 0em, 0.5em, 0.5em, #94e8e8)
         }
         
@@ -98,7 +98,7 @@
             }
         }
 
-        #commentary, #transcript {
+        main > div, main > section {
             text-align: left;
         }
 
@@ -138,10 +138,9 @@
             }
         }
 
-        .archive {
-            display: inline-block;
-            vertical-align: top;
-            text-align: left;
+        main > section {
+            width: 90%;
+            margin-top: 2em;
         }
 
         img, embed, object, video {
@@ -184,9 +183,10 @@
             dd {
                 margin-left: 0em;
             };
+            dt {font-weight: bold;}
             dt, dd {
                 display: inline;
-                white-space: pre;
+                white-space: pre-wrap;
             };
             .chartext {
             -webkit-box-shadow: none;
@@ -201,16 +201,24 @@
         
         main {
             /*margin-top: 0em;*/
-            div, section {
+            & > div, & > section, & > .tagslist {
                 padding: 1em 0.5em;
             }
-            .main, .allchars, .char {
+            .main, .allchars, .char, .tagslist {
                 margin-top: 2em;
             }
         }
         
         div + div, section + section {
             margin-top: 2em;
+        }
+        
+        h2, h3, .status {
+            margin-top: 0em;
+        }
+        
+        .tagslist, .chapterarch {
+            list-style-type: none
         }
 
     /*Medium screens*/
@@ -238,11 +246,20 @@
                 margin-bottom: 2em;
             }
 
-            main div, main section {
+            main > div, main > section {
                 margin-left: 1em;
-                padding: 0em;
-                padding: 0.1rem 1rem 0.2rem 1rem;
+                padding: 1em;
+                // padding: 0.1rem 1rem 0.2rem 1rem;
                 width: 80%;
+            }
+            
+            main > .tagslist {
+                text-align: left;
+                width: 80%;
+                padding: 1em;
+                li {
+                    margin-left: 1em;
+                }
             }
 
             .cominavbox, .cominavbox li {
@@ -288,7 +305,7 @@
                 }
             }
 
-            .archive {
+            main > section {
                 margin: 1em;
                 padding-left: 1em;
                 padding-right: 1em;
@@ -317,6 +334,10 @@
             .char {
                 img {
                     margin: 0em 1em;
+                }
+                
+                .chartraits {
+                    overflow-wrap: break-word;
                 }
             }
 

@@ -16,12 +16,14 @@
     #gothic img, #gothic embed, #gothic object, #gothic video {
       max-width: 100%; }
     #gothic main, #gothic figure {
-      margin-left: 0em;
-      padding-left: 0em; }
-    #gothic figure {
-      padding: 0em;
+      margin: 0em;
+      padding: 0em; }
+    #gothic figure#comic {
+      margin-right: 0em;
       text-align: center;
       border: none; }
+      #gothic figure#comic figcaption {
+        padding: 0em 1em; }
     #gothic #skippy {
       text-align: left;
       margin: 0em; }
@@ -62,8 +64,7 @@
     #gothic footer p {
       margin-left: 0em;
       text-align: left; }
-    #gothic .archive {
-      vertical-align: top;
+    #gothic main > section {
       text-align: left; }
     #gothic .cominavbox {
       margin: 0em;
@@ -74,12 +75,14 @@
         margin: 0em; }
     #gothic .action {
       font-weight: bold; }
-    #gothic p + p, #gothic li + li, #gothic div + div {
+    #gothic p + p, #gothic li + li, #gothic div + div, #gothic section + section {
       margin-top: 0.5em; }
-    #gothic main div, #gothic .archive {
+    #gothic main > div, #gothic main > section, #gothic main > .tagslist {
       border: double medium #e00;
       border-left: none;
-      border-right: none; }
+      border-right: none;
+      text-align: left;
+      padding: 0em 1em; }
     #gothic h1 {
       margin: 0em;
       margin-bottom: 1em; }
@@ -94,27 +97,42 @@
         margin-left: 0em; }
       #gothic .char dt, #gothic .char dd {
         display: inline;
-        white-space: pre; }
+        white-space: pre-wrap; }
       #gothic .char dt {
         font-weight: bold; }
       #gothic .char dl {
-        font-size: 0.9em; }
+        padding: 0em 1em; }
       #gothic .char img {
         margin: 1em;
         border: double medium #e00; }
-      #gothic .char p {
-        text-indent: 1em; } }
+      #gothic .char .chartext {
+        text-indent: 1em;
+        padding: 0em 1em; }
+    #gothic .tagslist, #gothic .chapterarch {
+      list-style-type: none; } }
   @media screen and (min-width: 1024px) {
     #gothic body {
       font-size: 1.5em;
       margin-left: 1em;
       background: url("drips.gif") fixed repeat-x 0% 0%, #100 url("rose-tall.gif") fixed no-repeat 100% 100%;
       margin: 0em; }
-    #gothic figure {
-      margin-left: 1em;
-      margin-top: 0em;
-      margin-bottom: 0em; }
-    #gothic main div, #gothic main section {
+    #gothic figure#comic {
+      display: inline-block;
+      margin: 0em 1em;
+      padding: 0em;
+      width: auto;
+      text-align: center; }
+      #gothic figure#comic img {
+        border: double medium #e00; }
+      #gothic figure#comic figcaption {
+        border: double medium #e00;
+        background: #100;
+        padding: 1em;
+        margin: auto;
+        width: 100%;
+        max-width: 60%;
+        text-align: center; }
+    #gothic main > div, #gothic main > section, #gothic main > .tagslist {
       padding-left: 1em;
       padding-right: 1em;
       width: 80%;
@@ -126,8 +144,6 @@
       margin: 0.5em 1em 0em 1em; }
     #gothic figure + .cominavbox {
       margin-top: 0em; }
-    #gothic figure {
-      margin-left: 1em; }
     #gothic h1 {
       font-size: 1.5em; }
     #gothic h2 {
@@ -139,12 +155,12 @@
       text-align: right; }
     #gothic footer p {
       font-size: 0.7em; }
-    #gothic .archive {
+    #gothic main > section {
       margin-left: 1em;
       margin-right: 1em;
       padding-left: 1em;
       padding-right: 1em; }
-    #gothic figure, #gothic main div, #gothic .archive, #gothic nav li {
+    #gothic main > div, #gothic main > section, #gothic nav li, #gothic main > .tagslist {
       border: double medium #e00;
       background: #100; }
     #gothic nav li, #gothic nav li + li {
@@ -181,11 +197,16 @@
         font-weight: bold; }
     #gothic .char img {
       margin: 0em 1em 1em 0em; }
-    #gothic .char .chartext {
+    #gothic .char .chartraits {
       margin: 0em; }
-    #gothic .char .chartext, #gothic .char img {
+    #gothic .char .chartraits, #gothic .char img {
       display: inline-block;
       vertical-align: top;
-      max-width: 50%; } }
+      max-width: 50%;
+      overflow-wrap: break-word; }
+    #gothic main > .tagslist {
+      padding: 1em; }
+    #gothic main > section .tagslist {
+      width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

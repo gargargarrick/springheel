@@ -5,7 +5,7 @@
     $bg: #171717;
     /* Default (small) screens */
         * {
-            box-sizing: content-box;
+            box-sizing: border-box;
         }
         body {
             background-color: $bg;
@@ -15,28 +15,27 @@
             font-size: 1.5em;
             font-family: sans-serif;
             display: grid;
-            grid-gap: 1em;
-            grid-template-areas:
-              'skip'
-              'header'
-              'main'
-              'footer';
-            grid-template-columns: auto;
+            grid-gap: 1em 0;
+            grid: auto auto 1fr / 0em 1fr 0em;
+            margin: 0;
+            min-height: 100vh;
         }
         #skippy {
-          grid-area: skip;
+          grid-column: 2
         }
         
         header {
-          grid-area: header;
+          grid-column: 2;
+          margin-top: 1em
         }
         
         main {
-          grid-area: main;
+          grid-column: 2
         }
         
         footer {
-          grid-area: footer;
+          grid-column: 2;
+          align-self: end;
         }
 
         main, figure {
@@ -48,12 +47,16 @@
             margin: 0em;
         }
         figure#comic {
-            padding: 1em;
+            padding: 0em;
+            margin: 0em;
             text-align: center;
         }
         .cominavbox, .cominavbox li {
             display: inline-block;
             padding: 0em;
+        }
+        .cominavbox li {
+            margin: 0em 1em;
         }
 
         p + p, li + li {
@@ -79,7 +82,8 @@
           width: auto;
           font-size: 1em;
           margin-top: 0em;
-          color: #0000ff;
+          color: #fff;
+          background: #000;
         }
 
         nav li {
@@ -117,8 +121,6 @@
         }
 
         .archive {
-            display: inline-block;
-            vertical-align: top;
             text-align: left;
         }
 
@@ -133,8 +135,17 @@
         .charname {
             font-weight: bold
         }
-        
+
         .char {
+            padding: 0em;
+            .chartraits {
+                overflow-wrap: break-word;
+            }
+            dt {
+                font-weight: bold;
+                line-height: 2em;
+                text-transform: uppercase;
+            }
             dt:after {
                 content: ":"
             }
@@ -146,8 +157,13 @@
             }
             dt, dd {
                 display: inline;
-                white-space: pre;
+                white-space: pre-wrap;
             }
+        }
+
+        .tagslist, .chapterarch {
+            list-style-type: none;
+            padding-left: 0em
         }
 
     /*Medium screens*/
@@ -155,27 +171,30 @@
         @media screen and (min-width: 1024px) {
             body {
                 margin: 0em;
+                grid: auto auto 1fr / 0em 1fr 0em;
                 background: url("curtaint.png") repeat-x 0% 0%, url("curtainr.png") fixed repeat-y 100% 0%, $bg url("curtainl.png") fixed repeat-y 0% 0%;
             }
 
             figure#comic {
-                margin-left: 1em;
-                margin-top: 0em;
-                margin-bottom: 0em;
+                margin: 0em;
                 img {
-                  border: 1em solid #A06D3D
+                    border: solid 1em #c18d5c;
+                    padding: 0em;
+                    margin: 0em;
+                    max-width: 100%;
                 }
             }
-            figure#comic figcaption {
-              max-width: 80%;
-              margin: auto;
+
+            main > div, main > section, main > .tagslist, h1, figure#comic figcaption {
+                max-width: 70%;
+                margin-left: auto;
+                margin-right: auto;
             }
 
-            main div, main section {
+            main > div, main > section, main > .tagslist {
                 text-align: left;
                 padding-left: 1em;
                 padding-right: 1em;
-                width: 70%;
                 margin: auto;
             }
 
@@ -184,29 +203,24 @@
                 margin-top: 0em;
             }
 
-            .cominavbox, .cominavbox li {
-                margin-left: 1em;
-                margin-right: 1em;
-                margin-top: 0.5em;
-                margin-bottom: 0em;
+            .cominavbox {
+                margin: 0.5em 1em;
             }
 
-            figure + .cominavbox {
-                margin-top: 0em;
-            }
-
-            figure {
-                margin-left: 1em;
+            .cominavbox li {
+                margin: 0em 1.5em
             }
 
             h1 {
                 font-size: 1.5em;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             h2 {
                 font-size: 1.2em;
             }
-            
+
             h3 {
                 font-size: 1em;
             }
@@ -231,31 +245,38 @@
             }
 
             footer p {
-                font-size: 0.7em;
+                font-size: 0.8em;
                 margin-bottom: 0em;
             }
 
-            .archive {
-                margin-left: 0em;
-                margin-right: 1em;
-                padding-left: 1em;
-                padding-right: 1em;
-            }
-            
+            // .archive {
+            //     margin-left: 0em;
+            //     margin-right: 1em;
+            //     padding-left: 1em;
+            //     padding-right: 1em;
+            // }
+
             .main {
                 padding: 0.5em;
-                margin: auto;
-                width: 50%;
                 & p {
                     margin-left: 0em;
                 }
             }
             .char {
                 text-align: left;
+                .chartraits, img {
+                  display: inline-block;
+                  vertical-align: top;
+                  max-width: 40%;
+                }
+                .chartraits {
+                    max-width: 50%;
+                    margin-top: 0em;
+                    margin-left: 1em;
+                }
             }
-            .chartext, .charimg {
-              display: inline-block;
-              vertical-align: top
+            main > .tagslist {
+                padding: 1em
             }
         }
     }

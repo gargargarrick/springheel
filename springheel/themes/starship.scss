@@ -34,25 +34,33 @@
         h2 {
             font-size: 1em;
         }
-        figure {
-            padding: 1em;
+        figure#comic {
+            padding: 0em;
             text-align: center;
             border: none;
             margin: 0em;
+            figcaption {
+                background: $box;
+                color: $int;
+                padding: 0.5em;
+                border: groove medium $box;
+            }
         }
-        
+
         .cominavbox {
             background: $bg;
             border: groove medium $box;
         }
-        
+
         .cominavbox, .cominavbox li {
             display: inline-block;
             padding: 0em;
         }
-        
+
         .cominavbox li {
             padding: 0.5em;
+            margin-left: 1em;
+            margin-right: 1em;
             a:active, a:focus {
                 outline: dashed medium $acc;
             }
@@ -109,7 +117,7 @@
             color: #cc0000;
         }
 
-        footer {     
+        footer {
             border-top: solid thin $acc;
             margin: 1em 0em 0em 0em;
             padding: 0em;
@@ -118,7 +126,7 @@
                 text-align: left;
             }
         }
-        
+
         footer a, .cominavbox a {
             &:link {
                 color: #73b9ff;
@@ -130,13 +138,12 @@
                 color: #ff8793;
             }
         }
-
-        .archive {
-            vertical-align: top;
+        
+        main > section, main > .tagslist {
             text-align: left;
         }
 
-        nav li, main div, main section {
+        nav li, main > div, main > section, main > .tagslist {
             background: $box;
             color: $int;
             padding: 0.5em;
@@ -157,9 +164,12 @@
         .archive li {
             margin-top: 1em;
         }
-        
+
         .char {
             text-align: left;
+            .chartraits {
+                overflow-wrap: break-word;
+            }
             dt:after {
                 content: ":"
             }
@@ -171,14 +181,23 @@
             }
             dt, dd {
                 display: inline;
-                white-space: pre;
+                white-space: pre-wrap;
             }
+        }
+
+        .tagslist, .chapterarch {
+            list-style-type: none;
+            padding-left: 0em;
+        }
+        
+        .archive .status, #extras h2:first-of-type {
+            margin-top: 0em
         }
 
     /*Medium screens*/
 
         @media screen and (min-width: 1024px) {
-            figure {
+            figure#comic {
                 margin-left: 1em;
             }
 
@@ -198,13 +217,13 @@
 
             h2 {
                 font-size: 1.2em;
-                border-bottom: inset medium $int;                
+                border-bottom: inset medium $int;
             }
-            
+
             h3 {
                 font-size: 1em
             }
-            
+
             h2, h3, h4, h5, h6, nav li {
                 text-shadow: 0.05em 0.05em 0em #ffe;
                 font-weight: normal;
@@ -224,7 +243,7 @@
                 margin-left: 1em;
             }
 
-            .archive {
+            main > section {
                 margin: 1em;
                 padding: 1em;
                 & h2 {
@@ -232,20 +251,18 @@
                 }
             }
 
-            main div, main section {
+            main > div, main > section, main > .tagslist {
                 margin: 1em;
                 width: 80%;
             }
-            
+
             .main {
                 padding: 0.5em;
-                margin: auto;
-                width: 50%;
                 & p {
                     margin-left: 0em;
                 }
             }
-            
+
             .intro {
                 border: none;
                 margin: 0em;
@@ -265,7 +282,7 @@
                     font-weight: bold;
                 }
             }
-            
+
             .main, .intro {
                 text-align: left;
                 & p {
@@ -281,28 +298,22 @@
             .charname {
                 font-weight: bold
             }
-            
+
             .char {
+                padding: 1em;
                 h2 {
                     margin-top: 0em;
-                };                
-                padding: 1em;
+                };
                 img {
                     margin: 0em 1em 1em 0em;
                     border: groove medium $box;
                 }
-                .chartext {
-                    margin: 0em;
-                    text-align: left
-                }
-                .chartext, img {
-                    display: inline-block;
-                    vertical-align: top;
-                    max-width: 70%;
-                }
                 p {
                     text-indent: 1em;
                 };
+                .chartraits {
+                    margin-top: 0em;
+                }
             }
 
         }

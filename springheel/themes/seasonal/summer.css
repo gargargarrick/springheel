@@ -12,24 +12,22 @@
       box-sizing: content-box; }
     #seasonal body {
       background-color: #429ad7;
-      background-image: url("summer.png");
-      background-position: 0 100%;
-      background-repeat: repeat-x;
+      background: url("summer.png") bottom 1em left 0em repeat-x, linear-gradient(to top, #429ad7 144px, #429AD7 145px, #429AD7);
       background-attachment: fixed;
       color: #111;
       text-align: center;
-      font-size: 1.2em;
+      font-size: 1.5em;
       font-family: sans-serif;
       margin: 0em; }
     #seasonal main, #seasonal figure {
       margin-left: 0em;
       padding-left: 0em; }
-    #seasonal main div, #seasonal figure, #seasonal .archive {
+    #seasonal main > div, #seasonal figure#comic, #seasonal main > section, #seasonal main > .tagslist {
       background-color: #fafafa;
       padding-left: 0.5em;
       padding-right: 0.5em; }
-    #seasonal main div, #seasonal main section, #seasonal figure, #seasonal .archive, #seasonal h1 {
-      border: solid thick #429ad7;
+    #seasonal main > div, #seasonal main > section, #seasonal figure#comic, #seasonal h1, #seasonal main > .tagslist {
+      border: solid thick #4866c5;
       border-left: none;
       border-right: none; }
     #seasonal nav li {
@@ -39,7 +37,7 @@
       margin-top: 1em;
       background-color: #fafafa;
       padding: 1em; }
-    #seasonal figure {
+    #seasonal figure#comic {
       padding: 1em 0em;
       margin: 1em 0em;
       text-align: center; }
@@ -77,16 +75,16 @@
     #seasonal .statline {
       font-weight: bold; }
     #seasonal a:link {
-      color: #315040;
+      color: #354fa7;
       text-decoration: underline; }
     #seasonal a:visited {
-      color: #324b9e; }
+      color: #233570; }
     #seasonal a:hover {
       text-decoration: underline; }
     #seasonal a:hover, #seasonal a:focus, #seasonal a:active {
-      color: #3c7949; }
+      color: #3651ab; }
     #seasonal a:focus, #seasonal a:active {
-      outline: dashed medium #3c7949; }
+      outline: dashed medium #3651ab; }
     #seasonal footer {
       margin-bottom: 0em; }
       #seasonal footer p {
@@ -103,8 +101,6 @@
         background: none;
         border: none; }
     #seasonal .archive {
-      display: inline-block;
-      vertical-align: top;
       text-align: left; }
     #seasonal img, #seasonal embed, #seasonal object, #seasonal video {
       max-width: 100%; }
@@ -114,19 +110,21 @@
       background-color: #fafafa;
       padding-left: 0.5em;
       padding-right: 0.5em;
-      border: solid thick #429ad7; }
+      border: solid thick #4866c5; }
       #seasonal .cominavbox a:focus, #seasonal .cominavbox a:active {
-        outline: medium dashed #3c7949; }
-    #seasonal .cominavbox li a:active, #seasonal .cominavbox li a:focus {
-      outline: dashed medium #46a946; }
-      #seasonal .cominavbox li a:active img, #seasonal .cominavbox li a:focus img {
-        background-color: #46a946; }
+        outline: medium dashed #3651ab; }
+    #seasonal .cominavbox li:active a, #seasonal .cominavbox li:focus a {
+      outline: dashed medium #429ad7; }
+      #seasonal .cominavbox li:active a img, #seasonal .cominavbox li:focus a img {
+        background-color: #429ad7; }
     #seasonal .cominavbox li img {
-      background-color: #3c7949; }
-      #seasonal .cominavbox li img:active, #seasonal .cominavbox li img:focus, #seasonal .cominavbox li img:hover {
-        background-color: #46a946; }
+      background-color: #3651ab; }
+    #seasonal .cominavbox li:active img, #seasonal .cominavbox li:focus img, #seasonal .cominavbox li:hover img {
+      background-color: #429ad7; }
     #seasonal .char {
       text-align: left; }
+      #seasonal .char .chartraits {
+        overflow-wrap: break-word; }
       #seasonal .char dt:after {
         content: ":"; }
       #seasonal .char dd:after {
@@ -136,15 +134,13 @@
         margin-left: 0em; }
       #seasonal .char dt, #seasonal .char dd {
         display: inline;
-        white-space: pre; }
-    #seasonal * + * {
-      margin-top: 1em; }
+        white-space: pre-wrap; }
     #seasonal header {
       margin-top: 0em; }
-    #seasonal main div, #seasonal main section {
+    #seasonal main > div, #seasonal main > section, #seasonal main > .tagslist {
       padding: 1em 0.5em; }
     #seasonal main .main, #seasonal main .allchars, #seasonal main .char {
-      margin-top: 2em; }
+      margin-top: 1em; }
     #seasonal .intro {
       border: none;
       background: none;
@@ -156,30 +152,30 @@
         margin: 0em;
         padding: 0em; }
     #seasonal div + div, #seasonal section + section {
-      margin-top: 2em; } }
+      margin-top: 2em; }
+    #seasonal .tagslist, #seasonal .chapterarch {
+      list-style-type: none;
+      padding-left: 0em;
+      line-height: 2em; } }
   @media screen and (min-width: 1024px) {
     #seasonal body {
-      font-size: 1.5em;
       margin: 0;
       padding-bottom: 0; }
-    #seasonal main div, #seasonal main section, #seasonal figure, #seasonal .archive, #seasonal h1 {
-      border: solid thick #429ad7; }
-    #seasonal figure {
+    #seasonal main > div, #seasonal main > section, #seasonal figure#comic, #seasonal h1, #seasonal main > .tagslist {
+      border: solid thick #4866c5; }
+    #seasonal figure#comic {
       padding: 1em;
       margin: 0em 1em;
       background-color: #fafafa; }
-      #seasonal figure + .cominavbox {
+      #seasonal figure#comic + .cominavbox {
         margin-top: 1.5em;
         margin-bottom: 0em; }
     #seasonal main {
-      width: 80%;
-      margin-left: 2em;
-      margin-bottom: 2em; }
-    #seasonal main div, #seasonal main section {
-      margin-left: 1em;
-      padding: 0em;
-      padding: 0.1rem 1rem 0.2rem 1rem;
-      width: 80%; }
+      margin: 0em; }
+    #seasonal main > div, #seasonal main > section, #seasonal main > .tagslist {
+      margin: 1em auto;
+      padding: 1em;
+      max-width: 70%; }
     #seasonal .cominavbox, #seasonal .cominavbox li {
       margin: 1em; }
     #seasonal h1 {
@@ -208,38 +204,31 @@
         text-align: left;
         margin-left: 0.5em;
         border: solid medium #73cfd9; }
-    #seasonal .archive {
-      margin: 1em;
-      padding-left: 1em;
-      padding-right: 1em;
-      width: 90%; }
     #seasonal .main {
-      padding: 0.5em;
-      margin: auto;
-      margin-top: 2em;
-      width: 80%;
       text-align: left; }
-      #seasonal .main p {
-        margin-left: 0.5em; }
     #seasonal .intro {
       margin: 0em; }
     #seasonal .intro + .intro {
-      border-top: dashed thin #4866c5; }
+      border-top: dashed thin #429AD7; }
     #seasonal .char {
       padding: 0em; }
       #seasonal .char h2 {
         text-indent: 1em; }
       #seasonal .char img {
         margin: 0em 1em 1em 1em; }
-      #seasonal .char .chartext {
+      #seasonal .char .chartraits {
         margin: 0em;
         text-align: left;
         border: none; }
-      #seasonal .char p {
-        margin-top: 0em; }
-      #seasonal .char .chartext, #seasonal .char img {
+      #seasonal .char .chartext {
+        margin-top: 0em;
+        padding: 0em 1em; }
+      #seasonal .char .chartraits, #seasonal .char img {
         display: inline-block;
         vertical-align: top;
-        max-width: 50%; } }
+        max-width: 50%; }
+    #seasonal main > section .tagslist li {
+      display: inline-block;
+      vertical-align: top; } }
 
-/*# sourceMappingURL=summer.css.map */
+/*# sourceMappingURL=style.css.map */

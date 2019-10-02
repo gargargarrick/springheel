@@ -16,3 +16,4 @@ include springheel/socialbuttons/*
 include springheel/templates/*
 recursive-include springheel/themes *
 prune springheel/themes/.sass-cache/
+recursive-exclude springheel/themes *.css.map

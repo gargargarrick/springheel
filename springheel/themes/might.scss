@@ -34,7 +34,9 @@
         header {
             margin: 0em;
             grid-area: head;
-            background-color: $bglight
+            background-color: $bglight;
+            color: black;
+            padding-bottom: 1em
         }
         
         footer {
@@ -53,13 +55,13 @@
             padding-left: 0em;
         }
         
-        main div, main section, figcaption, nav li, .cominavbox {
+        main > div, main > section, figcaption, nav li, .cominavbox, main > .tagslist {
             background-color: $box;
             color: $t;
             border: solid thick $borders;
         }
         
-        main div, main section {
+        main > div, main > section, main > .tagslist {
           padding: 0em 1em;
         }
 
@@ -72,11 +74,13 @@
             border: none;
             background: none;
             text-align: center;
+            img {
+                vertical-align: middle
+            }
         }
         
         figcaption {
             padding: 1em;
-            border: none;
         }
         
         .cominavbox, .cominavbox li {
@@ -134,8 +138,9 @@
             }
         }
 
-        main div, main section {
+        main > div, main > section, main > .tagslist {
             text-align: left;
+            padding: 1em;
         }
 
         .statline {
@@ -161,11 +166,6 @@
 
         footer p {
             margin-left: 0em;
-            text-align: left;
-        }
-
-        .archive {
-            vertical-align: top;
             text-align: left;
         }
 
@@ -198,13 +198,13 @@
             };
             dt, dd {
                 display: inline;
-                white-space: pre;
+                white-space: pre-wrap;
             };
             dt {
                 font-weight: bold;
             };
             dl {
-                font-size: 0.9em;
+                overflow-wrap: break-word
             };
             img {
                 margin: 1em;
@@ -222,6 +222,15 @@
           margin: 0em;
           line-height: 2em;
         }
+        
+        main > .tagslist {
+            margin-top: 0em;
+            padding: 1em 1em 1em 2em
+        }
+        
+        .tagslist, .chapterarch {
+            list-style-type: none
+        }
 
     /*Medium screens*/
 
@@ -232,12 +241,16 @@
                 margin-top: 0em;
                 margin-bottom: 0em;
                 padding: 1em;
+                img {
+                    border: solid thick $altborders;
+                    margin-bottom: 1em
+                }
             }
             
             header {
+                padding-bottom: 0em;
                 background-color: $bglight;
-                background: radial-gradient(circle at bottom center, $bglight 85%, $sky 86%);
-                // background: $bglight url("moon.png") no-repeat 95% 95%;
+                background: radial-gradient(circle at bottom center, $bglight 50vw, $sky 51vw);
                 h1 {
                     margin-bottom: 1em;
                     color: black;
@@ -295,12 +308,6 @@
                 text-indent: 1em;
                 font-weight: bold;
             }
-
-            .archive {
-                margin: 1em;
-                padding-left: 1em;
-                padding-right: 1em;
-            }
             
             .main {
                 padding: 0.5em;
@@ -333,6 +340,7 @@
                 img, .chartraits {
                     display: inline-block;
                     vertical-align: top;
+                    max-width: 50%;
                 }
                 .chartext {
                     width: auto;
@@ -343,6 +351,9 @@
             }
             .chartraits * {
                 line-height: 1.5em
+            }
+            main > .tagslist {
+                display: inline-block;
             }
         }
     }

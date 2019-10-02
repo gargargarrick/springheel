@@ -22,13 +22,16 @@
         }
 
         main, figure {
-            margin-left: 0em;
-            padding-left: 0em;
+            margin: 0em;
+            padding: 0em;
         }
         figure#comic {
-            padding: 0em;
+            margin-right: 0em;
             text-align: center;
             border: none;
+            figcaption {
+                padding: 0em 1em;
+            }
         }
 
         /*TODO: Fix the skip link hiding method*/
@@ -98,8 +101,7 @@
             text-align: left;
         }
 
-        .archive {
-            vertical-align: top;
+        main > section {
             text-align: left;
         }
         
@@ -117,14 +119,16 @@
             font-weight: bold;
         }
         
-        p + p, li + li, div + div {
+        p + p, li + li, div + div, section + section {
             margin-top: 0.5em;
         }
             
-        main div, .archive {
+        main > div, main > section, main > .tagslist {
             border: double medium $accent;
             border-left: none;
             border-right: none;
+            text-align: left;
+            padding: 0em 1em
         }
         
         h1 {
@@ -145,21 +149,26 @@
             };
             dt, dd {
                 display: inline;
-                white-space: pre;
+                white-space: pre-wrap;
             };
             dt {
                 font-weight: bold;
             };
             dl {
-                font-size: 0.9em;
+                padding: 0em 1em
             };
             img {
                 margin: 1em;
                 border: double medium $accent;
             };
-            p {
+            .chartext {
                 text-indent: 1em;
+                padding: 0em 1em
             }
+        }
+        
+        .tagslist, .chapterarch {
+            list-style-type: none
         }
 
     /*Medium screens*/
@@ -172,13 +181,27 @@
                 margin: 0em;                
             }
 
-            figure {
-                margin-left: 1em;
-                margin-top: 0em;
-                margin-bottom: 0em;
+            figure#comic {
+                display: inline-block;
+                margin: 0em 1em;
+                padding: 0em;
+                width: auto;
+                text-align: center;
+                img {
+                    border: double medium $accent;
+                }
+                figcaption {
+                    border: double medium $accent;
+                    background: $bg-color;
+                    padding: 1em;
+                    margin: auto;
+                    width: 100%;
+                    max-width: 60%;
+                    text-align: center;
+                }
             }
 
-            main div, main section {
+            main > div, main > section, main > .tagslist {
                 padding-left: 1em;
                 padding-right: 1em;
                 width: 80%;
@@ -196,10 +219,6 @@
 
             figure + .cominavbox {
                 margin-top: 0em;
-            }
-
-            figure#comic {
-                margin-left: 1em;
             }
 
             h1 {
@@ -223,14 +242,14 @@
                 font-size: 0.7em;
             }
 
-            .archive {
+            main > section {
                 margin-left: 1em;
                 margin-right: 1em;
                 padding-left: 1em;
                 padding-right: 1em;
             }
             
-            figure#comic, main div, .archive, nav li {
+            main > div, main > section, nav li, main > .tagslist {
                 border: double medium $accent;
                 background: $bg-color;
             }
@@ -288,14 +307,21 @@
                 img {
                     margin: 0em 1em 1em 0em
                 }
-                .chartext {
+                .chartraits {
                     margin: 0em
                 }
-                .chartext, img {
+                .chartraits, img {
                     display: inline-block;
                     vertical-align: top;
                     max-width: 50%;
+                    overflow-wrap: break-word;
                 }
+            }
+            main > .tagslist {
+                padding: 1em;
+            }
+            main > section .tagslist {
+                width: 100%;
             }
 
         }

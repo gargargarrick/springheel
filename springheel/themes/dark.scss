@@ -93,12 +93,10 @@
         }
 
         .archive {
-            display: inline-block;
-            vertical-align: top;
             text-align: left;
         }
 
-        nav li, main div, .archive {
+        nav li, main > div, main > section, main > .tagslist {
             background: #17181f;
             border: thin #4C565E solid;
             padding: 0.5em;
@@ -132,7 +130,7 @@
             };
             dt, dd {
                 display: inline;
-                white-space: pre;
+                white-space: pre-wrap;
             };
             dl {
                 font-size: 0.9em;
@@ -240,12 +238,14 @@
                   margin: 1em;
                 }
             }
-            .char img, .chartext {
+            .char img, .chartraits {
                 display: inline-block;
                 vertical-align: top;
                 max-width: 50%;
-            };
-
+            }
+            .chartraits {
+                overflow-wrap: break-word;
+            }
         }
     }
 }

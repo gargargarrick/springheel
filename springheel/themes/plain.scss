@@ -91,9 +91,7 @@
             text-align: left;
         }
 
-        .archive {
-            display: inline-block;
-            vertical-align: top;
+        main > section {
             text-align: left;
         }
 
@@ -121,8 +119,13 @@
             }
             dt, dd {
                 display: inline;
-                white-space: pre;
+                white-space: pre-wrap;
             }
+        }
+        
+        .tagslist, .chapterarch {
+            list-style-type: none;
+            padding-left: 0em
         }
 
     /*Medium screens*/
@@ -139,7 +142,7 @@
                 margin-bottom: 0em;
             }
 
-            main div, main section {
+            main > div, main > section {
                 padding-left: 1em;
                 padding-right: 1em;
                 width: 80%;
@@ -195,7 +198,7 @@
                 font-size: 0.7em;
             }
 
-            .archive {
+            main > section {
                 margin-left: 1em;
                 margin-right: 1em;
                 padding-left: 1em;
@@ -216,6 +219,9 @@
                 img {
                     margin: 1em;
                     border: solid thin #222
+                }
+                .chartraits {
+                    overflow-wrap: break-word;
                 }
             }
         }

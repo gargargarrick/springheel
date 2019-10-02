@@ -70,10 +70,8 @@
       margin-left: 0em;
       text-align: left; }
     #rock .archive {
-      display: inline-block;
-      vertical-align: top;
       text-align: left; }
-    #rock nav li, #rock main div, #rock .archive {
+    #rock nav li, #rock main > div, #rock main > section, #rock main > .tagslist {
       background: #000;
       border: solid #3413ff thick;
       padding: 0.5em; }
@@ -95,6 +93,8 @@
       margin-top: 1em; }
     #rock .char {
       text-align: left; }
+      #rock .char .chartraits {
+        overflow-wrap: break-word; }
       #rock .char dt:after {
         content: ":"; }
       #rock .char dd:after {
@@ -104,7 +104,7 @@
         margin-left: 0em; }
       #rock .char dt, #rock .char dd {
         display: inline;
-        white-space: pre; }
+        white-space: pre-wrap; }
       #rock .char dl {
         font-size: 0.9em; }
       #rock .char img {
@@ -119,14 +119,24 @@
     #rock .intro {
       border: none;
       margin: 0em;
-      padding: 0em; } }
+      padding: 0em; }
+    #rock .tagslist, #rock .chapterarch {
+      list-style-type: none;
+      padding-left: 0em; } }
   @media screen and (min-width: 1024px) {
     #rock body {
       margin-left: 1em; }
-    #rock main div, #rock main section, #rock nav li {
+    #rock main {
+      margin: 0em;
+      margin-top: 1em; }
+    #rock main > div, #rock main > section, #rock nav li, #rock main > .tagslist {
       -webkit-box-shadow: 0em 0em 0.5em 0.5em #fff;
       -moz-box-shadow: 0em 0em 0.5em 0.5em #fff;
       box-shadow: 0em 0em 0.5em 0.5em #fff; }
+    #rock main > div, #rock main > section, #rock main > .tagslist, #rock #extras {
+      margin: 2em;
+      padding: .5em 1.4em .5em 1.2em;
+      max-width: 80%; }
     #rock figure {
       padding: 1em;
       margin: 0em 0em 0em 1em; }
@@ -148,7 +158,8 @@
       margin-top: 0em;
       margin-bottom: 0em; }
     #rock h1 {
-      font-size: 1.4em; }
+      font-size: 1.4em;
+      margin-top: 2em; }
     #rock h2 {
       font-size: 1.2em;
       background: url("starw.png") no-repeat top left, #000;
@@ -162,21 +173,6 @@
       font-size: 0.8em; }
     #rock footer p {
       font-size: 0.7em; }
-    #rock .archive {
-      margin: 1em;
-      padding: 1em; }
-      #rock .archive h2 {
-        margin: 0em 0em 1em 0em; }
-    #rock main div, #rock main section {
-      margin: 2em;
-      padding: .5em 1.4em .5em 1.2em;
-      width: 80%; }
-    #rock .main {
-      padding: 0.5em;
-      margin: 1em auto 1em auto;
-      width: 50%; }
-      #rock .main p {
-        margin-left: 0em; }
     #rock .intro {
       text-align: left;
       background: none;
@@ -202,11 +198,11 @@
     #rock .char .chartext {
       margin: 0em;
       text-align: left; }
-    #rock .char .chartext, #rock .char img {
+    #rock .char .chartraits, #rock .char img {
       display: inline-block;
       vertical-align: top;
       max-width: 50%; }
-    #rock .chartext {
+    #rock .chartraits {
       border: none;
       -webkit-box-shadow: none;
       -moz-box-shadow: none;

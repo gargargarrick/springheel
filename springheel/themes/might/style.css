@@ -19,7 +19,9 @@
     #might header {
       margin: 0em;
       grid-area: head;
-      background-color: #ffed00; }
+      background-color: #ffed00;
+      color: black;
+      padding-bottom: 1em; }
     #might footer {
       grid-area: footer;
       padding: 0.5em;
@@ -30,11 +32,11 @@
     #might main, #might figure {
       margin-left: 0em;
       padding-left: 0em; }
-    #might main div, #might main section, #might figcaption, #might nav li, #might .cominavbox {
+    #might main > div, #might main > section, #might figcaption, #might nav li, #might .cominavbox, #might main > .tagslist {
       background-color: #000022;
       color: #fff;
       border: solid thick #ff0042; }
-    #might main div, #might main section {
+    #might main > div, #might main > section, #might main > .tagslist {
       padding: 0em 1em; }
     #might h1 {
       margin: 0em; }
@@ -44,9 +46,10 @@
       border: none;
       background: none;
       text-align: center; }
+      #might figure img {
+        vertical-align: middle; }
     #might figcaption {
-      padding: 1em;
-      border: none; }
+      padding: 1em; }
     #might .cominavbox, #might .cominavbox li {
       display: inline-block;
       text-align: center;
@@ -84,8 +87,9 @@
       #might nav ul li {
         display: inline-block;
         padding: 0.5em; }
-    #might main div, #might main section {
-      text-align: left; }
+    #might main > div, #might main > section, #might main > .tagslist {
+      text-align: left;
+      padding: 1em; }
     #might .statline {
       font-weight: bold; }
     #might a:link {
@@ -99,9 +103,6 @@
       color: #FF7A7A; }
     #might footer p {
       margin-left: 0em;
-      text-align: left; }
-    #might .archive {
-      vertical-align: top;
       text-align: left; }
     #might img, #might embed, #might object, #might video {
       max-width: 100%; }
@@ -122,11 +123,11 @@
         margin-left: 0em; }
       #might .char dt, #might .char dd {
         display: inline;
-        white-space: pre; }
+        white-space: pre-wrap; }
       #might .char dt {
         font-weight: bold; }
       #might .char dl {
-        font-size: 0.9em; }
+        overflow-wrap: break-word; }
       #might .char img {
         margin: 1em; }
     #might .char img, #might .chartraits {
@@ -136,16 +137,25 @@
       border: none;
       padding: 0em;
       margin: 0em;
-      line-height: 2em; } }
+      line-height: 2em; }
+    #might main > .tagslist {
+      margin-top: 0em;
+      padding: 1em 1em 1em 2em; }
+    #might .tagslist, #might .chapterarch {
+      list-style-type: none; } }
   @media screen and (min-width: 1024px) {
     #might figure#comic {
       margin-left: 1em;
       margin-top: 0em;
       margin-bottom: 0em;
       padding: 1em; }
+      #might figure#comic img {
+        border: solid thick #375490;
+        margin-bottom: 1em; }
     #might header {
+      padding-bottom: 0em;
       background-color: #ffed00;
-      background: radial-gradient(circle at bottom center, #ffed00 85%, #A5032C 86%); }
+      background: radial-gradient(circle at bottom center, #ffed00 50vw, #A5032C 51vw); }
       #might header h1 {
         margin-bottom: 1em;
         color: black; }
@@ -182,10 +192,6 @@
     #might .action {
       text-indent: 1em;
       font-weight: bold; }
-    #might .archive {
-      margin: 1em;
-      padding-left: 1em;
-      padding-right: 1em; }
     #might .main {
       padding: 0.5em;
       margin: auto;
@@ -209,12 +215,15 @@
         border: solid medium #375490; }
       #might .char img, #might .char .chartraits {
         display: inline-block;
-        vertical-align: top; }
+        vertical-align: top;
+        max-width: 50%; }
       #might .char .chartext {
         width: auto; }
     #might .chartraits {
       margin-left: 1em; }
     #might .chartraits * {
-      line-height: 1.5em; } }
+      line-height: 1.5em; }
+    #might main > .tagslist {
+      display: inline-block; } }
 
 /*# sourceMappingURL=style.css.map */

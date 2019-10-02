@@ -2,32 +2,32 @@
 /*seasonal*/
     #seasonal {
     /*Spring*/
-    // $bottom: #315040;
-    // $bbg: #4866c5;
-    // $mbg: #fafafa;
-    // $la: #73cfd9;
-    // $ma: #429ad7;
-    // $dt: #eee;
-    // $lt: #111;
-    // $bgi: url("spring.png");
-    // $aa: #315040;
-    // $av: #324b9e;
-    // $ahaf: #3c7949;
-    // $anh: #46a946;
+    $bottom: #315040;
+    $bbg: #4866c5;
+    $mbg: #fafafa;
+    $la: #73cfd9;
+    $ma: #429ad7;
+    $dt: #eee;
+    $lt: #111;
+    $bgi: url("spring.png");
+    $aa: #315040;
+    $av: #324b9e;
+    $ahaf: #3c7949;
+    $anh: #46a946;
 
     /*Summer*/
     // $bottom: #429ad7;
-    // $bbg: #4866c5;
+    // $bbg: #429AD7;
     // $mbg: #fafafa;
     // $la: #73cfd9;
-    // $ma: #429ad7;
+    // $ma: #4866c5;
     // $dt: #eee;
     // $lt: #111;
     // $bgi: url("summer.png");
-    // $aa: #315040;
-    // $av: #324b9e;
-    // $ahaf: #3c7949;
-    // $anh: #46a946;
+    // $aa: #354fa7;
+    // $av: #233570;
+    // $ahaf: #3651ab;
+    // $anh: #429ad7;
 
     /*Fall*/
     // $bottom: #914533;
@@ -44,18 +44,18 @@
     // $anh: #f88f32;
 
     /*Winter*/
-    $bottom: #b88fb4;
-    $bbg: #504170;
-    $mbg: #fafafa;
-    $la: #facb1e;
-    $ma: #b88fb4;
-    $dt: #180e0e;
-    $lt: #111;
-    $bgi: url("winter.png");
-    $aa: #6d428f;
-    $av: #504170;
-    $ahaf: #8a325e;
-    $anh: #b88fb4;
+    // $bottom: #b88fb4;
+    // $bbg: #504170;
+    // $mbg: #fafafa;
+    // $la: #facb1e;
+    // $ma: #b88fb4;
+    // $dt: #180e0e;
+    // $lt: #111;
+    // $bgi: url("winter.png");
+    // $aa: #6d428f;
+    // $av: #504170;
+    // $ahaf: #8a325e;
+    // $anh: #b88fb4;
 
     /* Default (small) screens */
         * {
@@ -63,13 +63,11 @@
         }
         body {
             background-color: $bottom;
-            background-image: $bgi;
-            background-position: 0 100%;
-            background-repeat: repeat-x;
+            background: $bgi bottom 1em left 0em repeat-x, linear-gradient(to top, $bottom 144px, $bbg 145px, $bbg);
             background-attachment: fixed;
             color: $lt;
             text-align: center;
-            font-size: 1.2em;
+            font-size: 1.5em;
             font-family: sans-serif;
             margin: 0em;
         }
@@ -79,13 +77,13 @@
             padding-left: 0em;
         }
 
-        main div, figure, .archive {
+        main > div, figure#comic, main > section, main > .tagslist {
             background-color: $mbg;
             padding-left: 0.5em;
             padding-right: 0.5em;
         }
 
-        main div, main section, figure, .archive, h1 {
+        main > div, main > section, figure#comic, h1, main > .tagslist {
             border: solid thick $ma;
             border-left: none;
             border-right: none;
@@ -101,7 +99,7 @@
             background-color: $mbg;
             padding: 1em;
         }
-        figure {
+        figure#comic {
             padding: 1em 0em;
             margin: 1em 0em;
             text-align: center;
@@ -198,8 +196,6 @@
         }
 
         .archive {
-            display: inline-block;
-            vertical-align: top;
             text-align: left;
         }
 
@@ -222,15 +218,19 @@
         }
 
         .cominavbox li {
-            a:active, a:focus {
-                outline: dashed medium $anh;
-                img {
-                    background-color: $anh;
+            &:active, &:focus {
+                a {
+                    outline: dashed medium $anh;
+                    img {
+                        background-color: $anh;
+                    }
                 }
-            };
+            }
             img {
                 background-color: $ahaf;
-                &:active, &:focus, &:hover {
+            }
+            &:active, &:focus, &:hover {
+                img {
                     background-color: $anh;
                 }
             }
@@ -238,6 +238,9 @@
 
         .char {
             text-align: left;
+            .chartraits {
+                overflow-wrap: break-word
+            };
             dt:after {
                 content: ":"
             };
@@ -249,24 +252,24 @@
             };
             dt, dd {
                 display: inline;
-                white-space: pre;
+                white-space: pre-wrap;
             };
         }
 
-        * + * {
-            margin-top: 1em
-        }
+        // * + * {
+        //     margin-top: 1em
+        // }
         
         header {
             margin-top: 0em;
         }
 
         main {
-            div, section {
+            & > div, & > section, & > .tagslist {
                 padding: 1em 0.5em;
             }
             .main, .allchars, .char {
-                margin-top: 2em;
+                margin-top: 1em;
             }
         }
 
@@ -286,21 +289,26 @@
         div + div, section + section {
             margin-top: 2em;
         }
+        
+        .tagslist, .chapterarch {
+            list-style-type: none;
+            padding-left: 0em;
+            line-height: 2em
+        }
 
     /*Medium screens*/
 
         @media screen and (min-width: 1024px) {
             body {
-                font-size: 1.5em;
                 margin: 0;
                 padding-bottom: 0;
             }
 
-            main div, main section, figure, .archive, h1 {
+            main > div, main > section, figure#comic, h1, main > .tagslist {
                 border: solid thick $ma;
             }
 
-            figure {
+            figure#comic {
                 padding: 1em;
                 margin: 0em 1em;
                 background-color: $mbg;
@@ -309,18 +317,14 @@
                     margin-bottom: 0em;
                 }
             }
-
             main {
-                width: 80%;
-                margin-left: 2em;
-                margin-bottom: 2em;
+                margin: 0em;
             }
 
-            main div, main section {
-                margin-left: 1em;
-                padding: 0em;
-                padding: 0.1rem 1rem 0.2rem 1rem;
-                width: 80%;
+            main > div, main > section, main > .tagslist {
+                margin: 1em auto;
+                padding: 1em;
+                max-width: 70%;
             }
 
             .cominavbox, .cominavbox li {
@@ -367,22 +371,15 @@
                 }
             }
 
-            .archive {
-                margin: 1em;
-                padding-left: 1em;
-                padding-right: 1em;
-                width: 90%;
-            }
+            // .archive {
+            //     margin: 1em;
+            //     padding-left: 1em;
+            //     padding-right: 1em;
+            //     width: 90%;
+            // }
 
             .main {
-                padding: 0.5em;
-                margin: auto;
-                margin-top: 2em;
-                width: 80%;
                 text-align: left;
-                & p {
-                    margin-left: 0.5em;
-                }
             }
 
             .intro {
@@ -401,21 +398,25 @@
                 img {
                     margin: 0em 1em 1em 1em
                 }
-                .chartext {
+                .chartraits {
                     margin: 0em;
                     text-align: left;
                     border: none;
                 }
-                p {
+                .chartext {
                     margin-top: 0em;
+                    padding: 0em 1em;
                 }
-                .chartext, img {
+                .chartraits, img {
                     display: inline-block;
                     vertical-align: top;
                     max-width: 50%;
                 }
             }
-
+            main > section .tagslist li {
+                display: inline-block;
+                vertical-align: top;
+            }
         }
     }
 }

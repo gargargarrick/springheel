@@ -12,17 +12,17 @@
       color: #111;
       text-align: center;
       font-size: 1.5em;
-      font-family: serif;
+      font-family: sans-serif;
       margin: 0em; }
     #beach main, #beach figure {
       margin-left: 0em;
       padding-left: 0em; }
-    #beach main div, #beach figure, #beach .archive, #beach footer, #beach .cominavbox {
+    #beach main > div, #beach main > section, #beach figure, #beach footer, #beach .cominavbox, #beach main > .tagslist {
       background-color: #faefd9;
       background-image: url("beach_sand.png");
       padding-left: 0.5em;
       padding-right: 0.5em; }
-    #beach main div, #beach main section, #beach figure#comic, #beach .archive, #beach h1, #beach .cominavbox {
+    #beach main > div, #beach main > section, #beach figure#comic, #beach h1, #beach .cominavbox, #beach main > .tagslist {
       -webkit-box-shadow: 0em 0em 0.5em 0.5em #94e8e8;
       -moz-box-shadow: 0em 0em 0.5em 0.5em #94e8e8;
       box-shadow: 0em 0em 0.5em 0.5em #94e8e8; }
@@ -70,7 +70,7 @@
       padding: 0.5em; }
       #beach nav li + li {
         margin-left: 0.5em; }
-    #beach #commentary, #beach #transcript {
+    #beach main > div, #beach main > section {
       text-align: left; }
     #beach .statline {
       font-weight: bold; }
@@ -92,10 +92,9 @@
         text-align: left; }
         #beach footer p:last-of-type {
           margin-bottom: 0em; }
-    #beach .archive {
-      display: inline-block;
-      vertical-align: top;
-      text-align: left; }
+    #beach main > section {
+      width: 90%;
+      margin-top: 2em; }
     #beach img, #beach embed, #beach object, #beach video {
       max-width: 100%; }
     #beach .action {
@@ -122,9 +121,11 @@
         white-space: pre; }
       #beach .char dd {
         margin-left: 0em; }
+      #beach .char dt {
+        font-weight: bold; }
       #beach .char dt, #beach .char dd {
         display: inline;
-        white-space: pre; }
+        white-space: pre-wrap; }
       #beach .char .chartext {
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
@@ -133,12 +134,16 @@
       margin-top: 1em; }
     #beach main {
       /*margin-top: 0em;*/ }
-      #beach main div, #beach main section {
+      #beach main > div, #beach main > section, #beach main > .tagslist {
         padding: 1em 0.5em; }
-      #beach main .main, #beach main .allchars, #beach main .char {
+      #beach main .main, #beach main .allchars, #beach main .char, #beach main .tagslist {
         margin-top: 2em; }
     #beach div + div, #beach section + section {
-      margin-top: 2em; } }
+      margin-top: 2em; }
+    #beach h2, #beach h3, #beach .status {
+      margin-top: 0em; }
+    #beach .tagslist, #beach .chapterarch {
+      list-style-type: none; } }
   @media screen and (min-width: 1024px) {
     #beach body {
       margin: 0;
@@ -155,11 +160,16 @@
       width: 80%;
       margin-left: 2em;
       margin-bottom: 2em; }
-    #beach main div, #beach main section {
+    #beach main > div, #beach main > section {
       margin-left: 1em;
-      padding: 0em;
-      padding: 0.1rem 1rem 0.2rem 1rem;
+      padding: 1em;
       width: 80%; }
+    #beach main > .tagslist {
+      text-align: left;
+      width: 80%;
+      padding: 1em; }
+      #beach main > .tagslist li {
+        margin-left: 1em; }
     #beach .cominavbox, #beach .cominavbox li {
       margin: 1em; }
     #beach h1 {
@@ -187,7 +197,7 @@
         font-size: 0.7em;
         text-align: left;
         margin-left: 0.5em; }
-    #beach .archive {
+    #beach main > section {
       margin: 1em;
       padding-left: 1em;
       padding-right: 1em;
@@ -205,6 +215,8 @@
     #beach .intro + .intro {
       border-top: dashed thin #03475f; }
     #beach .char img {
-      margin: 0em 1em; } }
+      margin: 0em 1em; }
+    #beach .char .chartraits {
+      overflow-wrap: break-word; } }
 
 /*# sourceMappingURL=style.css.map */

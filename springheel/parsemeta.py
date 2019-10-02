@@ -64,7 +64,7 @@ def splitMC(file_name,translated_strings):
 def dictizeMeta(m):
     meta = []
     for i in m:
-        s = i.split(": ")
+        s = i.split(": ", 1)
         d = {s[0]:s[1]}
         meta.append(d)
     result = {}

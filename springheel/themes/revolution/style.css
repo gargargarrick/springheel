@@ -45,7 +45,8 @@
       margin-top: 0em;
       color: #0000ff; }
     #revolution nav li {
-      display: inline-block; }
+      display: inline-block;
+      margin: 0em 0.5em; }
     #revolution #commentary, #revolution #transcript {
       text-align: left; }
     #revolution .statline {
@@ -62,16 +63,14 @@
     #revolution footer p {
       margin-left: 0em;
       text-align: left; }
-    #revolution .archive {
-      display: inline-block;
-      vertical-align: top;
-      text-align: left; }
     #revolution img, #revolution embed, #revolution object, #revolution video {
       max-width: 100%; }
     #revolution .action {
       font-weight: bold; }
     #revolution .char {
       text-align: left; }
+      #revolution .char .chartraits {
+        overflow-wrap: break-word; }
       #revolution .char dt:after {
         content: ":"; }
       #revolution .char dd:after {
@@ -81,7 +80,7 @@
         margin-left: 0em; }
       #revolution .char dt, #revolution .char dd {
         display: inline;
-        white-space: pre; }
+        white-space: pre-wrap; }
     #revolution .charname {
       font-weight: bold; }
     #revolution .char img {
@@ -94,7 +93,9 @@
       border: none;
       padding: 0em;
       margin: 0em;
-      line-height: 2em; } }
+      line-height: 2em; }
+    #revolution .tagslist, #revolution .chapterarch {
+      list-style-type: none; } }
   @media screen and (min-width: 1024px) {
     #revolution body {
       background-color: #060606;
@@ -103,7 +104,7 @@
       margin-left: 1em;
       margin-top: 0em;
       margin-bottom: 0em; }
-    #revolution main div, #revolution main section {
+    #revolution main > div, #revolution main > section, #revolution main > .tagslist {
       padding: 2em 3em;
       width: 80%; }
     #revolution div + div {
@@ -116,7 +117,7 @@
       margin-bottom: 0em; }
     #revolution figure + .cominavbox {
       margin-bottom: 1em; }
-    #revolution figure#comic, #revolution main div, #revolution main section {
+    #revolution figure#comic, #revolution main > div, #revolution main > section, #revolution main > .tagslist {
       background: #060606;
       border: solid thick #e7568d;
       border-image-slice: 68 66 70 64;
@@ -158,7 +159,7 @@
       text-align: right; }
     #revolution footer p {
       font-size: 0.7em; }
-    #revolution .archive {
+    #revolution main > section {
       padding: 1em 2em;
       margin: 1em; }
     #revolution .main {
@@ -171,7 +172,8 @@
       text-align: left; }
       #revolution .char img, #revolution .char .chartraits {
         display: inline-block;
-        vertical-align: top; }
+        vertical-align: top;
+        max-width: 50%; }
     #revolution .chartraits {
       margin-left: 1em; }
     #revolution .chartraits * {

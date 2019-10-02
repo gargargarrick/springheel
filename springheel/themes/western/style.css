@@ -5,7 +5,7 @@
     /*TODO: Fix the skip link hiding method*/
     /*Medium screens*/ }
     #western * {
-      box-sizing: content-box; }
+      box-sizing: border-box; }
     #western body {
       background-color: saddlebrown;
       color: #ffd;
@@ -13,22 +13,26 @@
       font-size: 1.5em;
       font-family: sans-serif;
       margin: 0; }
-    #western figure#comic, #western .archive, #western main div {
+    #western figure#comic, #western .archive, #western main > div, #western main > section, #western main > .tagslist {
       border: double thick saddlebrown; }
     #western .intro {
       border: none; }
     #western main, #western figure {
       margin-left: 0em;
       padding-left: 0em; }
+    #western figure, #western figure img {
+      vertical-align: middle;
+      margin: 0em;
+      padding: 0em; }
     #western figure#comic, #western .archive {
       background-color: wheat;
       background-image: url("horseshoe.png");
       background-repeat: no-repeat;
-      background-position: bottom right;
+      background-position: top 0.5em right 0.5em;
       color: #111; }
     #western .archive, #western .main {
       margin-top: 1em; }
-    #western main div {
+    #western main > div, #western main > section, #western main > .tagslist {
       background: wheat;
       color: #111; }
     #western h1 {
@@ -36,10 +40,13 @@
     #western h1, #western h2, #western h3, #western h4, #western h5, #western p.status {
       font-variant: small-caps;
       text-align: center; }
+    #western h2, #western h3 {
+      margin-top: 0em; }
+    #western figure {
+      text-align: center; }
     #western figure#comic {
       padding: 1em 0em 0em 0em;
-      margin: 0em;
-      text-align: center; }
+      margin: 0em; }
       #western figure#comic img {
         margin: 0em; }
     #western figcaption {
@@ -69,7 +76,7 @@
     #western .cominavbox p {
       margin-left: 0em;
       text-align: left; }
-    #western p + p, #western li + li {
+    #western p + p, #western li + li, #western div + div, #western section + section {
       margin-top: 0.5em; }
     #western #skippy {
       text-align: left;
@@ -117,9 +124,10 @@
         margin-top: 0em;
         padding-top: 0em;
         display: inline; }
-    #western main div {
+    #western main > div, #western main > .tagslist {
+      padding: 1em 0.5em;
       text-align: left;
-      padding: 1em 0.5em 0.5em 0.2em; }
+      padding: 0.5em; }
     #western .statline {
       font-weight: bold; }
     #western a:link {
@@ -152,8 +160,9 @@
     #western .action {
       font-weight: bold; }
     #western .char {
-      text-align: left;
-      border-bottom: double medium saddlebrown; }
+      text-align: left; }
+      #western .char .chartraits {
+        overflow-wrap: break-word; }
       #western .char dt:after {
         content: ":"; }
       #western .char dd:after {
@@ -163,25 +172,31 @@
         margin-left: 0em; }
       #western .char dt, #western .char dd {
         display: inline;
-        white-space: pre; }
+        white-space: pre-wrap; }
     #western .chartext {
       border: none; }
     #western .status {
       text-indent: 0.5em;
-      font-weight: bold; } }
+      font-weight: bold; }
+    #western .tagslist, #western .chapterarch {
+      list-style-type: none;
+      padding-left: 0.5em; } }
   @media screen and (min-width: 1024px) {
     #western figure#comic {
       padding: 1em 1em 0em 1em;
-      margin-left: 1em;
+      margin-left: 0em;
       margin-top: 0em;
       margin-bottom: 0em; }
       #western figure#comic + .cominavbox {
         margin-top: 0em; }
-    #western main div {
-      padding: 1em 0.5em;
+    #western main > div, #western main > section, #western main > .tagslist {
+      padding: 0.5em;
       margin: 1em 0em; }
-      #western main div p {
+      #western main > div p, #western main > section p, #western main > .tagslist p {
         margin-left: 1em; }
+    #western main h1, #western main > div, #western main > section, #western main > .tagslist {
+      width: 70%;
+      margin-left: 10%; }
     #western .transcript {
       margin-bottom: 0em;
       margin-top: 0em; }
@@ -223,25 +238,8 @@
     #western footer p {
       font-size: 0.7em;
       margin-left: 1em; }
-    #western h1, #western main {
-      width: 70%;
-      margin-left: 10%; }
     #western .action {
       text-indent: 1em; }
-    #western .archive {
-      padding: 0.5em 1em;
-      margin: 1em;
-      width: 70%; }
-      #western .archive ol {
-        margin-top: 1em;
-        margin-left: 1em; }
-    #western .main {
-      padding: 0em;
-      margin: 1em auto;
-      width: 70%;
-      text-align: center; }
-      #western .main p {
-        margin-left: 0em; }
     #western .intro {
       padding: 0em;
       margin: 0em;
@@ -254,26 +252,19 @@
         font-weight: bold; }
       #western .intro .desc {
         font-weight: bold; }
-    #western .char dl {
-      font-size: 0.9em;
-      padding-bottom: 0.5em; }
-    #western .char img {
-      margin: 0em 1em;
-      border: double medium saddlebrown; }
-    #western .char .chartext {
-      padding: 0em;
-      margin: 0em; }
-      #western .char .chartext dl {
+    #western .char {
+      padding: 0em; }
+      #western .char img {
+        margin: 0.5em 1em;
+        border: double medium saddlebrown; }
+      #western .char .chartraits {
         padding: 1em;
         margin: 0em; }
-      #western .char .chartext p {
-        margin: 0em;
-        padding: 1em; }
-      #western .char .chartext dl + p {
+      #western .char .chartext {
         border-top: double medium saddlebrown; }
-    #western .char img, #western .char .chartext {
-      max-width: 50%;
-      display: inline-block;
-      vertical-align: top; } }
+      #western .char img, #western .char .chartraits {
+        max-width: 45%;
+        display: inline-block;
+        vertical-align: top; } }
 
 /*# sourceMappingURL=style.css.map */

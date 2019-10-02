@@ -8,7 +8,7 @@
     $accent: #cc006d;
     /* Default (small) screens */
         * {
-            box-sizing: content-box;
+            box-sizing: border-box;
         }
         body {
             background: $bg;
@@ -25,7 +25,7 @@
             padding-left: 0em;
         }
         
-        div, section, nav li, figure#comic, .cominavbox {
+        main > div, main > section, nav li, figure#comic, .cominavbox, main > .tagslist {
             background: $box;
             border-right: solid thin $accent;
             border-bottom: solid thin $accent;
@@ -44,9 +44,14 @@
             text-align: center;
             margin-right: 0;
         }
+        .cominavbox {
+            padding: 0em;
+            & li {
+                padding: 0.5em;
+            }
+        }
         .cominavbox, .cominavbox li {
             display: inline-block;
-            padding: 0em;
         }
         
         .cominavbox li a {
@@ -59,8 +64,8 @@
             margin-top: 0.5em
         }
         
-        header {
-            margin-top: 0;
+        header, h2, h3, .status {
+            margin-top: 0em;
         }
 
         /*TODO: Fix the skip link hiding method*/
@@ -118,25 +123,26 @@
             text-align: left;
         }
 
-        .archive {
+        main > section {
             display: inline-block;
             vertical-align: top;
             text-align: left;
         }
 
-        main div, main section {
+        main > div, main > section, main > .tagslist {
             padding: .5em 1.4em 0em 1.2em;
             background-image: url("bloom.png");
             background-size: 1.5em;
             background-repeat: no-repeat;
             background-position: 1% 1%;
+            width: 100%;
         }
 
         img, embed, object, video {
             max-width: 100%;
         }
 
-        .archive li {
+        main > section li {
             margin-top: 1em;
         }
             
@@ -164,12 +170,23 @@
             };
             dt, dd {
                 display: inline;
-                white-space: pre;
+                white-space: pre-wrap;
             }
         }
         .chartext, .intro {
             border: none;
         }
+        
+        main > .tagslist {
+            padding: 1em;
+            li + li {
+                margin-top: 1.2em
+            }
+        }
+        
+        .tagslist, .chapterarch {
+            list-style-type: none
+        }        
 
     /*Medium screens*/
 
@@ -210,6 +227,7 @@
 
             h2 {
                 font-size: 1.2em;
+                line-height: 1.2em;
                 border-bottom: thin solid $petal;
                 margin-bottom: 0.5em;
                 margin-top: 0.5em;
@@ -245,14 +263,14 @@
             }
 
             footer p {
-                font-size: 0.7em;
+                font-size: 0.8em;
             }
             
             .action {
                 text-indent: 1em;
             }
 
-            .archive {
+            main > section {
                 margin: 1em;
                 padding: 1em 1em 0em 1em;
                 & h2 {
@@ -260,14 +278,14 @@
                     padding-top: 0.5em;
                     padding-bottom: 0em;
                 };
-                & + .archive {
+                & + section {
                     margin-top: 0em;
                 }
             }
 
-            main div, main section {
+            main > div, main > section, main > .tagslist {
                 margin: 1em;
-                width: 80%;
+                width: 100%;
                 text-align: left;
             }
             
@@ -313,8 +331,25 @@
                 img {
                     margin-right: 1em;
                 }
+                .chartraits, .char img {
+                    display: inline-block;
+                    vertical-align: top;
+                    max-width: 50%
+                }
+                .chartraits {
+                    margin-top: 0em;
+                    overflow-wrap: break-word;
+                }
             }
-
+            
+            main > .tagslist {
+                padding: 1em;
+            }
+            
+            main > section .tagslist li {
+                display: inline-block;
+                vertical-align: top;
+            }
         }
     }
 }

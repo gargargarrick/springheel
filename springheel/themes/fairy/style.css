@@ -5,10 +5,10 @@
     /*TODO: Fix the skip link hiding method*/
     /*Medium screens*/ }
     #fairy * {
-      box-sizing: content-box; }
+      box-sizing: border-box; }
     #fairy body {
       background: #ECAAC5 url("sparkles.png") 0% 5% repeat-x fixed;
-      color: black;
+      color: #000;
       text-align: center;
       font-size: 1.5em;
       font-family: sans-serif;
@@ -17,7 +17,7 @@
       margin: 0em;
       padding-left: 0em;
       padding-right: 0em; }
-    #fairy figure#comic, #fairy main > div, #fairy main > section {
+    #fairy figure#comic, #fairy main > div, #fairy main > section, #fairy main > .tagslist {
       background: #DFE7C0;
       border-top: solid thick #A685E7;
       border-bottom: solid thick #A685E7; }
@@ -31,13 +31,19 @@
     #fairy figure {
       text-align: center;
       border: none; }
-    #fairy .cominavbox, #fairy .cominavbox li {
-      display: inline-block;
+    #fairy .cominavbox {
       padding: 0em; }
+    #fairy .cominavbox, #fairy .cominavbox li {
+      display: inline-block; }
+    #fairy .cominavbox li {
+      padding: 1em; }
     #fairy p + p, #fairy li + li, #fairy div + div, #fairy section + section, #fairy footer {
       margin-top: 0.5em; }
-    #fairy main > div, #fairy main > section {
-      padding: 0.5em; }
+    #fairy main > div, #fairy main > section, #fairy main > .tagslist {
+      padding: 0.5em;
+      margin-left: 0em;
+      margin-right: 0em;
+      width: 100vw; }
     #fairy #skippy {
       text-align: left; }
     #fairy #skippy a, #fairy #skippy a:hover, #fairy #skippy a:visited {
@@ -57,7 +63,8 @@
     #fairy nav {
       font-size: 1.2em; }
     #fairy nav li {
-      display: inline-block; }
+      display: inline-block;
+      padding: 0.5em; }
     #fairy #commentary, #fairy #transcript {
       text-align: left; }
     #fairy .statline {
@@ -79,8 +86,6 @@
       #fairy footer p {
         margin: 0em; }
     #fairy .archive {
-      display: inline-block;
-      vertical-align: top;
       text-align: left; }
     #fairy img, #fairy embed, #fairy object, #fairy video {
       max-width: 100%; }
@@ -97,7 +102,7 @@
         margin-left: 0em; }
       #fairy .char dt, #fairy .char dd {
         display: inline;
-        white-space: pre; }
+        white-space: pre-wrap; }
     #fairy .charname {
       font-weight: bold; }
     #fairy .char img {
@@ -124,10 +129,10 @@
       margin-left: 1em;
       margin-top: 0em;
       margin-bottom: 0em; }
-    #fairy figure#comic, #fairy main > div, #fairy main > section {
+    #fairy figure#comic, #fairy main > div, #fairy main > section, #fairy main > .tagslist {
       background: #DFE7C0 url("mornglor.png") top right no-repeat;
       border: solid thick #A685E7; }
-    #fairy main > div, #fairy main > section {
+    #fairy main > div, #fairy main > section, #fairy main > .tagslist {
       padding: 1em;
       width: 80%; }
     #fairy div + div {
@@ -179,9 +184,11 @@
         border: solid medium #A685E7; }
       #fairy .char img, #fairy .char .chartraits {
         display: inline-block;
-        vertical-align: top; }
+        vertical-align: top;
+        max-width: 50%; }
     #fairy .chartraits {
-      margin-left: 1em; }
+      margin-left: 1em;
+      overflow-wrap: break-word; }
     #fairy .chartraits * {
       line-height: 1.5em; } }
 

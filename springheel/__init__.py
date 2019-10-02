@@ -19,7 +19,7 @@
 
 name = "springheel"
 author = "gargargarrick"
-__version__ = '5.0.1'
+__version__ = '5.0.2'
 
 class Site:
     def __init__(self):
@@ -357,7 +357,7 @@ def getChapters(chapter_file):
     chapters = []
     for line in chapter_raws:
         if line != "":
-            split_line = line.split(" = ")
+            split_line = line.split(" = ",1)
             d = {"num":int(split_line[0]), "title":split_line[1]}
             chapters.append(d)
     return(chapters)
@@ -766,7 +766,7 @@ def build():
             for tag in i.tags:
                 tag_match = [item for item in all_tags if item.name == tag.name][0]
                 tag_match.strips.append(i)
-                tag_match.strips.sort(key=lambda x: x.h1_title)
+                tag_match.strips.sort(key=lambda x: (x.category, x.page_int))
             tline = " &mdash; {tags_s}: {tags} &mdash; ".format(
                tags_s=translated_strings["tags_s"],
                tags=tagsline)
@@ -1602,8 +1602,7 @@ def build():
 
 ## Initialize a Springheel project.
 def init():
-    lang=springheelinit.getLang()
-    springheelinit.copyAssets(lang)
+    springheelinit.copyAssets()
 
 def version():
     print("{name} {version} copyright 2017-2019 {author}. Some rights reserved. See LICENSE.".format(name=springheel.name,author=springheel.author,version=springheel.__version__))

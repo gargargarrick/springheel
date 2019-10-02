@@ -51,7 +51,7 @@ On Windows, add Python to your path if you haven't already, run the `springheel-
 
 I know this is a bit of a mouthful compared to the GNU/Linux version, sorry.
 
-If all goes well, a prompt will appear in your terminal asking for the (ISO 639-1 two-letter code for the) language your site will use. *Wuffle* is in English, so type "en" and press enter. Some debug info will appear explaining what is going on: the script locates where Springheel was installed, grabs the templates and other base assets for the language in question, and copies them to your current directory.
+If all goes well, some debug info will appear explaining what is going on: the script locates where Springheel was installed, grabs the templates and other base assets, and copies them to your current directory.
 
 Now unzip the contents of the *Wuffle* pack, `springheel-wuffle-sample-site-pack.zip`, into the current directory. Everything in it *except* the `wuffle_conf.ini` file should go into `input`. Remove the current `conf.ini` file and rename `wuffle_conf.ini` to simply `conf.ini`.
 
@@ -108,33 +108,33 @@ Springheel comes equipped with a whopping 27 default themes, in order to match a
 
 These are the themes available by default:
 
-* plain -- an extremely simple theme. Uses no images. 7.6KiB + 3.6Kib arrows.
-* dark -- a simple dark theme. Uses no images. 8.1KiB + 3.4KiB arrows.
-* beach -- a relaxed and fun theme inspired by the blue ocean. 41KiB + 7.8KiB arrows.
-* book -- an elegant theme inspired by hardbound books. 17.2KiB + 2.8KiB arrows.
-* brandy -- a hard-boiled noir theme of stark light and darkness. 11.1KiB + 23.1KiB arrows.
-* cherry -- a girly pink theme for shoujo dreamers. 21.2KiB + 13.1KiB arrows.
-* city -- a dreamy, twinkly theme. 10.2KiB + 735B arrows.
-* cute -- a cute, candy-themed pink and brown theme. Might be good for comics about sweets or children. 10.5KiB + 4.5KiB arrows.
-* cyber -- a theme inspired by 90s cyberpunk. 10.5KiB + 7.7KiB arrows.
-* fairy -- a fluffy theme with flowers and sparkles. 12.8KiB + 14.2KiB arrows.
-* fantasy -- a lush theme with green, gems, and parchment, perfect for "high fantasy" comics. 24.2KiB + 18.2KiB arrows.
-* garden -- a soothing floral theme. **Warning: large theme.** 129.9KiB + 17.7KiB arrows.
-* gothic -- featuring blood, roses, and bloody roses. 18.7KiB + 19.2KiB arrows.
-* haunted -- a slightly cute, slightly spooky theme inspired by haunted houses. Suited for comedic horror comics. 24.2KiB + 38.5KiB arrows.
-* magiccircle -- a mysterious, fantastical theme. **Warning: large theme.** 79.4KiB + 16.2KiB arrows.
-* might -- a bold theme for comics about heroes who are super. 6KiB + 8.4KiB arrows.
-* note -- a striking, modern theme, designed to look "native" on phones. Uses no images. 12.3KiB + 3.5KiB arrows.
-* prayers -- a peaceful theme in the image of a Shinto shrine. Mostly included because fans of a certain scrolling-shooter game might prefer red-white over black. ^\_\- 18.5KiB + 27.5KiB arrows.
-* revolution -- a dark theme with hearts, swords, and flowers (specifically roses, and lots of them) for those who want to live nobly and with style. **Warning: large theme.** 77.9KiB + 16.6KiB arrows.
-* rock -- a theme with plenty of star power, perfect for comics involving three chords and cowboys of the rhinestone variety. 15.8KiB + 22.1KiB arrows.
-* showtime -- a dramatic theme based on theatrical staging. 18.9KiB + 6.7KiB arrows.
-* starship -- a retro sci-fi theme with stars and metal. 11.8KiB + 700B arrows.
-* steam -- a "steampunk" theme with plenty of gears. 17.6KiB + 8.2KiB arrows.
-* sysadmin -- a no-nonsense monospaced theme for fighting in the eighties. Uses no images. 4.5KiB + 444B arrows.
-* twothousand -- a theme inspired by typical comic site designs from the early 2000s. Uses no images. 12.7KiB + 4.4KiB arrows.
+* plain -- an extremely simple theme. Uses no images. 3.8KiB + 3.6Kib arrows.
+* dark -- a simple dark theme. Uses no images. 4.2KiB + 3.4KiB arrows.
+* beach -- a relaxed and fun theme inspired by the blue ocean. 37.4KiB + 7.8KiB arrows.
+* book -- an elegant theme inspired by hardbound books. 14.1KiB + 2.8KiB arrows.
+* brandy -- a hard-boiled noir theme of stark light and darkness. 7.4KiB + 23.1KiB arrows.
+* cherry -- a girly pink theme for shoujo dreamers. 18.1KiB + 13.1KiB arrows.
+* city -- a dreamy, twinkly theme. 6.4KiB + 735B arrows.
+* cute -- a cute, candy-themed pink and brown theme. Might be good for comics about sweets or children. 7.1KiB + 4.5KiB arrows.
+* cyber -- a theme inspired by 90s cyberpunk. 7.0KiB + 7.7KiB arrows.
+* fairy -- a fluffy theme with flowers and sparkles. 13.1KiB + 14.2KiB arrows.
+* fantasy -- a lush theme with green, gems, and parchment, perfect for "high fantasy" comics. 20.1KiB + 18.2KiB arrows.
+* garden -- a soothing floral theme. **Warning: large theme.** 126.3KiB + 17.7KiB arrows.
+* gothic -- featuring blood, roses, and bloody roses. 15.4KiB + 19.2KiB arrows.
+* haunted -- a slightly cute, slightly spooky theme inspired by haunted houses. Suited for comedic horror comics. 20.5KiB + 38.5KiB arrows.
+* magiccircle -- a mysterious, fantastical theme. **Warning: large theme.** 76.1KiB + 16.2KiB arrows.
+* might -- a bold theme for comics about heroes who are super. 6.4KiB + 8.4KiB arrows.
+* note -- a striking, modern theme, designed to look "native" on phones. Uses no images. 9.3KiB + 3.5KiB arrows.
+* prayers -- a peaceful theme in the image of a Shinto shrine. Mostly included because fans of a certain scrolling-shooter game might prefer red-white over black. ^\_\- 14.0KiB + 27.5KiB arrows.
+* revolution -- a dark theme with hearts, swords, and flowers (specifically roses, and lots of them) for those who want to live nobly and with style. **Warning: large theme.** 78.1KiB + 16.6KiB arrows.
+* rock -- a theme with plenty of star power, perfect for comics involving three chords and cowboys of the rhinestone variety. 11.9KiB + 22.1KiB arrows.
 * seasonal -- a theme you can change to match the seasons. **Requires configuration before use.** ~8KiB each + 1.6KiB arrows.
-* western -- a rugged theme fit for a cowpoke. 14.7KiB + 18.6KiB arrows.
+* showtime -- a dramatic theme based on theatrical staging. 19.8KiB + 6.7KiB arrows.
+* starship -- a retro sci-fi theme with stars and metal. 8.1KiB + 700B arrows.
+* steam -- a "steampunk" theme with plenty of gears. 18.0KiB + 8.2KiB arrows.
+* sysadmin -- a no-nonsense monospaced theme for fighting in the eighties. Uses no images. 4.7KiB + 444B arrows.
+* twothousand -- a theme inspired by typical comic site designs from the early 2000s. Uses no images. 8.9KiB + 4.4KiB arrows.
+* western -- a rugged theme fit for a cowpoke. 11.0KiB + 18.6KiB arrows.
 
 To use any of these themes, just enter its name as `site_style` in `conf.ini`. Plain is the default.
 
@@ -164,7 +164,7 @@ Creating your own styles is simple enough. Here's what you must do:
 6. No, really, actually do #5. Your readers will thank you.
 7. Set `site_style` to the theme name you decided on in step 1 and run Springheel to regenerate your comic. Your comic site will now be themed with your own, custom theme!
 
-One thing to keep in mind that you may have noticed already: each theme's CSS is wrapped in an ID selector, and pages that use a given theme set the ID of `html` to that theme's name. (So, a page that uses the "plain" style will have "`<html lang="[whatever]" id="plain">`, and plain's `style.css` only applies to elements within `#plain`.) If you don't do the same, and your site uses multiple themes, it won't display correctly at all and will look very weird.
+One thing to keep in mind that you may have noticed already: each theme's CSS is wrapped in an ID selector, and pages that use a given theme set the ID of `html` to that theme's name. (So, a page that uses the "plain" style will have "`<html lang="[whatever]" id="plain">`", and plain's `style.css` only applies to elements within `#plain`.) If you don't do the same, and your site uses multiple themes, it won't display correctly at all and will look very weird.
 
 ### Setting comic metadata
 
@@ -513,9 +513,10 @@ There is one use case that requires JS, but it's also the one thing I can't have
 
 **Q. Why do extra pages, and only extra pages, use JSON when everything else uses some vaguely YAML-like crap?**
 
-Because I am a dumb ass.
+A. Because I am a dumb ass.
 
+---
 
+**Q. Does the "note" theme follow Material Design guidelines?**
 
-
-
+A. Nope!

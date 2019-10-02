@@ -23,11 +23,16 @@
       font-size: 1.2em; }
     #starship h2 {
       font-size: 1em; }
-    #starship figure {
-      padding: 1em;
+    #starship figure#comic {
+      padding: 0em;
       text-align: center;
       border: none;
       margin: 0em; }
+      #starship figure#comic figcaption {
+        background: #D0D0D0;
+        color: #222;
+        padding: 0.5em;
+        border: groove medium #D0D0D0; }
     #starship .cominavbox {
       background: #1e1e1e;
       border: groove medium #D0D0D0; }
@@ -35,7 +40,9 @@
       display: inline-block;
       padding: 0em; }
     #starship .cominavbox li {
-      padding: 0.5em; }
+      padding: 0.5em;
+      margin-left: 1em;
+      margin-right: 1em; }
       #starship .cominavbox li a:active, #starship .cominavbox li a:focus {
         outline: dashed medium #ffff66; }
     #starship * + * {
@@ -82,10 +89,9 @@
       color: #dea6ff; }
     #starship footer a:hover, #starship footer a:focus, #starship footer a:active, #starship .cominavbox a:hover, #starship .cominavbox a:focus, #starship .cominavbox a:active {
       color: #ff8793; }
-    #starship .archive {
-      vertical-align: top;
+    #starship main > section, #starship main > .tagslist {
       text-align: left; }
-    #starship nav li, #starship main div, #starship main section {
+    #starship nav li, #starship main > div, #starship main > section, #starship main > .tagslist {
       background: #D0D0D0;
       color: #222;
       padding: 0.5em;
@@ -101,6 +107,8 @@
       margin-top: 1em; }
     #starship .char {
       text-align: left; }
+      #starship .char .chartraits {
+        overflow-wrap: break-word; }
       #starship .char dt:after {
         content: ":"; }
       #starship .char dd:after {
@@ -110,9 +118,14 @@
         margin-left: 0em; }
       #starship .char dt, #starship .char dd {
         display: inline;
-        white-space: pre; } }
+        white-space: pre-wrap; }
+    #starship .tagslist, #starship .chapterarch {
+      list-style-type: none;
+      padding-left: 0em; }
+    #starship .archive .status, #starship #extras h2:first-of-type {
+      margin-top: 0em; } }
   @media screen and (min-width: 1024px) {
-    #starship figure {
+    #starship figure#comic {
       margin-left: 1em; }
     #starship .cominavbox, #starship .cominavbox li {
       margin-left: 1em;
@@ -138,18 +151,16 @@
     #starship footer p {
       font-size: 0.7em;
       margin-left: 1em; }
-    #starship .archive {
+    #starship main > section {
       margin: 1em;
       padding: 1em; }
-      #starship .archive h2 {
+      #starship main > section h2 {
         margin: 0em 0em 1em 0em; }
-    #starship main div, #starship main section {
+    #starship main > div, #starship main > section, #starship main > .tagslist {
       margin: 1em;
       width: 80%; }
     #starship .main {
-      padding: 0.5em;
-      margin: auto;
-      width: 50%; }
+      padding: 0.5em; }
       #starship .main p {
         margin-left: 0em; }
     #starship .intro {
@@ -182,14 +193,9 @@
       #starship .char img {
         margin: 0em 1em 1em 0em;
         border: groove medium #D0D0D0; }
-      #starship .char .chartext {
-        margin: 0em;
-        text-align: left; }
-      #starship .char .chartext, #starship .char img {
-        display: inline-block;
-        vertical-align: top;
-        max-width: 70%; }
       #starship .char p {
-        text-indent: 1em; } }
+        text-indent: 1em; }
+      #starship .char .chartraits {
+        margin-top: 0em; } }
 
 /*# sourceMappingURL=style.css.map */

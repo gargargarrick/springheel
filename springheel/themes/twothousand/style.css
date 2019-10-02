@@ -7,7 +7,7 @@
     /*Medium screens*/
     /*Larger screens*/ }
     #twothousand * {
-      box-sizing: content-box; }
+      box-sizing: border-box; }
     #twothousand body {
       background-color: #2b2b2b;
       color: #111;
@@ -26,7 +26,8 @@
       margin-right: 0em;
       text-align: center; }
       #twothousand figure img {
-        margin: 0em; }
+        margin: 0em;
+        padding: 0em; }
     #twothousand figcaption {
       margin-top: 0.5em;
       margin-bottom: 0.5em;
@@ -167,21 +168,24 @@
         margin-left: 0em; }
       #twothousand .char dt, #twothousand .char dd {
         display: inline;
-        white-space: pre; }
+        white-space: pre-wrap; }
     #twothousand .status {
-      text-indent: 2em;
-      font-size: .9em;
-      font-weight: bold;
-      margin-top: 0em; }
+      font-weight: bold; }
+    #twothousand .archives .status {
+      padding: 0.5em 1em; }
     #twothousand .char:first-of-type h2 {
       border-top: none;
-      margin-top: 0em; } }
+      margin-top: 0em; }
+    #twothousand .tagslist, #twothousand .chapterarch {
+      list-style-type: none;
+      padding-left: 0em; }
+    #twothousand .chartraits {
+      overflow-wrap: break-word; } }
   @media screen and (min-width: 640px) {
     #twothousand body {
       font-size: 1.5em; }
     #twothousand figure {
-      padding: 1em 1em 0em 1em;
-      margin-left: 1em;
+      padding: 1em 0em;
       margin-top: 0em;
       margin-bottom: 0em; }
       #twothousand figure + .cominavbox {
@@ -234,8 +238,7 @@
       margin-left: 1em; }
     #twothousand h1, #twothousand main, #twothousand nav {
       width: auto;
-      margin-right: 1em;
-      max-width: 80%; }
+      margin-right: 1rem; }
     #twothousand header {
       text-align: left;
       max-width: 100%;
@@ -247,12 +250,11 @@
       margin-left: 0em; }
     #twothousand nav ul {
       padding-inline-start: 0em; }
-    #twothousand .main {
-      padding: 0em;
-      margin: 0em;
-      width: 100%; }
-      #twothousand .main p {
-        margin-left: 0em; }
+    #twothousand #extras {
+      margin-top: 0em; }
+      #twothousand #extras h3 {
+        margin-top: 0em;
+        padding: 0.5em; }
     #twothousand .intro {
       padding: 0em;
       margin: 0em;
@@ -274,21 +276,24 @@
       #twothousand .char .chartext {
         margin: 0em;
         text-align: left; }
-      #twothousand .char .chartext, #twothousand .char img {
+      #twothousand .char .chartraits, #twothousand .char img {
         display: inline-block;
         vertical-align: top;
-        max-width: 70%; }
+        max-width: 45%; }
       #twothousand .char:first-of-type {
         margin-top: 0em; }
         #twothousand .char:first-of-type h2 {
           border-top: none;
-          margin-top: 0em; } }
-  @media screen and (min-width: 1280px) {
+          margin-top: 0em; }
+    #twothousand main > section .tagslist {
+      padding-left: 1em; } }
+  @media screen and (min-width: 1024px) {
     #twothousand nav {
       font-size: 1em; }
     #twothousand h1, #twothousand main, #twothousand nav {
+      margin-left: 1rem;
+      margin-right: 10%;
       width: auto;
-      margin-right: 1em;
-      max-width: 70%; } }
+      max-width: 90%; } }
 
 /*# sourceMappingURL=style.css.map */

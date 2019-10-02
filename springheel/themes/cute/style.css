@@ -5,7 +5,7 @@
     /*TODO: Fix the skip link hiding method*/
     /*Medium screens*/ }
     #cute * {
-      box-sizing: content-box; }
+      box-sizing: border-box; }
     #cute body {
       background-color: #e7dfc2;
       background: url("cakeMid.png") repeat-x 0 0, url("cakeCenter.png") repeat 0 0;
@@ -28,16 +28,22 @@
       border: thick solid #FFCCFF;
       padding: 1em; }
       #cute .cominavbox li {
-        padding: 0em; }
+        padding: 0em 0.5em; }
     #cute .cominavbox, #cute .cominavbox li {
       display: inline-block; }
-    #cute figure#comic, #cute main div, #cute nav li, #cute .archive {
-      border: thick solid #FFCCFF;
+    #cute main > div, #cute main > section, #cute main > .tagslist {
+      border-top: thick solid #FFCCFF;
+      border-bottom: thick solid #FFCCFF;
       background: #fff;
+      margin-left: 0em;
+      margin-right: 0em;
       padding-top: .3em;
       padding-bottom: .3em;
       padding-left: 1.2em;
       padding-right: 1.5em; }
+    #cute figure#comic, #cute nav li {
+      background: #fff;
+      border: thick solid #FFCCFF; }
     #cute p + p, #cute li + li, #cute div + div {
       margin-top: 0.5em; }
     #cute #skippy {
@@ -57,8 +63,9 @@
       margin-top: 0em;
       color: #0000ff; }
     #cute nav li {
-      display: inline-block; }
-    #cute main div {
+      display: inline-block;
+      padding: 0.5em; }
+    #cute main > div, #cute main > section {
       text-align: left; }
     #cute .statline {
       font-weight: bold; }
@@ -72,7 +79,7 @@
     #cute footer p {
       margin-left: 0em;
       text-align: left; }
-    #cute .archive {
+    #cute main > section {
       display: inline-block;
       vertical-align: top;
       text-align: left; }
@@ -80,12 +87,14 @@
       max-width: 100%; }
     #cute .action {
       font-weight: bold; }
-    #cute figure#comic, #cute main div {
-      max-width: 100%;
+    #cute main > div, #cute main > section, #cute main > .tagslist {
+      width: 100%;
       margin-left: 0em;
       margin-right: 0em;
       border-left: 0em;
       border-right: 0em; }
+    #cute div + div, #cute section + section {
+      margin-top: 1em; }
     #cute .char {
       text-align: left; }
       #cute .char dt:after {
@@ -97,7 +106,7 @@
         margin-left: 0em; }
       #cute .char dt, #cute .char dd {
         display: inline;
-        white-space: pre; }
+        white-space: pre-wrap; }
       #cute .char .chartext, #cute .char .chartext p {
         margin: 0em; } }
   @media screen and (min-width: 1024px) {
@@ -105,14 +114,14 @@
       margin-left: 1em; }
     #cute figure#comic {
       margin-left: 1em; }
-    #cute figure#comic, #cute nav li, #cute .archive, #cute main div, #cute .cominavbox {
+    #cute figure#comic, #cute nav li, #cute .archive, #cute main > div, #cute main > section, #cute main > .tagslist, #cute .cominavbox {
       border: thick solid #FFCCFF;
       border-image-slice: 20 20 20 20 fill;
       border-image-width: 10px 10px 10px 10px;
       border-image-outset: 0px 0px 0px 0px;
       border-image-repeat: round round;
       border-image-source: url("stripe-border.png"); }
-    #cute main div {
+    #cute main > div, #cute main > section, #cute main > .tagslist {
       padding: 1em;
       width: 80%;
       margin-top: 1em; }
@@ -175,9 +184,10 @@
         font-weight: bold; }
     #cute .char img {
       margin: 1em; }
-    #cute .chartext, #cute .char img {
+    #cute .chartraits, #cute .char img {
       display: inline-block;
       vertical-align: top;
-      max-width: 60%; } }
+      max-width: 60%;
+      overflow-wrap: break-word; } }
 
 /*# sourceMappingURL=style.css.map */

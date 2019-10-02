@@ -1,6 +1,7 @@
 @media screen {
 /*Sysadmin*/
     #sysadmin {
+    // Use #87df32 for green or #ffba00 for amber terminal
     $a: #87df32;
     /* Default (small) screens */
         * {
@@ -10,8 +11,10 @@
             background: #000;
             color: $a;
             text-align: left;
-            font-size: 2.2em;
+            // Monospace fonts need to be fairly big
+            font-size: 2em;
             font-family: monospace;
+            margin: 0em;
         }
 
         main, figure {
@@ -29,6 +32,7 @@
         
         h1, h2, h3, h4, h5, h6 {
           font-size: 1em;
+          font-weight: normal;
         }
 
         h1 {
@@ -42,7 +46,8 @@
 
         figure {
             border: none;
-            margin: 0em
+            margin: 0em;
+            padding: 0em;
         }
         
         figure#comic img {
@@ -95,7 +100,6 @@
         .statline {
             margin: 0em;
             padding: 0.5em 0.5em 0em 0.5em;
-            font-weight: bold;
             text-align: right;
             border-top: dashed medium $a
         }
@@ -122,7 +126,7 @@
             text-align: left;
         }
 
-        main > div, main > section {
+        main > div, main > section, main > .tagslist {
             padding: 1em;
             border: dashed medium $a
         }
@@ -160,14 +164,24 @@
             };
             dt, dd {
                 display: inline;
-                white-space: pre;
+                white-space: pre-wrap;
             };
             img {
                 margin: 1em;
             };
-            p {
-                text-indent: 1em;
-            }
+        }
+        
+        #extras ul {
+            list-style-type: "-"
+        }
+
+        .tagslist, .chapterarch {
+            list-style-type: none;
+            padding-left: 0em;
+        }
+
+        .chartraits {
+            overflow-wrap: break-word;
         }
 
     /*Medium screens*/
@@ -175,7 +189,7 @@
         @media screen and (min-width: 1024px) {
           
           figure {
-              padding: 1em;
+              padding: 1em 0em;
             }
 
             .cominavbox, .cominavbox li {
@@ -193,15 +207,15 @@
                 margin: 0em;
             }
 
-            .archive {
+            main > section {
                 margin: 1em;
-                padding: 1em;
+                padding: 0em 1em;
                 & h2 {
                     margin: 0em 0em 1em 0em;
                 }
             }
 
-            main > div, main > section {
+            main > div, main > section, main > .tagslist {
                 margin: 1em;
                 h2 {
                   margin-top: 0em;
@@ -213,7 +227,7 @@
             }
             
             .main {
-                padding: 1em;
+                padding: 1em 1em 0em 1em;
             }
             
             .intro {
@@ -227,12 +241,6 @@
                 & img {
                     display: inline;
                 };
-                & .author {
-                    font-weight: bold;
-                }
-                & .desc {
-                    font-weight: bold;
-                }
             }
             
             .main, .intro {

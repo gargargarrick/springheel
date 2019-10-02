@@ -1,4 +1,3 @@
-@import "shadow.scss";
 @import "gradient.scss";
 @media screen {
 /*Steam*/
@@ -12,14 +11,14 @@
     $in-text: #111;
     /* Default (small) screens */
         * {
-            box-sizing: content-box;
+            box-sizing: border-box;
         }
         body {
             background-color: $bg-color;
             background-image: url("gears.png");
             color: $out-text;
             text-align: center;
-            font-size: 1.2em;
+            font-size: 1.5em;
             font-family: serif;
             margin: 0;
         }
@@ -29,19 +28,24 @@
             padding-left: 0em;
         }
         
-        figure, main div {
+        figure#comic, main > div, main > section, main > .tagslist {
             background-color: $box-color;
             color: $in-text;
+            border-top: double thick $borders;
+            border-bottom: double thick $borders;
         }
 
         h1 {
             margin: 1em 0em 0em 0em;
         }
+        
+        figure {
+            text-align: center;
+            margin: 0em;
+        }
 
         figure#comic {
             padding: 1em 0em 0em 0em;
-            margin: 0em;
-            text-align: center;
             background: $box-color url("frame.gif") no-repeat 100% 0%;
             & img {
                 margin: 0em;
@@ -49,9 +53,8 @@
         }
 
         figcaption {
-            margin-top: 0.5em;
-            margin-bottom: 0em;
-            padding: 0em
+            text-align: center;
+            padding: 0.5em
         }
         
         .cominavbox {
@@ -115,10 +118,10 @@
                 padding: 0.5em;
                 background: $bg-color;
                 color: $out-text;
+                border: double medium $borders
             };
             & li + li {
                 margin-left: 1em;
-                border: double medium $borders
             };
             a:link {
                 text-decoration: none;
@@ -143,9 +146,12 @@
         }
 
         main {
-            & div {
+            & > div, & > section, & > .tagslist {
                 text-align: left;
                 padding: 0.5em 0em 0.5em 0.2em;
+            }
+            & > div + div, & > section + section {
+                margin-top: 1em
             }
         }
 
@@ -184,7 +190,7 @@
             }
         }
 
-        .archive {
+        main > section {
             vertical-align: top;
             text-align: left;
             background-color: $box-color;
@@ -208,59 +214,67 @@
         
         .char {
             text-align: left;
-            border-bottom: double medium $borders;
-            dt:after {
-                content: ":"
-            };
-            dd:after {
-                content: "\A"; white-space: pre;
-            };
-            dd {
-                margin-left: 0em;
-            };
-            dt, dd {
-                display: inline;
-                white-space: pre;
-            };
+            .chartraits {
+                overflow-wrap: break-word;
+                padding: 0em 1em;
+            }
+            dt {
+                font-weight: bold;
+                font-style: italic;
+            }
             .chartext {
                 background: none
+            }
+            & + .char {
+                margin-top: 1em
             }
         }
         
         .status {
-            text-indent: 0.5em;
             font-weight: bold;
+        }
+
+        .tagslist, .chapterarch {
+            list-style-type: none;
+            margin-top: 1em;
+        }
+        .archives .status {
+            margin: 0em;
         }
 
     /*Medium screens*/
 
-        @media screen and (min-width: 1024px) {
-            body {
-                font-size: 1.5em;
+        @media screen and (min-width: 1024px) {            
+            figure {
+                margin: 0em;
             }
 
             figure#comic {
                 padding: 1em 1em 0em 1em;
-                margin-left: 1em;
-                margin-top: 0em;
-                margin-bottom: 0em;
+                margin: 0em 1em; 
                 border: double thick $borders;
+                vertical-align: middle;
                 & + .cominavbox {
                     margin-top: 0em;
                 }
             }
 
             main {
-                & div {
+                & > div, & > section, & > .tagslist {
                     padding: 0em 0em 0.5em 0em;
-                    margin: 1em 0em 1em 0em;
+                    margin: 1em 0em 1em 10%;
+                    max-width: 70%;
+                    border: double thick $borders;
                     & p {
                         margin-left: 1em
+                    }
+                    & h2 {
+                        margin-top: 0em;
                     }
                 }
             }
 
-            div + div {
+            div + div, section + section {
                 margin-bottom: 0em;
                 margin-top: 0em;
             }
@@ -282,7 +296,7 @@
                 margin: 0em;
                 padding: 0.5em 0em 0.5em 0.5em;
                 border-left: none;
-                border-right: none
+                border-right: none;
             }
             
             h3 {
@@ -318,10 +332,8 @@
                 }
             }
             
-            h2, nav li {
+            h2, nav li, .archives .status {
                 background: #A88D4D;
-                background: -moz-linear-gradient(top, #53452b 0%, #987f46 10%, #b99c56 25%, #fdf0e8 50%, #b99c56 75%, #987f46 90%, #53452b 100%);
-                background: -webkit-linear-gradient(top, #53452b 0%,#987f46 10%,#b99c56 25%,#fdf0e8 50%,#b99c56 75%,#987f46 90%,#53452b 100%);
                 background: linear-gradient(to bottom, #53452b 0%,#987f46 10%,#b99c56 25%,#fdf0e8 50%,#b99c56 75%,#987f46 90%,#53452b 100%);
                 color: $in-text;
 /*                text-shadow: 0.15em 0.15em 0.1em $out-text;*/
@@ -329,8 +341,11 @@
                              -0.1em -0.1em 0.1em #fdf0e8,
                              0.1em -0.1em 0.1em #fdf0e8,
                              -0.1em 0.1em 0.1em #fdf0e8;
-                @include shadow(0em, 0.1em, 0.1em, 0.1em, $in-text);
+                box-shadow: 0em 0.1em 0.1em 0em $in-text;
                 font-weight: normal
+            }
+            .archives .status {
+                padding: 1em;
             }
 
             .statline {
@@ -344,32 +359,12 @@
                 margin-left: 1em
             }
 
-            h1, main {
-                width: 70%;
-                margin-left: 10%;
+            main > .tagslist {
+                padding: 1em;
             }
 
             .action {
                 text-indent: 1em;
-            }
-            
-            .archive {
-                padding: 0em 0em 0.5em 0em;
-                width: 70%;
-                & ol {
-                    margin-top: 1em;
-                    margin-left: 1em;
-                }
-            }
-            
-            .main {
-                padding: 1em;
-                margin: auto;
-                width: 60%;
-                text-align: center;
-                & p {
-                    margin-left: 0em;
-                }
             }
             
             .intro {
@@ -390,24 +385,22 @@
             }
             
             .char {
-                border: none;
-                dl {
-                    font-size: 0.9em;
-                    border-bottom: double medium $borders;
-                };
                 padding: 0em;
+                margin: 1em;
                 img {
                     margin: 1em;
                     border: double medium $borders;
                 }
-                .chartext {
+                .chartraits {
+                    font-size: 0.9em;
                     margin: 0em;
                     text-align: left
                 }
-                .chartext, img {
-                    display: inline-block;
-                    vertical-align: top;
-                    max-width: 50%;
+                .chartext {
+                    margin-top: 0.5em;
+                    padding: 0em 0.5em 0.5em 0.5em;
+                    border-top: double medium $borders;
+                    text-indent: 1em;
                 }
             }
 

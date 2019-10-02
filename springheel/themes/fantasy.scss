@@ -15,7 +15,7 @@
             margin: 0em;
         }
         
-        nav li, figure, main div, main section, .cominavbox {
+        nav li, figure, main > div, main > section, .cominavbox, main > .tagslist {
             background-color: #f5ebda;
             background-image: url(paper.gif);
             color: #222;
@@ -29,9 +29,14 @@
         figure {
             text-align: center;
         }
-        .cominavbox, .cominavbox li {
+        .cominavbox{
             display: inline-block;
             padding: 0em;
+        }
+        
+        .cominavbox li {
+            display: inline-block;
+            padding: 0em 1em;
         }
         
         .cominavbox li {
@@ -97,7 +102,7 @@
             color: #ffdddd;
         }
         
-        main div, main section {
+        main > div, main > section {
             h2, h3, h4 {
                 border-bottom: thin solid goldenrod;
             }
@@ -122,9 +127,7 @@
             text-align: left;
         }
 
-        .archive {
-            display: inline-block;
-            vertical-align: top;
+        main > section {
             text-align: left;
         }
 
@@ -145,16 +148,6 @@
             dt:after {
                 content: ":"
             }
-            dd:after {
-                content: "\A"; white-space: pre;
-            }
-            dd {
-                margin-left: 0em;
-            }
-            dt, dd {
-                display: inline;
-                white-space: pre;
-            }
             img {
                 border: thick ridge gold;
                 margin: 0em;
@@ -171,7 +164,7 @@
             padding-right: 0em;
             border-left: none;
             border-right: none;
-            section, div {
+            & > section, & > div {
                 border-left: none;
                 border-right: none;
                 padding: 0.5em;
@@ -191,16 +184,16 @@
 
         @media screen and (min-width: 1024px) {
     
-            nav li, figure, main div, main section {
+            nav li, figure, main > div, main > section, main > .tagslist {
                 border: thick ridge gold;
             }
 
             figure {
-                margin: 0em 1em;
+                margin: 1em;
                 padding: 1em;
             }
 
-            main div, main section {
+            main > div, main > section, main > .tagslist {
                 padding: 0.5em 1em;
                 margin: 1em;
                 width: 80%;
@@ -216,7 +209,7 @@
 
             div + div {
                 margin-bottom: 0em;
-                margin-top: 0em;
+                margin-top: 1em;
             }
 
             .cominavbox, .cominavbox li {
@@ -228,10 +221,6 @@
 
             figure + .cominavbox {
                 margin-top: 0em;
-            }
-
-            figure {
-                margin-left: 1em;
             }
 
             h1 {
@@ -264,7 +253,7 @@
                 margin-left: 1em;
             }
 
-            .archive {
+            main > section {
                 margin-left: 1em;
                 margin-right: 1em;
                 padding-left: 1em;
@@ -283,12 +272,13 @@
             .char {
                 text-align: left;
                 img {
-                    margin: 0em 1em 0em 0em
+                    margin: 0em 1em 1em 0em
                 }
-                .chartext, img {
+                .chartraits, img {
                     display: inline-block;
                     vertical-align: top;
-                    max-width: 60%;
+                    max-width: 50%;
+                    overflow-wrap: break-word;
                 }
             }
         }

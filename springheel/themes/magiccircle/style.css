@@ -12,7 +12,7 @@
       font-size: 1.5em;
       font-family: serif;
       margin: 0; }
-    #magiccircle main div, #magiccircle main section, #magiccircle nav li {
+    #magiccircle main > div, #magiccircle main > section, #magiccircle nav li, #magiccircle main > .tagslist {
       background: rgba(0, 0, 34, 0.75);
       border: solid thin #f48bff;
       color: #f9c2ff; }
@@ -22,22 +22,30 @@
     #magiccircle h1 {
       margin: 0em;
       text-shadow: 0em 0em 0.2em #002, 0em 0em 0.2em #002, 0em 0em 0.2em #002, 0em 0em 0.2em #002, 0em 0em 0.2em #002, 0em 0em 0.5em #002, 0em 0em 0.5em #002; }
-    #magiccircle figure {
-      padding: 1em 0em 0em 0em;
-      margin-left: 0em;
-      margin-right: 0em;
+    #magiccircle figure#comic {
+      margin: 0em;
+      padding-top: 0em;
       text-align: center;
       border: none;
       border-bottom: solid thin #f48bff; }
-      #magiccircle figure img {
-        margin: 0em; }
+      #magiccircle figure#comic img {
+        margin: 0em;
+        border: thin solid #f48bff;
+        vertical-align: middle; }
     #magiccircle figcaption {
-      margin-bottom: 0.5em;
-      padding: 0em; }
+      margin-bottom: 0em;
+      padding: 0.5em; }
+    #magiccircle figure + .cominavbox {
+      margin-top: 0em;
+      border-top: none;
+      margin-bottom: 1em; }
+      #magiccircle figure + .cominavbox li {
+        margin-top: 0em;
+        padding: 0.5em; }
     #magiccircle .cominavbox, #magiccircle .cominavbox li {
       display: inline-block;
       padding: 0em; }
-    #magiccircle p + p, #magiccircle li + li, #magiccircle div + div, #magiccircle section + section, #magiccircle figcaption {
+    #magiccircle p + p, #magiccircle li + li, #magiccircle div + div, #magiccircle section + section {
       margin-top: 0.5em; }
     #magiccircle #skippy {
       text-align: left;
@@ -102,12 +110,11 @@
     #magiccircle footer p {
       margin-left: 0em;
       text-align: left; }
-    #magiccircle .archive {
-      vertical-align: top;
+    #magiccircle main > section {
       text-align: left; }
-      #magiccircle .archive h2 {
+      #magiccircle main > section h2 {
         margin-top: 0.5em; }
-      #magiccircle .archive ol {
+      #magiccircle main > section ol {
         margin-top: 0em; }
     #magiccircle img, #magiccircle embed, #magiccircle object, #magiccircle video {
       max-width: 100%; }
@@ -120,19 +127,14 @@
     #magiccircle .cominavbox {
       background: rgba(0, 0, 34, 0.75);
       margin-bottom: 0em;
-      border: thin solid #f48bff; }
+      border: thin solid #f48bff;
+      border-bottom: none; }
       #magiccircle .cominavbox li {
         padding: 0.5em; }
-    #magiccircle figure {
-      margin-top: 0em;
-      padding-top: 0em;
-      margin-bottom: 0em;
-      border: thin solid #f48bff; }
-    #magiccircle figcaption {
-      margin-bottom: 0em;
-      padding-top: 0.5em; }
     #magiccircle figure + .cominavbox {
       margin-top: 0em;
+      border: thin solid #f48bff;
+      border-top: none;
       margin-bottom: 1em; }
       #magiccircle figure + .cominavbox li {
         margin-top: 0em;
@@ -152,6 +154,8 @@
       #magiccircle .char h2 {
         margin-left: 1em;
         padding-top: 1em; }
+      #magiccircle .char dt {
+        font-style: italic; }
       #magiccircle .char dt:after {
         content: ":"; }
       #magiccircle .char dd:after {
@@ -161,47 +165,57 @@
         margin-left: 0em; }
       #magiccircle .char dt, #magiccircle .char dd {
         display: inline;
-        white-space: pre; }
+        white-space: pre-wrap; }
       #magiccircle .char dl {
         font-size: 0.9em;
         margin-left: 1em; }
       #magiccircle .char img {
-        border: solid thin #f48bff; } }
+        border: solid thin #f48bff; }
+      #magiccircle .char .chartraits {
+        overflow-wrap: break-word; }
+    #magiccircle .tagslist, #magiccircle .chapterarch {
+      list-style-type: none; }
+    #magiccircle .chapterarch {
+      padding-left: 0em; }
+    #magiccircle main > .tagslist {
+      padding: 1em; } }
   @media screen and (min-width: 1024px) {
     #magiccircle body {
       background: #002 url("glowy-magic-circle.jpg") fixed no-repeat 100% 0%;
       background-size: 50%; }
-    #magiccircle figure {
+    #magiccircle figure#comic {
       padding: 0em;
-      -webkit-box-shadow: 0em 0em 0.5em 0.5em #f48bff;
-      -moz-box-shadow: 0em 0em 0.5em 0.5em #f48bff;
-      box-shadow: 0em 0em 0.5em 0.5em #f48bff;
-      margin-left: 1em;
-      margin-top: 0em;
-      margin-bottom: 0em;
-      background: rgba(0, 0, 34, 0.75); }
-      #magiccircle figure img {
-        display: inline;
-        border-bottom: solid thin #f48bff; }
+      margin: 0em 1em 0em 0em;
+      border: none;
+      width: 100%; }
+      #magiccircle figure#comic img {
+        -webkit-box-shadow: 0em 0em 0.5em 0.5em #f48bff;
+        -moz-box-shadow: 0em 0em 0.5em 0.5em #f48bff;
+        box-shadow: 0em 0em 0.5em 0.5em #f48bff;
+        background: rgba(0, 0, 34, 0.75);
+        max-width: 100%; }
     #magiccircle figcaption {
-      font-size: 1.2em;
-      padding: 0.5em 1em 1em 0.5em;
-      margin: 0em; }
-    #magiccircle main {
-      margin-left: 10%;
-      width: 70%; }
-      #magiccircle main div, #magiccircle main section {
-        padding: 0em 0em 0.5em 0em;
-        margin: 1em 2em 1em 0em; }
-        #magiccircle main div p, #magiccircle main section p {
-          margin-left: 1em; }
+      padding: 1em;
+      margin: 0em 2em;
+      background: rgba(0, 0, 34, 0.75);
+      border: solid thin #f48bff; }
+    #magiccircle main > div, #magiccircle main > section, #magiccircle main > .tagslist {
+      max-width: 70%;
+      padding: 0em 0em 0.5em 0em;
+      margin: 1em 2em 1em 10%; }
+      #magiccircle main > div p, #magiccircle main > section p, #magiccircle main > .tagslist p {
+        margin-left: 1em; }
+    #magiccircle main > .tagslist {
+      padding: 1em; }
     #magiccircle .cominavbox {
-      background: rgba(0, 0, 34, 0.75); }
+      background: rgba(0, 0, 34, 0.75);
+      border: thin solid #f48bff; }
       #magiccircle .cominavbox li {
         margin-bottom: 1em;
         padding-bottom: 1em; }
     #magiccircle figure + .cominavbox {
-      margin-top: 0em; }
+      margin-top: 0em;
+      border-top: none; }
       #magiccircle figure + .cominavbox li {
         margin-top: 0em;
         padding-top: 0.5em; }
@@ -240,15 +254,15 @@
       margin-left: 1em; }
     #magiccircle .action {
       text-indent: 1em; }
-    #magiccircle .archive {
+    #magiccircle main > section {
       padding: 0em 0em 0.5em 0em;
       width: 80%; }
-      #magiccircle .archive ol {
+      #magiccircle main > section ol {
         margin-top: 1em;
         margin-left: 1em;
         margin-right: 2em;
         border-right: solid thin #f48bff; }
-      #magiccircle .archive h2 {
+      #magiccircle main > section h2 {
         padding: 0em;
         margin: 0em;
         margin-left: 1em;
@@ -261,14 +275,14 @@
         margin-top: 0.5em; }
     #magiccircle .char img {
       margin: 0em 2em 1em 1em; }
-    #magiccircle .char .chartext {
+    #magiccircle .char .chartraits {
       margin: 0em;
       text-align: left;
       background: none; }
-      #magiccircle .char .chartext p {
+      #magiccircle .char .chartraits p {
         margin: 0em;
         padding: 0em; }
-    #magiccircle .char .chartext, #magiccircle .char img {
+    #magiccircle .char .chartraits, #magiccircle .char img {
       display: inline-block;
       vertical-align: top;
       max-width: 50%; } }

@@ -10,8 +10,9 @@
       background: #000;
       color: #87df32;
       text-align: left;
-      font-size: 2.2em;
-      font-family: monospace; }
+      font-size: 2em;
+      font-family: monospace;
+      margin: 0em; }
     #sysadmin main, #sysadmin figure {
       margin-left: 0em;
       padding-left: 0em; }
@@ -20,7 +21,8 @@
     #sysadmin nav li {
       margin: 1.5em; }
     #sysadmin h1, #sysadmin h2, #sysadmin h3, #sysadmin h4, #sysadmin h5, #sysadmin h6 {
-      font-size: 1em; }
+      font-size: 1em;
+      font-weight: normal; }
     #sysadmin h1 {
       margin: 0em;
       text-align: left; }
@@ -29,7 +31,8 @@
       border-bottom: dashed medium #87df32; }
     #sysadmin figure {
       border: none;
-      margin: 0em; }
+      margin: 0em;
+      padding: 0em; }
     #sysadmin figure#comic img {
       padding: 0em;
       margin: 0em; }
@@ -63,7 +66,6 @@
     #sysadmin .statline {
       margin: 0em;
       padding: 0.5em 0.5em 0em 0.5em;
-      font-weight: bold;
       text-align: right;
       border-top: dashed medium #87df32; }
     #sysadmin a:link {
@@ -78,7 +80,7 @@
       text-align: left; }
     #sysadmin .archive {
       text-align: left; }
-    #sysadmin main > div, #sysadmin main > section {
+    #sysadmin main > div, #sysadmin main > section, #sysadmin main > .tagslist {
       padding: 1em;
       border: dashed medium #87df32; }
     #sysadmin #extras * + h2, #sysadmin #extras h3 {
@@ -104,14 +106,19 @@
         margin-left: 0em; }
       #sysadmin .char dt, #sysadmin .char dd {
         display: inline;
-        white-space: pre; }
+        white-space: pre-wrap; }
       #sysadmin .char img {
         margin: 1em; }
-      #sysadmin .char p {
-        text-indent: 1em; } }
+    #sysadmin #extras ul {
+      list-style-type: "-"; }
+    #sysadmin .tagslist, #sysadmin .chapterarch {
+      list-style-type: none;
+      padding-left: 0em; }
+    #sysadmin .chartraits {
+      overflow-wrap: break-word; } }
   @media screen and (min-width: 1024px) {
     #sysadmin figure {
-      padding: 1em; }
+      padding: 1em 0em; }
     #sysadmin .cominavbox, #sysadmin .cominavbox li {
       margin-left: 1em;
       margin-right: 1em;
@@ -121,19 +128,19 @@
     #sysadmin nav li {
       padding: 1em;
       margin: 0em; }
-    #sysadmin .archive {
+    #sysadmin main > section {
       margin: 1em;
-      padding: 1em; }
-      #sysadmin .archive h2 {
+      padding: 0em 1em; }
+      #sysadmin main > section h2 {
         margin: 0em 0em 1em 0em; }
-    #sysadmin main > div, #sysadmin main > section {
+    #sysadmin main > div, #sysadmin main > section, #sysadmin main > .tagslist {
       margin: 1em; }
-      #sysadmin main > div h2, #sysadmin main > section h2 {
+      #sysadmin main > div h2, #sysadmin main > section h2, #sysadmin main > .tagslist h2 {
         margin-top: 0em; }
     #sysadmin img, #sysadmin embed, #sysadmin object, #sysadmin video {
       max-width: auto; }
     #sysadmin .main {
-      padding: 1em; }
+      padding: 1em 1em 0em 1em; }
     #sysadmin .intro {
       border: none;
       margin: 0em;
@@ -143,10 +150,6 @@
         margin-bottom: 0.5em; }
       #sysadmin .intro img {
         display: inline; }
-      #sysadmin .intro .author {
-        font-weight: bold; }
-      #sysadmin .intro .desc {
-        font-weight: bold; }
     #sysadmin .main, #sysadmin .intro {
       text-align: left; }
       #sysadmin .main p, #sysadmin .intro p {
