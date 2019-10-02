@@ -110,16 +110,16 @@ These are the themes available by default:
 
 * plain -- an extremely simple theme. Uses no images. 3.8KiB + 3.6Kib arrows.
 * dark -- a simple dark theme. Uses no images. 4.2KiB + 3.4KiB arrows.
-* beach -- a relaxed and fun theme inspired by the blue ocean. 37.4KiB + 7.8KiB arrows.
+* beach -- a relaxed and fun theme inspired by the blue ocean. 37.4KiB + 7.2KiB arrows.
 * book -- an elegant theme inspired by hardbound books. 14.1KiB + 2.8KiB arrows.
 * brandy -- a hard-boiled noir theme of stark light and darkness. 7.4KiB + 23.1KiB arrows.
 * cherry -- a girly pink theme for shoujo dreamers. 18.1KiB + 13.1KiB arrows.
 * city -- a dreamy, twinkly theme. 6.4KiB + 735B arrows.
 * cute -- a cute, candy-themed pink and brown theme. Might be good for comics about sweets or children. 7.1KiB + 4.5KiB arrows.
 * cyber -- a theme inspired by 90s cyberpunk. 7.0KiB + 7.7KiB arrows.
-* fairy -- a fluffy theme with flowers and sparkles. 13.1KiB + 14.2KiB arrows.
+* fairy -- a fluffy theme with flowers and sparkles. 13.1KiB + 14.1KiB arrows.
 * fantasy -- a lush theme with green, gems, and parchment, perfect for "high fantasy" comics. 20.1KiB + 18.2KiB arrows.
-* garden -- a soothing floral theme. **Warning: large theme.** 126.3KiB + 17.7KiB arrows.
+* garden -- a soothing floral theme. **Warning: large theme.** 121.5KiB + 17.7KiB arrows.
 * gothic -- featuring blood, roses, and bloody roses. 15.4KiB + 19.2KiB arrows.
 * haunted -- a slightly cute, slightly spooky theme inspired by haunted houses. Suited for comedic horror comics. 20.5KiB + 38.5KiB arrows.
 * magiccircle -- a mysterious, fantastical theme. **Warning: large theme.** 76.1KiB + 16.2KiB arrows.
@@ -127,12 +127,12 @@ These are the themes available by default:
 * note -- a striking, modern theme, designed to look "native" on phones. Uses no images. 9.3KiB + 3.5KiB arrows.
 * prayers -- a peaceful theme in the image of a Shinto shrine. Mostly included because fans of a certain scrolling-shooter game might prefer red-white over black. ^\_\- 14.0KiB + 27.5KiB arrows.
 * revolution -- a dark theme with hearts, swords, and flowers (specifically roses, and lots of them) for those who want to live nobly and with style. **Warning: large theme.** 78.1KiB + 16.6KiB arrows.
-* rock -- a theme with plenty of star power, perfect for comics involving three chords and cowboys of the rhinestone variety. 11.9KiB + 22.1KiB arrows.
+* rock -- a theme with plenty of star power, perfect for comics involving three chords and cowboys of the rhinestone variety. 11.7KiB + 22.1KiB arrows.
 * seasonal -- a theme you can change to match the seasons. **Requires configuration before use.** ~8KiB each + 1.6KiB arrows.
 * showtime -- a dramatic theme based on theatrical staging. 19.8KiB + 6.7KiB arrows.
 * starship -- a retro sci-fi theme with stars and metal. 8.1KiB + 700B arrows.
 * steam -- a "steampunk" theme with plenty of gears. 18.0KiB + 8.2KiB arrows.
-* sysadmin -- a no-nonsense monospaced theme for fighting in the eighties. Uses no images. 4.7KiB + 444B arrows.
+* sysadmin -- a no-nonsense monospaced theme for fighting in the eighties. Uses no images. 4.7KiB + 412B arrows.
 * twothousand -- a theme inspired by typical comic site designs from the early 2000s. Uses no images. 8.9KiB + 4.4KiB arrows.
 * western -- a rugged theme fit for a cowpoke. 11.0KiB + 18.6KiB arrows.
 
