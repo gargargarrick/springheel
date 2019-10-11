@@ -258,7 +258,7 @@ The .conf file has fields that are required for accurate copyright statements, R
 * **language** (ISO 639-1 code)
 * **chapters** (whether or not the comic is divided into chapters. If you set this to True *or* the name of a .chapters file, the archives page will automatically be separated by chapter)
 * **desc** (a description of the comic; used for the index page and RSS feeds)
-* **status** (whether the series is finished or not; accepted values are `in-progress`, `complete`, and `dead`)
+* **status** (whether the series is finished or not; accepted values are `in-progress`, `complete`, and `hiatus`)
 * **chars** (optional; the filename of a .chars file. If characters_page in `conf.ini` is set to True, this will generate a characters page based on the linked file.)
 
 ### Character pages

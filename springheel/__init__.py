@@ -19,7 +19,7 @@
 
 name = "springheel"
 author = "gargargarrick"
-__version__ = '5.0.2'
+__version__ = '5.0.3'
 
 class Site:
     def __init__(self):
@@ -611,16 +611,14 @@ def build():
         if match.chapters not in falses:
             chapters_dicts = getChapters(match.chapters_file)
             match.chapters_dicts = chapters_dicts
+            if hasattr(match,"chapters_list") == False:
+                match.chapters_list = []
             for chapter in chapters_dicts:
                 ## Check if chapter exists already
-                try:
-                    chap_check = [item for item in match.chapters_list if item.chap_number == chapter["num"]]
-                    if len(chap_check) == 0:
-                        chap = match.Chapter(chapter["num"],chapter["title"])
-                        chapters_list.append(chap)
-                except AttributeError:
-                    pass
-            match.chapters_list = chapters_list
+                chap_check = [item for item in match.chapters_list if item.chap_number == chapter["num"]]
+                if len(chap_check) == 0:
+                    chap = match.Chapter(chapter["num"],chapter["title"])
+                    match.chapters_list.append(chap)
         else:
             logMsg("{match} has a chapter setting of {chapter}.".format(match=match.category,chapter=match.chapters),".")
             match.chapters_list = []
@@ -793,7 +791,7 @@ def build():
 
         i.copyright_statement = copyright_statement
 
-        statuses = [translated_strings["inprogress_s"], translated_strings["complete_s"], translated_strings["hiatus_s"], "Status Not Found - Please add one of 'in-progress', 'complete', or 'dead' to this comic's .conf file!"]
+        statuses = [translated_strings["inprogress_s"], translated_strings["complete_s"], translated_strings["hiatus_s"], "Status Not Found - Please add one of 'in-progress', 'complete', or 'hiatus' to this comic's .conf file!"]
 
         if match.status == "in-progress":
             status = statuses[0]
@@ -1323,7 +1321,7 @@ def build():
         for conf in configs:
 
             fn = conf["chars"]
-            if fn == "None":
+            if fn == "None" or fn == "False":
                 logmesg = "No character file found for {category}, skipping...".format(category=conf["category"])
                 logMsg(logmesg,".")
             else:

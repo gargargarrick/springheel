@@ -1,5 +1,9 @@
 # Springheel Changelog
 
+## 5.0.3
++ Fixed a major bug where comics on multi-comic sites were added to the wrong chapters.
++ Corrected the error message that appears if "status" is unset.
+
 ## 5.0.2
 + Fixed a bug where tag page results weren't being sorted correctly.
 + Archive page titles for single-comic sites are now translatable.
