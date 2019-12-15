@@ -1,3 +1,5 @@
+**This repository is not currently updated due to GitHub's contract with ICE. Please check [my website](https://www.twinkle-night.net/Code/springheel.html) for the latest version of this software.**
+
 # Springheel
 A static site generator for webcomics (in beta)
 
